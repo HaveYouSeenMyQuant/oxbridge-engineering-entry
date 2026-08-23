@@ -3173,7 +3173,7 @@ window.QQ_DATA = {
        "vizParams": {
         "lam": 1.0,
         "d": 6,
-        "py": 1.0
+        "py": 2.0
        }
       },
       {
