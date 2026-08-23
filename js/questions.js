@@ -1804,6 +1804,118 @@ window.QQ_DATA = {
        "explain": "If they point in exactly opposite directions they cancel to the zero vector. Magnitude alone never determines a sum — direction does half the work."
       }
      ]
+    },
+    {
+     "id": "v4",
+     "title": "Vectors in three dimensions",
+     "questions": [
+      {
+       "id": "ve3_mag",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the magnitude of the vector (1, 2, 2)?",
+       "answerNumber": 3,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "√(1 + 4 + 4) = 3. The formula does not change with dimension: square every component, add, take the root. (1,2,2) and (2,-1,2) are both worth recognising — they are the 3D equivalents of the 3-4-5 triangle."
+      },
+      {
+       "id": "ve3_dist",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "How far apart are the points (1, 2, 3) and (4, 6, 3)?",
+       "answerNumber": 5,
+       "tolerance": 0.001,
+       "answerValue": "5",
+       "explain": "Subtract to get the vector between them, (3, 4, 0), then take its magnitude: √(9+16+0) = 5. Distance is just the length of the joining vector, which is why the two formulas look the same."
+      },
+      {
+       "id": "ve3_dot_angle",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "(1, 2, 2) and (2, −1, 2) both have magnitude 3. Their dot product is 4. What is the angle between them, to the nearest degree?",
+       "answerNumber": 64,
+       "tolerance": 0.6,
+       "answerValue": "64",
+       "explain": "cosθ = 4/(3×3) = 0.444, so θ = 64°. The formula a·b = |a||b|cosθ works unchanged in three dimensions, which is why the dot product is the tool of choice for angles in space."
+      },
+      {
+       "id": "ve3_unit",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "The unit vector in the direction of (3, 4) is (0.6, k). What is k?",
+       "answerNumber": 0.8,
+       "tolerance": 0.001,
+       "answerValue": "0.8",
+       "explain": "Divide by the magnitude 5: (0.6, 0.8). Check it is a unit vector: 0.36 + 0.64 = 1 ✓. Unit vectors carry direction and throw away length, which is what you want whenever only the direction matters."
+      },
+      {
+       "id": "ve3_cross_needed",
+       "type": "truefalse",
+       "topic": "vectors",
+       "prompt": "The dot product of two vectors is a vector.",
+       "statement": "The dot product of two vectors is a vector.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It is a scalar — a single number — which is why it is also called the scalar product. The product that returns a VECTOR is the cross product, and it only exists in three dimensions."
+      }
+     ]
+    },
+    {
+     "id": "v5",
+     "title": "Lines and exam-level vectors",
+     "questions": [
+      {
+       "id": "ve3_line_point",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "A line is r = (1, 0, 2) + t(2, 1, −2). What is the x-coordinate of the point at t = 2?",
+       "answerNumber": 5,
+       "tolerance": 0,
+       "answerValue": "5",
+       "explain": "x = 1 + 2t = 5 at t = 2, giving the point (5, 2, −2). The vector equation of a line is just 'start here, then travel along this direction' — one point plus a direction."
+      },
+      {
+       "id": "ve3_line_dir_mag",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "For that same line, what is the magnitude of the direction vector (2, 1, −2)?",
+       "answerNumber": 3,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "√(4 + 1 + 4) = 3. Dividing the direction by 3 gives a unit direction, after which the parameter t measures actual distance travelled along the line."
+      },
+      {
+       "id": "ve3_parallel_k",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "For what value of k are (2, 3, −1) and (6, 9, k) parallel?",
+       "answerNumber": -3,
+       "tolerance": 0,
+       "answerValue": "-3",
+       "explain": "Parallel means one is a multiple of the other. The first two components are tripled, so the third must be too: k = −3. Parallel is about a common MULTIPLE; perpendicular is about a zero dot product — two different tests."
+      },
+      {
+       "id": "ve3_resolve_two",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "A 50 N force acts at 30° above the horizontal. What is its vertical component, in newtons?",
+       "answerNumber": 24.999999999999996,
+       "tolerance": 0.01,
+       "answerValue": "25",
+       "explain": "50 sin30 = 25 N. Vertical uses SIN when the angle is measured from the horizontal — and the safest check is that a small angle should give a small vertical component, which sin does and cos does not."
+      },
+      {
+       "id": "ve3_exam_zero_dot",
+       "type": "truefalse",
+       "topic": "vectors",
+       "prompt": "If a·b = 0 then at least one of a and b must be the zero vector.",
+       "statement": "If a·b = 0 then at least one of a and b must be the zero vector.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Not at all — it usually means they are perpendicular. (1,0)·(0,1) = 0 with neither vector zero. This is the one place where vector algebra genuinely differs from ordinary numbers, where ab = 0 does force one of them to be zero."
+      }
+     ]
     }
    ]
   },
@@ -3067,6 +3179,66 @@ window.QQ_DATA = {
        "answerBool": true,
        "answerValue": "TRUE",
        "explain": "Always. If your walk round the Earth came out at ten days you would know something had gone wrong, because you know roughly how far people walk in a day. A sanity anchor catches the factor-of-a-thousand slips that estimation is prone to."
+      }
+     ]
+    },
+    {
+     "id": "x3",
+     "title": "Everyday scales",
+     "questions": [
+      {
+       "id": "es_bath",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "A bath holds about 150 litres. Roughly how many 250 ml cups is that?",
+       "answerNumber": 600.0,
+       "tolerance": 1.0,
+       "answerValue": "600",
+       "explain": "150 / 0.25 = 600 cups. Converting to a common unit before dividing is most of the work in these; mixing litres and millilitres is where they go wrong."
+      },
+      {
+       "id": "es_steps",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "At about 0.75 m per step, roughly how many steps is one kilometre? Give it to the nearest hundred.",
+       "answerNumber": 1300,
+       "tolerance": 51,
+       "answerValue": "1300",
+       "explain": "1000 / 0.75 ≈ 1333, so about 1300. A useful anchor: a kilometre is roughly 1300 steps, and the 10,000-step target is therefore about 7.5 km."
+      },
+      {
+       "id": "es_density",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "70 million people in 250,000 km². Roughly how many people per km²?",
+       "answerNumber": 280,
+       "tolerance": 5,
+       "answerValue": "280",
+       "explain": "70,000,000 / 250,000 = 280 per km². Cancelling the zeros before dividing keeps this doable in your head — 70/0.25 = 280 once both are in millions."
+      },
+      {
+       "id": "es_which_bigger",
+       "type": "choice",
+       "topic": "estimation",
+       "prompt": "Which is the larger number: the seconds in a year, or the millimetres in ten kilometres?",
+       "choices": [
+        "Seconds in a year",
+        "Millimetres in ten kilometres",
+        "They are within a factor of two"
+       ],
+       "answer": 0,
+       "answerValue": "Seconds in a year",
+       "explain": "Seconds in a year is about 3.2×10⁷; millimetres in 10 km is 10⁷ exactly. The first is roughly three times the second. Comparing powers of ten first, and only then the leading digit, is the whole method."
+      },
+      {
+       "id": "es_units_first",
+       "type": "truefalse",
+       "topic": "estimation",
+       "prompt": "In an estimation question it is worth converting everything to one unit before doing any arithmetic.",
+       "statement": "In an estimation question it is worth converting everything to one unit before doing any arithmetic.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Almost always. Most estimation errors are factor-of-a-thousand slips between millimetres and metres or grams and kilograms, not errors of judgement about the quantities themselves."
       }
      ]
     }
