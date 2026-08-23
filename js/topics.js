@@ -69,6 +69,99 @@
     estimation: 'Estimation'
   };
 
+
+  /* ------------------------------------------------------------ MOCK PAPER
+   * The road teaches one topic at a time and the topic screen revises one at a
+   * time. Neither is what the exam is: ESAT and PAT are MIXED papers, and the
+   * skill they test that nothing else here does is recognising which topic a
+   * question belongs to before you can start it. On a single-topic page you
+   * always already know.
+   *
+   * This builds a paper on the fly and hands it to the ordinary lesson runner,
+   * so hearts, XP and explanations all behave exactly as they do everywhere
+   * else. It owns no question of its own.
+   */
+  var PAPER_N = 10;
+
+  function examTopics() {
+    /* Weighted toward what is actually examinable: a unit tagged "enrichment"
+     * (matrices, at the owner's request) is included but cannot dominate. */
+    var pool = [];
+    D.units.forEach(function (u) {
+      var isExam = (u.syllabus || '').toLowerCase().indexOf('esat') !== -1 ||
+                   (u.syllabus || '').toLowerCase().indexOf('pat') !== -1;
+      (u.lessons || []).forEach(function (l) {
+        (l.questions || []).forEach(function (q) {
+          pool.push({ q: q, unit: u, weight: isExam ? 3 : 1 });
+        });
+      });
+    });
+    return pool;
+  }
+
+  function buildPaper(n) {
+    var pool = examTopics(), picked = [], seenTopic = {};
+    /* Spread across topics first, then fill at random. A "mixed paper" that
+     * happened to draw nine calculus questions would not be mixed. */
+    var byTopic = {};
+    pool.forEach(function (r) { (byTopic[r.q.topic] = byTopic[r.q.topic] || []).push(r); });
+    var topics = Object.keys(byTopic);
+    topics.sort(function () { return Math.random() - 0.5; });
+    topics.forEach(function (t) {
+      if (picked.length >= n) return;
+      var bucket = byTopic[t];
+      var r = bucket[Math.floor(Math.random() * bucket.length)];
+      if (picked.indexOf(r.q) === -1) { picked.push(r.q); seenTopic[t] = 1; }
+    });
+    var guard = 0;
+    while (picked.length < n && guard++ < 500) {
+      var r2 = pool[Math.floor(Math.random() * pool.length)];
+      if (Math.random() * 3 >= r2.weight) continue;      // apply the weighting
+      if (picked.indexOf(r2.q) === -1) picked.push(r2.q);
+    }
+    return picked.slice(0, n);
+  }
+
+  function startPaper() {
+    var qs = buildPaper(PAPER_N);
+    if (!qs.length) return;
+    var topics = {};
+    qs.forEach(function (q) { topics[q.topic] = 1; });
+    if (global.QQA && QQA.track) {
+      QQA.track('mock_paper_started', {
+        questions: qs.length, topics: Object.keys(topics).length
+      });
+    }
+    var unit = { id: 'u_mock', index: 0, title: 'Mixed paper',
+                 subtitle: 'Every topic, in no order.', colour: '#f0883e',
+                 free: true, lessons: [] };
+    /* A fresh id each time, so a paper is never treated as a lesson already
+     * completed and never overwrites road progress. */
+    var lesson = { id: 'mock_' + Date.now(), title: 'Mixed paper', questions: qs };
+    unit.lessons = [lesson];
+    if (global.QQApp && QQApp.startLesson) QQApp.startLesson(unit, lesson);
+  }
+
+  function paperCard() {
+    var card = el('section', 'topic-card mock-card');
+    var head = el('div', 'topic-head');
+    var dot = el('span', 'topic-dot'); dot.style.background = '#f0883e';
+    head.appendChild(dot);
+    head.appendChild(el('h3', null, 'Mixed paper'));
+    head.appendChild(el('span', 'topic-count', PAPER_N + ' questions · every topic'));
+    card.appendChild(head);
+    card.appendChild(el('p', 'topic-sub',
+      'The real papers do not tell you which topic a question is. This one does not either.'));
+    var b = el('button', 'topic-open mock-open');
+    b.type = 'button';
+    b.appendChild(el('span', 'topic-step-n', '▶'));
+    b.appendChild(el('span', 'topic-step-t', 'Start a mixed paper'));
+    b.appendChild(el('span', 'topic-step-q', PAPER_N + 'q'));
+    b.addEventListener('click', startPaper);
+    card.appendChild(b);
+    return card;
+  }
+
   function render() {
     var host = document.getElementById('topicsList');
     if (!host) return;
@@ -78,6 +171,7 @@
                    ' — they will render as raw keys');
     }
     host.innerHTML = '';
+    host.appendChild(paperCard());
     var byTopic = index();
 
     Object.keys(byTopic).sort(function (a, b) {
@@ -160,5 +254,6 @@
     boot();
   }
 
-  global.QQTopics = { render: render, show: show, index: index };
+  global.QQTopics = { render: render, show: show, index: index,
+                      buildPaper: buildPaper, startPaper: startPaper };
 })(window);

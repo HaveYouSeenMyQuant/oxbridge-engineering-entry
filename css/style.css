@@ -1185,3 +1185,11 @@ body.in-lesson .tabs { display: none; }
 .mat-r { border-left: none; }
 /* inside a choice button the matrices sit on one line with the text */
 .choice .mat { margin: 0 3px; }
+
+/* the mixed paper sits above the topic ladders and is deliberately louder */
+.mock-card { border-color: rgba(240,136,62,0.45); }
+.mock-open { border-color: rgba(240,136,62,0.40); }
+.mock-open:hover, .mock-open:focus-visible {
+  border-color: #f0883e; background: rgba(240,136,62,0.10);
+}
+.mock-open .topic-step-n { background: rgba(240,136,62,0.20); color: #f0883e; }
