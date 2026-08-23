@@ -777,7 +777,9 @@
     $('#playProgressFill').style.width = (play.cleared / play.total * 100) + '%';
     heartsRender();
     $('#qKicker').textContent = play.unit.title + ' · ' + play.lesson.title;
-    $('#qPrompt').textContent = q.prompt;
+    /* Matrices are drawn as grids, not as [2 1; 3 4]. See js/matrix_render.js. */
+    if (global.QQMat) QQMat.into($('#qPrompt'), q.prompt);
+    else $('#qPrompt').textContent = q.prompt;
     $('#qHint').textContent = q.vizHint || '';
     $('#feedback').className = 'feedback';
     $('#feedback').innerHTML = '';
@@ -862,7 +864,8 @@
     var node = el('div', 'choices');
     var picked = null, btns = [];
     q.choices.forEach(function (choice, idx) {
-      var b = el('button', 'choice', choice);
+      var b = el('button', 'choice');
+      if (global.QQMat) QQMat.into(b, choice); else b.textContent = choice;
       b.type = 'button';
       b.addEventListener('click', function () {
         if (play.locked) return;
@@ -1116,7 +1119,8 @@
     if (correct) {
       bar.classList.add('good');
       fb.className = 'feedback good show';
-      fb.innerHTML = '<b>' + (play.attempts[q.id] === 1 ? 'Right, first go.' : 'Right.') + '</b> ' + q.explain;
+      fb.innerHTML = '<b>' + (play.attempts[q.id] === 1 ? 'Right, first go.' : 'Right.') +
+                     '</b> ' + (global.QQMat ? QQMat.html(q.explain) : q.explain);
       if (play.attempts[q.id] === 1) play.firstTry++;
       play.cleared++;
       QQStore.recordSolved(q.id, play.attempts[q.id], ms);
@@ -1133,7 +1137,9 @@
         lessonId: play.lesson.id, questionId: q.id, heartsLeft: play.hearts, type: q.type
       });
       fb.className = 'feedback bad show';
-      fb.innerHTML = '<b>Not quite.</b> The answer is <b>' + rightAnswerText(q) + '</b>. ' + q.explain;
+      fb.innerHTML = '<b>Not quite.</b> The answer is <b>' +
+                     (global.QQMat ? QQMat.html(rightAnswerText(q)) : rightAnswerText(q)) +
+                     '</b>. ' + (global.QQMat ? QQMat.html(q.explain) : q.explain);
       play.queue.shift();
       if (!play.requeued[q.id]) {
         // back to the end of the queue, once: you never leave a lesson having

@@ -1149,3 +1149,39 @@ body.in-lesson .tabs { display: none; }
 .topic-step-q { flex: 0 0 auto; font-size: 0.72rem; color: var(--muted, #8b949e); }
 .topic-step.is-done .topic-step-n { background: var(--good, #3fb950); color: #06210f; }
 .topic-step.is-done .topic-step-t { color: var(--muted, #8b949e); }
+
+/* ============ MATRICES ============================================
+   A matrix drawn as a matrix: a grid of entries between two square
+   brackets. See js/matrix_render.js for why the bank stores shorthand
+   and this draws it properly. */
+.mat {
+  display: inline-grid;
+  grid-template-columns: 6px auto 6px;
+  align-items: stretch;
+  vertical-align: middle;
+  margin: 0 4px;
+  gap: 3px;
+}
+.mat-g {
+  display: grid;
+  gap: 2px 14px;
+  padding: 3px 2px;
+  justify-items: center;
+  align-items: center;
+}
+.mat-c {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  line-height: 1.25;
+  min-width: 1.1em;
+  text-align: center;
+}
+.mat-b {
+  border: 2px solid currentColor;
+  opacity: 0.55;
+  border-radius: 1px;
+}
+.mat-l { border-right: none; }
+.mat-r { border-left: none; }
+/* inside a choice button the matrices sit on one line with the text */
+.choice .mat { margin: 0 3px; }
