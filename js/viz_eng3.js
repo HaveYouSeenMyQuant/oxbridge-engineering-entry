@@ -236,4 +236,67 @@
     };
     return { destroy: stage.destroy };
   });
+
+  /* ------------------------------------------------------------ scaleBox --
+   * The square-cube law is the estimation idea everyone accepts as a sentence
+   * and then cannot use. So this makes it countable: drag the length factor
+   * and watch three bars -- length, area, volume -- pull apart. The bars carry
+   * FACTORS rather than raw sizes, because the factor is what the question
+   * asks for, and they sit on a log scale so x64 still fits beside x1.
+   */
+  global.QQViz.register('scaleBox', function (host, api) {
+    var P = (api && api.params) || {};
+    var L = P.L != null ? P.L : 2;
+    var reveal = P.reveal !== false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.82);
+    slider(row, { min: 1, max: 4, step: 0.5, value: L, label: 'length factor' },
+      function (v) { L = v; api.onInteract('slider'); say(); });
+
+    function say() {
+      out.innerHTML = 'length x<b>' + L + '</b>' + (reveal
+        ? ' &nbsp;·&nbsp; area x<b>' + (+(L * L).toFixed(2)) +
+          '</b> &nbsp;·&nbsp; volume x<b>' + (+(L * L * L).toFixed(2)) + '</b>'
+        : ' &nbsp;·&nbsp; area and volume do not grow by the same factor. By how much does each?');
+    }
+    say();
+
+    stage.draw = function (g, w, h) {
+      var barTop = h - 66;
+      /* the cube, so the growth is seen and not only tabulated */
+      var base = Math.min((w - 40) / 6.0, (barTop - 16) / 4.8);
+      var side = base * L, ox = 24, oy = barTop - 10;
+      var dp = side * 0.32;
+      g.fillStyle = 'rgba(88,166,255,0.18)';
+      g.fillRect(ox, oy - side, side, side);
+      g.strokeStyle = C.accent; g.lineWidth = 2;
+      g.strokeRect(ox, oy - side, side, side);
+      g.beginPath();
+      g.moveTo(ox, oy - side); g.lineTo(ox + dp, oy - side - dp);
+      g.lineTo(ox + side + dp, oy - side - dp); g.lineTo(ox + side, oy - side);
+      g.moveTo(ox + side, oy); g.lineTo(ox + side + dp, oy - dp);
+      g.lineTo(ox + side + dp, oy - side - dp);
+      g.stroke();
+
+      var bars = [['length', L, C.accent],
+                  ['area', L * L, C.gold],
+                  ['volume', L * L * L, C.good]];
+      var maxF = Math.max(4 * 4 * 4, bars[2][1]);
+      var x0 = 62, wAvail = w - x0 - 44;
+      bars.forEach(function (b, i) {
+        var y = barTop + 6 + i * 18;
+        var frac = Math.log(b[1]) / Math.log(maxF);   // log scale
+        g.fillStyle = C.line;
+        K.roundRect(g, x0, y, wAvail, 11, 3); g.fill();
+        g.fillStyle = b[2];
+        K.roundRect(g, x0, y, Math.max(3, wAvail * frac), 11, 3); g.fill();
+        g.fillStyle = C.muted; g.font = f(10, 700); g.textAlign = 'right';
+        g.fillText(b[0], x0 - 6, y + 9);
+        g.fillStyle = C.fg; g.textAlign = 'left';
+        g.fillText(reveal ? 'x' + (+b[1].toFixed(2)) : '?', x0 + wAvail + 6, y + 9);
+      });
+    };
+    return { destroy: stage.destroy };
+  });
 })(window);

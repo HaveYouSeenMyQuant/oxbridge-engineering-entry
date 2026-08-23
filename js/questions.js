@@ -3759,6 +3759,162 @@ window.QQ_DATA = {
        "explain": "Almost always. Most estimation errors are factor-of-a-thousand slips between millimetres and metres or grams and kilograms, not errors of judgement about the quantities themselves."
       }
      ]
+    },
+    {
+     "id": "es4",
+     "title": "Checking an answer by its units",
+     "questions": [
+      {
+       "id": "es_dim_speed",
+       "type": "choice",
+       "topic": "estimation",
+       "prompt": "Which of these could possibly be a formula for a speed? (g is an acceleration, h a height.)",
+       "choices": [
+        "sqrt(2gh)",
+        "2gh",
+        "sqrt(2gh^2)"
+       ],
+       "answer": 0,
+       "answerValue": "sqrt(2gh)",
+       "explain": "Put the units in. g is m/s^2 and h is m, so gh is m^2/s^2, and the square root of that is m/s - a speed. The second, 2gh, is m^2/s^2, which is a speed SQUARED. The third gives m^3/s^2, which is nothing at all. You can reject two of the three without knowing any physics, and that is the point: units are a check you can always run."
+      },
+      {
+       "id": "es_dim_pendulum",
+       "type": "choice",
+       "topic": "estimation",
+       "prompt": "A pendulum's period depends on its length L and on g. Only one combination of those has units of TIME. Which?",
+       "choices": [
+        "sqrt(L/g)",
+        "sqrt(gL)",
+        "L/g"
+       ],
+       "answer": 0,
+       "answerValue": "sqrt(L/g)",
+       "explain": "L is m and g is m/s^2, so L/g is s^2 and its square root is seconds. sqrt(gL) gives m/s, a speed; L/g gives s^2. So the period MUST be a number times sqrt(L/g) - and indeed it is 2*pi*sqrt(L/g). Dimensions cannot give you the 2*pi, but they give you the whole shape of the answer for free, including the fact that the mass cannot appear."
+      },
+      {
+       "id": "es_dim_constant",
+       "type": "truefalse",
+       "topic": "estimation",
+       "prompt": "Checking the units of a formula can prove it is correct.",
+       "statement": "Checking the units of a formula can prove it is correct.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Units can prove a formula WRONG, but never that it is right: any dimensionless factor - a 2, a pi, a one-half - is invisible to a units check, and so is a missing dimensionless ratio. sqrt(L/g) and 2*pi*sqrt(L/g) have identical units and only one is the period. It is a filter, not a proof, and treating it as a proof is the mistake worth avoiding."
+      },
+      {
+       "id": "es_dim_energy",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "Energy has units kg m^2 s^-2. If a quantity has units kg m^2 s^-3, what is it? Enter 1 for power, 2 for force, 3 for momentum.",
+       "answerNumber": 1.0,
+       "tolerance": 0.01,
+       "answerValue": "1",
+       "explain": "Energy per unit TIME is power, and dividing energy's units by seconds gives exactly kg m^2 s^-3 - the watt. Force is kg m s^-2 and momentum is kg m s^-1, neither of which match. Recognising a quantity from its units is quick to practise and repeatedly useful, because it tells you what a number in front of you can possibly mean."
+      },
+      {
+       "id": "es_dim_reject",
+       "type": "choice",
+       "topic": "estimation",
+       "prompt": "You estimate a car's braking distance and get 4 seconds. What has gone wrong?",
+       "choices": [
+        "The answer has the wrong units - a distance cannot be in seconds",
+        "Nothing; 4 seconds is a reasonable braking distance",
+        "The answer is too small"
+       ],
+       "answer": 0,
+       "answerValue": "The answer has the wrong units - a distance cannot be in seconds",
+       "explain": "A distance is measured in metres, so an answer in seconds cannot be a distance whatever its size. Checking the units of your OWN answer, before checking whether the number looks sensible, catches a whole class of algebra slips - typically dividing where you should have multiplied."
+      }
+     ]
+    },
+    {
+     "id": "es5",
+     "title": "Scaling and the square-cube law",
+     "questions": [
+      {
+       "id": "es_scale_area",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "You double every length of an object. By what factor does its surface area grow?",
+       "answerNumber": 4.0,
+       "tolerance": 0.01,
+       "answerValue": "4",
+       "explain": "Area is a product of two lengths, so scaling every length by 2 scales area by 2^2 = 4. This is why a scale model's paint bill goes up faster than its dimensions do: area follows the SQUARE of the length factor, always.",
+       "viz": "scaleBox",
+       "vizHint": "Set the length factor to 2 and read the area bar.",
+       "vizParams": {
+        "L": 2,
+        "reveal": false
+       }
+      },
+      {
+       "id": "es_scale_volume",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "For that same doubled object, by what factor does its volume - and so its mass - grow?",
+       "answerNumber": 8.0,
+       "tolerance": 0.01,
+       "answerValue": "8",
+       "explain": "Volume is a product of three lengths, so it scales by 2^3 = 8. Together with the area result this is the square-cube law: make something twice as long and it gets four times the surface but eight times the weight. Every consequence below follows from those two numbers disagreeing.",
+       "viz": "scaleBox",
+       "vizHint": "Same factor; now compare the volume bar.",
+       "vizParams": {
+        "L": 2,
+        "reveal": false
+       }
+      },
+      {
+       "id": "es_square_cube",
+       "type": "choice",
+       "topic": "estimation",
+       "prompt": "Why can an ant carry many times its own weight while an elephant cannot?",
+       "choices": [
+        "Muscle strength follows cross-sectional AREA while weight follows VOLUME",
+        "Ants have denser muscle than elephants",
+        "Gravity is weaker at an ant's size"
+       ],
+       "answer": 0,
+       "answerValue": "Muscle strength follows cross-sectional AREA while weight follows VOLUME",
+       "explain": "A muscle's strength is set by its cross-section, which scales as length squared, while weight scales as length cubed. So strength-to-weight goes as 1/length: scale an animal up by 2 and it becomes half as strong for its weight. Nothing about ant muscle is special - it is geometry, and the same argument sets how tall a tree or a building can be.",
+       "viz": "scaleBox",
+       "vizHint": "Watch the area and volume bars pull apart.",
+       "vizParams": {
+        "L": 3
+       }
+      },
+      {
+       "id": "es_scale_ratio",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "A cube of side 1 m has surface-area-to-volume ratio 6 per metre. What is it for a cube of side 2 m?",
+       "answerNumber": 3.0,
+       "tolerance": 0.02,
+       "answerValue": "3",
+       "explain": "Surface area is 6L^2 and volume is L^3, so the ratio is 6/L. At L = 2 that is 3 per metre - half the value. Bigger things have relatively less surface, which is why large animals struggle to shed heat, why small ones lose it fast, and why crushed ice melts quicker than a block.",
+       "viz": "scaleBox",
+       "vizHint": "Surface area over volume is 6/L.",
+       "vizParams": {
+        "L": 2,
+        "reveal": false
+       }
+      },
+      {
+       "id": "es_scale_terminal",
+       "type": "truefalse",
+       "topic": "estimation",
+       "prompt": "Doubling every dimension of a falling object leaves its terminal velocity unchanged.",
+       "statement": "Doubling every dimension of a falling object leaves its terminal velocity unchanged.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "At terminal velocity the drag equals the weight: weight follows volume (length cubed) and drag follows frontal area times v squared (length squared times v squared). Setting those equal gives v^2 proportional to length, so v goes as the square root of the size - doubling the dimensions raises terminal velocity by a factor of about 1.4. It is the same reason a mouse survives a fall that would kill a horse.",
+       "viz": "scaleBox",
+       "vizHint": "Weight follows volume; drag follows area.",
+       "vizParams": {
+        "L": 2
+       }
+      }
+     ]
     }
    ]
   }
