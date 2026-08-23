@@ -1184,54 +1184,136 @@ window.QQ_DATA = {
    "id": "u_mechanics",
    "index": 5,
    "title": "Mechanics",
-   "subtitle": "Kinematics, forces, momentum, energy.",
+   "subtitle": "Kinematics, forces, momentum, energy, projectiles.",
    "colour": "#f85149",
    "free": false,
    "syllabus": "ESAT Physics · PAT",
    "lessons": [
     {
      "id": "p1",
-     "title": "Motion and forces",
+     "title": "Motion in a straight line",
      "questions": [
       {
        "id": "me_suvat",
        "type": "number",
        "topic": "mechanics",
        "prompt": "A ball is dropped from rest. Taking g = 10 m/s², how fast is it moving after 3 s, in m/s?",
-       "answerNumber": 30,
+       "answerNumber": 30.0,
        "tolerance": 0,
        "answerValue": "30",
-       "explain": "v = u + at = 0 + 10×3 = 30 m/s. With u = 0 the suvat equations become very short — worth spotting."
+       "explain": "v = u + at = 0 + 10×3 = 30 m/s. With u = 0 the suvat equations become very short, which is worth spotting before you write anything down."
       },
       {
        "id": "me_distance",
        "type": "number",
        "topic": "mechanics",
        "prompt": "Same ball, same g = 10. How far has it fallen in 3 s, in metres?",
-       "answerNumber": 45,
+       "answerNumber": 45.0,
        "tolerance": 0,
        "answerValue": "45",
-       "explain": "s = ut + ½at² = 0 + ½×10×9 = 45 m. Distance grows with the SQUARE of time, which is why the last second of a fall covers the most ground."
+       "explain": "s = ut + ½at² = 0 + ½×10×9 = 45 m. Distance grows with the SQUARE of time, which is why the last second of a fall covers far more ground than the first."
       },
+      {
+       "id": "me_v2",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A car decelerates from 20 m/s to rest in 40 m. What is the magnitude of its acceleration, in m/s²?",
+       "answerNumber": 5.0,
+       "tolerance": 0,
+       "answerValue": "5",
+       "explain": "Use v² = u² + 2as with v = 0: 0 = 400 + 2a(40), so a = −5 m/s² and the magnitude is 5. This is the suvat equation to reach for whenever TIME is not mentioned."
+      },
+      {
+       "id": "me_graph_area",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "On a velocity-time graph, a body goes from 0 to 12 m/s in 4 s at constant acceleration. What distance does it cover, in metres?",
+       "answerNumber": 24.0,
+       "tolerance": 0,
+       "answerValue": "24",
+       "explain": "The area under a velocity-time graph is the distance: a triangle of base 4 and height 12, area 24 m. Gradient gives acceleration, area gives distance — that pair answers most graph questions on the paper."
+      },
+      {
+       "id": "me_decel_negative",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "An object with negative acceleration must be slowing down.",
+       "statement": "An object with negative acceleration must be slowing down.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Only if it is moving in the positive direction. A ball thrown downward with downward taken as negative has negative acceleration and is speeding up. Acceleration and velocity have to point in OPPOSITE directions for slowing down."
+      }
+     ]
+    },
+    {
+     "id": "p2",
+     "title": "Forces",
+     "questions": [
       {
        "id": "me_newton",
        "type": "number",
        "topic": "mechanics",
        "prompt": "A 4 kg mass accelerates at 2.5 m/s². What resultant force acts on it, in newtons?",
-       "answerNumber": 10,
+       "answerNumber": 10.0,
        "tolerance": 0,
        "answerValue": "10",
-       "explain": "F = ma = 4 × 2.5 = 10 N. The word RESULTANT matters: it is the vector sum of every force, not any single one."
+       "explain": "F = ma = 4 × 2.5 = 10 N. The word RESULTANT matters: it is the vector sum of every force acting, not any single one of them."
       },
+      {
+       "id": "me_weight",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "What is the weight of a 7 kg mass, taking g = 10 m/s², in newtons?",
+       "answerNumber": 70.0,
+       "tolerance": 0,
+       "answerValue": "70",
+       "explain": "W = mg = 70 N. Mass is in kilograms and never changes; weight is a force in newtons and depends on where you are. The paper will punish using them interchangeably."
+      },
+      {
+       "id": "me_lift",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 50 kg person stands in a lift accelerating upward at 2 m/s², g = 10. What is the normal reaction force, in newtons?",
+       "answerNumber": 600.0,
+       "tolerance": 0,
+       "answerValue": "600",
+       "explain": "R − mg = ma, so R = m(g + a) = 50 × 12 = 600 N. That is why you feel heavier as a lift starts upward: the floor pushes harder than your weight."
+      },
+      {
+       "id": "me_friction",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 10 kg block on a rough floor needs 25 N to keep moving steadily. What is the coefficient of friction, given g = 10? Give a decimal.",
+       "answerNumber": 0.25,
+       "tolerance": 0.001,
+       "answerValue": "0.25",
+       "explain": "Steady speed means zero resultant, so friction = 25 N. With F = μR and R = mg = 100 N, μ = 0.25."
+      },
+      {
+       "id": "me_incline",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 4 kg block sits on a smooth slope at 30°, g = 10. What is the component of weight along the slope, in newtons?",
+       "answerNumber": 19.999999999999996,
+       "tolerance": 0,
+       "answerValue": "20",
+       "explain": "mg sin θ = 40 × 0.5 = 20 N. The component along the slope uses SIN and the one into the slope uses COS — the standard way to lose marks here is to swap them."
+      }
+     ]
+    },
+    {
+     "id": "p3",
+     "title": "Momentum",
+     "questions": [
       {
        "id": "me_momentum",
        "type": "number",
        "topic": "mechanics",
        "prompt": "A 2 kg trolley at 3 m/s hits a stationary 1 kg trolley and they move off together. What is their common speed, in m/s?",
-       "answerNumber": 2,
+       "answerNumber": 2.0,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "Momentum before = 2×3 = 6 kg m/s. After, the combined mass is 3 kg, so v = 6/3 = 2 m/s. Momentum is conserved in every collision; kinetic energy is not."
+       "explain": "Momentum before = 2×3 = 6 kg m/s. After, the combined mass is 3 kg, so v = 2 m/s. Momentum is conserved in every collision; kinetic energy is not."
       },
       {
        "id": "me_ke_conserved",
@@ -1241,7 +1323,149 @@ window.QQ_DATA = {
        "statement": "Kinetic energy is conserved when two objects stick together in a collision.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "That is a perfectly inelastic collision — momentum is conserved, kinetic energy is not. Some of it becomes heat, sound and deformation. Here: 9 J before, 6 J after."
+       "explain": "That is a perfectly inelastic collision — momentum is conserved, kinetic energy is not. Here 9 J becomes 6 J, and the missing 3 J goes to heat, sound and deformation."
+      },
+      {
+       "id": "me_impulse",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 0.5 kg ball hits a wall at 8 m/s and rebounds at 6 m/s. What is the magnitude of the impulse, in N s?",
+       "answerNumber": 7.0,
+       "tolerance": 0,
+       "answerValue": "7",
+       "explain": "Impulse is the CHANGE in momentum: 0.5×6 − (−0.5×8) = 7 N s. The rebound reverses the sign, so the two contributions add rather than cancel — forgetting that halves the answer."
+      },
+      {
+       "id": "me_recoil",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 60 kg skater at rest throws a 2 kg ball at 15 m/s. What is the skater's recoil speed, in m/s?",
+       "answerNumber": 0.5,
+       "tolerance": 0.001,
+       "answerValue": "0.5",
+       "explain": "Total momentum stays zero: 60v = 2×15, so v = 0.5 m/s backwards. Conservation of momentum works just as well when things fly apart as when they collide."
+      },
+      {
+       "id": "me_force_rate",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A jet of water delivers 20 kg per second at 5 m/s onto a wall and stops dead. What force does it exert, in newtons?",
+       "answerNumber": 100,
+       "tolerance": 0,
+       "answerValue": "100",
+       "explain": "Force is the rate of change of momentum: 20 kg/s × 5 m/s = 100 N. Writing F = ma as F = Δp/Δt is what makes this kind of continuous-flow question tractable."
+      }
+     ]
+    },
+    {
+     "id": "p4",
+     "title": "Energy and power",
+     "questions": [
+      {
+       "id": "me_ke",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "What is the kinetic energy of a 2 kg mass moving at 3 m/s, in joules?",
+       "answerNumber": 9.0,
+       "tolerance": 0,
+       "answerValue": "9",
+       "explain": "KE = ½mv² = ½×2×9 = 9 J. Energy goes with the SQUARE of speed, so doubling the speed quadruples the energy — the reason stopping distances grow so fast."
+      },
+      {
+       "id": "me_gpe",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "How much gravitational potential energy does a 5 kg mass gain when lifted 4 m, with g = 10? Answer in joules.",
+       "answerNumber": 200.0,
+       "tolerance": 0,
+       "answerValue": "200",
+       "explain": "GPE = mgh = 5×10×4 = 200 J. Only the VERTICAL height matters; the path taken is irrelevant, which is what makes gravity a conservative force."
+      },
+      {
+       "id": "me_fall_speed",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "An object falls 5 m from rest, g = 10. Using energy, what is its speed on landing, in m/s?",
+       "answerNumber": 10.0,
+       "tolerance": 0.01,
+       "answerValue": "10",
+       "explain": "mgh = ½mv², and the mass cancels: v = √(2gh) = √100 = 10 m/s. The mass cancelling is why everything falls at the same rate."
+      },
+      {
+       "id": "me_power",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A crane lifts 60 kg through 2 m in 4 s, g = 10. What is its output power, in watts?",
+       "answerNumber": 300.0,
+       "tolerance": 0,
+       "answerValue": "300",
+       "explain": "Work = mgh = 1200 J, done in 4 s, so P = 300 W. Power is work per unit time, and P = Fv is the same statement for something moving steadily."
+      },
+      {
+       "id": "me_efficiency",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A motor takes 500 W and delivers 400 W. What is its efficiency as a percentage?",
+       "answerNumber": 80.0,
+       "tolerance": 0,
+       "answerValue": "80",
+       "explain": "400/500 = 80%. The missing 100 W has not vanished — it is heat and sound. Efficiency is always useful output over total input."
+      }
+     ]
+    },
+    {
+     "id": "p5",
+     "title": "Projectiles and exam-level mechanics",
+     "questions": [
+      {
+       "id": "me_proj_time",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A ball is launched at 20 m/s at 30° above the horizontal, g = 10. How long is it in the air, in seconds?",
+       "answerNumber": 1.9999999999999996,
+       "tolerance": 0.01,
+       "answerValue": "2",
+       "explain": "The vertical component is 20 sin30 = 10 m/s. Time up is 10/10 = 1 s, and the flight is symmetric, so 2 s in total. Splitting into horizontal and vertical is the whole method."
+      },
+      {
+       "id": "me_proj_height",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "Same launch. What is the maximum height reached, in metres?",
+       "answerNumber": 4.999999999999998,
+       "tolerance": 0.01,
+       "answerValue": "5",
+       "explain": "Using v² = u² − 2gs with v = 0 vertically: s = 100/20 = 5 m. The horizontal motion has no effect on this at all — gravity acts only vertically."
+      },
+      {
+       "id": "me_proj_range",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "Same launch. How far does it travel horizontally, in metres? Give it to the nearest metre.",
+       "answerNumber": 35,
+       "tolerance": 0.6,
+       "answerValue": "35",
+       "explain": "Horizontal speed 20 cos30 = 17.3 m/s, held for 2 s, gives 34.6 m, about 35 m. Equivalently R = u²sin(2θ)/g, which is greatest at 45°."
+      },
+      {
+       "id": "me_exam_energy",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 2 kg block slides from rest down a smooth slope, dropping 1.8 m, g = 10. What is its speed at the bottom, in m/s?",
+       "answerNumber": 6.0,
+       "tolerance": 0.01,
+       "answerValue": "6",
+       "explain": "Energy: mgh = ½mv² gives v = √(2×10×1.8) = 6 m/s. The angle of the slope never enters it, which is exactly why the energy method beats resolving forces here."
+      },
+      {
+       "id": "me_exam_indep",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "A bullet fired horizontally and one dropped from the same height hit the ground at the same time.",
+       "statement": "A bullet fired horizontally and one dropped from the same height hit the ground at the same time.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Horizontal and vertical motion are independent. Gravity gives both the same downward acceleration and the same vertical start, so both take the same time — however far the fired one travels sideways."
       }
      ]
     }
@@ -1258,18 +1482,64 @@ window.QQ_DATA = {
    "lessons": [
     {
      "id": "e1",
-     "title": "Circuits",
+     "title": "Current, voltage, resistance",
      "questions": [
       {
        "id": "el_ohm",
        "type": "number",
        "topic": "electricity",
        "prompt": "A 12 V supply drives 3 A through a resistor. What is its resistance, in ohms?",
-       "answerNumber": 4,
+       "answerNumber": 4.0,
        "tolerance": 0,
        "answerValue": "4",
-       "explain": "R = V/I = 12/3 = 4 Ω. Ohm's law rearranges three ways and the exam will use all of them, so it is worth being able to write any one of V, I, R in terms of the other two without stopping to think."
+       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing."
       },
+      {
+       "id": "el_charge",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A current of 2 A flows for 30 s. How much charge passes, in coulombs?",
+       "answerNumber": 60,
+       "tolerance": 0,
+       "answerValue": "60",
+       "explain": "Q = It = 60 C. Current IS charge per second, so this is the definition rearranged rather than a separate formula."
+      },
+      {
+       "id": "el_electrons",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "How many volts are needed to push 3 A through 15 Ω?",
+       "answerNumber": 45,
+       "tolerance": 0,
+       "answerValue": "45",
+       "explain": "V = IR = 45 V. Ohm's law again, in the third of its three arrangements."
+      },
+      {
+       "id": "el_ohmic",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "A filament lamp obeys Ohm's law at all currents.",
+       "statement": "A filament lamp obeys Ohm's law at all currents.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It does not. As current rises the filament heats up and its resistance INCREASES, so the current-voltage graph curves rather than staying straight. Ohm's law holds only at constant temperature, which is what 'ohmic' means."
+      },
+      {
+       "id": "el_emf",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A battery of emf 9 V has internal resistance 1 Ω and drives 2 A. What is the terminal voltage, in volts?",
+       "answerNumber": 7,
+       "tolerance": 0,
+       "answerValue": "7",
+       "explain": "V = ε − Ir = 9 − 2 = 7 V. Some of the emf is dropped inside the battery itself, which is why a battery's terminal voltage sags under load."
+      }
+     ]
+    },
+    {
+     "id": "e2",
+     "title": "Series and parallel",
+     "questions": [
       {
        "id": "el_series",
        "type": "number",
@@ -1278,27 +1548,37 @@ window.QQ_DATA = {
        "answerNumber": 8,
        "tolerance": 0,
        "answerValue": "8",
-       "explain": "In series resistances simply add: 8 Ω. The same current passes through both."
+       "explain": "In series resistances simply add: 8 Ω. The same current passes through both, and the voltages share out in proportion to the resistances."
       },
       {
        "id": "el_parallel",
        "type": "number",
        "topic": "electricity",
        "prompt": "Two 6 Ω resistors in parallel. What is the total resistance, in ohms?",
-       "answerNumber": 3,
-       "tolerance": 0,
+       "answerNumber": 3.0,
+       "tolerance": 0.001,
        "answerValue": "3",
-       "explain": "1/R = 1/6 + 1/6 = 1/3, so R = 3 Ω. Two equal resistors in parallel always give half of one — a shortcut worth having."
+       "explain": "1/R = 1/6 + 1/6 = 1/3, so R = 3 Ω. Two EQUAL resistors in parallel always give half of one, which is a shortcut worth having."
       },
       {
-       "id": "el_power",
+       "id": "el_parallel_unequal",
        "type": "number",
        "topic": "electricity",
-       "prompt": "A 240 V kettle draws 8 A. What is its power, in watts?",
-       "answerNumber": 1920,
+       "prompt": "A 3 Ω and a 6 Ω resistor in parallel. What is the total resistance, in ohms?",
+       "answerNumber": 2.0,
+       "tolerance": 0.001,
+       "answerValue": "2",
+       "explain": "1/R = 1/3 + 1/6 = 1/2, so R = 2 Ω. Notice the total is smaller than EITHER branch — always true in parallel, and a useful sanity check."
+      },
+      {
+       "id": "el_divider",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 12 V supply across 3 Ω and 9 Ω in series. What voltage appears across the 3 Ω, in volts?",
+       "answerNumber": 3.0,
        "tolerance": 0,
-       "answerValue": "1920",
-       "explain": "P = VI = 240 × 8 = 1920 W, near enough 2 kW. The other two forms, P = I²R and P = V²/R, follow by substituting Ohm's law and are often quicker when you know the resistance instead of one of the other quantities."
+       "answerValue": "3",
+       "explain": "The voltage divides in the ratio of the resistances: 12 × 3/12 = 3 V. The 9 Ω takes the other 9 V, and the two must add back to the supply."
       },
       {
        "id": "el_parallel_less",
@@ -1308,7 +1588,119 @@ window.QQ_DATA = {
        "statement": "Adding a resistor in parallel always decreases the total resistance.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "Another parallel path gives the current somewhere else to go, so the combination always conducts better than the best single branch."
+       "explain": "Another parallel path gives current somewhere else to go, so the combination always conducts better than the best single branch."
+      }
+     ]
+    },
+    {
+     "id": "e3",
+     "title": "Power and energy",
+     "questions": [
+      {
+       "id": "el_power",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 240 V kettle draws 8 A. What is its power, in watts?",
+       "answerNumber": 1920,
+       "tolerance": 0,
+       "answerValue": "1920",
+       "explain": "P = VI = 1920 W, near enough 2 kW. The other two forms, P = I²R and P = V²/R, follow by substituting Ohm's law and are quicker when you know the resistance instead."
+      },
+      {
+       "id": "el_power_i2r",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 5 Ω resistor carries 3 A. What power does it dissipate, in watts?",
+       "answerNumber": 45,
+       "tolerance": 0,
+       "answerValue": "45",
+       "explain": "P = I²R = 9 × 5 = 45 W. The square on the current is why doubling the current quadruples the heating — and why transmission lines run at high voltage and low current."
+      },
+      {
+       "id": "el_energy_kwh",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 2 kW heater runs for 30 minutes. How many kilowatt-hours does it use?",
+       "answerNumber": 1.0,
+       "tolerance": 0.001,
+       "answerValue": "1",
+       "explain": "2 kW × 0.5 h = 1 kWh. A kilowatt-hour is an energy, not a power: it is what you are billed for."
+      },
+      {
+       "id": "el_energy_j",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 60 W bulb runs for 120 s. How much energy does it use, in joules?",
+       "answerNumber": 7200,
+       "tolerance": 0,
+       "answerValue": "7200",
+       "explain": "E = Pt = 7200 J. A watt is a joule per second, so power times time is always an energy."
+      },
+      {
+       "id": "el_fuse",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 230 V appliance is rated 920 W. What current does it draw, in amps?",
+       "answerNumber": 4.0,
+       "tolerance": 0.001,
+       "answerValue": "4",
+       "explain": "I = P/V = 4 A, so it would need a 5 A fuse — the next size up, never the next size down."
+      }
+     ]
+    },
+    {
+     "id": "e4",
+     "title": "Exam-level circuits",
+     "questions": [
+      {
+       "id": "el_exam_network",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A 6 Ω resistor is in series with two 4 Ω resistors that are in parallel with each other. What is the total resistance, in ohms?",
+       "answerNumber": 8.0,
+       "tolerance": 0.001,
+       "answerValue": "8",
+       "explain": "The parallel pair gives 2 Ω, in series with 6 Ω makes 8 Ω. Always collapse the parallel groups FIRST, then add the series chain."
+      },
+      {
+       "id": "el_exam_current",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "For that same network on a 24 V supply, what current does the supply deliver, in amps?",
+       "answerNumber": 3.0,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "I = V/R = 24/8 = 3 A. That 3 A then splits equally between the two 4 Ω branches, 1.5 A each, because they are identical."
+      },
+      {
+       "id": "el_exam_power_total",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "Same network, same supply. What total power is dissipated, in watts?",
+       "answerNumber": 72,
+       "tolerance": 0,
+       "answerValue": "72",
+       "explain": "P = VI = 24 × 3 = 72 W. Checking by parts: the 6 Ω dissipates I²R = 54 W and the parallel pair 3²×2 = 18 W, which sum to 72 W ✓."
+      },
+      {
+       "id": "el_exam_internal",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A cell of emf 12 V and internal resistance 2 Ω is connected to a 4 Ω resistor. What current flows, in amps?",
+       "answerNumber": 2.0,
+       "tolerance": 0.001,
+       "answerValue": "2",
+       "explain": "The internal resistance is in series: I = 12/6 = 2 A. Ignoring it is the standard trap, and it would have given 3 A."
+      },
+      {
+       "id": "el_exam_short",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "Connecting a wire of negligible resistance across a resistor stops current flowing through that resistor.",
+       "statement": "Connecting a wire of negligible resistance across a resistor stops current flowing through that resistor.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Almost all of it, yes — that is a short circuit. Current takes the path of least resistance, so with a zero-resistance route beside it the resistor carries essentially nothing."
       }
      ]
     }
