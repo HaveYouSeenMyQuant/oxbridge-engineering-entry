@@ -264,7 +264,14 @@ window.QQ_DATA = {
        "answerValue": "FALSE",
        "explain": "It cannot. The inverse divides by the determinant, and more fundamentally a singular matrix collapses the plane onto a line — information is destroyed, so there is no way back. Every point on that line has infinitely many origins.",
        "viz": "detArea",
-       "vizHint": "Drag the arrows onto one line."
+       "vizHint": "Drag the arrows onto one line.",
+       "vizParams": {
+        "a": 2,
+        "b": 6,
+        "c": 1,
+        "d": 3,
+        "reveal": false
+       }
       },
       {
        "id": "mx_det_neg",
@@ -276,7 +283,14 @@ window.QQ_DATA = {
        "answerValue": "-6",
        "explain": "Magnitude 6 for the area, negative for the flip. The SIGN of a determinant records whether the transformation preserves orientation — a reflection has a negative determinant, a rotation a positive one.",
        "viz": "detArea",
-       "vizHint": "Cross the arrows over and watch the sign."
+       "vizHint": "Cross the arrows over and watch the sign.",
+       "vizParams": {
+        "a": 3,
+        "b": 0,
+        "c": 0,
+        "d": -2,
+        "reveal": false
+       }
       },
       {
        "id": "mx_det3",
@@ -362,7 +376,11 @@ window.QQ_DATA = {
        "answerValue": "They are parallel — no solution, or the same line with infinitely many",
        "explain": "Zero determinant means the rows are multiples of each other, so the two lines have the same gradient. Either they never meet (no solutions) or they are the same line (infinitely many). Exactly one solution is precisely what a non-zero determinant guarantees.",
        "viz": "solveLines",
-       "vizHint": "Slide until the lines are parallel."
+       "vizHint": "The lines start parallel. Slide to break it.",
+       "vizParams": {
+        "a2": 1.5,
+        "reveal": false
+       }
       }
      ]
     },
@@ -495,7 +513,14 @@ window.QQ_DATA = {
        "answerValue": "12",
        "explain": "Every entry doubles, so BOTH columns double, and area scales by 2 × 2 = 4. det(2A) = 4 × 3 = 12. For an n × n matrix the factor is kⁿ — a favourite exam trap, because the instinct is to say 6.",
        "viz": "detArea",
-       "vizHint": "Double BOTH arrows and see what the area does."
+       "vizHint": "Double BOTH arrows and see what the area does.",
+       "vizParams": {
+        "a": 3,
+        "b": 0,
+        "c": 0,
+        "d": 1,
+        "reveal": false
+       }
       },
       {
        "id": "mx_lambda",

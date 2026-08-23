@@ -322,12 +322,15 @@
      * is drawn on the grid for the student to read off, which is the skill. */
     var P0 = (api && api.params) || {};
     var reveal = P0.reveal !== false;
-    var a1 = 3, b1 = 4, c1 = 10, a2 = 1, b2 = 2, c2 = 4;
+    /* a2 comes from the question because mx_singular_system asks what a zero
+     * determinant means: it needs to OPEN on parallel lines, not on a system
+     * that crosses. Half-steps so the singular value 1.5 is reachable. */
+    var a1 = 3, b1 = 4, c1 = 10, a2 = P0.a2 != null ? P0.a2 : 1, b2 = 2, c2 = 4;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.95);
 
-    slider(row, { min: -4, max: 6, step: 1, value: a2, label: 'second equation x-coefficient' },
+    slider(row, { min: -4, max: 6, step: 0.5, value: a2, label: 'second equation x-coefficient' },
       function (v) { a2 = v; api.onInteract('slider'); say(); });
 
     function say() {
