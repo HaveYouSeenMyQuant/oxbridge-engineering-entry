@@ -64,7 +64,9 @@
     vectors: 'Vectors',
     logs: 'Logarithms and exponentials',
     mechanics: 'Mechanics',
-    electricity: 'Electricity'
+    electricity: 'Electricity',
+    waves: 'Waves and optics',
+    estimation: 'Estimation'
   };
 
   function render() {

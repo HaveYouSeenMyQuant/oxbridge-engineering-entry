@@ -2458,6 +2458,312 @@ window.QQ_DATA = {
      ]
     }
    ]
+  },
+  {
+   "id": "u_waves",
+   "index": 12,
+   "title": "Waves and optics",
+   "subtitle": "Wave equation, refraction, lenses, standing waves.",
+   "colour": "#39c5cf",
+   "free": false,
+   "syllabus": "ESAT Physics · PAT",
+   "lessons": [
+    {
+     "id": "w1",
+     "title": "Describing a wave",
+     "questions": [
+      {
+       "id": "wa_speed",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "A wave has frequency 50 Hz and wavelength 6 m. What is its speed, in m/s?",
+       "answerNumber": 300,
+       "tolerance": 0,
+       "answerValue": "300",
+       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two."
+      },
+      {
+       "id": "wa_period",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "A wave has frequency 200 Hz. What is its period, in milliseconds?",
+       "answerNumber": 5.0,
+       "tolerance": 0.001,
+       "answerValue": "5",
+       "explain": "T = 1/f = 0.005 s = 5 ms. Period and frequency are reciprocals: one is seconds per cycle, the other cycles per second."
+      },
+      {
+       "id": "wa_wavelength",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Sound travels at 340 m/s. What is the wavelength of a 170 Hz note, in metres?",
+       "answerNumber": 2.0,
+       "tolerance": 0.001,
+       "answerValue": "2",
+       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not."
+      },
+      {
+       "id": "wa_transverse",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "Sound in air is a transverse wave.",
+       "statement": "Sound in air is a transverse wave.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It is longitudinal: the air moves back and forth ALONG the direction of travel, in compressions and rarefactions. Light and waves on a string are transverse. Only transverse waves can be polarised, which is the standard way of telling them apart."
+      },
+      {
+       "id": "wa_light_wavelength",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Light travels at 3×10⁸ m/s. What is the wavelength of light of frequency 5×10¹⁴ Hz, in nanometres?",
+       "answerNumber": 600.0,
+       "tolerance": 0.5,
+       "answerValue": "600",
+       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head."
+      }
+     ]
+    },
+    {
+     "id": "w2",
+     "title": "Reflection and refraction",
+     "questions": [
+      {
+       "id": "wa_snell",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Light enters glass (n = 1.5) from air at 30° to the normal. What is the angle of refraction, in degrees, to the nearest degree?",
+       "answerNumber": 19,
+       "tolerance": 0.6,
+       "answerValue": "19",
+       "explain": "n₁sinθ₁ = n₂sinθ₂, so sinθ₂ = 0.5/1.5 = 0.333 and θ₂ = 19°. Light entering a denser medium bends TOWARD the normal, and the angle is always measured from the normal, never from the surface."
+      },
+      {
+       "id": "wa_critical",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "What is the critical angle for glass of refractive index 1.5, in degrees, to the nearest degree?",
+       "answerNumber": 42,
+       "tolerance": 0.6,
+       "answerValue": "42",
+       "explain": "sinC = 1/n = 0.667, so C = 42°. Beyond this angle light is totally internally reflected, which is exactly how optical fibres keep a signal inside the glass."
+      },
+      {
+       "id": "wa_tir_direction",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "Total internal reflection can happen when light passes from air into glass.",
+       "statement": "Total internal reflection can happen when light passes from air into glass.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Only going from denser to less dense — glass to air, not air to glass. Light entering a denser medium bends toward the normal and can always get in."
+      },
+      {
+       "id": "wa_speed_glass",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Light travels at 3×10⁸ m/s in a vacuum. How fast does it move in glass of n = 1.5, in m/s?",
+       "answerNumber": 200000000.0,
+       "tolerance": 100000.0,
+       "answerValue": "2e+08",
+       "explain": "v = c/n = 2×10⁸ m/s. Refractive index is the factor by which light is slowed, and the slowing is what causes the bending."
+      },
+      {
+       "id": "wa_reflect_angle",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "A ray hits a mirror at 25° to the normal. At what angle does it reflect, in degrees?",
+       "answerNumber": 25,
+       "tolerance": 0,
+       "answerValue": "25",
+       "explain": "The angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°."
+      }
+     ]
+    },
+    {
+     "id": "w3",
+     "title": "Lenses and exam-level waves",
+     "questions": [
+      {
+       "id": "wa_lens",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "An object sits 15 cm from a converging lens of focal length 10 cm. How far from the lens is the image, in cm?",
+       "answerNumber": 29.999999999999993,
+       "tolerance": 0.05,
+       "answerValue": "30",
+       "explain": "1/f = 1/u + 1/v gives 1/v = 1/10 − 1/15 = 1/30, so v = 30 cm. The image is real and on the far side of the lens."
+      },
+      {
+       "id": "wa_magnification",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "For that same lens and object, what is the magnification?",
+       "answerNumber": 2.0,
+       "tolerance": 0.01,
+       "answerValue": "2",
+       "explain": "m = v/u = 30/15 = 2, so the image is twice the size of the object — and inverted, because it is real."
+      },
+      {
+       "id": "wa_standing",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "A string 2 m long is fixed at both ends. What is the wavelength of its fundamental, in metres?",
+       "answerNumber": 4,
+       "tolerance": 0,
+       "answerValue": "4",
+       "explain": "The fundamental fits half a wavelength between the fixed ends, so λ = 2L = 4 m. Each higher harmonic adds another half wavelength."
+      },
+      {
+       "id": "wa_harmonic",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "That string's fundamental is 100 Hz. What is the frequency of its second harmonic, in Hz?",
+       "answerNumber": 200,
+       "tolerance": 0,
+       "answerValue": "200",
+       "explain": "Harmonics are whole-number multiples of the fundamental, so the second is 200 Hz. This is why a string sounds like a note rather than a noise."
+      },
+      {
+       "id": "wa_exam_freq_change",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "When light passes from air into glass its frequency changes.",
+       "statement": "When light passes from air into glass its frequency changes.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "The frequency is set by the source and does not change. The SPEED drops and the WAVELENGTH shortens in proportion, keeping v = fλ consistent. Assuming the wrong one of the three is fixed is the usual error here."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u_estimation",
+   "index": 13,
+   "title": "Estimation",
+   "subtitle": "Orders of magnitude and Fermi problems — the PAT's favourite.",
+   "colour": "#bc8cff",
+   "free": false,
+   "syllabus": "PAT",
+   "lessons": [
+    {
+     "id": "x1",
+     "title": "Orders of magnitude",
+     "questions": [
+      {
+       "id": "es_year",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "Roughly how many seconds are there in a year? Give the power of ten (i.e. n where the answer is about 10ⁿ).",
+       "answerNumber": 7,
+       "tolerance": 0,
+       "answerValue": "7",
+       "explain": "365 × 24 × 3600 ≈ 3.15×10⁷, so n = 7. Physicists round this to 'about π×10⁷ seconds', which is accurate to half a per cent and genuinely worth remembering."
+      },
+      {
+       "id": "es_breaths",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "At about 15 breaths a minute, roughly how many breaths do you take in a day? Give the power of ten.",
+       "answerNumber": 4,
+       "tolerance": 0,
+       "answerValue": "4",
+       "explain": "15 × 60 × 24 = 21,600, so about 10⁴. In estimation you carry one significant figure and the exponent; carrying more is false precision."
+      },
+      {
+       "id": "es_person_volume",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "A 70 kg person is about the density of water. Roughly what is their volume, in litres?",
+       "answerNumber": 70,
+       "tolerance": 0,
+       "answerValue": "70",
+       "explain": "Water is 1 kg per litre, so 70 kg is about 70 litres. Knowing you float tells you your density is near water's, which is the whole assumption."
+      },
+      {
+       "id": "es_method",
+       "type": "choice",
+       "topic": "estimation",
+       "prompt": "In an estimation question, what matters most?",
+       "choices": [
+        "Getting the exact number",
+        "Getting the right power of ten with a defensible method",
+        "Using a calculator"
+       ],
+       "answer": 1,
+       "answerValue": "Getting the right power of ten with a defensible method",
+       "explain": "The examiner is testing whether you can break a problem into pieces you can each guess to within a factor of two or three. Errors partly cancel, and the order of magnitude survives. State your assumptions — they earn the marks."
+      },
+      {
+       "id": "es_sig_figs",
+       "type": "truefalse",
+       "topic": "estimation",
+       "prompt": "An estimate quoted as 21,600 breaths is better than 'about 20,000'.",
+       "statement": "An estimate quoted as 21,600 breaths is better than 'about 20,000'.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It is worse: it claims five significant figures from an input of one. 'About 2×10⁴' is the honest statement, and it shows you understand what the calculation can support."
+      }
+     ]
+    },
+    {
+     "id": "x2",
+     "title": "Fermi problems",
+     "questions": [
+      {
+       "id": "es_earth_walk",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "The Earth's circumference is about 4×10⁷ m. Walking at 5 km/h for 24 hours a day, roughly how many days to walk right round? Give the answer to the nearest 10 days.",
+       "answerNumber": 330,
+       "tolerance": 11,
+       "answerValue": "330",
+       "explain": "40,000 km at 5 km/h is 8,000 hours, which is about 333 days — call it 330. That the answer lands near a year is a useful sanity anchor."
+      },
+      {
+       "id": "es_heartbeats",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "At 70 beats a minute for 80 years, roughly how many times does a heart beat? Give the power of ten.",
+       "answerNumber": 9,
+       "tolerance": 0,
+       "answerValue": "9",
+       "explain": "70 × 60 × 24 × 365 × 80 ≈ 2.9×10⁹, so about 10⁹ — three billion. Chain the conversions one at a time and the arithmetic stays manageable."
+      },
+      {
+       "id": "es_hair",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "A human head has roughly how many hairs? Give the power of ten.",
+       "answerNumber": 5,
+       "tolerance": 0,
+       "answerValue": "5",
+       "explain": "About 100,000, so 10⁵. You can bound it: a head is roughly 0.05 m² and hairs sit about a millimetre or two apart, giving 10⁴ to 10⁵ — and that bounding argument is what earns credit, not the recalled figure."
+      },
+      {
+       "id": "es_piano",
+       "type": "number",
+       "topic": "estimation",
+       "prompt": "If a city has 1,000,000 people, about 1 household in 100 has a piano, and a household is about 3 people, roughly how many pianos are there? Give the power of ten.",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "1,000,000/3 ≈ 330,000 households, one per cent of which is about 3,300 — so 10³. This is the original Fermi problem, and the method is always the same: split it into factors you can each estimate."
+      },
+      {
+       "id": "es_check",
+       "type": "truefalse",
+       "topic": "estimation",
+       "prompt": "A good estimate should be checked against something you already know.",
+       "statement": "A good estimate should be checked against something you already know.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Always. If your walk round the Earth came out at ten days you would know something had gone wrong, because you know roughly how far people walk in a day. A sanity anchor catches the factor-of-a-thousand slips that estimation is prone to."
+      }
+     ]
+    }
+   ]
   }
  ]
 };
