@@ -2053,7 +2053,15 @@ window.QQ_DATA = {
        "answerNumber": 30.0,
        "tolerance": 0,
        "answerValue": "30",
-       "explain": "v = u + at = 0 + 10×3 = 30 m/s. With u = 0 the suvat equations become very short, which is worth spotting before you write anything down."
+       "explain": "v = u + at = 0 + 10×3 = 30 m/s. With u = 0 the suvat equations become very short, which is worth spotting before you write anything down.",
+       "viz": "vtGraph",
+       "vizHint": "Set the start speed to zero and read the line.",
+       "vizParams": {
+        "u": 0,
+        "a": 10,
+        "T": 3,
+        "reveal": false
+       }
       },
       {
        "id": "me_distance",
@@ -2063,7 +2071,15 @@ window.QQ_DATA = {
        "answerNumber": 45.0,
        "tolerance": 0,
        "answerValue": "45",
-       "explain": "s = ut + ½at² = 0 + ½×10×9 = 45 m. Distance grows with the SQUARE of time, which is why the last second of a fall covers far more ground than the first."
+       "explain": "s = ut + ½at² = 0 + ½×10×9 = 45 m. Distance grows with the SQUARE of time, which is why the last second of a fall covers far more ground than the first.",
+       "viz": "vtGraph",
+       "vizHint": "The shaded area is the distance.",
+       "vizParams": {
+        "u": 0,
+        "a": 10,
+        "T": 3,
+        "reveal": false
+       }
       },
       {
        "id": "me_v2",
@@ -2073,7 +2089,15 @@ window.QQ_DATA = {
        "answerNumber": 5.0,
        "tolerance": 0,
        "answerValue": "5",
-       "explain": "Use v² = u² + 2as with v = 0: 0 = 400 + 2a(40), so a = −5 m/s² and the magnitude is 5. This is the suvat equation to reach for whenever TIME is not mentioned."
+       "explain": "Use v² = u² + 2as with v = 0: 0 = 400 + 2a(40), so a = −5 m/s² and the magnitude is 5. This is the suvat equation to reach for whenever TIME is not mentioned.",
+       "viz": "vtGraph",
+       "vizHint": "Decelerating: try a negative acceleration.",
+       "vizParams": {
+        "u": 8,
+        "a": -2,
+        "T": 4,
+        "reveal": false
+       }
       },
       {
        "id": "me_graph_area",
@@ -2083,7 +2107,15 @@ window.QQ_DATA = {
        "answerNumber": 24.0,
        "tolerance": 0,
        "answerValue": "24",
-       "explain": "The area under a velocity-time graph is the distance: a triangle of base 4 and height 12, area 24 m. Gradient gives acceleration, area gives distance — that pair answers most graph questions on the paper."
+       "explain": "The area under a velocity-time graph is the distance: a triangle of base 4 and height 12, area 24 m. Gradient gives acceleration, area gives distance — that pair answers most graph questions on the paper.",
+       "viz": "vtGraph",
+       "vizHint": "A triangle of base 4 and height 12.",
+       "vizParams": {
+        "u": 0,
+        "a": 3,
+        "T": 4,
+        "reveal": false
+       }
       },
       {
        "id": "me_decel_negative",
@@ -2093,7 +2125,9 @@ window.QQ_DATA = {
        "statement": "An object with negative acceleration must be slowing down.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "Only if it is moving in the positive direction. A ball thrown downward with downward taken as negative has negative acceleration and is speeding up. Acceleration and velocity have to point in OPPOSITE directions for slowing down."
+       "explain": "Only if it is moving in the positive direction. A ball thrown downward with downward taken as negative has negative acceleration and is speeding up. Acceleration and velocity have to point in OPPOSITE directions for slowing down.",
+       "viz": "vtGraph",
+       "vizHint": "Negative acceleration with a positive speed."
       }
      ]
     },
@@ -2109,7 +2143,9 @@ window.QQ_DATA = {
        "answerNumber": 10.0,
        "tolerance": 0,
        "answerValue": "10",
-       "explain": "F = ma = 4 × 2.5 = 10 N. The word RESULTANT matters: it is the vector sum of every force acting, not any single one of them."
+       "explain": "F = ma = 4 × 2.5 = 10 N. The word RESULTANT matters: it is the vector sum of every force acting, not any single one of them.",
+       "viz": "vtGraph",
+       "vizHint": "Force changes the gradient, not the height."
       },
       {
        "id": "me_weight",
@@ -2129,7 +2165,9 @@ window.QQ_DATA = {
        "answerNumber": 600.0,
        "tolerance": 0,
        "answerValue": "600",
-       "explain": "R − mg = ma, so R = m(g + a) = 50 × 12 = 600 N. That is why you feel heavier as a lift starts upward: the floor pushes harder than your weight."
+       "explain": "R − mg = ma, so R = m(g + a) = 50 × 12 = 600 N. That is why you feel heavier as a lift starts upward: the floor pushes harder than your weight.",
+       "viz": "incline",
+       "vizHint": "Set the slope flat and think about up and down."
       },
       {
        "id": "me_friction",
@@ -2139,7 +2177,9 @@ window.QQ_DATA = {
        "answerNumber": 0.25,
        "tolerance": 0.001,
        "answerValue": "0.25",
-       "explain": "Steady speed means zero resultant, so friction = 25 N. With F = μR and R = mg = 100 N, μ = 0.25."
+       "explain": "Steady speed means zero resultant, so friction = 25 N. With F = μR and R = mg = 100 N, μ = 0.25.",
+       "viz": "incline",
+       "vizHint": "The green arrow is what friction has to work against."
       },
       {
        "id": "me_incline",
@@ -2149,7 +2189,14 @@ window.QQ_DATA = {
        "answerNumber": 19.999999999999996,
        "tolerance": 0,
        "answerValue": "20",
-       "explain": "mg sin θ = 40 × 0.5 = 20 N. The component along the slope uses SIN and the one into the slope uses COS — the standard way to lose marks here is to swap them."
+       "explain": "mg sin θ = 40 × 0.5 = 20 N. The component along the slope uses SIN and the one into the slope uses COS — the standard way to lose marks here is to swap them.",
+       "viz": "incline",
+       "vizHint": "Which component slides it down the slope?",
+       "vizParams": {
+        "deg": 30,
+        "m": 4,
+        "reveal": false
+       }
       }
      ]
     },
@@ -2165,7 +2212,15 @@ window.QQ_DATA = {
        "answerNumber": 2.0,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "Momentum before = 2×3 = 6 kg m/s. After, the combined mass is 3 kg, so v = 2 m/s. Momentum is conserved in every collision; kinetic energy is not."
+       "explain": "Momentum before = 2×3 = 6 kg m/s. After, the combined mass is 3 kg, so v = 2 m/s. Momentum is conserved in every collision; kinetic energy is not.",
+       "viz": "collide",
+       "vizHint": "Run it and watch what survives.",
+       "vizParams": {
+        "m1": 2,
+        "u1": 3,
+        "m2": 1,
+        "reveal": false
+       }
       },
       {
        "id": "me_ke_conserved",
@@ -2175,7 +2230,14 @@ window.QQ_DATA = {
        "statement": "Kinetic energy is conserved when two objects stick together in a collision.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "That is a perfectly inelastic collision — momentum is conserved, kinetic energy is not. Here 9 J becomes 6 J, and the missing 3 J goes to heat, sound and deformation."
+       "explain": "That is a perfectly inelastic collision — momentum is conserved, kinetic energy is not. Here 9 J becomes 6 J, and the missing 3 J goes to heat, sound and deformation.",
+       "viz": "collide",
+       "vizHint": "Compare the energy before and after.",
+       "vizParams": {
+        "m1": 2,
+        "u1": 3,
+        "m2": 1
+       }
       },
       {
        "id": "me_impulse",
@@ -2195,7 +2257,9 @@ window.QQ_DATA = {
        "answerNumber": 0.5,
        "tolerance": 0.001,
        "answerValue": "0.5",
-       "explain": "Total momentum stays zero: 60v = 2×15, so v = 0.5 m/s backwards. Conservation of momentum works just as well when things fly apart as when they collide."
+       "explain": "Total momentum stays zero: 60v = 2×15, so v = 0.5 m/s backwards. Conservation of momentum works just as well when things fly apart as when they collide.",
+       "viz": "collide",
+       "vizHint": "The same conservation, running backwards."
       },
       {
        "id": "me_force_rate",

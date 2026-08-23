@@ -222,3 +222,185 @@
   });
 
 })(window);
+
+/* ==========================================================================
+ * Mechanics. Added after a coverage check found 25 questions there sharing
+ * four visuals between them -- the thinnest topic on the site.
+ * ========================================================================== */
+(function (global) {
+  'use strict';
+  var K = global.QQViz.kit;
+  var C = K.C, f = K.f, Stage = K.Stage;
+  var controls = K.controls, readout = K.readout, button = K.button, slider = K.slider;
+
+  /* ------------------------------------------------------------- vtGraph --
+   * Gradient is acceleration, area is distance. Both are shown as things you
+   * can see rather than rules to remember. */
+  global.QQViz.register('vtGraph', function (host, api) {
+    var P = (api && api.params) || {};
+    var u = P.u != null ? P.u : 0, a = P.a != null ? P.a : 3, T = P.T != null ? P.T : 4;
+    var reveal = P.reveal !== false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.85);
+    slider(row, { min: -5, max: 5, step: 1, value: a, label: 'acceleration' },
+      function (v) { a = v; api.onInteract('slider'); say(); });
+    slider(row, { min: 0, max: 8, step: 1, value: u, label: 'start speed' },
+      function (v) { u = v; api.onInteract('slider'); say(); });
+    function dist() { return u * T + 0.5 * a * T * T; }
+    function say() {
+      out.innerHTML = 'u = <b>' + u + '</b>, a = <b>' + a + '</b> over ' + T + ' s' +
+        (reveal ? '   ·   area = distance = <b>' + (+dist().toFixed(1)) + '</b>'
+                : '   ·   the shaded area IS the distance');
+    }
+    say();
+    stage.draw = function (g, w, h) {
+      var pad = 30, x0 = pad, y0 = h - 26, x1 = w - 12, y1 = 14;
+      var vmax = 14, sx = (x1 - x0) / T, sy = (y0 - y1) / vmax;
+      g.strokeStyle = C.line; g.lineWidth = 1;
+      for (var i = 0; i <= T; i++) {
+        g.beginPath(); g.moveTo(x0 + i * sx, y1); g.lineTo(x0 + i * sx, y0); g.stroke();
+      }
+      for (var v = 0; v <= vmax; v += 2) {
+        g.beginPath(); g.moveTo(x0, y0 - v * sy); g.lineTo(x1, y0 - v * sy); g.stroke();
+      }
+      g.strokeStyle = C.muted; g.lineWidth = 1.8;
+      g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+      /* the area under the line, which IS the distance */
+      g.beginPath();
+      g.moveTo(x0, y0);
+      for (var t = 0; t <= T; t += T / 60) {
+        var vv = Math.max(0, u + a * t);
+        g.lineTo(x0 + t * sx, y0 - vv * sy);
+      }
+      g.lineTo(x0 + T * sx, y0); g.closePath();
+      g.fillStyle = 'rgba(88,166,255,0.24)'; g.fill();
+      g.strokeStyle = C.accent; g.lineWidth = 2.5;
+      g.beginPath();
+      for (var t2 = 0; t2 <= T; t2 += T / 60) {
+        var v2 = Math.max(0, u + a * t2);
+        var X = x0 + t2 * sx, Y = y0 - v2 * sy;
+        if (t2 === 0) g.moveTo(X, Y); else g.lineTo(X, Y);
+      }
+      g.stroke();
+      g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
+      g.fillText('gradient = acceleration      area = distance', w / 2, h - 6);
+    };
+    return { destroy: stage.destroy };
+  });
+
+  /* ------------------------------------------------------------ collide ---
+   * Momentum before and after, with the kinetic energy shown alongside so the
+   * difference between the two is visible rather than asserted. */
+  global.QQViz.register('collide', function (host, api) {
+    var P = (api && api.params) || {};
+    var m1 = P.m1 != null ? P.m1 : 2, u1 = P.u1 != null ? P.u1 : 3;
+    var m2 = P.m2 != null ? P.m2 : 1;
+    var reveal = P.reveal !== false;
+    var t = 0, running = false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.5);
+    slider(row, { min: 1, max: 6, step: 1, value: m1, label: 'first mass' },
+      function (v) { m1 = v; t = 0; api.onInteract('slider'); say(); });
+    slider(row, { min: 1, max: 6, step: 1, value: u1, label: 'first speed' },
+      function (v) { u1 = v; t = 0; api.onInteract('slider'); say(); });
+    button(row, 'run', function () { t = 0; running = true; api.onInteract('run'); });
+    function vAfter() { return m1 * u1 / (m1 + m2); }
+    function say() {
+      var ke0 = 0.5 * m1 * u1 * u1, ke1 = 0.5 * (m1 + m2) * Math.pow(vAfter(), 2);
+      out.innerHTML = 'momentum before = <b>' + (m1 * u1) + '</b>' +
+        (reveal ? '   ·   after they join, v = <b>' + vAfter().toFixed(2) + '</b>' +
+                  '   ·   KE ' + ke0.toFixed(1) + ' → ' + ke1.toFixed(1)
+                : '   ·   momentum is the same afterwards — what about the energy?');
+    }
+    say();
+    stage.draw = function (g, w, h) {
+      if (running) { t += 1 / 60; if (t > 2.4) { t = 2.4; running = false; } }
+      var y = h / 2, floor = h - 20;
+      g.strokeStyle = C.muted; g.lineWidth = 2;
+      g.beginPath(); g.moveTo(0, floor); g.lineTo(w, floor); g.stroke();
+      var meet = 0.62 * w, tHit = 1.2;
+      var x1, x2;
+      if (t < tHit) {
+        x1 = 0.12 * w + (meet - 0.12 * w) * (t / tHit);
+        x2 = meet + 26;
+      } else {
+        var v = vAfter() / Math.max(1, u1);
+        x1 = meet + (t - tHit) * 60 * v;
+        x2 = x1 + 26;
+      }
+      function block(x, m, col) {
+        var s = 12 + m * 5;
+        g.fillStyle = col;
+        K.roundRect(g, x - s / 2, floor - s, s, s, 3); g.fill();
+        g.fillStyle = C.fg; g.font = f(10, 700); g.textAlign = 'center';
+        g.fillText(m + 'kg', x, floor - s - 6);
+      }
+      block(x1, m1, C.accent);
+      block(x2, m2, C.gold);
+      g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
+      g.fillText('they stick together — momentum survives, energy does not',
+                 w / 2, h - 4);
+    };
+    return { destroy: stage.destroy };
+  });
+
+  /* ------------------------------------------------------------ incline ---
+   * Resolving a weight, with the two components drawn so sin and cos stop
+   * being interchangeable. */
+  global.QQViz.register('incline', function (host, api) {
+    var P = (api && api.params) || {};
+    var deg = P.deg != null ? P.deg : 30, m = P.m != null ? P.m : 4;
+    var reveal = P.reveal !== false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.75);
+    slider(row, { min: 5, max: 60, step: 5, value: deg, label: 'slope' },
+      function (v) { deg = v; api.onInteract('slider'); say(); });
+    function along() { return m * 10 * Math.sin(deg * Math.PI / 180); }
+    function into() { return m * 10 * Math.cos(deg * Math.PI / 180); }
+    function say() {
+      out.innerHTML = deg + '°, ' + m + ' kg, g = 10' +
+        (reveal ? '   ·   along <b>' + along().toFixed(1) + ' N</b>, into the slope <b>' +
+                  into().toFixed(1) + ' N</b>'
+                : '   ·   which component uses sin, and which cos?');
+    }
+    say();
+    stage.draw = function (g, w, h) {
+      var r = deg * Math.PI / 180;
+      var bx = 40, by = h - 28, L = Math.min(w - 80, (h - 60) / Math.max(0.18, Math.tan(r)));
+      var tx = bx + L, ty = by - L * Math.tan(r);
+      g.fillStyle = 'rgba(88,166,255,0.14)';
+      g.beginPath(); g.moveTo(bx, by); g.lineTo(tx, by); g.lineTo(tx, ty); g.closePath();
+      g.fill();
+      g.strokeStyle = C.muted; g.lineWidth = 2;
+      g.beginPath(); g.moveTo(bx, by); g.lineTo(tx, ty); g.moveTo(bx, by); g.lineTo(tx, by);
+      g.stroke();
+      var px = bx + L * 0.55, py = by - L * 0.55 * Math.tan(r);
+      g.fillStyle = C.accent;
+      K.roundRect(g, px - 11, py - 11, 22, 22, 3); g.fill();
+      function arrow(dx, dy, col, lab) {
+        var x1 = px + dx, y1 = py + dy;
+        g.strokeStyle = col; g.fillStyle = col; g.lineWidth = 3;
+        g.beginPath(); g.moveTo(px, py); g.lineTo(x1, y1); g.stroke();
+        var an = Math.atan2(y1 - py, x1 - px);
+        g.beginPath(); g.moveTo(x1, y1);
+        g.lineTo(x1 - 9 * Math.cos(an - 0.4), y1 - 9 * Math.sin(an - 0.4));
+        g.lineTo(x1 - 9 * Math.cos(an + 0.4), y1 - 9 * Math.sin(an + 0.4));
+        g.closePath(); g.fill();
+        g.font = f(10, 700); g.textAlign = 'center';
+        g.fillText(lab, x1 + 12 * Math.cos(an), y1 + 12 * Math.sin(an));
+      }
+      var sc = 2.0;
+      arrow(0, m * 10 * sc * 0.5, C.muted, 'mg');
+      arrow(Math.cos(r) * along() * sc * 0.5, Math.sin(r) * along() * sc * 0.5,
+            C.gold, 'along');
+      arrow(Math.sin(r) * into() * sc * 0.5, -Math.cos(r) * into() * sc * 0.5,
+            C.good, 'into');
+      g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
+      g.fillText('gold slides it down, green presses it in', w / 2, h - 4);
+    };
+    return { destroy: stage.destroy };
+  });
+})(window);
