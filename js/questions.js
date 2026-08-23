@@ -498,7 +498,8 @@ window.QQ_DATA = {
        "vizParams": {
         "a": 1,
         "b": -6,
-        "c": 9
+        "c": 9,
+        "verdict": false
        }
       },
       {
@@ -542,7 +543,8 @@ window.QQ_DATA = {
        "vizParams": {
         "a": 1,
         "b": 4,
-        "c": 9
+        "c": 9,
+        "verdict": false
        }
       },
       {
@@ -696,7 +698,8 @@ window.QQ_DATA = {
        "vizParams": {
         "a": 1,
         "b": -2,
-        "c": 1
+        "c": 1,
+        "verdict": false
        }
       },
       {

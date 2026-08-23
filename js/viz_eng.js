@@ -63,13 +63,26 @@
     slider(row, { min: -10, max: 10, step: 1, value: c, label: 'c' },
       function (v) { c = v; api.onInteract('slider'); say(); });
 
+    /* WHETHER TO SPELL OUT WHAT THE DISCRIMINANT MEANS.
+     *
+     * Showing b² − 4ac is teaching; adding "one repeated root" after it is
+     * answering. On a question that ASKS how many roots there are, the second
+     * half turns the visual into a spoiler and the question into a reading
+     * exercise. Questions that ask it pass verdict:false and get the number
+     * only — they still have to know that zero means one root, which is the
+     * thing being examined. */
+    var verdict = P.verdict !== false;
     function disc() { return b * b - 4 * a * c; }
     function say() {
       var d = disc();
-      var msg = 'b² − 4ac = ' + d + ' — ';
-      msg += d > 0 ? 'two real roots' : (d === 0 ? 'one repeated root' : 'no real roots');
-      out.innerHTML = 'y = ' + a + 'x² ' + (b < 0 ? '− ' + (-b) : '+ ' + b) + 'x ' +
-        (c < 0 ? '− ' + (-c) : '+ ' + c) + '<br><b>' + msg + '</b>';
+      var eq = 'y = ' + a + 'x² ' + (b < 0 ? '− ' + (-b) : '+ ' + b) + 'x ' +
+        (c < 0 ? '− ' + (-c) : '+ ' + c);
+      var msg = 'b² − 4ac = <b>' + d + '</b>';
+      if (verdict) {
+        msg += ' — ' + (d > 0 ? 'two real roots'
+                              : (d === 0 ? 'one repeated root' : 'no real roots'));
+      }
+      out.innerHTML = eq + '<br>' + msg;
     }
     say();
 
@@ -78,7 +91,10 @@
       axes(g, w, h, ox, oy, s);
       plot(g, w, h, ox, oy, s, function (x) { return a * x * x + b * x + c; }, C.accent);
       var d = disc();
-      if (d >= 0) {
+      /* The green dots count the roots for you, so they come off too when the
+       * question is asking for that count. The curve still crosses where it
+       * crosses -- the student reads it, rather than being told. */
+      if (d >= 0 && verdict) {
         var r1 = (-b - Math.sqrt(d)) / (2 * a), r2 = (-b + Math.sqrt(d)) / (2 * a);
         dot(g, ox + r1 * s, oy, C.good, 6);
         dot(g, ox + r2 * s, oy, C.good, 6);
@@ -86,7 +102,8 @@
       var vx = -b / (2 * a);
       dot(g, ox + vx * s, oy - (a * vx * vx + b * vx + c) * s, C.gold, 4);
       g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
-      g.fillText('green = roots      gold = vertex', w / 2, h - 6);
+      g.fillText(verdict ? 'green = roots      gold = vertex'
+                   : 'gold = vertex', w / 2, h - 6);
     };
     return { destroy: stage.destroy };
   });
