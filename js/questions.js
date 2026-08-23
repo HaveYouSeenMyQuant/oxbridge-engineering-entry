@@ -1181,8 +1181,605 @@ window.QQ_DATA = {
    ]
   },
   {
+   "id": "u_trig",
+   "index": 7,
+   "title": "Trigonometry",
+   "subtitle": "Right-angled triangles, sine and cosine rules, radians, identities.",
+   "colour": "#e3b341",
+   "free": false,
+   "syllabus": "ESAT M1 · PAT",
+   "lessons": [
+    {
+     "id": "t1",
+     "title": "Right-angled triangles",
+     "questions": [
+      {
+       "id": "tr_soh",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "A right-angled triangle has hypotenuse 10 and an angle of 30°. How long is the side opposite that angle?",
+       "answerNumber": 4.999999999999999,
+       "tolerance": 0.01,
+       "answerValue": "5",
+       "explain": "opposite = hypotenuse × sin30 = 10 × 0.5 = 5. The 30-60-90 triangle always has its short side exactly half the hypotenuse, which is worth recognising on sight."
+      },
+      {
+       "id": "tr_adj",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "Same triangle. How long is the side adjacent to the 30° angle? Give it to two decimal places.",
+       "answerNumber": 8.660254037844387,
+       "tolerance": 0.01,
+       "answerValue": "8.66025",
+       "explain": "adjacent = 10 cos30 = 8.66, which is 5√3. Checking with Pythagoras: 5² + 8.66² = 25 + 75 = 100 ✓."
+      },
+      {
+       "id": "tr_tan_angle",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "A ladder reaches 4 m up a wall with its foot 3 m out. What angle does it make with the ground, in degrees, to the nearest degree?",
+       "answerNumber": 53,
+       "tolerance": 0.6,
+       "answerValue": "53",
+       "explain": "tanθ = 4/3, so θ = 53°. The 3-4-5 triangle turns up constantly; recognising it saves you reaching for a calculator."
+      },
+      {
+       "id": "tr_exact_45",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "What is tan45°?",
+       "answerNumber": 0.9999999999999999,
+       "tolerance": 0.001,
+       "answerValue": "1",
+       "explain": "Exactly 1, because at 45° the opposite and adjacent sides are equal. The exact values at 0, 30, 45, 60 and 90 are expected knowledge on a calculator-free paper."
+      },
+      {
+       "id": "tr_sin_max",
+       "type": "truefalse",
+       "topic": "trigonometry",
+       "prompt": "sinθ can be greater than 1.",
+       "statement": "sinθ can be greater than 1.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Never. sinθ is the ratio of a side to the hypotenuse, and the hypotenuse is always the longest side, so the ratio cannot exceed 1. Getting sinθ > 1 in a solution is a reliable sign of an error earlier on."
+      }
+     ]
+    },
+    {
+     "id": "t2",
+     "title": "The sine and cosine rules",
+     "questions": [
+      {
+       "id": "tr_cosine_rule",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "A triangle has sides 5 and 7 with a 60° angle between them. How long is the third side, to two decimal places?",
+       "answerNumber": 6.244997998398397,
+       "tolerance": 0.01,
+       "answerValue": "6.245",
+       "explain": "c² = a² + b² − 2ab cosC = 25 + 49 − 35 = 39, so c = 6.24. Use the cosine rule when you have two sides and the angle BETWEEN them, or all three sides."
+      },
+      {
+       "id": "tr_sine_rule",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "In a triangle, a = 8 opposite A = 30°. Find b opposite B = 45°, to two decimal places.",
+       "answerNumber": 11.313708498984761,
+       "tolerance": 0.01,
+       "answerValue": "11.3137",
+       "explain": "a/sinA = b/sinB gives b = 8 × sin45/sin30 = 11.31. Use the sine rule when you have a matched side-angle PAIR."
+      },
+      {
+       "id": "tr_area",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "A triangle has sides 6 and 8 with a 30° angle between them. What is its area?",
+       "answerNumber": 11.999999999999998,
+       "tolerance": 0.01,
+       "answerValue": "12",
+       "explain": "Area = ½ab sinC = ½ × 48 × 0.5 = 12. This is the half-base-times-height formula with the height written as b sinC."
+      },
+      {
+       "id": "tr_pythag_check",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "Using the cosine rule on a triangle with a 90° angle, what does the term 2ab cosC become?",
+       "answerNumber": 0,
+       "tolerance": 0,
+       "answerValue": "0",
+       "explain": "cos90 = 0, so the term vanishes and the cosine rule collapses to c² = a² + b² — Pythagoras. Pythagoras is the special case, not a separate result."
+      },
+      {
+       "id": "tr_which_rule",
+       "type": "choice",
+       "topic": "trigonometry",
+       "prompt": "You know all three sides of a triangle and want an angle. Which rule?",
+       "choices": [
+        "The sine rule",
+        "The cosine rule",
+        "Either works equally well"
+       ],
+       "answer": 1,
+       "answerValue": "The cosine rule",
+       "explain": "The cosine rule, rearranged to cosC = (a² + b² − c²)/2ab. The sine rule needs a matched side-angle pair, and with three sides you have no angle to start from."
+      }
+     ]
+    },
+    {
+     "id": "t3",
+     "title": "Radians, graphs and equations",
+     "questions": [
+      {
+       "id": "tr_arc",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "A sector has radius 5 and angle 1.2 radians. What is the arc length?",
+       "answerNumber": 6.0,
+       "tolerance": 0.001,
+       "answerValue": "6",
+       "explain": "s = rθ = 6. This clean formula is the entire reason radians exist; in degrees it would carry a factor of π/180."
+      },
+      {
+       "id": "tr_sector_area",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "Same sector, radius 5 and angle 1.2 radians. What is its area?",
+       "answerNumber": 15.0,
+       "tolerance": 0.001,
+       "answerValue": "15",
+       "explain": "A = ½r²θ = ½ × 25 × 1.2 = 15. Both sector formulas only work in radians."
+      },
+      {
+       "id": "tr_solve_sin",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "How many solutions does sinx = 0.5 have for 0° ≤ x < 360°?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "Two: x = 30° and x = 150°. Sine is positive in the first and second quadrants. Finding only the calculator's answer and stopping is the standard way to lose half the marks."
+      },
+      {
+       "id": "tr_second_solution",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "sinx = 0.5 and x = 30° is one solution. What is the other, in degrees, between 0 and 360?",
+       "answerNumber": 150,
+       "tolerance": 0,
+       "answerValue": "150",
+       "explain": "180 − 30 = 150°. For sine the partner is 180 − x; for cosine it is 360 − x. Sketching the curve is more reliable than memorising which is which."
+      },
+      {
+       "id": "tr_period",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "What is the period of y = sin(2x), in degrees?",
+       "answerNumber": 180,
+       "tolerance": 0,
+       "answerValue": "180",
+       "explain": "Doubling the input halves the period: 360/2 = 180°. A coefficient inside the function squashes the graph horizontally."
+      }
+     ]
+    },
+    {
+     "id": "t4",
+     "title": "Identities and exam-level trigonometry",
+     "questions": [
+      {
+       "id": "tr_identity",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "If sinθ = 0.6 and θ is acute, what is cosθ?",
+       "answerNumber": 0.8,
+       "tolerance": 0.001,
+       "answerValue": "0.8",
+       "explain": "sin²θ + cos²θ = 1, so cosθ = √(1 − 0.36) = 0.8. The 3-4-5 triangle again, scaled to a hypotenuse of 1."
+      },
+      {
+       "id": "tr_tan_identity",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "With sinθ = 0.6 and cosθ = 0.8, what is tanθ?",
+       "answerNumber": 0.7499999999999999,
+       "tolerance": 0.001,
+       "answerValue": "0.75",
+       "explain": "tanθ = sinθ/cosθ = 0.75. That identity, together with sin² + cos² = 1, generates most of the others."
+      },
+      {
+       "id": "tr_small_angle",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "Using the small-angle approximation, what is sin(0.02) to three decimal places, with 0.02 in radians?",
+       "answerNumber": 0.02,
+       "tolerance": 0.001,
+       "answerValue": "0.02",
+       "explain": "For small angles in RADIANS, sinθ ≈ θ, so 0.020. The true value is 0.0199999, and the approximation is what makes pendulum and optics questions tractable."
+      },
+      {
+       "id": "tr_exam_double",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "Using sin2θ = 2 sinθ cosθ with sinθ = 0.6 and cosθ = 0.8, what is sin2θ?",
+       "answerNumber": 0.96,
+       "tolerance": 0.001,
+       "answerValue": "0.96",
+       "explain": "2 × 0.6 × 0.8 = 0.96. Note it is NOT 2 sinθ = 1.2, which would be impossible since sine cannot exceed 1 — a built-in check on the commonest misuse of this identity."
+      },
+      {
+       "id": "tr_exam_degrees",
+       "type": "truefalse",
+       "topic": "trigonometry",
+       "prompt": "The small-angle approximation sinθ ≈ θ works with θ in degrees.",
+       "statement": "The small-angle approximation sinθ ≈ θ works with θ in degrees.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Only in radians. sin(1°) is 0.0175, not 1. Every calculus and approximation result involving trigonometric functions assumes radians, which is why radians are the default in physics."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u_vectors",
+   "index": 8,
+   "title": "Vectors",
+   "subtitle": "Magnitude, the dot product, forces and equilibrium.",
+   "colour": "#db6d28",
+   "free": false,
+   "syllabus": "ESAT M2 · PAT",
+   "lessons": [
+    {
+     "id": "v1",
+     "title": "Vectors and magnitude",
+     "questions": [
+      {
+       "id": "ve_mag",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the magnitude of the vector (3, 4)?",
+       "answerNumber": 5,
+       "tolerance": 0.001,
+       "answerValue": "5",
+       "explain": "√(3² + 4²) = 5 — Pythagoras. Magnitude is just the length of the arrow, and the 3-4-5 triangle makes this one immediate."
+      },
+      {
+       "id": "ve_mag3",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the magnitude of (2, −1, 2)?",
+       "answerNumber": 3,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "√(4 + 1 + 4) = 3. The formula extends to as many components as you like: square, add, square-root."
+      },
+      {
+       "id": "ve_add",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "(3, 4) + (1, −2) has components (a, b). What is b?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "Add component by component: (4, 2), so b = 2. Geometrically it is the nose-to-tail rule."
+      },
+      {
+       "id": "ve_scalar_mult",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the magnitude of 3 × (3, 4)?",
+       "answerNumber": 15,
+       "tolerance": 0.001,
+       "answerValue": "15",
+       "explain": "Scaling a vector by 3 scales its length by 3: 3 × 5 = 15. The direction is unchanged unless the scalar is negative, which reverses it."
+      },
+      {
+       "id": "ve_unit",
+       "type": "truefalse",
+       "topic": "vectors",
+       "prompt": "A unit vector has magnitude 1.",
+       "statement": "A unit vector has magnitude 1.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "That is its definition. You make one by dividing a vector by its own magnitude — (3,4)/5 = (0.6, 0.8) — which keeps the direction and throws away the length."
+      }
+     ]
+    },
+    {
+     "id": "v2",
+     "title": "The dot product",
+     "questions": [
+      {
+       "id": "ve_dot",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the dot product of (3, 4) and (1, 2)?",
+       "answerNumber": 11,
+       "tolerance": 0,
+       "answerValue": "11",
+       "explain": "3×1 + 4×2 = 11. Multiply matching components and add. The result is a NUMBER, not a vector, which is why it is also called the scalar product."
+      },
+      {
+       "id": "ve_dot3",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the dot product of (1, 2, 3) and (4, 5, 6)?",
+       "answerNumber": 32,
+       "tolerance": 0,
+       "answerValue": "32",
+       "explain": "4 + 10 + 18 = 32. The rule does not care how many dimensions there are, which is one reason the dot product survives into three-dimensional mechanics unchanged."
+      },
+      {
+       "id": "ve_perp",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "What is the dot product of two perpendicular vectors?",
+       "answerNumber": 0,
+       "tolerance": 0,
+       "answerValue": "0",
+       "explain": "Zero, because a·b = |a||b|cosθ and cos90 = 0. This is the fastest test for perpendicularity there is, and it works in any number of dimensions."
+      },
+      {
+       "id": "ve_find_k",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "For what value of k are (2, 3) and (6, k) perpendicular?",
+       "answerNumber": -4,
+       "tolerance": 0,
+       "answerValue": "-4",
+       "explain": "Perpendicular means the dot product is zero: 12 + 3k = 0, so k = −4. Check: (2,3)·(6,−4) = 12 − 12 = 0 ✓."
+      },
+      {
+       "id": "ve_angle",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "Two vectors of magnitudes 3 and 4 have dot product 6. What is the angle between them, in degrees?",
+       "answerNumber": 60,
+       "tolerance": 0.6,
+       "answerValue": "60",
+       "explain": "cosθ = 6/(3×4) = 0.5, so θ = 60°. Rearranging a·b = |a||b|cosθ is how almost every angle-between-vectors question is done."
+      }
+     ]
+    },
+    {
+     "id": "v3",
+     "title": "Vectors in mechanics and exam problems",
+     "questions": [
+      {
+       "id": "ve_resultant",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "Forces of 3 N east and 4 N north act on a body. What is the magnitude of the resultant, in newtons?",
+       "answerNumber": 5,
+       "tolerance": 0.001,
+       "answerValue": "5",
+       "explain": "Perpendicular forces combine by Pythagoras: √(9+16) = 5 N. Forces are vectors, so they add nose-to-tail and NOT arithmetically."
+      },
+      {
+       "id": "ve_resultant_angle",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "For those same forces, what angle does the resultant make with east, in degrees, to the nearest degree?",
+       "answerNumber": 53,
+       "tolerance": 0.6,
+       "answerValue": "53",
+       "explain": "tanθ = 4/3 gives 53° north of east. A magnitude without a direction is only half an answer for a vector quantity."
+      },
+      {
+       "id": "ve_component",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "A 20 N force acts at 60° to the horizontal. What is its horizontal component, in newtons?",
+       "answerNumber": 10.000000000000002,
+       "tolerance": 0.01,
+       "answerValue": "10",
+       "explain": "20 cos60 = 10 N. Resolving into components is the move that turns almost every force problem into two independent one-dimensional ones."
+      },
+      {
+       "id": "ve_exam_equilibrium",
+       "type": "number",
+       "topic": "vectors",
+       "prompt": "Three forces are in equilibrium. Two are 5 N north and 5 N east. What is the magnitude of the third, in newtons, to two decimal places?",
+       "answerNumber": 7.0710678118654755,
+       "tolerance": 0.01,
+       "answerValue": "7.07107",
+       "explain": "Equilibrium means the three sum to zero, so the third must balance the resultant of the other two: √50 = 7.07 N, pointing south-west."
+      },
+      {
+       "id": "ve_exam_zero",
+       "type": "truefalse",
+       "topic": "vectors",
+       "prompt": "Two vectors of equal magnitude always sum to a non-zero vector.",
+       "statement": "Two vectors of equal magnitude always sum to a non-zero vector.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "If they point in exactly opposite directions they cancel to the zero vector. Magnitude alone never determines a sum — direction does half the work."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u_logs",
+   "index": 9,
+   "title": "Logarithms and exponentials",
+   "subtitle": "Log laws, solving for an exponent, growth and decay.",
+   "colour": "#7ee787",
+   "free": false,
+   "syllabus": "ESAT M1 · PAT",
+   "lessons": [
+    {
+     "id": "g1",
+     "title": "What a logarithm is",
+     "questions": [
+      {
+       "id": "lg_log2",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "What is log₂32?",
+       "answerNumber": 5.0,
+       "tolerance": 0.001,
+       "answerValue": "5",
+       "explain": "2⁵ = 32, so the answer is 5. A logarithm answers the question 'what power do I raise the base to?' — nothing more mysterious than that."
+      },
+      {
+       "id": "lg_log10",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "What is log₁₀1000?",
+       "answerNumber": 3,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "10³ = 1000, so 3. Base-10 logs count the digits, roughly, which is why they are used for decibels and pH."
+      },
+      {
+       "id": "lg_ln",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "What is ln(e³)?",
+       "answerNumber": 3,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "The natural log undoes e to a power, so the answer is 3. ln and eˣ are inverse functions, and that is the only fact needed here."
+      },
+      {
+       "id": "lg_log1",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "What is log₅1?",
+       "answerNumber": 0,
+       "tolerance": 0,
+       "answerValue": "0",
+       "explain": "Zero, because 5⁰ = 1. The log of 1 is zero in EVERY base, which is worth knowing as an instant answer."
+      },
+      {
+       "id": "lg_log_neg",
+       "type": "truefalse",
+       "topic": "logs",
+       "prompt": "You can take the logarithm of a negative number and get a real answer.",
+       "statement": "You can take the logarithm of a negative number and get a real answer.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "No real power of a positive base gives a negative result, so log of a negative is undefined over the reals. A solution that requires one has gone wrong earlier."
+      }
+     ]
+    },
+    {
+     "id": "g2",
+     "title": "Laws of logarithms",
+     "questions": [
+      {
+       "id": "lg_add",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "log₁₀4 + log₁₀25 equals log₁₀ of what number?",
+       "answerNumber": 100,
+       "tolerance": 0,
+       "answerValue": "100",
+       "explain": "Adding logs multiplies the arguments: 4 × 25 = 100, so the sum is log₁₀100 = 2. Turning multiplication into addition is what logarithms were invented for."
+      },
+      {
+       "id": "lg_sub",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "log₂48 − log₂6 equals log₂ of what number?",
+       "answerNumber": 8,
+       "tolerance": 0,
+       "answerValue": "8",
+       "explain": "Subtracting logs divides the arguments: 48/6 = 8, and log₂8 = 3. It is the mirror of the addition rule, and both come straight from the index laws they are built on."
+      },
+      {
+       "id": "lg_power",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "log₃(9⁴) equals what number?",
+       "answerNumber": 8,
+       "tolerance": 0,
+       "answerValue": "8",
+       "explain": "The power comes out in front: 4 log₃9 = 4 × 2 = 8. This rule is what lets you solve equations with the unknown in the exponent."
+      },
+      {
+       "id": "lg_solve_exp",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "Solve 2ˣ = 20. What is x, to three decimal places?",
+       "answerNumber": 4.321928094887363,
+       "tolerance": 0.002,
+       "answerValue": "4.32193",
+       "explain": "x = log₂20 = ln20/ln2 = 4.322. Taking logs of both sides is the standard move whenever the unknown is upstairs."
+      },
+      {
+       "id": "lg_change_base",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "Using the change-of-base rule, log₄64 equals what number?",
+       "answerNumber": 3,
+       "tolerance": 0.001,
+       "answerValue": "3",
+       "explain": "log₄64 = ln64/ln4 = 3, since 4³ = 64. Change of base lets a calculator with only ln and log₁₀ handle any base at all."
+      }
+     ]
+    },
+    {
+     "id": "g3",
+     "title": "Growth, decay and exam-level problems",
+     "questions": [
+      {
+       "id": "lg_compound",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "£1000 grows at 5% a year for 10 years. What is it worth, to the nearest pound?",
+       "answerNumber": 1629,
+       "tolerance": 1.0,
+       "answerValue": "1629",
+       "explain": "1000 × 1.05¹⁰ = £1629. Exponential growth compounds on what it has already produced, which is why it outruns linear growth eventually however small the rate."
+      },
+      {
+       "id": "lg_halflife",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "A sample has a half-life of 5 years. After how many years is one eighth left?",
+       "answerNumber": 15,
+       "tolerance": 0,
+       "answerValue": "15",
+       "explain": "An eighth is three halvings — 1/2, 1/4, 1/8 — so 3 × 5 = 15 years. Recognising the fraction as a power of two avoids logs entirely."
+      },
+      {
+       "id": "lg_decay_frac",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "After 4 half-lives, what fraction remains? The answer is 1/k. What is k?",
+       "answerNumber": 16,
+       "tolerance": 0,
+       "answerValue": "16",
+       "explain": "(1/2)⁴ = 1/16, so k = 16. Each half-life multiplies what is left by a half, regardless of how much there was."
+      },
+      {
+       "id": "lg_exam_solve",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "Solve 5^(2x) = 125. What is x, as a decimal?",
+       "answerNumber": 1.5,
+       "tolerance": 0.001,
+       "answerValue": "1.5",
+       "explain": "125 = 5³, so 2x = 3 and x = 1.5. Matching bases beats logs whenever the numbers allow it."
+      },
+      {
+       "id": "lg_exam_graph",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "The graph of y = 3 × 2ˣ crosses the y-axis at what value?",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "At x = 0, 2⁰ = 1, so y = 3. Every exponential y = A·bˣ crosses the y-axis at A, which makes A readable straight off a sketch."
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "u_mechanics",
-   "index": 5,
+   "index": 10,
    "title": "Mechanics",
    "subtitle": "Kinematics, forces, momentum, energy, projectiles.",
    "colour": "#f85149",
@@ -1473,7 +2070,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_electricity",
-   "index": 6,
+   "index": 11,
    "title": "Electricity",
    "subtitle": "Current, resistance, circuits, power.",
    "colour": "#a371f7",

@@ -51,10 +51,18 @@
     } catch (e) { return false; }
   }
 
+  /* Display names for topic keys. A key with no entry here falls back to the
+   * key itself, which renders as raw lowercase -- so every topic the bank uses
+   * needs a line, and the check below fails loudly in the console if one is
+   * missing rather than shipping 'trigonometry' in lower case. */
   var TITLES = {
     matrices: 'Matrices',
     algebra: 'Algebra and functions',
     calculus: 'Differentiation',
+    integration: 'Integration',
+    trigonometry: 'Trigonometry',
+    vectors: 'Vectors',
+    logs: 'Logarithms and exponentials',
     mechanics: 'Mechanics',
     electricity: 'Electricity'
   };
@@ -62,6 +70,11 @@
   function render() {
     var host = document.getElementById('topicsList');
     if (!host) return;
+    var unnamed = Object.keys(index()).filter(function (t) { return !TITLES[t]; });
+    if (unnamed.length && global.console) {
+      console.warn('topics.js: no display name for ' + unnamed.join(', ') +
+                   ' — they will render as raw keys');
+    }
     host.innerHTML = '';
     var byTopic = index();
 
