@@ -92,6 +92,13 @@
     props.anonId = e.anonId;
     props.visitNumber = e.visitNumber;
     props.msSinceLoad = e.msSinceLoad;
+    /* WHICH SITE THIS CAME FROM. Both sites post to the same Supabase table.
+     * Without this tag the engineering site's events are indistinguishable from
+     * the quant road's, which would both corrupt that funnel and leave this one
+     * unmeasurable -- the two failures reinforcing each other, since the mixed
+     * numbers would still look plausible. Read from QQ_DATA so the tag cannot
+     * drift from the bank it describes. */
+    props.site = (global.QQ_DATA && global.QQ_DATA.site) || 'unknown';
     /* The auth user id when there is a session, so a signed-in player's funnel
      * joins to their profile. Guarded: analytics loads before auth and must keep
      * working if that module is ever removed. */
