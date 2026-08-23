@@ -3169,7 +3169,12 @@ window.QQ_DATA = {
        "answerValue": "TRUE",
        "explain": "Superposition says the resulting displacement is the sum of the individual displacements, at every instant. Crest plus crest gives a bigger crest (constructive); crest plus trough of equal size cancels to nothing (destructive). Nothing is destroyed - the waves pass through each other and carry on unchanged.",
        "viz": "interfere",
-       "vizHint": "Slide the point and watch the crests meet."
+       "vizHint": "Slide the point and watch the crests meet.",
+       "vizParams": {
+        "lam": 1.0,
+        "d": 6,
+        "py": 1.0
+       }
       },
       {
        "id": "wa_path_bright",
@@ -3185,10 +3190,11 @@ window.QQ_DATA = {
        "answerValue": "A loud spot - the waves arrive in phase",
        "explain": "A path difference of a WHOLE number of wavelengths means one wave has slipped forward by complete cycles, so it arrives in step with the other. Crest meets crest: constructive, and loud. Whole numbers of wavelengths give maxima; odd numbers of half-wavelengths give minima.",
        "viz": "interfere",
-       "vizHint": "Find a point two wavelengths further from one source.",
+       "vizHint": "Slide out until the difference is two whole wavelengths.",
        "vizParams": {
         "lam": 1.0,
-        "d": 4,
+        "d": 6,
+        "py": 4.5,
         "reveal": false
        }
       },
@@ -3205,7 +3211,8 @@ window.QQ_DATA = {
        "vizHint": "Hunt for the point where crest meets trough.",
        "vizParams": {
         "lam": 1.0,
-        "d": 4,
+        "d": 6,
+        "py": 1.0,
         "reveal": false
        }
       },
@@ -3222,7 +3229,8 @@ window.QQ_DATA = {
        "vizHint": "Push the sources together and watch the spacing.",
        "vizParams": {
         "lam": 0.8,
-        "d": 3,
+        "d": 6,
+        "py": 2.0,
         "reveal": false
        }
       },
@@ -3240,7 +3248,12 @@ window.QQ_DATA = {
        "answerValue": "So the two waves keep a constant phase relationship",
        "explain": "The pattern is a map of path difference, and that map only stays still if the phase difference at the slits stays constant - which is what coherence means. Two independent lamps drift in phase at random, so the bright and dark spots would sweep about far faster than the eye can follow and average into uniform grey. Equal amplitude only affects how DEEP the dark fringes are, not whether the pattern exists.",
        "viz": "interfere",
-       "vizHint": "The pattern only holds still if the sources keep in step."
+       "vizHint": "The pattern only holds still if the sources keep in step.",
+       "vizParams": {
+        "lam": 1.0,
+        "d": 6,
+        "py": 3.0
+       }
       }
      ]
     },
