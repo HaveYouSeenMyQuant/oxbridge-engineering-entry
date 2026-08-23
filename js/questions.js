@@ -492,7 +492,9 @@ window.QQ_DATA = {
        "answerNumber": 1,
        "tolerance": 0,
        "answerValue": "1",
-       "explain": "The discriminant is 36 − 36 = 0, so there is one repeated root, x = 3. b² − 4ac decides it: positive gives two, zero gives one, negative gives none."
+       "explain": "The discriminant is 36 − 36 = 0, so there is one repeated root, x = 3. b² − 4ac decides it: positive gives two, zero gives one, negative gives none.",
+       "viz": "quadRoots",
+       "vizHint": "Drag a, b and c. Watch where the curve meets the axis."
       },
       {
        "id": "al_complete",
@@ -502,7 +504,9 @@ window.QQ_DATA = {
        "answerNumber": -13,
        "tolerance": 0,
        "answerValue": "-13",
-       "explain": "Half of 8 is 4, so (x+4)² = x² + 8x + 16, which overshoots by 13. Hence (x+4)² − 13 and q = −13. Completing the square hands you the minimum point directly: (−4, −13)."
+       "explain": "Half of 8 is 4, so (x+4)² = x² + 8x + 16, which overshoots by 13. Hence (x+4)² − 13 and q = −13. Completing the square hands you the minimum point directly: (−4, −13).",
+       "viz": "quadRoots",
+       "vizHint": "The gold dot is the vertex."
       },
       {
        "id": "al_sum_roots",
@@ -522,7 +526,9 @@ window.QQ_DATA = {
        "answerNumber": 6,
        "tolerance": 0,
        "answerValue": "6",
-       "explain": "One root means the discriminant is zero: k² − 36 = 0, so k = ±6. The positive value is 6, giving (x+3)² = 0."
+       "explain": "One root means the discriminant is zero: k² − 36 = 0, so k = ±6. The positive value is 6, giving (x+3)² = 0.",
+       "viz": "quadRoots",
+       "vizHint": "Find the k that makes the two roots merge into one."
       },
       {
        "id": "al_disc",
@@ -532,7 +538,9 @@ window.QQ_DATA = {
        "statement": "If a quadratic has a negative discriminant its graph never crosses the x-axis.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "No real roots means no crossings — the parabola sits entirely above or entirely below the axis, depending on the sign of a. Sketching this is usually faster than any algebra."
+       "explain": "No real roots means no crossings — the parabola sits entirely above or entirely below the axis, depending on the sign of a. Sketching this is usually faster than any algebra.",
+       "viz": "quadRoots",
+       "vizHint": "Try to make the curve miss the axis entirely."
       }
      ]
     },
@@ -604,7 +612,9 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0,
        "answerValue": "3",
-       "explain": "The roots are 2 and 3, and a positive parabola is BELOW the axis strictly between its roots, so 2 < x < 3 and b = 3. Sketching beats sign tables here."
+       "explain": "The roots are 2 and 3, and a positive parabola is BELOW the axis strictly between its roots, so 2 < x < 3 and b = 3. Sketching beats sign tables here.",
+       "viz": "quadRoots",
+       "vizHint": "Where is the curve below the axis?"
       },
       {
        "id": "al_ineq_flip",
@@ -660,7 +670,9 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "Setting them equal: x² − mx + 1 = 0. A tangent meets the curve exactly once, so the discriminant is zero: m² − 4 = 0 and m = ±2. The positive value is 2, touching at x = 1 where both give y = 1. Note the sign of the constant matters: with y = mx + 1 the discriminant is m² + 4, which is never zero, so that line always CROSSES the parabola twice."
+       "explain": "Setting them equal: x² − mx + 1 = 0. A tangent meets the curve exactly once, so the discriminant is zero: m² − 4 = 0 and m = ±2. The positive value is 2, touching at x = 1 where both give y = 1. Note the sign of the constant matters: with y = mx + 1 the discriminant is m² + 4, which is never zero, so that line always CROSSES the parabola twice.",
+       "viz": "quadRoots",
+       "vizHint": "A tangent touches once — one repeated root."
       },
       {
        "id": "al_exam_surd",
@@ -727,7 +739,9 @@ window.QQ_DATA = {
        "answerNumber": 48,
        "tolerance": 0,
        "answerValue": "48",
-       "explain": "dy/dx = 12x², and 12 × 4 = 48. Multiply by the index, then drop it by one. The derivative is a FUNCTION: feed it an x and it returns the gradient there."
+       "explain": "dy/dx = 12x², and 12 × 4 = 48. Multiply by the index, then drop it by one. The derivative is a FUNCTION: feed it an x and it returns the gradient there.",
+       "viz": "tangentSlide",
+       "vizHint": "Slide the point. The gold line is the tangent."
       },
       {
        "id": "ca_constant",
@@ -747,7 +761,9 @@ window.QQ_DATA = {
        "answerNumber": -2,
        "tolerance": 0,
        "answerValue": "-2",
-       "explain": "dy/dx = 3x² − 5, which is 3 − 5 = −2 at x = 1. Differentiation goes term by term, and the negative gradient tells you the curve is falling there."
+       "explain": "dy/dx = 3x² − 5, which is 3 − 5 = −2 at x = 1. Differentiation goes term by term, and the negative gradient tells you the curve is falling there.",
+       "viz": "tangentSlide",
+       "vizHint": "Read the gradient off the tangent."
       },
       {
        "id": "ca_neg_power",
@@ -767,7 +783,9 @@ window.QQ_DATA = {
        "statement": "Where a curve is falling, its derivative is negative.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "The derivative IS the gradient of the tangent. Falling means the tangent slopes downward, which is a negative gradient. Reading a sign off a sketch is often all a question needs."
+       "explain": "The derivative IS the gradient of the tangent. Falling means the tangent slopes downward, which is a negative gradient. Reading a sign off a sketch is often all a question needs.",
+       "viz": "tangentSlide",
+       "vizHint": "Find somewhere the curve is falling."
       }
      ]
     },
@@ -839,7 +857,9 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0,
        "answerValue": "3",
-       "explain": "dy/dx = 2x − 6 = 0 gives x = 3. The second derivative is 2, positive, so it is a minimum — at (3, −4)."
+       "explain": "dy/dx = 2x − 6 = 0 gives x = 3. The second derivative is 2, positive, so it is a minimum — at (3, −4).",
+       "viz": "tangentSlide",
+       "vizHint": "Find where the tangent goes flat."
       },
       {
        "id": "ca_two_stat",
@@ -849,7 +869,9 @@ window.QQ_DATA = {
        "answerNumber": 1,
        "tolerance": 0,
        "answerValue": "1",
-       "explain": "dy/dx = 3x² − 3 = 0 gives x = ±1. The larger is 1, where the second derivative 6x is positive — a minimum. At x = −1 it is negative, a maximum."
+       "explain": "dy/dx = 3x² − 3 = 0 gives x = ±1. The larger is 1, where the second derivative 6x is positive — a minimum. At x = −1 it is negative, a maximum.",
+       "viz": "tangentSlide",
+       "vizHint": "There are two flat points. Find both."
       },
       {
        "id": "ca_nature",
@@ -863,7 +885,9 @@ window.QQ_DATA = {
        ],
        "answer": 1,
        "answerValue": "A maximum",
-       "explain": "Negative second derivative means the gradient is decreasing through the point — the curve is bending downward, so the stationary point is a maximum."
+       "explain": "Negative second derivative means the gradient is decreasing through the point — the curve is bending downward, so the stationary point is a maximum.",
+       "viz": "tangentSlide",
+       "vizHint": "Compare the two flat points."
       },
       {
        "id": "ca_optimise",
@@ -899,7 +923,9 @@ window.QQ_DATA = {
        "answerNumber": 1,
        "tolerance": 0,
        "answerValue": "1",
-       "explain": "dy/dx = 3x² − 2, which is 3 − 2 = 1 at x = 1. The derivative IS the gradient function: feed it an x and it hands back the slope of the tangent at that point."
+       "explain": "dy/dx = 3x² − 2, which is 3 − 2 = 1 at x = 1. The derivative IS the gradient function: feed it an x and it hands back the slope of the tangent at that point.",
+       "viz": "tangentSlide",
+       "vizHint": "Slide to x = 1."
       },
       {
        "id": "ca_normal",
@@ -939,7 +965,9 @@ window.QQ_DATA = {
        "statement": "If dy/dx = 0 at a point, the curve must have a maximum or minimum there.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "It could be a point of inflection — y = x³ at x = 0 has zero gradient but is neither a maximum nor a minimum. Zero gradient is necessary for a turning point, not sufficient."
+       "explain": "It could be a point of inflection — y = x³ at x = 0 has zero gradient but is neither a maximum nor a minimum. Zero gradient is necessary for a turning point, not sufficient.",
+       "viz": "tangentSlide",
+       "vizHint": "A flat tangent is not always a turning point."
       }
      ]
     },
@@ -1078,7 +1106,9 @@ window.QQ_DATA = {
        "answerNumber": 9,
        "tolerance": 0,
        "answerValue": "9",
-       "explain": "[x³/3] from 0 to 3 = 27/3 − 0 = 9. A definite integral needs no constant, because it cancels when you subtract the two limits."
+       "explain": "[x³/3] from 0 to 3 = 27/3 − 0 = 9. A definite integral needs no constant, because it cancels when you subtract the two limits.",
+       "viz": "areaUnder",
+       "vizHint": "Add rectangles and watch the total settle."
       },
       {
        "id": "in_area",
@@ -1088,7 +1118,9 @@ window.QQ_DATA = {
        "answerNumber": 15,
        "tolerance": 0,
        "answerValue": "15",
-       "explain": "[x²] from 1 to 4 = 16 − 1 = 15. Check it geometrically: it is a trapezium with parallel sides 2 and 8 and width 3, area ½(2+8)(3) = 15 ✓."
+       "explain": "[x²] from 1 to 4 = 16 − 1 = 15. Check it geometrically: it is a trapezium with parallel sides 2 and 8 and width 3, area ½(2+8)(3) = 15 ✓.",
+       "viz": "areaUnder",
+       "vizHint": "Area under a curve, built from strips."
       },
       {
        "id": "in_between",
@@ -1108,7 +1140,9 @@ window.QQ_DATA = {
        "statement": "A definite integral can come out negative.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "Where the curve is below the axis the integral is negative. That is why an AREA question needs the region split at every crossing — otherwise positive and negative parts cancel and you understate it."
+       "explain": "Where the curve is below the axis the integral is negative. That is why an AREA question needs the region split at every crossing — otherwise positive and negative parts cancel and you understate it.",
+       "viz": "areaUnder",
+       "vizHint": "What would happen below the axis?"
       },
       {
        "id": "in_limits_swap",
@@ -1134,7 +1168,9 @@ window.QQ_DATA = {
        "answerNumber": 32,
        "tolerance": 0,
        "answerValue": "32",
-       "explain": "∫(4x − x²)dx from 0 to 4 = [2x² − x³/3] = 32 − 64/3 = 32/3, so k = 32. Sketching first tells you the curve is above the axis throughout, so no splitting is needed."
+       "explain": "∫(4x − x²)dx from 0 to 4 = [2x² − x³/3] = 32 − 64/3 = 32/3, so k = 32. Sketching first tells you the curve is above the axis throughout, so no splitting is needed.",
+       "viz": "areaUnder",
+       "vizHint": "More strips, closer to the true area."
       },
       {
        "id": "in_exam_volume",
@@ -1164,7 +1200,9 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0,
        "answerValue": "3",
-       "explain": "Mean = (1/(b−a))∫y dx = (1/3) × 9 = 3. The mean value is the height of the rectangle with the same area over the same width."
+       "explain": "Mean = (1/(b−a))∫y dx = (1/3) × 9 = 3. The mean value is the height of the rectangle with the same area over the same width.",
+       "viz": "areaUnder",
+       "vizHint": "The mean is the height of the equivalent rectangle."
       },
       {
        "id": "in_exam_split",
@@ -1201,7 +1239,9 @@ window.QQ_DATA = {
        "answerNumber": 4.999999999999999,
        "tolerance": 0.01,
        "answerValue": "5",
-       "explain": "opposite = hypotenuse × sin30 = 10 × 0.5 = 5. The 30-60-90 triangle always has its short side exactly half the hypotenuse, which is worth recognising on sight."
+       "explain": "opposite = hypotenuse × sin30 = 10 × 0.5 = 5. The 30-60-90 triangle always has its short side exactly half the hypotenuse, which is worth recognising on sight.",
+       "viz": "unitCircle",
+       "vizHint": "The circle is the triangle, scaled to radius 1."
       },
       {
        "id": "tr_adj",
@@ -1231,7 +1271,9 @@ window.QQ_DATA = {
        "answerNumber": 0.9999999999999999,
        "tolerance": 0.001,
        "answerValue": "1",
-       "explain": "Exactly 1, because at 45° the opposite and adjacent sides are equal. The exact values at 0, 30, 45, 60 and 90 are expected knowledge on a calculator-free paper."
+       "explain": "Exactly 1, because at 45° the opposite and adjacent sides are equal. The exact values at 0, 30, 45, 60 and 90 are expected knowledge on a calculator-free paper.",
+       "viz": "unitCircle",
+       "vizHint": "Drag to 45° and compare the two legs."
       },
       {
        "id": "tr_sin_max",
@@ -1241,7 +1283,9 @@ window.QQ_DATA = {
        "statement": "sinθ can be greater than 1.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "Never. sinθ is the ratio of a side to the hypotenuse, and the hypotenuse is always the longest side, so the ratio cannot exceed 1. Getting sinθ > 1 in a solution is a reliable sign of an error earlier on."
+       "explain": "Never. sinθ is the ratio of a side to the hypotenuse, and the hypotenuse is always the longest side, so the ratio cannot exceed 1. Getting sinθ > 1 in a solution is a reliable sign of an error earlier on.",
+       "viz": "unitCircle",
+       "vizHint": "How long can the green line get?"
       }
      ]
     },
@@ -1337,7 +1381,9 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "Two: x = 30° and x = 150°. Sine is positive in the first and second quadrants. Finding only the calculator's answer and stopping is the standard way to lose half the marks."
+       "explain": "Two: x = 30° and x = 150°. Sine is positive in the first and second quadrants. Finding only the calculator's answer and stopping is the standard way to lose half the marks.",
+       "viz": "unitCircle",
+       "vizHint": "Find every angle with the same height."
       },
       {
        "id": "tr_second_solution",
@@ -1347,7 +1393,9 @@ window.QQ_DATA = {
        "answerNumber": 150,
        "tolerance": 0,
        "answerValue": "150",
-       "explain": "180 − 30 = 150°. For sine the partner is 180 − x; for cosine it is 360 − x. Sketching the curve is more reliable than memorising which is which."
+       "explain": "180 − 30 = 150°. For sine the partner is 180 − x; for cosine it is 360 − x. Sketching the curve is more reliable than memorising which is which.",
+       "viz": "unitCircle",
+       "vizHint": "Two angles share a sine. Find the other."
       },
       {
        "id": "tr_period",
@@ -1373,7 +1421,9 @@ window.QQ_DATA = {
        "answerNumber": 0.8,
        "tolerance": 0.001,
        "answerValue": "0.8",
-       "explain": "sin²θ + cos²θ = 1, so cosθ = √(1 − 0.36) = 0.8. The 3-4-5 triangle again, scaled to a hypotenuse of 1."
+       "explain": "sin²θ + cos²θ = 1, so cosθ = √(1 − 0.36) = 0.8. The 3-4-5 triangle again, scaled to a hypotenuse of 1.",
+       "viz": "unitCircle",
+       "vizHint": "sin and cos are the two legs of one triangle."
       },
       {
        "id": "tr_tan_identity",
@@ -1383,7 +1433,9 @@ window.QQ_DATA = {
        "answerNumber": 0.7499999999999999,
        "tolerance": 0.001,
        "answerValue": "0.75",
-       "explain": "tanθ = sinθ/cosθ = 0.75. That identity, together with sin² + cos² = 1, generates most of the others."
+       "explain": "tanθ = sinθ/cosθ = 0.75. That identity, together with sin² + cos² = 1, generates most of the others.",
+       "viz": "unitCircle",
+       "vizHint": "tan is the ratio of the two legs."
       },
       {
        "id": "tr_small_angle",
@@ -1440,7 +1492,9 @@ window.QQ_DATA = {
        "answerNumber": 5,
        "tolerance": 0.001,
        "answerValue": "5",
-       "explain": "√(3² + 4²) = 5 — Pythagoras. Magnitude is just the length of the arrow, and the 3-4-5 triangle makes this one immediate."
+       "explain": "√(3² + 4²) = 5 — Pythagoras. Magnitude is just the length of the arrow, and the 3-4-5 triangle makes this one immediate.",
+       "viz": "vectorAdd",
+       "vizHint": "Drag an arrow and watch its length."
       },
       {
        "id": "ve_mag3",
@@ -1460,7 +1514,9 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "Add component by component: (4, 2), so b = 2. Geometrically it is the nose-to-tail rule."
+       "explain": "Add component by component: (4, 2), so b = 2. Geometrically it is the nose-to-tail rule.",
+       "viz": "vectorAdd",
+       "vizHint": "The dashed arrow is the sum."
       },
       {
        "id": "ve_scalar_mult",
@@ -1496,7 +1552,9 @@ window.QQ_DATA = {
        "answerNumber": 11,
        "tolerance": 0,
        "answerValue": "11",
-       "explain": "3×1 + 4×2 = 11. Multiply matching components and add. The result is a NUMBER, not a vector, which is why it is also called the scalar product."
+       "explain": "3×1 + 4×2 = 11. Multiply matching components and add. The result is a NUMBER, not a vector, which is why it is also called the scalar product.",
+       "viz": "vectorAdd",
+       "vizHint": "The dot product is shown as you drag."
       },
       {
        "id": "ve_dot3",
@@ -1516,7 +1574,9 @@ window.QQ_DATA = {
        "answerNumber": 0,
        "tolerance": 0,
        "answerValue": "0",
-       "explain": "Zero, because a·b = |a||b|cosθ and cos90 = 0. This is the fastest test for perpendicularity there is, and it works in any number of dimensions."
+       "explain": "Zero, because a·b = |a||b|cosθ and cos90 = 0. This is the fastest test for perpendicularity there is, and it works in any number of dimensions.",
+       "viz": "vectorAdd",
+       "vizHint": "Make the two arrows perpendicular."
       },
       {
        "id": "ve_find_k",
@@ -1526,7 +1586,9 @@ window.QQ_DATA = {
        "answerNumber": -4,
        "tolerance": 0,
        "answerValue": "-4",
-       "explain": "Perpendicular means the dot product is zero: 12 + 3k = 0, so k = −4. Check: (2,3)·(6,−4) = 12 − 12 = 0 ✓."
+       "explain": "Perpendicular means the dot product is zero: 12 + 3k = 0, so k = −4. Check: (2,3)·(6,−4) = 12 − 12 = 0 ✓.",
+       "viz": "vectorAdd",
+       "vizHint": "Perpendicular means the dot product is zero."
       },
       {
        "id": "ve_angle",
@@ -1536,7 +1598,9 @@ window.QQ_DATA = {
        "answerNumber": 60,
        "tolerance": 0.6,
        "answerValue": "60",
-       "explain": "cosθ = 6/(3×4) = 0.5, so θ = 60°. Rearranging a·b = |a||b|cosθ is how almost every angle-between-vectors question is done."
+       "explain": "cosθ = 6/(3×4) = 0.5, so θ = 60°. Rearranging a·b = |a||b|cosθ is how almost every angle-between-vectors question is done.",
+       "viz": "vectorAdd",
+       "vizHint": "Watch the angle as you drag."
       }
      ]
     },
@@ -1552,7 +1616,9 @@ window.QQ_DATA = {
        "answerNumber": 5,
        "tolerance": 0.001,
        "answerValue": "5",
-       "explain": "Perpendicular forces combine by Pythagoras: √(9+16) = 5 N. Forces are vectors, so they add nose-to-tail and NOT arithmetically."
+       "explain": "Perpendicular forces combine by Pythagoras: √(9+16) = 5 N. Forces are vectors, so they add nose-to-tail and NOT arithmetically.",
+       "viz": "vectorAdd",
+       "vizHint": "Forces add exactly like these arrows."
       },
       {
        "id": "ve_resultant_angle",
@@ -2022,7 +2088,9 @@ window.QQ_DATA = {
        "answerNumber": 1.9999999999999996,
        "tolerance": 0.01,
        "answerValue": "2",
-       "explain": "The vertical component is 20 sin30 = 10 m/s. Time up is 10/10 = 1 s, and the flight is symmetric, so 2 s in total. Splitting into horizontal and vertical is the whole method."
+       "explain": "The vertical component is 20 sin30 = 10 m/s. Time up is 10/10 = 1 s, and the flight is symmetric, so 2 s in total. Splitting into horizontal and vertical is the whole method.",
+       "viz": "projectile",
+       "vizHint": "Fire it. Watch the clock and the arc."
       },
       {
        "id": "me_proj_height",
@@ -2032,7 +2100,9 @@ window.QQ_DATA = {
        "answerNumber": 4.999999999999998,
        "tolerance": 0.01,
        "answerValue": "5",
-       "explain": "Using v² = u² − 2gs with v = 0 vertically: s = 100/20 = 5 m. The horizontal motion has no effect on this at all — gravity acts only vertically."
+       "explain": "Using v² = u² − 2gs with v = 0 vertically: s = 100/20 = 5 m. The horizontal motion has no effect on this at all — gravity acts only vertically.",
+       "viz": "projectile",
+       "vizHint": "The apex of the arc."
       },
       {
        "id": "me_proj_range",
@@ -2042,7 +2112,9 @@ window.QQ_DATA = {
        "answerNumber": 35,
        "tolerance": 0.6,
        "answerValue": "35",
-       "explain": "Horizontal speed 20 cos30 = 17.3 m/s, held for 2 s, gives 34.6 m, about 35 m. Equivalently R = u²sin(2θ)/g, which is greatest at 45°."
+       "explain": "Horizontal speed 20 cos30 = 17.3 m/s, held for 2 s, gives 34.6 m, about 35 m. Equivalently R = u²sin(2θ)/g, which is greatest at 45°.",
+       "viz": "projectile",
+       "vizHint": "Try 45° and compare."
       },
       {
        "id": "me_exam_energy",
@@ -2062,7 +2134,9 @@ window.QQ_DATA = {
        "statement": "A bullet fired horizontally and one dropped from the same height hit the ground at the same time.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "Horizontal and vertical motion are independent. Gravity gives both the same downward acceleration and the same vertical start, so both take the same time — however far the fired one travels sideways."
+       "explain": "Horizontal and vertical motion are independent. Gravity gives both the same downward acceleration and the same vertical start, so both take the same time — however far the fired one travels sideways.",
+       "viz": "projectile",
+       "vizHint": "Horizontal and vertical are independent."
       }
      ]
     }
@@ -2089,7 +2163,9 @@ window.QQ_DATA = {
        "answerNumber": 4.0,
        "tolerance": 0,
        "answerValue": "4",
-       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing."
+       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing.",
+       "viz": "circuitLab",
+       "vizHint": "I = V/R, live."
       },
       {
        "id": "el_charge",
@@ -2145,7 +2221,9 @@ window.QQ_DATA = {
        "answerNumber": 8,
        "tolerance": 0,
        "answerValue": "8",
-       "explain": "In series resistances simply add: 8 Ω. The same current passes through both, and the voltages share out in proportion to the resistances."
+       "explain": "In series resistances simply add: 8 Ω. The same current passes through both, and the voltages share out in proportion to the resistances.",
+       "viz": "circuitLab",
+       "vizHint": "Switch between series and parallel."
       },
       {
        "id": "el_parallel",
@@ -2155,7 +2233,9 @@ window.QQ_DATA = {
        "answerNumber": 3.0,
        "tolerance": 0.001,
        "answerValue": "3",
-       "explain": "1/R = 1/6 + 1/6 = 1/3, so R = 3 Ω. Two EQUAL resistors in parallel always give half of one, which is a shortcut worth having."
+       "explain": "1/R = 1/6 + 1/6 = 1/3, so R = 3 Ω. Two EQUAL resistors in parallel always give half of one, which is a shortcut worth having.",
+       "viz": "circuitLab",
+       "vizHint": "Two equal resistors in parallel."
       },
       {
        "id": "el_parallel_unequal",
@@ -2165,7 +2245,9 @@ window.QQ_DATA = {
        "answerNumber": 2.0,
        "tolerance": 0.001,
        "answerValue": "2",
-       "explain": "1/R = 1/3 + 1/6 = 1/2, so R = 2 Ω. Notice the total is smaller than EITHER branch — always true in parallel, and a useful sanity check."
+       "explain": "1/R = 1/3 + 1/6 = 1/2, so R = 2 Ω. Notice the total is smaller than EITHER branch — always true in parallel, and a useful sanity check.",
+       "viz": "circuitLab",
+       "vizHint": "Set 3 and 6, then switch to parallel."
       },
       {
        "id": "el_divider",
@@ -2185,7 +2267,9 @@ window.QQ_DATA = {
        "statement": "Adding a resistor in parallel always decreases the total resistance.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "Another parallel path gives current somewhere else to go, so the combination always conducts better than the best single branch."
+       "explain": "Another parallel path gives current somewhere else to go, so the combination always conducts better than the best single branch.",
+       "viz": "circuitLab",
+       "vizHint": "Compare the total against each branch."
       }
      ]
     },
@@ -2257,7 +2341,9 @@ window.QQ_DATA = {
        "answerNumber": 8.0,
        "tolerance": 0.001,
        "answerValue": "8",
-       "explain": "The parallel pair gives 2 Ω, in series with 6 Ω makes 8 Ω. Always collapse the parallel groups FIRST, then add the series chain."
+       "explain": "The parallel pair gives 2 Ω, in series with 6 Ω makes 8 Ω. Always collapse the parallel groups FIRST, then add the series chain.",
+       "viz": "circuitLab",
+       "vizHint": "Collapse the parallel pair first."
       },
       {
        "id": "el_exam_current",
