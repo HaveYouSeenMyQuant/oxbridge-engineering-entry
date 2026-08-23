@@ -127,6 +127,14 @@
 
   /* ------------------------------------------------------------- 2. matMul */
   global.QQViz.register('matMul', function (host, api) {
+    /* THE PRODUCT USED TO BE DRAWN IN FULL, which answered the question.
+     * mx_entry11 asks for the top-left entry of AB and the visual printed it.
+     * With reveal:false every entry of the product shows as "?" until it is
+     * tapped, and the tapped one shows its row-times-column WORKING rather
+     * than the number, so the visual teaches the method and the student still
+     * has to do the arithmetic. */
+    var P0 = (api && api.params) || {};
+    var reveal = P0.reveal !== false;
     var A = [[2, 1], [3, 4]], B = [[1, 0], [-2, 5]];
     var P = [[0, 0], [0, 0]], i, j, k;
     for (i = 0; i < 2; i++) for (j = 0; j < 2; j++) {
@@ -155,7 +163,8 @@
         highlight: function (r, c) { return sel && sel.j === c ? 2 : 0; }
       });
       var x2 = x1 + 2 * cw + gap;
-      var rr = drawMatrix(g, P, x2, y, cw, ch, {
+      var shown = reveal ? P : [['?', '?'], ['?', '?']];
+      var rr = drawMatrix(g, shown, x2, y, cw, ch, {
         size: 16 * sc, bracket: C.accent,
         highlight: function (r, c) { return sel && sel.i === r && sel.j === c ? 1 : 0; }
       });
@@ -170,7 +179,8 @@
         g.fillStyle = C.accent; g.font = f(12 * sc, 600); g.textAlign = 'center';
         var terms = [];
         for (k = 0; k < 2; k++) terms.push(A[sel.i][k] + '×' + B[k][sel.j]);
-        g.fillText(terms.join('  +  ') + '  =  ' + P[sel.i][sel.j], w / 2, y + 2 * ch + 22 * sc);
+        g.fillText(terms.join('  +  ') + (reveal ? '  =  ' + P[sel.i][sel.j] : '  =  ?'),
+                   w / 2, y + 2 * ch + 22 * sc);
       }
     };
 
@@ -192,7 +202,13 @@
 
   /* ------------------------------------------------------------ 3. detArea */
   global.QQViz.register('detArea', function (host, api) {
-    var col1 = { x: 3, y: 1 }, col2 = { x: 1, y: 2 };
+    /* Opens on the question's own matrix when it supplies one, and withholds
+     * the determinant VALUE on questions that ask for it -- the parallelogram
+     * is still there to be reasoned about. */
+    var P0 = (api && api.params) || {};
+    var reveal = P0.reveal !== false;
+    var col1 = { x: P0.a != null ? P0.a : 3, y: P0.c != null ? P0.c : 1 },
+        col2 = { x: P0.b != null ? P0.b : 1, y: P0.d != null ? P0.d : 2 };
     var out = readout(host, 'Drag either arrow.');
     var stage = Stage(host, 0.95);
     var drag = null;
@@ -201,10 +217,14 @@
 
     function say() {
       var d = det();
-      out.innerHTML = 'det = ' + col1.x.toFixed(1) + '×' + col2.y.toFixed(1) + ' − ' +
-        col2.x.toFixed(1) + '×' + col1.y.toFixed(1) + ' = <b>' + d.toFixed(2) + '</b>' +
-        (Math.abs(d) < 0.05 ? ' — squashed flat, no inverse' :
-          (d < 0 ? ' — negative: flipped over' : ' — area of the parallelogram'));
+      var lhs = 'det = ' + col1.x.toFixed(1) + '×' + col2.y.toFixed(1) + ' − ' +
+                col2.x.toFixed(1) + '×' + col1.y.toFixed(1);
+      out.innerHTML = reveal
+        ? lhs + ' = <b>' + d.toFixed(2) + '</b>' +
+          (Math.abs(d) < 0.05 ? ' — squashed flat, no inverse' :
+            (d < 0 ? ' — negative: flipped over' : ' — area of the parallelogram'))
+        : lhs + ' = <b>?</b> — the shaded area is its size, and the sign says ' +
+          'whether the plane was flipped.';
     }
     say();
 
@@ -223,7 +243,8 @@
       arrow(g, ox, oy, a.x, a.y, C.accent, 3);
       arrow(g, ox, oy, b.x, b.y, C.gold, 3);
       g.fillStyle = C.fg; g.font = f(13, 700); g.textAlign = 'center';
-      g.fillText('area ' + Math.abs(d).toFixed(2), w / 2, h - 8);
+      g.fillText(reveal ? 'area ' + Math.abs(d).toFixed(2) : 'drag to compare areas',
+                 w / 2, h - 8);
     };
 
     function nearest(p, w, h) {
@@ -294,7 +315,13 @@
 
   /* ---------------------------------------------------------- 5. solveLines */
   global.QQViz.register('solveLines', function (host, api) {
-    /* 3x + 4y = 10 and x + 2y = 4 */
+    /* 3x + 4y = 10 and x + 2y = 4.
+     * THE READOUT USED TO PRINT "they cross at x = 2, y = 1", which is
+     * precisely what mx_solve_x and mx_solve_y ask for. With reveal:false it
+     * reports only the determinant and WHETHER they cross; the crossing point
+     * is drawn on the grid for the student to read off, which is the skill. */
+    var P0 = (api && api.params) || {};
+    var reveal = P0.reveal !== false;
     var a1 = 3, b1 = 4, c1 = 10, a2 = 1, b2 = 2, c2 = 4;
     var row = controls(host);
     var out = readout(host, '');
@@ -309,8 +336,11 @@
         out.innerHTML = 'det = <b>0</b> — the lines are parallel. No single crossing point.';
       } else {
         var x = (c1 * b2 - b1 * c2) / det, y = (a1 * c2 - c1 * a2) / det;
-        out.innerHTML = 'det = <b>' + det + '</b> — they cross at x = <b>' +
-          (+x.toFixed(2)) + '</b>, y = <b>' + (+y.toFixed(2)) + '</b>.';
+        out.innerHTML = reveal
+          ? 'det = <b>' + det + '</b> — they cross at x = <b>' + (+x.toFixed(2)) +
+            '</b>, y = <b>' + (+y.toFixed(2)) + '</b>.'
+          : 'det = <b>' + det + '</b> — non-zero, so they cross exactly once. ' +
+            'Read the point off the grid.';
       }
     }
     say();
@@ -348,7 +378,9 @@
 
   /* ------------------------------------------------------- 6. transformPlane */
   global.QQViz.register('transformPlane', function (host, api) {
-    var m = [1, 0, 0, 1];
+    var P0 = (api && api.params) || {};
+    var m = P0.m ? P0.m.slice() : [1, 0, 0, 1];
+    var reveal = P0.reveal !== false;
     var row = controls(host);
     var out = readout(host, 'Move the sliders. The columns are where (1,0) and (0,1) land.');
     var stage = Stage(host, 0.92);
@@ -358,8 +390,10 @@
     });
     function say() {
       var det = m[0] * m[3] - m[1] * m[2];
-      out.innerHTML = '[' + m[0] + ' ' + m[1] + '; ' + m[2] + ' ' + m[3] + ']  ·  det = <b>' +
-        (+det.toFixed(2)) + '</b>' + (Math.abs(det) < 0.01 ? ' — collapsed to a line' : '');
+      out.innerHTML = '[' + m[0] + ' ' + m[1] + '; ' + m[2] + ' ' + m[3] + ']' +
+        (reveal ? '  ·  det = <b>' + (+det.toFixed(2)) + '</b>' +
+                  (Math.abs(det) < 0.01 ? ' — collapsed to a line' : '')
+                : '  ·  watch where the two arrows land');
     }
     say();
 
@@ -384,4 +418,224 @@
     return { destroy: stage.destroy };
   });
 
+})(window);
+
+/* ==========================================================================
+ * Three visuals added after an audit found the ones above being used for
+ * questions they could not illustrate. Each of these exists because a specific
+ * question had no honest picture.
+ * ========================================================================== */
+(function (global) {
+  'use strict';
+  var K = global.QQViz.kit;
+  var C = K.C, f = K.f, Stage = K.Stage;
+  var controls = K.controls, readout = K.readout, button = K.button;
+
+  function bracketed(g, m, x, y, cw, ch, size, hi, dimAll) {
+    var rows = m.length, cols = m[0].length, W = cols * cw, H = rows * ch;
+    g.strokeStyle = C.muted; g.lineWidth = 2;
+    var b = 6;
+    g.beginPath();
+    g.moveTo(x + b, y - 4); g.lineTo(x - 2, y - 4);
+    g.lineTo(x - 2, y + H + 4); g.lineTo(x + b, y + H + 4); g.stroke();
+    g.beginPath();
+    g.moveTo(x + W - b, y - 4); g.lineTo(x + W + 2, y - 4);
+    g.lineTo(x + W + 2, y + H + 4); g.lineTo(x + W - b, y + H + 4); g.stroke();
+    for (var i = 0; i < rows; i++) for (var j = 0; j < cols; j++) {
+      if (hi && hi(i, j)) {
+        g.fillStyle = 'rgba(88,166,255,0.22)';
+        K.roundRect(g, x + j * cw + 2, y + i * ch + 2, cw - 4, ch - 4, 5); g.fill();
+      }
+      g.fillStyle = dimAll ? C.muted : C.fg;
+      g.font = f(size, 700); g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillText(String(m[i][j]), x + j * cw + cw / 2, y + i * ch + ch / 2);
+    }
+    return { w: W, h: H };
+  }
+
+  /* ------------------------------------------------------------- matOps ----
+   * For "what is the top-left entry of A + B" and "of 3A". The old visual
+   * showed one matrix and could do neither. */
+  global.QQViz.register('matOps', function (host, api) {
+    var P = (api && api.params) || {};
+    var A = P.A || [[2, 1], [3, 4]], B = P.B || [[1, 0], [-2, 5]];
+    var k = P.k != null ? P.k : 3;
+    var mode = P.mode || 'add';            // 'add' or 'scale'
+    var reveal = P.reveal !== false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.6);
+    var sel = null, cells = [];
+
+    function result() {
+      var R = [[0, 0], [0, 0]];
+      for (var i = 0; i < 2; i++) for (var j = 0; j < 2; j++) {
+        R[i][j] = mode === 'add' ? A[i][j] + B[i][j] : k * A[i][j];
+      }
+      return R;
+    }
+    function say() {
+      if (!sel) { out.textContent = 'Tap an entry of the answer.'; return; }
+      var i = sel.i, j = sel.j;
+      var lhs = mode === 'add' ? A[i][j] + ' + ' + B[i][j] : k + ' × ' + A[i][j];
+      out.innerHTML = 'Entry (' + (i + 1) + ',' + (j + 1) + '): ' + lhs +
+                      (reveal ? ' = <b>' + result()[i][j] + '</b>' : ' = <b>?</b>');
+    }
+    say();
+    button(row, mode === 'add' ? 'A + B' : k + 'A', function () { api.onInteract('op'); });
+
+    stage.draw = function (g, w, h) {
+      var cw = Math.min(42, (w - 90) / 6), ch = cw * 0.9;
+      var blocks = mode === 'add' ? 3 : 2;
+      var gap = 30, tot = blocks * 2 * cw + (blocks - 1) * gap;
+      var x = (w - tot) / 2, y = (h - 2 * ch) / 2;
+      bracketed(g, A, x, y, cw, ch, 15,
+                function (i, j) { return sel && sel.i === i && sel.j === j; });
+      var nx = x + 2 * cw + gap;
+      g.fillStyle = C.muted; g.font = f(16, 700);
+      g.textAlign = 'center'; g.textBaseline = 'middle';
+      if (mode === 'add') {
+        g.fillText('+', x + 2 * cw + gap / 2, y + ch);
+        bracketed(g, B, nx, y, cw, ch, 15,
+                  function (i, j) { return sel && sel.i === i && sel.j === j; });
+        nx += 2 * cw + gap;
+        g.fillText('=', nx - gap / 2, y + ch);
+      } else {
+        g.fillText('×' + k, x + 2 * cw + gap / 2, y + ch);
+      }
+      var shown = reveal ? result() : [['?', '?'], ['?', '?']];
+      bracketed(g, shown, nx, y, cw, ch, 15,
+                function (i, j) { return sel && sel.i === i && sel.j === j; });
+      cells = [];
+      for (var i = 0; i < 2; i++) for (var j = 0; j < 2; j++) {
+        cells.push({ i: i, j: j, x: nx + j * cw, y: y + i * ch, w: cw, h: ch });
+      }
+      g.fillStyle = C.muted; g.font = f(11, 600);
+      g.fillText(mode === 'add' ? 'addition pairs entries by position'
+                                : 'a scalar multiplies every entry', w / 2, h - 6);
+    };
+    stage.canvas.addEventListener('pointerdown', function (ev) {
+      var p = stage.pointer(ev);
+      for (var n = 0; n < cells.length; n++) {
+        var c = cells[n];
+        if (p.x >= c.x && p.x <= c.x + c.w && p.y >= c.y && p.y <= c.y + c.h) {
+          sel = c; say(); api.onInteract('cell'); return;
+        }
+      }
+    });
+    return { destroy: stage.destroy };
+  });
+
+  /* ----------------------------------------------------------- matShapes ---
+   * For the conformability question. The old visual was hard-wired to 2x2
+   * matrices and could not show why (2x3)(3x4) works and (3x4)(2x3) does not
+   * -- while its hint claimed you could "slide the shapes together". */
+  global.QQViz.register('matShapes', function (host, api) {
+    var P = (api && api.params) || {};
+    var r1 = P.r1 || 2, c1 = P.c1 || 3, r2 = P.r2 || 3, c2 = P.c2 || 4;
+    var swapped = false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.52);
+    button(row, 'swap the order', function () {
+      swapped = !swapped; api.onInteract('swap'); say();
+    });
+    function left() { return swapped ? [r2, c2] : [r1, c1]; }
+    function right() { return swapped ? [r1, c1] : [r2, c2]; }
+    function say() {
+      var L = left(), R = right(), fits = L[1] === R[0];
+      out.innerHTML = '(' + L[0] + '×<b>' + L[1] + '</b>)(<b>' + R[0] + '</b>×' + R[1] + ') — ' +
+        (fits ? 'the inner numbers match, so the product is <b>' + L[0] + '×' + R[1] + '</b>'
+              : 'the inner numbers <b>differ</b>, so this product is undefined');
+    }
+    say();
+    stage.draw = function (g, w, h) {
+      var L = left(), R = right(), fits = L[1] === R[0];
+      var u = Math.min(16, (w - 90) / (L[1] + R[1] + 3));
+      var y = h / 2 - 26;
+      function blk(x, rows, cols, col) {
+        g.fillStyle = col; g.globalAlpha = 0.30;
+        g.fillRect(x, y, cols * u, rows * u);
+        g.globalAlpha = 1; g.strokeStyle = col; g.lineWidth = 2;
+        g.strokeRect(x, y, cols * u, rows * u);
+        g.fillStyle = C.fg; g.font = f(12, 700); g.textAlign = 'center';
+        g.fillText(rows + '×' + cols, x + cols * u / 2, y + rows * u + 16);
+        return x + cols * u;
+      }
+      var x0 = (w - (L[1] + R[1]) * u - 40) / 2;
+      var e1 = blk(x0, L[0], L[1], C.accent);
+      var e2 = blk(e1 + 40, R[0], R[1], C.gold);
+      /* the join: green when the inner dimensions agree, red when they do not */
+      g.strokeStyle = fits ? C.good : C.bad; g.lineWidth = 3;
+      g.setLineDash(fits ? [] : [5, 4]);
+      g.beginPath();
+      g.moveTo(e1, y + L[0] * u / 2); g.lineTo(e1 + 40, y + R[0] * u / 2);
+      g.stroke(); g.setLineDash([]);
+      g.fillStyle = fits ? C.good : C.bad; g.font = f(13, 700); g.textAlign = 'center';
+      g.fillText(fits ? 'inner numbers match' : 'inner numbers differ', w / 2, h - 6);
+    };
+    return { destroy: stage.destroy };
+  });
+
+  /* ---------------------------------------------------------- matCompose ---
+   * For "is AB the same as BA" and "which order composes". The old visual
+   * applied a single matrix and could not show an order at all. */
+  global.QQViz.register('matCompose', function (host, api) {
+    var P = (api && api.params) || {};
+    var R = P.R || [0, -1, 1, 0];          // rotate 90 anticlockwise
+    var F = P.F || [1, 0, 0, -1];          // reflect in the x-axis
+    var order = 'FR';
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.62);
+    button(row, 'swap the order', function () {
+      order = order === 'FR' ? 'RF' : 'FR'; api.onInteract('swap'); say();
+    });
+    function mul(a, b) {
+      return [a[0] * b[0] + a[1] * b[2], a[0] * b[1] + a[1] * b[3],
+              a[2] * b[0] + a[3] * b[2], a[2] * b[1] + a[3] * b[3]];
+    }
+    function say() {
+      out.innerHTML = order === 'FR'
+        ? 'FR — rotate first, then reflect'
+        : 'RF — reflect first, then rotate';
+    }
+    say();
+    var SHAPE = [[0, 0], [1.4, 0], [1.4, 0.5], [0.5, 0.5], [0.5, 1.4], [0, 1.4]];
+    stage.draw = function (g, w, h) {
+      var s = Math.min(w, h) / 6.5, ox = w / 2, oy = h / 2;
+      grid(g, w, h, ox, oy, s, 4);
+      var M = order === 'FR' ? mul(F, R) : mul(R, F);
+      function poly(m, col, alpha, dash) {
+        g.beginPath();
+        SHAPE.forEach(function (p, i) {
+          var x = m[0] * p[0] + m[1] * p[1], yv = m[2] * p[0] + m[3] * p[1];
+          var X = ox + x * s, Y = oy - yv * s;
+          if (i === 0) g.moveTo(X, Y); else g.lineTo(X, Y);
+        });
+        g.closePath();
+        g.globalAlpha = alpha; g.fillStyle = col; g.fill(); g.globalAlpha = 1;
+        g.setLineDash(dash || []); g.strokeStyle = col; g.lineWidth = 2.5;
+        g.stroke(); g.setLineDash([]);
+      }
+      poly([1, 0, 0, 1], C.muted, 0.10, [4, 4]);      // where it started
+      poly(M, C.accent, 0.30);
+      /* the OTHER order, faint, so the difference is the point of the picture */
+      var other = order === 'FR' ? mul(R, F) : mul(F, R);
+      poly(other, C.gold, 0.12, [5, 4]);
+      g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
+      g.fillText('blue = this order      gold dashed = the other order', w / 2, h - 6);
+    };
+    function grid(g, w, h, ox, oy, s, span) {
+      g.strokeStyle = C.line; g.lineWidth = 1;
+      for (var i = -span; i <= span; i++) {
+        g.beginPath(); g.moveTo(ox + i * s, 0); g.lineTo(ox + i * s, h); g.stroke();
+        g.beginPath(); g.moveTo(0, oy + i * s); g.lineTo(w, oy + i * s); g.stroke();
+      }
+      g.strokeStyle = C.muted; g.lineWidth = 1.5;
+      g.beginPath(); g.moveTo(0, oy); g.lineTo(w, oy); g.stroke();
+      g.beginPath(); g.moveTo(ox, 0); g.lineTo(ox, h); g.stroke();
+    }
+    return { destroy: stage.destroy };
+  });
 })(window);

@@ -42,7 +42,7 @@ window.QQ_DATA = {
        "answerValue": "3 × 2",
        "explain": "Order is always rows first, then columns — 3 × 2 here. It is worth being fussy about this from the start, because whether two matrices can be multiplied at all is decided entirely by their orders.",
        "viz": "matGrid",
-       "vizHint": "Drag the handles to change the shape."
+       "vizHint": "Add and remove rows and columns. The readout names the order."
       },
       {
        "id": "mx_entry",
@@ -65,7 +65,32 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "3",
        "explain": "Addition is entry by entry: 2 + 1 = 3. Two matrices can only be added if they have exactly the same order, because every entry needs a partner.",
-       "viz": "matGrid"
+       "viz": "matOps",
+       "vizHint": "Tap an entry of the answer to see which pair makes it.",
+       "vizParams": {
+        "A": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          4
+         ]
+        ],
+        "B": [
+         [
+          1,
+          0
+         ],
+         [
+          -2,
+          5
+         ]
+        ],
+        "mode": "add",
+        "reveal": false
+       }
       },
       {
        "id": "mx_add_order",
@@ -86,7 +111,23 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "12",
        "explain": "A scalar multiplies every entry: 3 × 4 = 12. Scaling a matrix scales everything it does — a transformation matrix multiplied by 3 stretches three times as much.",
-       "viz": "matGrid"
+       "viz": "matOps",
+       "vizHint": "Tap an entry to see what the 3 does to it.",
+       "vizParams": {
+        "A": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          4
+         ]
+        ],
+        "k": 3,
+        "mode": "scale",
+        "reveal": false
+       }
       }
      ]
     },
@@ -108,8 +149,14 @@ window.QQ_DATA = {
        "answer": 0,
        "answerValue": "2×3 times 3×4",
        "explain": "The inner numbers must match: (2 × 3)(3 × 4) works because the 3s meet, and the result is 2 × 4 — the outer numbers. The other way round, 4 and 2 do not match, so nothing is defined.",
-       "viz": "matMul",
-       "vizHint": "Slide the shapes together to see which fit."
+       "viz": "matShapes",
+       "vizHint": "Swap the order and watch the inner numbers.",
+       "vizParams": {
+        "r1": 2,
+        "c1": 3,
+        "r2": 3,
+        "c2": 4
+       }
       },
       {
        "id": "mx_entry11",
@@ -119,9 +166,12 @@ window.QQ_DATA = {
        "answerNumber": 0,
        "tolerance": 0,
        "answerValue": "0",
-       "explain": "Row 1 of A against column 1 of B: 2×1 + 1×-2 = 0. Every entry of a product is one row dotted with one column, and that is the whole rule.",
+       "explain": "Row 1 of A against column 1 of B: 2×1 + 1×-2 = 0. Every entry of a product is one row dotted with one column, and that is the whole rule.and column build it.",
        "viz": "matMul",
-       "vizHint": "Tap an entry of the answer to see which row and column build it."
+       "vizHint": "Tap the top-left entry of the answer.",
+       "vizParams": {
+        "reveal": false
+       }
       },
       {
        "id": "mx_entry22",
@@ -132,7 +182,11 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "20",
        "explain": "Row 2 of A against column 2 of B: 3×0 + 4×5 = 20. Notice you never touch the other row or the other column — each entry of the product is built from exactly one of each, which is why the result is 2 × 2 rather than anything larger.",
-       "viz": "matMul"
+       "viz": "matMul",
+       "vizHint": "Tap the bottom-right entry.",
+       "vizParams": {
+        "reveal": false
+       }
       },
       {
        "id": "mx_commute",
@@ -143,7 +197,8 @@ window.QQ_DATA = {
        "answerBool": false,
        "answerValue": "FALSE",
        "explain": "It is usually not. With A = [2 1; 3 4] and B = [1 0; -2 5], AB = [0 5; -5 20] but BA = [2 1; 11 18]. Order matters because matrices are transformations, and rotating then reflecting is not the same as reflecting then rotating. This is the single most tested fact in the topic.",
-       "viz": "matMul"
+       "viz": "matCompose",
+       "vizHint": "Swap the order. The gold outline is the other one."
       },
       {
        "id": "mx_identity",
@@ -169,9 +224,16 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "ad − bc = 3×2 − 4×1 = 2. The determinant is the factor by which the matrix scales area: a unit square is sent to a parallelogram of area 2.",
+       "explain": "ad − bc = 3×2 − 4×1 = 2. The determinant is the factor by which the matrix scales area: a unit square is sent to a parallelogram of area 2.area change.",
        "viz": "detArea",
-       "vizHint": "Drag the two column vectors and watch the area change."
+       "vizHint": "This is the matrix in the question. Drag to compare areas.",
+       "vizParams": {
+        "a": 3,
+        "b": 4,
+        "c": 1,
+        "d": 2,
+        "reveal": false
+       }
       },
       {
        "id": "mx_det_singular",
@@ -182,7 +244,15 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "0",
        "explain": "2×3 − 6×1 = 0. A zero determinant means the two columns lie on the same line, so the unit square is squashed flat onto a line — area zero. Such a matrix is called singular and has no inverse.",
-       "viz": "detArea"
+       "viz": "detArea",
+       "vizHint": "Look at what the two columns do.",
+       "vizParams": {
+        "a": 2,
+        "b": 6,
+        "c": 1,
+        "d": 3,
+        "reveal": false
+       }
       },
       {
        "id": "mx_det_zero_inv",
@@ -193,7 +263,8 @@ window.QQ_DATA = {
        "answerBool": false,
        "answerValue": "FALSE",
        "explain": "It cannot. The inverse divides by the determinant, and more fundamentally a singular matrix collapses the plane onto a line — information is destroyed, so there is no way back. Every point on that line has infinitely many origins.",
-       "viz": "detArea"
+       "viz": "detArea",
+       "vizHint": "Drag the arrows onto one line."
       },
       {
        "id": "mx_det_neg",
@@ -204,7 +275,8 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "-6",
        "explain": "Magnitude 6 for the area, negative for the flip. The SIGN of a determinant records whether the transformation preserves orientation — a reflection has a negative determinant, a rotation a positive one.",
-       "viz": "detArea"
+       "viz": "detArea",
+       "vizHint": "Cross the arrows over and watch the sign."
       },
       {
        "id": "mx_det3",
@@ -232,7 +304,7 @@ window.QQ_DATA = {
        "answerValue": "1",
        "explain": "Swap the diagonal, negate the off-diagonal, divide by the determinant 2: top-left becomes 2/2 = 1.",
        "viz": "matInv",
-       "vizHint": "Watch the inverse undo the transformation."
+       "vizHint": "Apply M, then apply M inverse."
       },
       {
        "id": "mx_inv_check",
@@ -243,7 +315,8 @@ window.QQ_DATA = {
        "answerBool": true,
        "answerValue": "TRUE",
        "explain": "MM⁻¹ = M⁻¹M = I. Inverses are the one case where matrix multiplication does commute, and that is essentially what being an inverse means.",
-       "viz": "matInv"
+       "viz": "matInv",
+       "vizHint": "Does it land exactly back where it started?"
       },
       {
        "id": "mx_solve_x",
@@ -253,9 +326,12 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "The system is [3 4; 1 2][x; y] = [10; 4]. The determinant is 3×2 − 4×1 = 2, so the inverse is (1/2)[2 −4; −1 3]. Multiplying: x = (2×10 − 4×4)/2 = 4/2 = 2, and y = (−1×10 + 3×4)/2 = 2/2 = 1. Check: 3(2) + 4(1) = 10. ✓",
+       "explain": "The system is [3 4; 1 2][x; y] = [10; 4]. The determinant is 3×2 − 4×1 = 2, so the inverse is (1/2)[2 −4; −1 3]. Multiplying: x = (2×10 − 4×4)/2 = 4/2 = 2, and y = (−1×10 + 3×4)/2 = 2/2 = 1. Check: 3(2) + 4(1) = 10. ✓the solution.",
        "viz": "solveLines",
-       "vizHint": "Drag the lines; the crossing point is the solution."
+       "vizHint": "The crossing point is the solution. Read it off.",
+       "vizParams": {
+        "reveal": false
+       }
       },
       {
        "id": "mx_solve_y",
@@ -266,7 +342,11 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "1",
        "explain": "y = 1, from (−1×10 + 3×4)/2 = 1. Both original equations check out: 3(2)+4(1) = 10 and 2 + 2(1) = 4.",
-       "viz": "solveLines"
+       "viz": "solveLines",
+       "vizHint": "Same crossing, the other coordinate.",
+       "vizParams": {
+        "reveal": false
+       }
       },
       {
        "id": "mx_singular_system",
@@ -281,7 +361,8 @@ window.QQ_DATA = {
        "answer": 1,
        "answerValue": "They are parallel — no solution, or the same line with infinitely many",
        "explain": "Zero determinant means the rows are multiples of each other, so the two lines have the same gradient. Either they never meet (no solutions) or they are the same line (infinitely many). Exactly one solution is precisely what a non-zero determinant guarantees.",
-       "viz": "solveLines"
+       "viz": "solveLines",
+       "vizHint": "Slide until the lines are parallel."
       }
      ]
     },
@@ -301,9 +382,9 @@ window.QQ_DATA = {
        ],
        "answer": 0,
        "answerValue": "[0 −1; 1 0]",
-       "explain": "Track where the basis vectors go. (1,0) must land on (0,1) and (0,1) on (−1,0) — and those images ARE the columns of the matrix. That trick answers every transformation-matrix question without memorising anything.",
+       "explain": "Track where the basis vectors go. (1,0) must land on (0,1) and (0,1) on (−1,0) — and those images ARE the columns of the matrix. That trick answers every transformation-matrix question without memorising anything.move.",
        "viz": "transformPlane",
-       "vizHint": "Drag the sliders and watch the shape move."
+       "vizHint": "Set the sliders so (1,0) lands on (0,1)."
       },
       {
        "id": "mx_reflect_det",
@@ -314,7 +395,15 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "-1",
        "explain": "1×(−1) − 0×0 = −1. Area is preserved (magnitude 1) but orientation is reversed (negative) — which is exactly what a reflection does.",
-       "viz": "transformPlane"
+       "viz": "detArea",
+       "vizHint": "This is the reflection matrix.",
+       "vizParams": {
+        "a": 1,
+        "b": 0,
+        "c": 0,
+        "d": -1,
+        "reveal": false
+       }
       },
       {
        "id": "mx_enlarge",
@@ -325,7 +414,15 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "9",
        "explain": "det = 9. Lengths triple, so areas go up by 3² = 9. In general a 2 × 2 matrix multiplies area by |det|, which is the cleanest way to remember what a determinant is FOR.",
-       "viz": "detArea"
+       "viz": "detArea",
+       "vizHint": "This is the enlargement. Compare the areas.",
+       "vizParams": {
+        "a": 3,
+        "b": 0,
+        "c": 0,
+        "d": 3,
+        "reveal": false
+       }
       },
       {
        "id": "mx_compose_order",
@@ -340,7 +437,8 @@ window.QQ_DATA = {
        "answer": 1,
        "answerValue": "FR",
        "explain": "FR — the one applied FIRST sits nearest the vector, on the right, because it acts on the vector first: F(Rv) = (FR)v. Reading composition left to right is the classic error, and it gives a different transformation whenever the two do not commute.",
-       "viz": "transformPlane"
+       "viz": "matCompose",
+       "vizHint": "Swap the order and watch the shape move."
       },
       {
        "id": "mx_shear_area",
@@ -351,7 +449,15 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "1",
        "explain": "1×1 − 4×0 = 1. A shear slides the plane sideways but preserves area entirely — the parallelogram leans over without getting bigger. Determinant 1 is the signature of that.",
-       "viz": "detArea"
+       "viz": "detArea",
+       "vizHint": "This is the shear. Does the area change?",
+       "vizParams": {
+        "a": 1,
+        "b": 4,
+        "c": 0,
+        "d": 1,
+        "reveal": false
+       }
       }
      ]
     },
@@ -367,8 +473,7 @@ window.QQ_DATA = {
        "answerNumber": 15,
        "tolerance": 0,
        "answerValue": "15",
-       "explain": "det(AB) = det(A)det(B) = 15. It follows from what determinants mean: apply one transformation that triples area, then one that quintuples it, and area is multiplied by 15. This identity is worth knowing cold — it turns many exam questions into one line.",
-       "viz": "detArea"
+       "explain": "det(AB) = det(A)det(B) = 15. It follows from what determinants mean: apply one transformation that triples area, then one that quintuples it, and area is multiplied by 15. This identity is worth knowing cold — it turns many exam questions into one line."
       },
       {
        "id": "mx_det_inverse",
@@ -389,7 +494,8 @@ window.QQ_DATA = {
        "tolerance": 0,
        "answerValue": "12",
        "explain": "Every entry doubles, so BOTH columns double, and area scales by 2 × 2 = 4. det(2A) = 4 × 3 = 12. For an n × n matrix the factor is kⁿ — a favourite exam trap, because the instinct is to say 6.",
-       "viz": "detArea"
+       "viz": "detArea",
+       "vizHint": "Double BOTH arrows and see what the area does."
       },
       {
        "id": "mx_lambda",
