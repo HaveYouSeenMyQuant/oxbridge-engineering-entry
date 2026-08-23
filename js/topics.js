@@ -107,7 +107,18 @@
     pool.forEach(function (r) { (byTopic[r.q.topic] = byTopic[r.q.topic] || []).push(r); });
     var topics = Object.keys(byTopic);
     topics.sort(function () { return Math.random() - 0.5; });
-    topics.forEach(function (t) {
+    /* SPREAD OVER A SUBSET, NOT ALL OF THEM.
+     *
+     * Taking one from every topic first looked right and made the weighting
+     * below dead code: there are 11 topics and a 10-question paper, so the
+     * spread filled it every time and the weighted fill never ran once. Eight
+     * samples all came back with exactly 10 distinct topics, which is how I
+     * noticed -- a real paper is not one question per topic in a neat row.
+     *
+     * Guaranteeing a spread over about half the topics keeps it genuinely
+     * mixed while leaving room for the weighting to favour examinable ones. */
+    var spread = Math.max(3, Math.floor(n * 0.6));
+    topics.slice(0, spread).forEach(function (t) {
       if (picked.length >= n) return;
       var bucket = byTopic[t];
       var r = bucket[Math.floor(Math.random() * bucket.length)];
