@@ -48,7 +48,11 @@
 
   /* ---------------------------------------------------------- quadRoots */
   global.QQViz.register('quadRoots', function (host, api) {
-    var a = 1, b = -5, c = 6;
+    /* Open on the question's own quadratic when it supplies one. */
+    var P = (api && api.params) || {};
+    var a = P.a != null ? P.a : 1,
+        b = P.b != null ? P.b : -5,
+        c = P.c != null ? P.c : 6;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.95);
@@ -160,7 +164,8 @@
 
   /* ---------------------------------------------------------- unitCircle */
   global.QQViz.register('unitCircle', function (host, api) {
-    var deg = 30;
+    var P = (api && api.params) || {};
+    var deg = P.deg != null ? P.deg : 30;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 1.0);
@@ -254,7 +259,9 @@
 
   /* ---------------------------------------------------------- projectile */
   global.QQViz.register('projectile', function (host, api) {
-    var ang = 30, u = 20, G = 10, t = 0, running = false;
+    var P = (api && api.params) || {};
+    var ang = P.ang != null ? P.ang : 30,
+        u = P.u != null ? P.u : 20, G = 10, t = 0, running = false;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.72);
@@ -300,7 +307,11 @@
 
   /* ---------------------------------------------------------- circuitLab */
   global.QQViz.register('circuitLab', function (host, api) {
-    var r1 = 3, r2 = 6, series = true, V = 12;
+    var P = (api && api.params) || {};
+    var r1 = P.r1 != null ? P.r1 : 3,
+        r2 = P.r2 != null ? P.r2 : 6,
+        series = P.series != null ? P.series : true,
+        V = P.V != null ? P.V : 12;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.6);

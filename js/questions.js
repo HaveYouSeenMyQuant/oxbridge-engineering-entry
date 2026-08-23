@@ -494,7 +494,12 @@ window.QQ_DATA = {
        "answerValue": "1",
        "explain": "The discriminant is 36 − 36 = 0, so there is one repeated root, x = 3. b² − 4ac decides it: positive gives two, zero gives one, negative gives none.",
        "viz": "quadRoots",
-       "vizHint": "Drag a, b and c. Watch where the curve meets the axis."
+       "vizHint": "Drag a, b and c. Watch where the curve meets the axis.",
+       "vizParams": {
+        "a": 1,
+        "b": -6,
+        "c": 9
+       }
       },
       {
        "id": "al_complete",
@@ -506,7 +511,12 @@ window.QQ_DATA = {
        "answerValue": "-13",
        "explain": "Half of 8 is 4, so (x+4)² = x² + 8x + 16, which overshoots by 13. Hence (x+4)² − 13 and q = −13. Completing the square hands you the minimum point directly: (−4, −13).",
        "viz": "quadRoots",
-       "vizHint": "The gold dot is the vertex."
+       "vizHint": "The gold dot is the vertex.",
+       "vizParams": {
+        "a": 1,
+        "b": 8,
+        "c": 3
+       }
       },
       {
        "id": "al_sum_roots",
@@ -528,7 +538,12 @@ window.QQ_DATA = {
        "answerValue": "6",
        "explain": "One root means the discriminant is zero: k² − 36 = 0, so k = ±6. The positive value is 6, giving (x+3)² = 0.",
        "viz": "quadRoots",
-       "vizHint": "Find the k that makes the two roots merge into one."
+       "vizHint": "Find the k that makes the two roots merge into one.",
+       "vizParams": {
+        "a": 1,
+        "b": 4,
+        "c": 9
+       }
       },
       {
        "id": "al_disc",
@@ -614,7 +629,12 @@ window.QQ_DATA = {
        "answerValue": "3",
        "explain": "The roots are 2 and 3, and a positive parabola is BELOW the axis strictly between its roots, so 2 < x < 3 and b = 3. Sketching beats sign tables here.",
        "viz": "quadRoots",
-       "vizHint": "Where is the curve below the axis?"
+       "vizHint": "Where is the curve below the axis?",
+       "vizParams": {
+        "a": 1,
+        "b": -5,
+        "c": 6
+       }
       },
       {
        "id": "al_ineq_flip",
@@ -672,7 +692,12 @@ window.QQ_DATA = {
        "answerValue": "2",
        "explain": "Setting them equal: x² − mx + 1 = 0. A tangent meets the curve exactly once, so the discriminant is zero: m² − 4 = 0 and m = ±2. The positive value is 2, touching at x = 1 where both give y = 1. Note the sign of the constant matters: with y = mx + 1 the discriminant is m² + 4, which is never zero, so that line always CROSSES the parabola twice.",
        "viz": "quadRoots",
-       "vizHint": "A tangent touches once — one repeated root."
+       "vizHint": "A tangent touches once — one repeated root.",
+       "vizParams": {
+        "a": 1,
+        "b": -2,
+        "c": 1
+       }
       },
       {
        "id": "al_exam_surd",
@@ -1273,7 +1298,10 @@ window.QQ_DATA = {
        "answerValue": "1",
        "explain": "Exactly 1, because at 45° the opposite and adjacent sides are equal. The exact values at 0, 30, 45, 60 and 90 are expected knowledge on a calculator-free paper.",
        "viz": "unitCircle",
-       "vizHint": "Drag to 45° and compare the two legs."
+       "vizHint": "Drag to 45° and compare the two legs.",
+       "vizParams": {
+        "deg": 45
+       }
       },
       {
        "id": "tr_sin_max",
@@ -1383,7 +1411,10 @@ window.QQ_DATA = {
        "answerValue": "2",
        "explain": "Two: x = 30° and x = 150°. Sine is positive in the first and second quadrants. Finding only the calculator's answer and stopping is the standard way to lose half the marks.",
        "viz": "unitCircle",
-       "vizHint": "Find every angle with the same height."
+       "vizHint": "Find every angle with the same height.",
+       "vizParams": {
+        "deg": 30
+       }
       },
       {
        "id": "tr_second_solution",
@@ -1395,7 +1426,10 @@ window.QQ_DATA = {
        "answerValue": "150",
        "explain": "180 − 30 = 150°. For sine the partner is 180 − x; for cosine it is 360 − x. Sketching the curve is more reliable than memorising which is which.",
        "viz": "unitCircle",
-       "vizHint": "Two angles share a sine. Find the other."
+       "vizHint": "Two angles share a sine. Find the other.",
+       "vizParams": {
+        "deg": 150
+       }
       },
       {
        "id": "tr_period",
@@ -2090,7 +2124,11 @@ window.QQ_DATA = {
        "answerValue": "2",
        "explain": "The vertical component is 20 sin30 = 10 m/s. Time up is 10/10 = 1 s, and the flight is symmetric, so 2 s in total. Splitting into horizontal and vertical is the whole method.",
        "viz": "projectile",
-       "vizHint": "Fire it. Watch the clock and the arc."
+       "vizHint": "Fire it. Watch the clock and the arc.",
+       "vizParams": {
+        "ang": 30,
+        "u": 20
+       }
       },
       {
        "id": "me_proj_height",
@@ -2102,7 +2140,11 @@ window.QQ_DATA = {
        "answerValue": "5",
        "explain": "Using v² = u² − 2gs with v = 0 vertically: s = 100/20 = 5 m. The horizontal motion has no effect on this at all — gravity acts only vertically.",
        "viz": "projectile",
-       "vizHint": "The apex of the arc."
+       "vizHint": "The apex of the arc.",
+       "vizParams": {
+        "ang": 30,
+        "u": 20
+       }
       },
       {
        "id": "me_proj_range",
@@ -2114,7 +2156,11 @@ window.QQ_DATA = {
        "answerValue": "35",
        "explain": "Horizontal speed 20 cos30 = 17.3 m/s, held for 2 s, gives 34.6 m, about 35 m. Equivalently R = u²sin(2θ)/g, which is greatest at 45°.",
        "viz": "projectile",
-       "vizHint": "Try 45° and compare."
+       "vizHint": "Try 45° and compare.",
+       "vizParams": {
+        "ang": 30,
+        "u": 20
+       }
       },
       {
        "id": "me_exam_energy",
@@ -2165,7 +2211,13 @@ window.QQ_DATA = {
        "answerValue": "4",
        "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing.",
        "viz": "circuitLab",
-       "vizHint": "I = V/R, live."
+       "vizHint": "I = V/R, live.",
+       "vizParams": {
+        "r1": 4,
+        "r2": 4,
+        "series": true,
+        "V": 12
+       }
       },
       {
        "id": "el_charge",
@@ -2223,7 +2275,12 @@ window.QQ_DATA = {
        "answerValue": "8",
        "explain": "In series resistances simply add: 8 Ω. The same current passes through both, and the voltages share out in proportion to the resistances.",
        "viz": "circuitLab",
-       "vizHint": "Switch between series and parallel."
+       "vizHint": "Switch between series and parallel.",
+       "vizParams": {
+        "r1": 3,
+        "r2": 5,
+        "series": true
+       }
       },
       {
        "id": "el_parallel",
@@ -2235,7 +2292,12 @@ window.QQ_DATA = {
        "answerValue": "3",
        "explain": "1/R = 1/6 + 1/6 = 1/3, so R = 3 Ω. Two EQUAL resistors in parallel always give half of one, which is a shortcut worth having.",
        "viz": "circuitLab",
-       "vizHint": "Two equal resistors in parallel."
+       "vizHint": "Two equal resistors in parallel.",
+       "vizParams": {
+        "r1": 6,
+        "r2": 6,
+        "series": false
+       }
       },
       {
        "id": "el_parallel_unequal",
@@ -2247,7 +2309,12 @@ window.QQ_DATA = {
        "answerValue": "2",
        "explain": "1/R = 1/3 + 1/6 = 1/2, so R = 2 Ω. Notice the total is smaller than EITHER branch — always true in parallel, and a useful sanity check.",
        "viz": "circuitLab",
-       "vizHint": "Set 3 and 6, then switch to parallel."
+       "vizHint": "Set 3 and 6, then switch to parallel.",
+       "vizParams": {
+        "r1": 3,
+        "r2": 6,
+        "series": false
+       }
       },
       {
        "id": "el_divider",

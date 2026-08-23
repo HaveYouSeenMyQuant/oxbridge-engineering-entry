@@ -806,6 +806,11 @@
     if (q.viz) play.viz = QQViz.mount(q.viz, vizHost, {
       regions: q.regions || null,
       data: D.vizData,
+      /* The question's own numbers, so a visual can OPEN on the case being
+       * asked about. Without this, quadRoots drew x² − 5x + 6 beside a question
+       * about x² − 6x + 9 — a student who trusts the picture is misled, and one
+       * who does not has learned to ignore it. Both are worse than no graphic. */
+      params: q.vizParams || {},
       locked: function () { return play.locked; },
       onInteract: function (kind) {
         if (!play.interacted) {
