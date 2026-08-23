@@ -3154,6 +3154,178 @@ window.QQ_DATA = {
        "explain": "The frequency is set by the source and does not change. The SPEED drops and the WAVELENGTH shortens in proportion, keeping v = fλ consistent. Assuming the wrong one of the three is fixed is the usual error here."
       }
      ]
+    },
+    {
+     "id": "w4",
+     "title": "Superposition and interference",
+     "questions": [
+      {
+       "id": "wa_super_add",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "Where a crest of one wave meets a crest of another, the displacements add.",
+       "statement": "Where a crest of one wave meets a crest of another, the displacements add.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Superposition says the resulting displacement is the sum of the individual displacements, at every instant. Crest plus crest gives a bigger crest (constructive); crest plus trough of equal size cancels to nothing (destructive). Nothing is destroyed - the waves pass through each other and carry on unchanged.",
+       "viz": "interfere",
+       "vizHint": "Slide the point and watch the crests meet."
+      },
+      {
+       "id": "wa_path_bright",
+       "type": "choice",
+       "topic": "waves",
+       "prompt": "Two loudspeakers play the same note in phase. At a point the path difference from the two speakers is exactly two wavelengths. What do you hear?",
+       "choices": [
+        "A loud spot - the waves arrive in phase",
+        "A quiet spot - the waves cancel",
+        "Nothing distinctive; path difference does not matter"
+       ],
+       "answer": 0,
+       "answerValue": "A loud spot - the waves arrive in phase",
+       "explain": "A path difference of a WHOLE number of wavelengths means one wave has slipped forward by complete cycles, so it arrives in step with the other. Crest meets crest: constructive, and loud. Whole numbers of wavelengths give maxima; odd numbers of half-wavelengths give minima.",
+       "viz": "interfere",
+       "vizHint": "Find a point two wavelengths further from one source.",
+       "vizParams": {
+        "lam": 1.0,
+        "d": 4,
+        "reveal": false
+       }
+      },
+      {
+       "id": "wa_path_quiet",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Two speakers 1 m apart play a 1700 Hz note in phase; sound travels at 340 m/s. What is the SMALLEST path difference, in metres, that gives a quiet spot?",
+       "answerNumber": 0.1,
+       "tolerance": 0.001,
+       "answerValue": "0.1",
+       "explain": "First the wavelength: lambda = v/f = 340/1700 = 0.2 m. A quiet spot needs the two waves to arrive exactly out of step, which is a path difference of half a wavelength (or one and a half, or two and a half). The smallest is lambda/2 = 0.1 m. Note the 1 m separation is not needed for this part - it sets where the quiet spots land, not what path difference creates them.",
+       "viz": "interfere",
+       "vizHint": "Hunt for the point where crest meets trough.",
+       "vizParams": {
+        "lam": 1.0,
+        "d": 4,
+        "reveal": false
+       }
+      },
+      {
+       "id": "wa_fringe",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "In a double-slit experiment the slits are 0.5 mm apart, the screen is 2.0 m away, and the light has wavelength 600 nm. What is the fringe spacing, in millimetres?",
+       "answerNumber": 2.4,
+       "tolerance": 0.05,
+       "answerValue": "2.4",
+       "explain": "Fringe spacing w = lambda D / s, with everything in metres: w = (600e-9 x 2.0) / (0.5e-3) = 1.2e-6 / 5e-4 = 2.4e-3 m = 2.4 mm. The mistake that costs the marks is mixing units - the nanometres and the millimetres both have to become metres first. Notice the fringes get WIDER if you move the screen back or push the slits closer together.",
+       "viz": "interfere",
+       "vizHint": "Push the sources together and watch the spacing.",
+       "vizParams": {
+        "lam": 0.8,
+        "d": 3,
+        "reveal": false
+       }
+      },
+      {
+       "id": "wa_coherent",
+       "type": "choice",
+       "topic": "waves",
+       "prompt": "Why does a double-slit pattern need the two slits to be lit by the SAME source?",
+       "choices": [
+        "So the two waves keep a constant phase relationship",
+        "So the two waves have equal amplitude",
+        "So the two slits are the same width"
+       ],
+       "answer": 0,
+       "answerValue": "So the two waves keep a constant phase relationship",
+       "explain": "The pattern is a map of path difference, and that map only stays still if the phase difference at the slits stays constant - which is what coherence means. Two independent lamps drift in phase at random, so the bright and dark spots would sweep about far faster than the eye can follow and average into uniform grey. Equal amplitude only affects how DEEP the dark fringes are, not whether the pattern exists.",
+       "viz": "interfere",
+       "vizHint": "The pattern only holds still if the sources keep in step."
+      }
+     ]
+    },
+    {
+     "id": "w5",
+     "title": "Standing waves and diffraction",
+     "questions": [
+      {
+       "id": "wa_fund_lambda",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "A string 2 m long is fixed at both ends and vibrates at its fundamental. What is the wavelength, in metres?",
+       "answerNumber": 4.0,
+       "tolerance": 0.01,
+       "answerValue": "4",
+       "explain": "Both ends are clamped, so both must be nodes. The fundamental is the simplest shape that does that: a single hump, which is HALF a wavelength. So L = lambda/2 and lambda = 2L = 4 m - longer than the string itself, which surprises people every time. In general lambda = 2L/n for the nth harmonic.",
+       "viz": "standWave",
+       "vizHint": "One hump is half a wavelength.",
+       "vizParams": {
+        "L": 2,
+        "n": 1,
+        "reveal": false
+       }
+      },
+      {
+       "id": "wa_third_harm",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "The same 2 m string, now vibrating in its third harmonic. What is the wavelength, in metres? Give two decimal places.",
+       "answerNumber": 1.3333,
+       "tolerance": 0.01,
+       "answerValue": "1.3333",
+       "explain": "The nth harmonic fits n half-wavelengths into the string, so lambda = 2L/n = 4/3 = 1.33 m. Counting the humps is the reliable way to do this under time pressure: three humps means three half-wavelengths across 2 m, so each half-wavelength is 0.667 m and a whole one is 1.33 m.",
+       "viz": "standWave",
+       "vizHint": "Step up to three humps and count.",
+       "vizParams": {
+        "L": 2,
+        "n": 3,
+        "reveal": false
+       }
+      },
+      {
+       "id": "wa_harm_freq",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "That string's fundamental is 120 Hz. What is the frequency of its third harmonic, in hertz?",
+       "answerNumber": 360.0,
+       "tolerance": 0.5,
+       "answerValue": "360",
+       "explain": "The wave speed along the string is fixed by its tension and mass, not by how you pluck it. Since v = f x lambda is constant and the third harmonic has one THIRD the wavelength, it must have three times the frequency: 3 x 120 = 360 Hz. Harmonics of a fixed string are whole-number multiples of the fundamental, which is exactly why it sounds musical.",
+       "viz": "standWave",
+       "vizHint": "Three times the humps, one third the wavelength.",
+       "vizParams": {
+        "L": 2,
+        "n": 3,
+        "reveal": false
+       }
+      },
+      {
+       "id": "wa_node_energy",
+       "type": "choice",
+       "topic": "waves",
+       "prompt": "What is different about a standing wave compared with a travelling wave?",
+       "choices": [
+        "It transfers no net energy along the string",
+        "It has no wavelength",
+        "Its frequency changes along the string"
+       ],
+       "answer": 0,
+       "answerValue": "It transfers no net energy along the string",
+       "explain": "A standing wave is two identical travelling waves going opposite ways, so the energy they carry cancels out and nothing is transported along the string - the energy just sloshes between kinetic and elastic in place. It certainly has a wavelength (the distance between alternate nodes is one whole one) and a single frequency everywhere.",
+       "viz": "standWave",
+       "vizHint": "Watch the green dots: they never move."
+      },
+      {
+       "id": "wa_grating",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Light of wavelength 550 nm hits a grating with 300 lines per millimetre. At what angle, in degrees, is the FIRST order maximum? Give one decimal place.",
+       "answerNumber": 9.5,
+       "tolerance": 0.15,
+       "answerValue": "9.5",
+       "explain": "The grating equation is d sin(theta) = n lambda. First get the slit spacing: 300 lines per mm is 300000 lines per metre, so d = 1/300000 = 3.33e-6 m. Then sin(theta) = n lambda / d = (1 x 550e-9)/3.33e-6 = 0.165, giving theta = 9.5 degrees. The per-millimetre-to-per-metre step is where most of the lost marks are."
+      }
+     ]
     }
    ]
   },
