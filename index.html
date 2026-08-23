@@ -298,5 +298,11 @@
 <script src="js/app.js?v=9944b8c0"></script>
 <!-- browse by topic; loads after app.js because it calls QQApp.openLesson -->
 <script src="js/topics.js?v=9944b8c0"></script>
+<!-- the answers archive for THIS channel only: build_answers.py --account
+     reeltest. Somebody arriving from an engineering reel must find the answer
+     to the video they just watched, not a list from the other account.
+     Loaded after app.js so its router wins on a deep link. -->
+<script src="js/answers.js?v=9944b8c0"></script>
+<script src="js/answers_ui.js?v=9944b8c0"></script>
 </body>
 </html>
