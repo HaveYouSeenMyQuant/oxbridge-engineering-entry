@@ -98,7 +98,13 @@
      * unmeasurable -- the two failures reinforcing each other, since the mixed
      * numbers would still look plausible. Read from QQ_DATA so the tag cannot
      * drift from the bank it describes. */
-    props.site = (global.QQ_DATA && global.QQ_DATA.site) || 'unknown';
+    /* This file ships only on the engineering site, so the fallback is that
+     * site -- NOT 'unknown'. analytics.js loads BEFORE questions.js, so the
+     * earliest events of every visit (arrived, entry_path_chosen) fire while
+     * QQ_DATA does not exist yet. With 'unknown' as the fallback those events
+     * landed in a third bucket and the arrival count for this site was wrong
+     * from its first day: 10 events across 6 sessions went missing. */
+    props.site = (global.QQ_DATA && global.QQ_DATA.site) || 'engineering-entrance';
     /* The auth user id when there is a session, so a signed-in player's funnel
      * joins to their profile. Guarded: analytics loads before auth and must keep
      * working if that module is ever removed. */
