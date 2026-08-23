@@ -1349,6 +1349,118 @@ window.QQ_DATA = {
        "explain": "Zero, because x³ is an odd function and the negative area from −2 to 0 exactly cancels the positive area from 0 to 2. The AREA, though, is 8 — which is what the question would ask for if it wanted a non-zero answer. Spotting odd symmetry saves the whole calculation."
       }
      ]
+    },
+    {
+     "id": "i4",
+     "title": "Harder integrals",
+     "questions": [
+      {
+       "id": "in_poly_sum",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Evaluate ∫ from 0 to 2 of (3x² + 2x) dx.",
+       "answerNumber": 12,
+       "tolerance": 0.001,
+       "answerValue": "12",
+       "explain": "[x³ + x²] from 0 to 2 = 8 + 4 = 12. Integrate term by term and substitute the limits once, at the end — substituting into each term separately is where the arithmetic goes wrong."
+      },
+      {
+       "id": "in_neg_power_def",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Evaluate ∫ from 1 to 3 of x⁻² dx. The answer is k/3. What is k?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "∫x⁻²dx = −x⁻¹, so [−1/x] from 1 to 3 = −1/3 + 1 = 2/3, giving k = 2. The power rule handles every index except −1."
+      },
+      {
+       "id": "in_area_parabola",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Find the area between y = 4 − x² and the x-axis. The answer is k/3. What is k?",
+       "answerNumber": 32,
+       "tolerance": 0.5,
+       "answerValue": "32",
+       "explain": "The curve meets the axis at x = ±2, and ∫(4 − x²)dx from −2 to 2 = [4x − x³/3] = 32/3. Finding the limits by solving y = 0 first is the step people skip."
+      },
+      {
+       "id": "in_trig_def",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Evaluate ∫ from 0 to π/2 of sin x dx.",
+       "answerNumber": 1,
+       "tolerance": 0.001,
+       "answerValue": "1",
+       "explain": "[−cos x] from 0 to π/2 = 0 + 1 = 1. Integrating sine gives MINUS cosine, and the minus sign is the single most dropped one in the topic."
+      },
+      {
+       "id": "in_mean_parabola",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "What is the mean value of y = 4 − x² between x = −2 and x = 2? The answer is k/3. What is k?",
+       "answerNumber": 8,
+       "tolerance": 0.5,
+       "answerValue": "8",
+       "explain": "Mean = (1/4) × 32/3 = 8/3, so k = 8. The mean value is the height of the rectangle with the same area over the same width — worth picturing rather than memorising."
+      }
+     ]
+    },
+    {
+     "id": "i5",
+     "title": "Volumes, numerical methods and exam problems",
+     "questions": [
+      {
+       "id": "in_volume_root",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "y = √x is rotated about the x-axis from 0 to 4. The volume is kπ. What is k?",
+       "answerNumber": 8,
+       "tolerance": 0.01,
+       "answerValue": "8",
+       "explain": "V = π∫y²dx = π∫x dx from 0 to 4 = π[x²/2] = 8π, so k = 8. Rotating squares the function, which is why √x becomes an easy integral the moment you set it up."
+      },
+      {
+       "id": "in_trapezium",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Use the trapezium rule with 4 strips to estimate ∫ from 0 to 2 of x² dx. Give your answer as a decimal.",
+       "answerNumber": 2.75,
+       "tolerance": 0.001,
+       "answerValue": "2.75",
+       "explain": "h = 0.5, so T = (h/2)[f(0) + 2(f(0.5)+f(1)+f(1.5)) + f(2)] = 0.25[0 + 2(0.25+1+2.25) + 4] = 2.75. The exact value is 2.667, so the estimate is HIGH — always the case for a curve that bends upward, because the chords sit above it."
+      },
+      {
+       "id": "in_trap_over",
+       "type": "truefalse",
+       "topic": "integration",
+       "prompt": "The trapezium rule overestimates the area under a curve that bends upward.",
+       "statement": "The trapezium rule overestimates the area under a curve that bends upward.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "The straight chord joining two points on a convex curve lies above the curve, so every strip is too big. Knowing the DIRECTION of the error is often worth a mark on its own, and it takes one sketch."
+      },
+      {
+       "id": "in_between_curves",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Find the area between y = x² and y = 2x. The answer is k/3. What is k?",
+       "answerNumber": 4,
+       "tolerance": 0.5,
+       "answerValue": "4",
+       "explain": "They meet where x² = 2x, at x = 0 and x = 2. ∫(2x − x²)dx = [x² − x³/3] from 0 to 2 = 4 − 8/3 = 4/3, so k = 4. Upper curve minus lower, and find the crossings first."
+      },
+      {
+       "id": "in_exam_displacement",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "A particle has velocity v = 6t − 3t². At what time after t = 0 does it return to its starting point?",
+       "answerNumber": 3,
+       "tolerance": 0.01,
+       "answerValue": "3",
+       "explain": "Displacement is ∫v dt = 3t² − t³, which is zero when t²(3 − t) = 0, so t = 3. Note the particle turns round at t = 2, where v = 0, and only gets back to the start at t = 3 — displacement zero does not mean it never moved."
+      }
+     ]
     }
    ]
   },
