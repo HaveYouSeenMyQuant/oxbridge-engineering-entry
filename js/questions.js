@@ -1828,7 +1828,14 @@ window.QQ_DATA = {
        "answerNumber": 5.0,
        "tolerance": 0.001,
        "answerValue": "5",
-       "explain": "2⁵ = 32, so the answer is 5. A logarithm answers the question 'what power do I raise the base to?' — nothing more mysterious than that."
+       "explain": "2⁵ = 32, so the answer is 5. A logarithm answers the question 'what power do I raise the base to?' — nothing more mysterious than that.",
+       "viz": "powerLadder",
+       "vizHint": "Slide the power and watch the value.",
+       "vizParams": {
+        "base": 2,
+        "x": 5,
+        "reveal": false
+       }
       },
       {
        "id": "lg_log10",
@@ -1838,7 +1845,14 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0.001,
        "answerValue": "3",
-       "explain": "10³ = 1000, so 3. Base-10 logs count the digits, roughly, which is why they are used for decibels and pH."
+       "explain": "10³ = 1000, so 3. Base-10 logs count the digits, roughly, which is why they are used for decibels and pH.",
+       "viz": "powerLadder",
+       "vizHint": "Same ladder, base ten.",
+       "vizParams": {
+        "base": 10,
+        "x": 3,
+        "reveal": false
+       }
       },
       {
        "id": "lg_ln",
@@ -1858,7 +1872,13 @@ window.QQ_DATA = {
        "answerNumber": 0,
        "tolerance": 0,
        "answerValue": "0",
-       "explain": "Zero, because 5⁰ = 1. The log of 1 is zero in EVERY base, which is worth knowing as an instant answer."
+       "explain": "Zero, because 5⁰ = 1. The log of 1 is zero in EVERY base, which is worth knowing as an instant answer.",
+       "viz": "powerLadder",
+       "vizHint": "What power gives one?",
+       "vizParams": {
+        "base": 5,
+        "x": 0
+       }
       },
       {
        "id": "lg_log_neg",
@@ -1904,7 +1924,13 @@ window.QQ_DATA = {
        "answerNumber": 8,
        "tolerance": 0,
        "answerValue": "8",
-       "explain": "The power comes out in front: 4 log₃9 = 4 × 2 = 8. This rule is what lets you solve equations with the unknown in the exponent."
+       "explain": "The power comes out in front: 4 log₃9 = 4 × 2 = 8. This rule is what lets you solve equations with the unknown in the exponent.",
+       "viz": "powerLadder",
+       "vizHint": "Watch what happens to the position when you square the value.",
+       "vizParams": {
+        "base": 3,
+        "x": 2
+       }
       },
       {
        "id": "lg_solve_exp",
@@ -1914,7 +1940,14 @@ window.QQ_DATA = {
        "answerNumber": 4.321928094887363,
        "tolerance": 0.002,
        "answerValue": "4.32193",
-       "explain": "x = log₂20 = ln20/ln2 = 4.322. Taking logs of both sides is the standard move whenever the unknown is upstairs."
+       "explain": "x = log₂20 = ln20/ln2 = 4.322. Taking logs of both sides is the standard move whenever the unknown is upstairs.",
+       "viz": "powerLadder",
+       "vizHint": "Find the power that lands nearest twenty.",
+       "vizParams": {
+        "base": 2,
+        "x": 4,
+        "reveal": false
+       }
       },
       {
        "id": "lg_change_base",
@@ -1924,7 +1957,14 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0.001,
        "answerValue": "3",
-       "explain": "log₄64 = ln64/ln4 = 3, since 4³ = 64. Change of base lets a calculator with only ln and log₁₀ handle any base at all."
+       "explain": "log₄64 = ln64/ln4 = 3, since 4³ = 64. Change of base lets a calculator with only ln and log₁₀ handle any base at all.",
+       "viz": "powerLadder",
+       "vizHint": "Base four this time.",
+       "vizParams": {
+        "base": 4,
+        "x": 3,
+        "reveal": false
+       }
       }
      ]
     },
@@ -1960,7 +2000,13 @@ window.QQ_DATA = {
        "answerNumber": 16,
        "tolerance": 0,
        "answerValue": "16",
-       "explain": "(1/2)⁴ = 1/16, so k = 16. Each half-life multiplies what is left by a half, regardless of how much there was."
+       "explain": "(1/2)⁴ = 1/16, so k = 16. Each half-life multiplies what is left by a half, regardless of how much there was.",
+       "viz": "powerLadder",
+       "vizHint": "Halving is just a negative power of two.",
+       "vizParams": {
+        "base": 2,
+        "x": 4
+       }
       },
       {
        "id": "lg_exam_solve",
@@ -2586,7 +2632,14 @@ window.QQ_DATA = {
        "answerNumber": 300,
        "tolerance": 0,
        "answerValue": "300",
-       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two."
+       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two.",
+       "viz": "waveLab",
+       "vizHint": "Change one and see what the speed does.",
+       "vizParams": {
+        "f": 2,
+        "lam": 3,
+        "reveal": false
+       }
       },
       {
        "id": "wa_period",
@@ -2596,7 +2649,13 @@ window.QQ_DATA = {
        "answerNumber": 5.0,
        "tolerance": 0.001,
        "answerValue": "5",
-       "explain": "T = 1/f = 0.005 s = 5 ms. Period and frequency are reciprocals: one is seconds per cycle, the other cycles per second."
+       "explain": "T = 1/f = 0.005 s = 5 ms. Period and frequency are reciprocals: one is seconds per cycle, the other cycles per second.",
+       "viz": "waveLab",
+       "vizHint": "Count the crests going past.",
+       "vizParams": {
+        "f": 4,
+        "lam": 2
+       }
       },
       {
        "id": "wa_wavelength",
@@ -2606,7 +2665,14 @@ window.QQ_DATA = {
        "answerNumber": 2.0,
        "tolerance": 0.001,
        "answerValue": "2",
-       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not."
+       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not.",
+       "viz": "waveLab",
+       "vizHint": "Hold the speed and stretch the wave.",
+       "vizParams": {
+        "f": 2,
+        "lam": 4,
+        "reveal": false
+       }
       },
       {
        "id": "wa_transverse",
@@ -2626,7 +2692,13 @@ window.QQ_DATA = {
        "answerNumber": 600.0,
        "tolerance": 0.5,
        "answerValue": "600",
-       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head."
+       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head.",
+       "viz": "waveLab",
+       "vizHint": "The same relationship, at light speed.",
+       "vizParams": {
+        "f": 5,
+        "lam": 1
+       }
       }
      ]
     },
@@ -2642,7 +2714,14 @@ window.QQ_DATA = {
        "answerNumber": 19,
        "tolerance": 0.6,
        "answerValue": "19",
-       "explain": "n₁sinθ₁ = n₂sinθ₂, so sinθ₂ = 0.5/1.5 = 0.333 and θ₂ = 19°. Light entering a denser medium bends TOWARD the normal, and the angle is always measured from the normal, never from the surface."
+       "explain": "n₁sinθ₁ = n₂sinθ₂, so sinθ₂ = 0.5/1.5 = 0.333 and θ₂ = 19°. Light entering a denser medium bends TOWARD the normal, and the angle is always measured from the normal, never from the surface.",
+       "viz": "refractBend",
+       "vizHint": "Drag the incoming ray and watch it bend.",
+       "vizParams": {
+        "n": 1.5,
+        "deg": 30,
+        "reveal": false
+       }
       },
       {
        "id": "wa_critical",
@@ -2652,7 +2731,15 @@ window.QQ_DATA = {
        "answerNumber": 42,
        "tolerance": 0.6,
        "answerValue": "42",
-       "explain": "sinC = 1/n = 0.667, so C = 42°. Beyond this angle light is totally internally reflected, which is exactly how optical fibres keep a signal inside the glass."
+       "explain": "sinC = 1/n = 0.667, so C = 42°. Beyond this angle light is totally internally reflected, which is exactly how optical fibres keep a signal inside the glass.",
+       "viz": "refractBend",
+       "vizHint": "Coming OUT of the glass. Find the angle where it stops escaping.",
+       "vizParams": {
+        "n": 1.5,
+        "deg": 30,
+        "fromDense": true,
+        "reveal": false
+       }
       },
       {
        "id": "wa_tir_direction",
@@ -2662,7 +2749,14 @@ window.QQ_DATA = {
        "statement": "Total internal reflection can happen when light passes from air into glass.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "Only going from denser to less dense — glass to air, not air to glass. Light entering a denser medium bends toward the normal and can always get in."
+       "explain": "Only going from denser to less dense — glass to air, not air to glass. Light entering a denser medium bends toward the normal and can always get in.",
+       "viz": "refractBend",
+       "vizHint": "Try it both ways round.",
+       "vizParams": {
+        "n": 1.5,
+        "deg": 50,
+        "fromDense": true
+       }
       },
       {
        "id": "wa_speed_glass",
@@ -2682,7 +2776,13 @@ window.QQ_DATA = {
        "answerNumber": 25,
        "tolerance": 0,
        "answerValue": "25",
-       "explain": "The angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°."
+       "explain": "The angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°.",
+       "viz": "refractBend",
+       "vizHint": "Watch the angles either side of the normal.",
+       "vizParams": {
+        "n": 1.5,
+        "deg": 25
+       }
       }
      ]
     },
@@ -2765,7 +2865,14 @@ window.QQ_DATA = {
        "answerNumber": 7,
        "tolerance": 0,
        "answerValue": "7",
-       "explain": "365 × 24 × 3600 ≈ 3.15×10⁷, so n = 7. Physicists round this to 'about π×10⁷ seconds', which is accurate to half a per cent and genuinely worth remembering."
+       "explain": "365 × 24 × 3600 ≈ 3.15×10⁷, so n = 7. Physicists round this to 'about π×10⁷ seconds', which is accurate to half a per cent and genuinely worth remembering.",
+       "viz": "magnitudeLine",
+       "vizHint": "Which decade does a year of seconds land in?",
+       "vizParams": {
+        "lo": 0,
+        "hi": 12,
+        "pick": 5
+       }
       },
       {
        "id": "es_breaths",
@@ -2775,7 +2882,14 @@ window.QQ_DATA = {
        "answerNumber": 4,
        "tolerance": 0,
        "answerValue": "4",
-       "explain": "15 × 60 × 24 = 21,600, so about 10⁴. In estimation you carry one significant figure and the exponent; carrying more is false precision."
+       "explain": "15 × 60 × 24 = 21,600, so about 10⁴. In estimation you carry one significant figure and the exponent; carrying more is false precision.",
+       "viz": "magnitudeLine",
+       "vizHint": "Slide to your estimate.",
+       "vizParams": {
+        "lo": 0,
+        "hi": 9,
+        "pick": 3
+       }
       },
       {
        "id": "es_person_volume",
@@ -2799,7 +2913,9 @@ window.QQ_DATA = {
        ],
        "answer": 1,
        "answerValue": "Getting the right power of ten with a defensible method",
-       "explain": "The examiner is testing whether you can break a problem into pieces you can each guess to within a factor of two or three. Errors partly cancel, and the order of magnitude survives. State your assumptions — they earn the marks."
+       "explain": "The examiner is testing whether you can break a problem into pieces you can each guess to within a factor of two or three. Errors partly cancel, and the order of magnitude survives. State your assumptions — they earn the marks.",
+       "viz": "magnitudeLine",
+       "vizHint": "Each step is a factor of ten."
       },
       {
        "id": "es_sig_figs",
@@ -2835,7 +2951,14 @@ window.QQ_DATA = {
        "answerNumber": 9,
        "tolerance": 0,
        "answerValue": "9",
-       "explain": "70 × 60 × 24 × 365 × 80 ≈ 2.9×10⁹, so about 10⁹ — three billion. Chain the conversions one at a time and the arithmetic stays manageable."
+       "explain": "70 × 60 × 24 × 365 × 80 ≈ 2.9×10⁹, so about 10⁹ — three billion. Chain the conversions one at a time and the arithmetic stays manageable.",
+       "viz": "magnitudeLine",
+       "vizHint": "A lifetime of beats.",
+       "vizParams": {
+        "lo": 0,
+        "hi": 12,
+        "pick": 6
+       }
       },
       {
        "id": "es_hair",
@@ -2845,7 +2968,14 @@ window.QQ_DATA = {
        "answerNumber": 5,
        "tolerance": 0,
        "answerValue": "5",
-       "explain": "About 100,000, so 10⁵. You can bound it: a head is roughly 0.05 m² and hairs sit about a millimetre or two apart, giving 10⁴ to 10⁵ — and that bounding argument is what earns credit, not the recalled figure."
+       "explain": "About 100,000, so 10⁵. You can bound it: a head is roughly 0.05 m² and hairs sit about a millimetre or two apart, giving 10⁴ to 10⁵ — and that bounding argument is what earns credit, not the recalled figure.",
+       "viz": "magnitudeLine",
+       "vizHint": "Bound it from above and below first.",
+       "vizParams": {
+        "lo": 0,
+        "hi": 9,
+        "pick": 3
+       }
       },
       {
        "id": "es_piano",
@@ -2855,7 +2985,14 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0,
        "answerValue": "3",
-       "explain": "1,000,000/3 ≈ 330,000 households, one per cent of which is about 3,300 — so 10³. This is the original Fermi problem, and the method is always the same: split it into factors you can each estimate."
+       "explain": "1,000,000/3 ≈ 330,000 households, one per cent of which is about 3,300 — so 10³. This is the original Fermi problem, and the method is always the same: split it into factors you can each estimate.",
+       "viz": "magnitudeLine",
+       "vizHint": "Split it into factors you can each guess.",
+       "vizParams": {
+        "lo": 0,
+        "hi": 9,
+        "pick": 2
+       }
       },
       {
        "id": "es_check",
