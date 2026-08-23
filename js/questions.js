@@ -2400,9 +2400,7 @@ window.QQ_DATA = {
        "answerNumber": 1.386,
        "tolerance": 0.005,
        "answerValue": "1.386",
-       "explain": "Divide first: e^(2x) = 16. Then take natural logs of both sides, which is what undoes e: 2x = ln 16, so x = ln(16)/2 = 2.7726/2 = 1.386. Neatly, ln 16 = 4 ln 2, so x = 2 ln 2 exactly. Dividing by the 3 BEFORE taking logs matters; ln(3e^(2x)) is not 3 + 2x.",
-       "viz": "powerLadder",
-       "vizHint": "Divide by the 3 before you take logs."
+       "explain": "Divide first: e^(2x) = 16. Then take natural logs of both sides, which is what undoes e: 2x = ln 16, so x = ln(16)/2 = 2.7726/2 = 1.386. Neatly, ln 16 = 4 ln 2, so x = 2 ln 2 exactly. Dividing by the 3 BEFORE taking logs matters; ln(3e^(2x)) is not 3 + 2x."
       },
       {
        "id": "lg_doubling",
