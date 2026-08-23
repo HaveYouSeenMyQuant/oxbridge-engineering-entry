@@ -42,7 +42,7 @@ window.QQ_DATA = {
        "answerValue": "3 × 2",
        "explain": "Order is always rows first, then columns — 3 × 2 here. It is worth being fussy about this from the start, because whether two matrices can be multiplied at all is decided entirely by their orders.",
        "viz": "matGrid",
-       "vizHint": "Add and remove rows and columns. The readout names the order."
+       "vizHint": "Build a 3 × 2 and see which way round it goes."
       },
       {
        "id": "mx_entry",
@@ -54,7 +54,7 @@ window.QQ_DATA = {
        "answerValue": "3",
        "explain": "Row 2, column 1 is 3. The subscripts are row-then-column, the same order as the matrix's own dimensions. Reading them the other way round is the commonest slip in the whole topic.",
        "viz": "matGrid",
-       "vizHint": "Tap an entry to see its address."
+       "vizHint": "Row first, then column — the same order as the matrix's own dimensions."
       },
       {
        "id": "mx_add",
