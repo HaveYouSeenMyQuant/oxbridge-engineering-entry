@@ -2278,6 +2278,204 @@ window.QQ_DATA = {
        "explain": "At x = 0, 2⁰ = 1, so y = 3. Every exponential y = A·bˣ crosses the y-axis at A, which makes A readable straight off a sketch."
       }
      ]
+    },
+    {
+     "id": "lg4",
+     "title": "Straightening a curve with logs",
+     "questions": [
+      {
+       "id": "lg_loglog_axes",
+       "type": "choice",
+       "topic": "logs",
+       "prompt": "You suspect data follows y = a x^n. Which axes should you plot to get a straight line?",
+       "choices": [
+        "lg y against lg x",
+        "ln y against x",
+        "y against lg x"
+       ],
+       "answer": 0,
+       "answerValue": "lg y against lg x",
+       "explain": "Take logs of both sides: lg y = lg a + n lg x. Compare that with Y = mX + c and it is a straight line when you plot Y = lg y against X = lg x. A POWER law straightens on log-log axes; an EXPONENTIAL straightens on log-linear. Which of the two you are looking at is the first decision, and it decides everything after.",
+       "viz": "logPlot",
+       "vizHint": "Try each pair of axes and see which one straightens.",
+       "vizParams": {
+        "kind": "power",
+        "a": 3,
+        "n": 2,
+        "mode": "linear",
+        "reveal": false
+       }
+      },
+      {
+       "id": "lg_loglog_grad",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "On a plot of lg y against lg x the data lie on a straight line of gradient 2. In the law y = a x^n, what is n?",
+       "answerNumber": 2.0,
+       "tolerance": 0.01,
+       "answerValue": "2",
+       "explain": "Since lg y = n lg x + lg a, the gradient of the straight line IS the power n, so n = 2. This is the whole point of the technique: an awkward power hiding inside curved data becomes a gradient you can measure with a ruler. The intercept, meanwhile, is lg a rather than a itself.",
+       "viz": "logPlot",
+       "vizHint": "Switch to log-log and read the gradient.",
+       "vizParams": {
+        "kind": "power",
+        "a": 3,
+        "n": 2,
+        "mode": "loglog",
+        "reveal": false
+       }
+      },
+      {
+       "id": "lg_loglog_intercept",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "That same log-log line has intercept 0.477 on the lg y axis. What is a in y = a x^n? Give a whole number.",
+       "answerNumber": 3.0,
+       "tolerance": 0.05,
+       "answerValue": "3",
+       "explain": "The intercept is lg a, not a. So a = 10^0.477 = 3. Forgetting to undo the logarithm at the end is the single most common way to drop the marks on this kind of question: the gradient gives you n directly, but the intercept always needs raising back through the base.",
+       "viz": "logPlot",
+       "vizHint": "The intercept is lg a, not a.",
+       "vizParams": {
+        "kind": "power",
+        "a": 3,
+        "n": 2,
+        "mode": "loglog",
+        "reveal": false
+       }
+      },
+      {
+       "id": "lg_loglog_two_points",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "Two data points are (x, y) = (2, 12) and (8, 192). Assuming y = a x^n, what is n?",
+       "answerNumber": 2.0,
+       "tolerance": 0.02,
+       "answerValue": "2",
+       "explain": "The gradient on log-log axes is (lg 192 - lg 12) / (lg 8 - lg 2) = (2.283 - 1.079) / (0.903 - 0.301) = 1.204/0.602 = 2. You can also see it without logs: x went up by a factor of 4 and y by a factor of 16, and 16 = 4 squared, so n = 2. Both routes are worth having, because the second is much faster when the factors are clean.",
+       "viz": "logPlot",
+       "vizHint": "Four times the x, sixteen times the y.",
+       "vizParams": {
+        "kind": "power",
+        "a": 3,
+        "n": 2,
+        "mode": "loglog",
+        "reveal": false
+       }
+      },
+      {
+       "id": "lg_loglin_axes",
+       "type": "choice",
+       "topic": "logs",
+       "prompt": "Radioactive counts fall as N = N0 e^(-kt). Which plot gives a straight line, and what is its gradient?",
+       "choices": [
+        "ln N against t, gradient -k",
+        "lg N against lg t, gradient -k",
+        "N against ln t, gradient -k"
+       ],
+       "answer": 0,
+       "answerValue": "ln N against t, gradient -k",
+       "explain": "Taking natural logs: ln N = ln N0 - k t. That is straight when ln N is plotted against t (not against ln t), with gradient -k and intercept ln N0. Natural logs are the natural choice here because the law is written with e; using lg would still straighten it, but the gradient would come out as -k/ln(10) and that extra factor is easy to forget.",
+       "viz": "logPlot",
+       "vizHint": "An exponential straightens on DIFFERENT axes from a power law.",
+       "vizParams": {
+        "kind": "exp",
+        "A": 5,
+        "k": 0.4,
+        "mode": "linear",
+        "reveal": false
+       }
+      }
+     ]
+    },
+    {
+     "id": "lg5",
+     "title": "Natural logs and rates of change",
+     "questions": [
+      {
+       "id": "lg_ln_solve",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "Solve 3e^(2x) = 48. What is x? Give three decimal places.",
+       "answerNumber": 1.386,
+       "tolerance": 0.005,
+       "answerValue": "1.386",
+       "explain": "Divide first: e^(2x) = 16. Then take natural logs of both sides, which is what undoes e: 2x = ln 16, so x = ln(16)/2 = 2.7726/2 = 1.386. Neatly, ln 16 = 4 ln 2, so x = 2 ln 2 exactly. Dividing by the 3 BEFORE taking logs matters; ln(3e^(2x)) is not 3 + 2x.",
+       "viz": "powerLadder",
+       "vizHint": "Divide by the 3 before you take logs."
+      },
+      {
+       "id": "lg_doubling",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "A population grows as P = P0 e^(0.4t) with t in years. How long does it take to double? Give three decimal places.",
+       "answerNumber": 1.733,
+       "tolerance": 0.005,
+       "answerValue": "1.733",
+       "explain": "Doubling means P/P0 = 2, so e^(0.4t) = 2 and 0.4t = ln 2, giving t = ln(2)/0.4 = 0.6931/0.4 = 1.733 years. Note that P0 cancels: the doubling time does not depend on how many you started with, which is what exponential growth MEANS. The same algebra with a minus sign gives half-life = ln(2)/k.",
+       "viz": "logPlot",
+       "vizHint": "Log-linear axes turn the rate into a gradient.",
+       "vizParams": {
+        "kind": "exp",
+        "A": 5,
+        "k": 0.4,
+        "mode": "loglin",
+        "reveal": false
+       }
+      },
+      {
+       "id": "lg_halflife_k",
+       "type": "number",
+       "topic": "logs",
+       "prompt": "A decay has constant k = 0.05 per year in N = N0 e^(-kt). What is the half-life, in years? Give two decimal places.",
+       "answerNumber": 13.86,
+       "tolerance": 0.03,
+       "answerValue": "13.86",
+       "explain": "Half-life = ln(2)/k = 0.6931/0.05 = 13.86 years. Worth committing to memory in that form, because papers hand you either k or the half-life and expect the other back without working. The two are reciprocally related: double the decay constant and the half-life halves.",
+       "viz": "logPlot",
+       "vizHint": "Half-life and decay constant are reciprocally tied.",
+       "vizParams": {
+        "kind": "exp",
+        "A": 5,
+        "k": 0.4,
+        "mode": "loglin",
+        "reveal": false
+       }
+      },
+      {
+       "id": "lg_ln_gradient",
+       "type": "truefalse",
+       "topic": "logs",
+       "prompt": "For y = e^x, the gradient at any point equals the value of y there.",
+       "statement": "For y = e^x, the gradient at any point equals the value of y there.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Differentiating e^x gives e^x, so at every point the gradient and the height are the same number. That is the property that singles e out from every other base, and it is why e appears in growth and decay at all: it is the base for which the rate of change is proportional to the amount present, which is exactly what those situations describe."
+      },
+      {
+       "id": "lg_exam_rate",
+       "type": "choice",
+       "topic": "logs",
+       "prompt": "A quantity obeys dy/dt = 0.2y. What does that tell you about y?",
+       "choices": [
+        "It grows exponentially, y = y0 e^(0.2t)",
+        "It grows linearly, at 0.2 per unit time",
+        "It approaches a limit of 0.2"
+       ],
+       "answer": 0,
+       "answerValue": "It grows exponentially, y = y0 e^(0.2t)",
+       "explain": "The rate of change being PROPORTIONAL to the amount present is the defining equation of exponential growth, and its solution is y = y0 e^(0.2t). Linear growth would be dy/dt = constant, with no y on the right. Recognising this equation on sight is what lets you write the answer down instead of solving anything.",
+       "viz": "logPlot",
+       "vizHint": "Proportional rate of change means exponential.",
+       "vizParams": {
+        "kind": "exp",
+        "A": 5,
+        "k": 0.4,
+        "mode": "linear",
+        "reveal": false
+       }
+      }
+     ]
     }
    ]
   },

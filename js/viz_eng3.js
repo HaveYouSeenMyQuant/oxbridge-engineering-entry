@@ -143,4 +143,97 @@
     };
     return { destroy: stage.destroy };
   });
+
+  /* ------------------------------------------------------------- logPlot --
+   * The exam skill is not "what is a log", it is: given data that curves,
+   * which axes straighten it, and what do the gradient and intercept then
+   * MEAN. So this plots the same data three ways -- linear, log-log and
+   * log-linear -- and lets you switch. A power law straightens on log-log; an
+   * exponential straightens on log-linear. Seeing one curve and the other
+   * straighten, on the same points, is the entire lesson.
+   */
+  global.QQViz.register('logPlot', function (host, api) {
+    var P = (api && api.params) || {};
+    var kind = P.kind || 'power';        // 'power': y = a x^n, 'exp': y = A e^kx
+    var a = P.a != null ? P.a : 3, n = P.n != null ? P.n : 2;
+    var A = P.A != null ? P.A : 5, k = P.k != null ? P.k : 0.4;
+    var reveal = P.reveal !== false;
+    var mode = P.mode || 'linear';
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.80);
+    button(row, 'linear axes', function () { mode = 'linear'; api.onInteract('axes'); say(); });
+    button(row, 'log-log', function () { mode = 'loglog'; api.onInteract('axes'); say(); });
+    button(row, 'log-linear', function () { mode = 'loglin'; api.onInteract('axes'); say(); });
+
+    function pts() {
+      var o = [], i;
+      for (i = 1; i <= 10; i++) {
+        o.push({ x: i, y: kind === 'power' ? a * Math.pow(i, n) : A * Math.exp(k * i) });
+      }
+      return o;
+    }
+    /* the transformed coordinates for the chosen axes */
+    function tx(p) {
+      if (mode === 'loglog') return { x: Math.log10(p.x), y: Math.log10(p.y) };
+      if (mode === 'loglin') return { x: p.x, y: Math.log(p.y) };
+      return { x: p.x, y: p.y };
+    }
+    function straight() {
+      return (mode === 'loglog' && kind === 'power') ||
+             (mode === 'loglin' && kind === 'exp');
+    }
+    function say() {
+      var lab = mode === 'linear' ? 'y against x'
+        : (mode === 'loglog' ? 'lg y against lg x' : 'ln y against x');
+      var msg = lab + ' — ' + (straight() ? '<b>straight</b>' : 'still curved');
+      if (straight() && reveal) {
+        msg += kind === 'power'
+          ? '. Gradient is the POWER n = <b>' + n + '</b>; intercept is lg a.'
+          : '. Gradient is the rate k = <b>' + k + '</b>; intercept is ln A.';
+      } else if (straight()) {
+        msg += '. What does its gradient tell you?';
+      }
+      out.innerHTML = msg;
+    }
+    say();
+
+    stage.draw = function (g, w, h) {
+      var p = pts().map(tx);
+      var xs = p.map(function (q) { return q.x; }), ys = p.map(function (q) { return q.y; });
+      var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs);
+      var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+      if (x1 - x0 < 1e-9) x1 = x0 + 1;
+      if (y1 - y0 < 1e-9) y1 = y0 + 1;
+      var L = 34, R = 12, T = 12, B = 26;
+      var X = function (v) { return L + (v - x0) / (x1 - x0) * (w - L - R); };
+      var Y = function (v) { return h - B - (v - y0) / (y1 - y0) * (h - T - B); };
+      g.strokeStyle = C.muted; g.lineWidth = 1.5;
+      g.beginPath(); g.moveTo(L, T); g.lineTo(L, h - B); g.lineTo(w - R, h - B); g.stroke();
+      /* the straight line through the first and last point, drawn only when
+       * the data really is straight -- otherwise it would imply a fit that is
+       * not there */
+      if (straight()) {
+        g.strokeStyle = C.good; g.lineWidth = 2; g.setLineDash([6, 4]);
+        g.beginPath(); g.moveTo(X(p[0].x), Y(p[0].y));
+        g.lineTo(X(p[p.length - 1].x), Y(p[p.length - 1].y)); g.stroke();
+        g.setLineDash([]);
+      }
+      g.strokeStyle = C.accent; g.lineWidth = 2.5; g.beginPath();
+      p.forEach(function (q, i) {
+        if (i) g.lineTo(X(q.x), Y(q.y)); else g.moveTo(X(q.x), Y(q.y));
+      });
+      g.stroke();
+      g.fillStyle = C.gold;
+      p.forEach(function (q) {
+        g.beginPath(); g.arc(X(q.x), Y(q.y), 3.5, 0, 7); g.fill();
+      });
+      g.fillStyle = C.muted; g.font = f(11, 700); g.textAlign = 'center';
+      g.fillText(mode === 'loglog' ? 'lg x' : 'x', (L + w - R) / 2, h - 8);
+      g.save(); g.translate(11, (T + h - B) / 2); g.rotate(-Math.PI / 2);
+      g.fillText(mode === 'linear' ? 'y' : (mode === 'loglog' ? 'lg y' : 'ln y'), 0, 0);
+      g.restore();
+    };
+    return { destroy: stage.destroy };
+  });
 })(window);
