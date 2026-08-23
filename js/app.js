@@ -788,8 +788,22 @@
     $('#answerBar').classList.remove('good', 'bad');
 
     // --- the visual
+    //
+    // NOT EVERY QUESTION HAS ONE, and that is deliberate: a log law or a
+    // factor-theorem substitution is not improved by a graphic. The quant site
+    // this engine came from gives every question a visual, so mounting was
+    // unconditional -- which rendered the literal text "visual missing:
+    // undefined" in a grey box on all 123 questions here that have no viz.
+    // Hide the host instead, and let the question stand on its own.
+    // My first attempt at this returned early when there was no visual, which
+    // would have skipped the answer widget and the question_shown event and
+    // left the question unanswerable. Skip only the MOUNT.
     if (play.viz && play.viz.destroy) play.viz.destroy();
-    play.viz = QQViz.mount(q.viz, $('#vizHost'), {
+    play.viz = null;
+    var vizHost = $('#vizHost');
+    vizHost.innerHTML = '';
+    vizHost.hidden = !q.viz;
+    if (q.viz) play.viz = QQViz.mount(q.viz, vizHost, {
       regions: q.regions || null,
       data: D.vizData,
       locked: function () { return play.locked; },
