@@ -419,7 +419,7 @@ window.QQ_DATA = {
    "id": "u_algebra",
    "index": 2,
    "title": "Algebra and functions",
-   "subtitle": "Indices, surds, quadratics, polynomials.",
+   "subtitle": "Indices, surds, quadratics, polynomials, inequalities.",
    "colour": "#3fb950",
    "free": true,
    "syllabus": "ESAT M1 · PAT",
@@ -436,7 +436,17 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "(2³)⁴ = 2¹² and 2¹² ÷ 2¹⁰ = 2². Multiply indices when raising a power to a power, subtract when dividing."
+       "explain": "(2³)⁴ = 2¹² because you MULTIPLY indices when raising a power to a power, then dividing subtracts: 12 − 10 = 2. The two rules get confused constantly; the safe check is to expand a small case, (2²)³ = 4³ = 64 = 2⁶."
+      },
+      {
+       "id": "al_neg_index",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "What is 8^(−2/3)? Give your answer as a decimal.",
+       "answerNumber": 0.25,
+       "tolerance": 0.001,
+       "answerValue": "0.25",
+       "explain": "The denominator of the fraction is a root, the numerator a power, and the minus sign flips it: 8^(1/3) = 2, squared is 4, reciprocal is 0.25. Doing the ROOT first keeps the numbers small, which is the whole trick."
       },
       {
        "id": "al_surd",
@@ -446,8 +456,34 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "Multiply top and bottom by √3: 6√3/3 = 2√3, so the coefficient is 2. Rationalising never changes the value, only the form — and examiners expect the form with no surd underneath."
+       "explain": "Multiply top and bottom by √3: 6√3/3 = 2√3, so the coefficient is 2. Rationalising never changes the value, only the form, and examiners expect the form with no surd underneath."
       },
+      {
+       "id": "al_surd_conj",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Rationalise 1/(3 − √2). The result is (3 + √2)/k. What is k?",
+       "answerNumber": 7,
+       "tolerance": 0,
+       "answerValue": "7",
+       "explain": "Multiply by the conjugate 3 + √2. The bottom becomes 3² − (√2)² = 9 − 2 = 7, because the cross terms cancel. That difference-of-two-squares cancellation is the entire reason conjugates work."
+      },
+      {
+       "id": "al_surd_add",
+       "type": "truefalse",
+       "topic": "algebra",
+       "prompt": "√9 + √16 is equal to √25.",
+       "statement": "√9 + √16 is equal to √25.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "3 + 4 = 7, but √25 = 5. Roots do not distribute over addition. They DO distribute over multiplication — √9 × √16 = √144 = 12 — and mixing the two up is one of the most common errors in the paper."
+      }
+     ]
+    },
+    {
+     "id": "a2",
+     "title": "Quadratics",
+     "questions": [
       {
        "id": "al_quad_roots",
        "type": "number",
@@ -456,7 +492,7 @@ window.QQ_DATA = {
        "answerNumber": 1,
        "tolerance": 0,
        "answerValue": "1",
-       "explain": "The discriminant is 36 − 36 = 0, so there is one repeated root, x = 3. b² − 4ac decides it: positive two, zero one, negative none."
+       "explain": "The discriminant is 36 − 36 = 0, so there is one repeated root, x = 3. b² − 4ac decides it: positive gives two, zero gives one, negative gives none."
       },
       {
        "id": "al_complete",
@@ -469,6 +505,26 @@ window.QQ_DATA = {
        "explain": "Half of 8 is 4, so (x+4)² = x² + 8x + 16, which overshoots by 13. Hence (x+4)² − 13 and q = −13. Completing the square hands you the minimum point directly: (−4, −13)."
       },
       {
+       "id": "al_sum_roots",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "For 2x² − 10x + 3 = 0, what is the SUM of the roots?",
+       "answerNumber": 5,
+       "tolerance": 0,
+       "answerValue": "5",
+       "explain": "Sum of roots is −b/a = 10/2 = 5, and the product is c/a = 1.5. You never have to solve the quadratic to answer this, which is exactly why it appears on a multiple-choice paper."
+      },
+      {
+       "id": "al_disc_k",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "For what value of k does x² + kx + 9 = 0 have exactly one root? Give the positive value.",
+       "answerNumber": 6,
+       "tolerance": 0,
+       "answerValue": "6",
+       "explain": "One root means the discriminant is zero: k² − 36 = 0, so k = ±6. The positive value is 6, giving (x+3)² = 0."
+      },
+      {
        "id": "al_disc",
        "type": "truefalse",
        "topic": "algebra",
@@ -476,7 +532,175 @@ window.QQ_DATA = {
        "statement": "If a quadratic has a negative discriminant its graph never crosses the x-axis.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "No real roots means no crossings — the parabola sits entirely above or entirely below the axis, depending on the sign of a."
+       "explain": "No real roots means no crossings — the parabola sits entirely above or entirely below the axis, depending on the sign of a. Sketching this is usually faster than any algebra."
+      }
+     ]
+    },
+    {
+     "id": "a3",
+     "title": "Polynomials",
+     "questions": [
+      {
+       "id": "al_factor_thm",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "f(x) = x³ − 4x² + x + 6. What is f(2)?",
+       "answerNumber": 0,
+       "tolerance": 0,
+       "answerValue": "0",
+       "explain": "8 − 16 + 2 + 6 = 0. Since f(2) = 0, the factor theorem says (x − 2) is a factor. Hunting for a root among the factors of the constant term is the standard opening move on a cubic."
+      },
+      {
+       "id": "al_remainder",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Find the remainder when x³ + 2x − 5 is divided by (x − 1).",
+       "answerNumber": -2,
+       "tolerance": 0,
+       "answerValue": "-2",
+       "explain": "The remainder theorem: just evaluate at x = 1, giving 1 + 2 − 5 = −2. No long division required, which is the point of the theorem."
+      },
+      {
+       "id": "al_cubic_roots",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "x³ − 4x² + x + 6 factorises as (x−2)(x−3)(x+1). What is the sum of its roots?",
+       "answerNumber": 4,
+       "tolerance": 0,
+       "answerValue": "4",
+       "explain": "2 + 3 − 1 = 4, which also equals −b/a = 4 for a cubic. The root-coefficient relations carry over from quadratics and are worth knowing for all three."
+      },
+      {
+       "id": "al_expand",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "In the expansion of (1 + x)⁵, what is the coefficient of x²?",
+       "answerNumber": 10,
+       "tolerance": 0,
+       "answerValue": "10",
+       "explain": "It is the binomial coefficient 5C2 = 10. The whole row is 1, 5, 10, 10, 5, 1 — the sixth row of Pascal's triangle, which is the fastest way to write down any small expansion."
+      },
+      {
+       "id": "al_binom_term",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "In the expansion of (2 + x)⁴, what is the coefficient of x²?",
+       "answerNumber": 24,
+       "tolerance": 0,
+       "answerValue": "24",
+       "explain": "4C2 × 2² = 6 × 4 = 24. The general term is nCr × a^(n−r) × b^r; forgetting to raise the 2 to a power is the standard slip."
+      }
+     ]
+    },
+    {
+     "id": "a4",
+     "title": "Inequalities and simultaneous equations",
+     "questions": [
+      {
+       "id": "al_ineq",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Solve x² − 5x + 6 < 0. The solution is a < x < b. What is b?",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "The roots are 2 and 3, and a positive parabola is BELOW the axis strictly between its roots, so 2 < x < 3 and b = 3. Sketching beats sign tables here."
+      },
+      {
+       "id": "al_ineq_flip",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Solve −3x > 12. The solution is x < k. What is k?",
+       "answerNumber": -4,
+       "tolerance": 0,
+       "answerValue": "-4",
+       "explain": "Dividing by a negative reverses the inequality: x < −4. This is the single most-punished slip in the topic, and it is worth testing your answer with one value — x = −5 gives 15 > 12. ✓"
+      },
+      {
+       "id": "al_sim_x",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Solve 2x + y = 7 and x − y = 2 simultaneously. What is x?",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "Adding the equations eliminates y: 3x = 9, so x = 3 and y = 1. Check both: 6 + 1 = 7 ✓ and 3 − 1 = 2 ✓."
+      },
+      {
+       "id": "al_sim_quad",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "y = x² and y = x + 6 meet at two points. What is the LARGER x-coordinate?",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "x² = x + 6 gives x² − x − 6 = 0, so (x−3)(x+2) = 0 and x = 3 or −2. The larger is 3, where y = 9."
+      },
+      {
+       "id": "al_ineq_square",
+       "type": "truefalse",
+       "topic": "algebra",
+       "prompt": "If x² > 9 then x > 3.",
+       "statement": "If x² > 9 then x > 3.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "x could be less than −3: x = −4 gives 16 > 9. The full solution is x > 3 OR x < −3. Squaring loses sign information, and forgetting the negative branch is a favourite trap."
+      }
+     ]
+    },
+    {
+     "id": "a5",
+     "title": "Exam-level algebra",
+     "questions": [
+      {
+       "id": "al_exam_disc",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "The line y = mx − 1 is a tangent to y = x². Find the positive value of m.",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "Setting them equal: x² − mx + 1 = 0. A tangent meets the curve exactly once, so the discriminant is zero: m² − 4 = 0 and m = ±2. The positive value is 2, touching at x = 1 where both give y = 1. Note the sign of the constant matters: with y = mx + 1 the discriminant is m² + 4, which is never zero, so that line always CROSSES the parabola twice."
+      },
+      {
+       "id": "al_exam_surd",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Simplify √50 + √18 as k√2. What is k?",
+       "answerNumber": 8,
+       "tolerance": 0,
+       "answerValue": "8",
+       "explain": "√50 = 5√2 and √18 = 3√2, so the sum is 8√2 and k = 8. Always pull out the largest square factor first; the surds then combine like ordinary terms."
+      },
+      {
+       "id": "al_exam_poly",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "x³ + ax² − 4x − 12 has (x − 2) as a factor. Find a.",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "The factor theorem says f(2) = 0, so 8 + 4a − 8 − 12 = 0, giving 4a = 12 and a = 3. Substituting back to check: 8 + 12 − 8 − 12 = 0 ✓. That substitution takes five seconds and catches every arithmetic slip in this kind of question."
+      },
+      {
+       "id": "al_exam_index",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Solve 3^(2x) = 81. What is x?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "81 = 3⁴, so 2x = 4 and x = 2. Writing both sides to the same base turns an exponential equation into a linear one, and is almost always quicker than logs on an entrance paper."
+      },
+      {
+       "id": "al_exam_frac",
+       "type": "number",
+       "topic": "algebra",
+       "prompt": "Solve 1/(x−1) = 4/(x+2). What is x?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "Cross-multiplying: x + 2 = 4x − 4, so 3x = 6 and x = 2. Check the value does not make a denominator zero — here x = 2 gives 1/1 = 4/4 ✓."
       }
      ]
     }
@@ -493,7 +717,7 @@ window.QQ_DATA = {
    "lessons": [
     {
      "id": "c1",
-     "title": "Differentiating",
+     "title": "The idea of a derivative",
      "questions": [
       {
        "id": "ca_power",
@@ -503,8 +727,110 @@ window.QQ_DATA = {
        "answerNumber": 48,
        "tolerance": 0,
        "answerValue": "48",
-       "explain": "dy/dx = 12x², and 12 × 4 = 48. Multiply by the index, then drop it by one."
+       "explain": "dy/dx = 12x², and 12 × 4 = 48. Multiply by the index, then drop it by one. The derivative is a FUNCTION: feed it an x and it returns the gradient there."
       },
+      {
+       "id": "ca_constant",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = 7. What is dy/dx?",
+       "answerNumber": 0,
+       "tolerance": 0,
+       "answerValue": "0",
+       "explain": "Zero. A constant function is a horizontal line, and a horizontal line has no gradient anywhere. This is why the constant vanishes in differentiation and has to be recovered when integrating."
+      },
+      {
+       "id": "ca_sum",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = x³ − 5x + 2 and give dy/dx at x = 1.",
+       "answerNumber": -2,
+       "tolerance": 0,
+       "answerValue": "-2",
+       "explain": "dy/dx = 3x² − 5, which is 3 − 5 = −2 at x = 1. Differentiation goes term by term, and the negative gradient tells you the curve is falling there."
+      },
+      {
+       "id": "ca_neg_power",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = 1/x, i.e. x⁻¹. What is dy/dx at x = 2?",
+       "answerNumber": -0.25,
+       "tolerance": 0.001,
+       "answerValue": "-0.25",
+       "explain": "dy/dx = −x⁻² = −1/x², which is −1/4 at x = 2. The rule is the same for negative indices; write the term as a power first and the rule applies unchanged."
+      },
+      {
+       "id": "ca_grad_meaning",
+       "type": "truefalse",
+       "topic": "calculus",
+       "prompt": "Where a curve is falling, its derivative is negative.",
+       "statement": "Where a curve is falling, its derivative is negative.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "The derivative IS the gradient of the tangent. Falling means the tangent slopes downward, which is a negative gradient. Reading a sign off a sketch is often all a question needs."
+      }
+     ]
+    },
+    {
+     "id": "c2",
+     "title": "Rules",
+     "questions": [
+      {
+       "id": "ca_chain",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = (2x + 1)⁵ and give dy/dx at x = 0.",
+       "answerNumber": 10,
+       "tolerance": 0,
+       "answerValue": "10",
+       "explain": "Chain rule: 5(2x+1)⁴ × 2 = 10(2x+1)⁴, which is 10 at x = 0. Differentiate the outside, leave the inside alone, then multiply by the derivative of the inside."
+      },
+      {
+       "id": "ca_product",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = x²(x + 3) and give dy/dx at x = 1.",
+       "answerNumber": 9,
+       "tolerance": 0,
+       "answerValue": "9",
+       "explain": "Expanding first gives y = x³ + 3x², so dy/dx = 3x² + 6x = 9 at x = 1. The product rule gives the same answer; expanding is safer when the expansion is easy."
+      },
+      {
+       "id": "ca_quotient",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = (x + 1)/x and give dy/dx at x = 1.",
+       "answerNumber": -1,
+       "tolerance": 0,
+       "answerValue": "-1",
+       "explain": "Rewrite as 1 + x⁻¹, so dy/dx = −x⁻² = −1 at x = 1. Splitting the fraction avoids the quotient rule entirely — always worth checking whether you can."
+      },
+      {
+       "id": "ca_second",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "y = x³ − 3x. What is d²y/dx² at x = 2?",
+       "answerNumber": 12,
+       "tolerance": 0,
+       "answerValue": "12",
+       "explain": "dy/dx = 3x² − 3, and differentiating again gives 6x = 12 at x = 2. The second derivative measures how the gradient itself is changing — the curvature."
+      },
+      {
+       "id": "ca_chain_forget",
+       "type": "truefalse",
+       "topic": "calculus",
+       "prompt": "The derivative of (3x + 2)⁴ is 4(3x + 2)³.",
+       "statement": "The derivative of (3x + 2)⁴ is 4(3x + 2)³.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "That misses the inner derivative. The correct answer is 4(3x+2)³ × 3 = 12(3x+2)³. Forgetting the factor from the inside is the commonest chain-rule error there is."
+      }
+     ]
+    },
+    {
+     "id": "c3",
+     "title": "Stationary points",
+     "questions": [
       {
        "id": "ca_stationary",
        "type": "number",
@@ -513,8 +839,58 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0,
        "answerValue": "3",
-       "explain": "dy/dx = 2x − 6 = 0 gives x = 3. The second derivative is 2, positive, so it is a minimum."
+       "explain": "dy/dx = 2x − 6 = 0 gives x = 3. The second derivative is 2, positive, so it is a minimum — at (3, −4)."
       },
+      {
+       "id": "ca_two_stat",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "y = x³ − 3x has two stationary points. What is the LARGER x-value?",
+       "answerNumber": 1,
+       "tolerance": 0,
+       "answerValue": "1",
+       "explain": "dy/dx = 3x² − 3 = 0 gives x = ±1. The larger is 1, where the second derivative 6x is positive — a minimum. At x = −1 it is negative, a maximum."
+      },
+      {
+       "id": "ca_nature",
+       "type": "choice",
+       "topic": "calculus",
+       "prompt": "At a stationary point the second derivative is negative. What kind of point is it?",
+       "choices": [
+        "A minimum",
+        "A maximum",
+        "A point of inflection"
+       ],
+       "answer": 1,
+       "answerValue": "A maximum",
+       "explain": "Negative second derivative means the gradient is decreasing through the point — the curve is bending downward, so the stationary point is a maximum."
+      },
+      {
+       "id": "ca_optimise",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "A rectangle has perimeter 20. What is its greatest possible area?",
+       "answerNumber": 25,
+       "tolerance": 0,
+       "answerValue": "25",
+       "explain": "With sides x and 10 − x, area A = x(10 − x) = 10x − x². dA/dx = 10 − 2x = 0 gives x = 5, so the rectangle is a 5 by 5 square with area 25. Optimisation questions are nearly always this shape: write the thing you want in ONE variable, then differentiate."
+      },
+      {
+       "id": "ca_box",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "An open box is made from a square of side 12 by cutting x from each corner. V = x(12 − 2x)². What x maximises the volume?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "dV/dx = (12−2x)² + x·2(12−2x)(−2) = (12−2x)(12 − 6x), zero at x = 2 or x = 6. x = 6 gives zero volume, so the maximum is at x = 2, giving V = 2 × 64 = 128. Always reject the root that makes no physical sense."
+      }
+     ]
+    },
+    {
+     "id": "c4",
+     "title": "Tangents and rates",
+     "questions": [
       {
        "id": "ca_tangent",
        "type": "number",
@@ -526,24 +902,279 @@ window.QQ_DATA = {
        "explain": "dy/dx = 3x² − 2, which is 3 − 2 = 1 at x = 1. The derivative IS the gradient function: feed it an x and it hands back the slope of the tangent at that point."
       },
       {
-       "id": "ca_chain",
+       "id": "ca_normal",
        "type": "number",
        "topic": "calculus",
-       "prompt": "Differentiate y = (2x + 1)⁵ and give dy/dx at x = 0.",
-       "answerNumber": 10,
-       "tolerance": 0,
-       "answerValue": "10",
-       "explain": "Chain rule: dy/dx = 5(2x+1)⁴ × 2 = 10(2x+1)⁴, which is 10 at x = 0."
+       "prompt": "The tangent to a curve has gradient 4. What is the gradient of the normal there? Give it as a decimal.",
+       "answerNumber": -0.25,
+       "tolerance": 0.001,
+       "answerValue": "-0.25",
+       "explain": "The normal is perpendicular, so its gradient is −1/4 = −0.25. Perpendicular gradients multiply to −1, which is worth checking on every normal question."
       },
       {
-       "id": "ca_second",
+       "id": "ca_tangent_eq",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "y = x² at x = 3. The tangent is y = 6x + c. What is c?",
+       "answerNumber": -9,
+       "tolerance": 0,
+       "answerValue": "-9",
+       "explain": "The gradient is 2x = 6 and the point is (3, 9), so 9 = 18 + c and c = −9. The tangent is y = 6x − 9."
+      },
+      {
+       "id": "ca_rate",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "A balloon's volume is V = 4t³. What is dV/dt at t = 2?",
+       "answerNumber": 48,
+       "tolerance": 0,
+       "answerValue": "48",
+       "explain": "dV/dt = 12t² = 48 at t = 2. A derivative with respect to TIME is a rate of change, which is what most of the physics on the paper is really asking about."
+      },
+      {
+       "id": "ca_zero_grad",
        "type": "truefalse",
        "topic": "calculus",
-       "prompt": "A stationary point with a positive second derivative is a minimum.",
-       "statement": "A stationary point with a positive second derivative is a minimum.",
+       "prompt": "If dy/dx = 0 at a point, the curve must have a maximum or minimum there.",
+       "statement": "If dy/dx = 0 at a point, the curve must have a maximum or minimum there.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It could be a point of inflection — y = x³ at x = 0 has zero gradient but is neither a maximum nor a minimum. Zero gradient is necessary for a turning point, not sufficient."
+      }
+     ]
+    },
+    {
+     "id": "c5",
+     "title": "Exam-level calculus",
+     "questions": [
+      {
+       "id": "ca_exam_area",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "A cylinder has volume 16π. Its surface area is minimised when the radius is r. What is r?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "With V = πr²h = 16π, h = 16/r². Surface area A = 2πr² + 2πrh = 2πr² + 32π/r. dA/dr = 4πr − 32π/r² = 0 gives r³ = 8, so r = 2 and h = 4 — the height is the diameter, which is the classic result."
+      },
+      {
+       "id": "ca_exam_curve",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "y = x³ − 6x² + 9x. At how many points is the tangent horizontal?",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "dy/dx = 3x² − 12x + 9 = 3(x−1)(x−3), zero at x = 1 and x = 3. Two points: a maximum at (1, 4) and a minimum at (3, 0)."
+      },
+      {
+       "id": "ca_exam_inflect",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "y = x³ − 6x². Find the x-coordinate of the point of inflection.",
+       "answerNumber": 2,
+       "tolerance": 0,
+       "answerValue": "2",
+       "explain": "d²y/dx² = 6x − 12 = 0 at x = 2, and the second derivative changes sign there, so it is a genuine inflection. Checking the SIGN CHANGE matters: a zero second derivative alone is not enough."
+      },
+      {
+       "id": "ca_exam_chain2",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "Differentiate y = (x² + 1)³ and give dy/dx at x = 1.",
+       "answerNumber": 24,
+       "tolerance": 0,
+       "answerValue": "24",
+       "explain": "dy/dx = 3(x²+1)² × 2x = 6x(x²+1)², which at x = 1 is 6 × 4 = 24."
+      },
+      {
+       "id": "ca_exam_ladder",
+       "type": "number",
+       "topic": "calculus",
+       "prompt": "y = 2x³ − 9x² + 12x. The stationary values are y = a and y = b. What is the LARGER of the two y-values?",
+       "answerNumber": 5,
+       "tolerance": 0,
+       "answerValue": "5",
+       "explain": "dy/dx = 6x² − 18x + 12 = 6(x−1)(x−2), so x = 1 gives y = 5 and x = 2 gives y = 4. The larger stationary value is 5 — and note it is a MAXIMUM at the smaller x, which a sketch makes obvious."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u_integration",
+   "index": 4,
+   "title": "Integration",
+   "subtitle": "Reversing differentiation, area, volumes of revolution.",
+   "colour": "#2ea043",
+   "free": false,
+   "syllabus": "ESAT M1 · PAT",
+   "lessons": [
+    {
+     "id": "i1",
+     "title": "Reversing differentiation",
+     "questions": [
+      {
+       "id": "in_power",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Integrate 3x². What is the coefficient of x³ in the result?",
+       "answerNumber": 1,
+       "tolerance": 0,
+       "answerValue": "1",
+       "explain": "Raise the index by one and divide by the new index: 3x³/3 = x³, so the coefficient is 1. Integration is differentiation run backwards, which is why the check is always to differentiate your answer."
+      },
+      {
+       "id": "in_constant",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Integrate 5 with respect to x. What is the coefficient of x?",
+       "answerNumber": 5,
+       "tolerance": 0,
+       "answerValue": "5",
+       "explain": "∫5 dx = 5x + c. A constant integrates to a term linear in x, and the arbitrary constant c appears because differentiating any constant gives zero."
+      },
+      {
+       "id": "in_plus_c",
+       "type": "truefalse",
+       "topic": "integration",
+       "prompt": "An indefinite integral needs an arbitrary constant.",
+       "statement": "An indefinite integral needs an arbitrary constant.",
        "answerBool": true,
        "answerValue": "TRUE",
-       "explain": "Positive second derivative means the gradient is increasing through the point, so the curve turns upward — a minimum."
+       "explain": "Infinitely many functions share the same derivative, differing only by a constant, so + c records that. Dropping it is a guaranteed lost mark on an indefinite integral."
+      },
+      {
+       "id": "in_sum",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Integrate 6x + 4. Evaluate the result at x = 2, taking c = 0.",
+       "answerNumber": 20,
+       "tolerance": 0,
+       "answerValue": "20",
+       "explain": "∫(6x+4)dx = 3x² + 4x + c, which at x = 2 is 12 + 8 = 20. Each term integrates separately, exactly as each term differentiates separately — integration is linear."
+      },
+      {
+       "id": "in_neg",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Integrate x⁻² . The result is −x⁻¹ + c. What is its value at x = 2? Give a decimal.",
+       "answerNumber": -0.5,
+       "tolerance": 0.001,
+       "answerValue": "-0.5",
+       "explain": "−1/x = −0.5 at x = 2. The power rule works for every index except −1, where the integral is ln|x| instead — the one exception worth memorising."
+      }
+     ]
+    },
+    {
+     "id": "i2",
+     "title": "Definite integrals and area",
+     "questions": [
+      {
+       "id": "in_def",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Evaluate ∫ from 0 to 3 of x² dx.",
+       "answerNumber": 9,
+       "tolerance": 0,
+       "answerValue": "9",
+       "explain": "[x³/3] from 0 to 3 = 27/3 − 0 = 9. A definite integral needs no constant, because it cancels when you subtract the two limits."
+      },
+      {
+       "id": "in_area",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Find the area between y = 2x and the x-axis from x = 1 to x = 4.",
+       "answerNumber": 15,
+       "tolerance": 0,
+       "answerValue": "15",
+       "explain": "[x²] from 1 to 4 = 16 − 1 = 15. Check it geometrically: it is a trapezium with parallel sides 2 and 8 and width 3, area ½(2+8)(3) = 15 ✓."
+      },
+      {
+       "id": "in_between",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "Find the area between y = x² and y = x from x = 0 to x = 1. The answer is 1/k. What is k?",
+       "answerNumber": 6,
+       "tolerance": 0,
+       "answerValue": "6",
+       "explain": "∫(x − x²)dx = [x²/2 − x³/3] = 1/2 − 1/3 = 1/6, so k = 6. Always subtract the LOWER curve from the upper one; getting the order wrong just flips the sign."
+      },
+      {
+       "id": "in_negative",
+       "type": "truefalse",
+       "topic": "integration",
+       "prompt": "A definite integral can come out negative.",
+       "statement": "A definite integral can come out negative.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Where the curve is below the axis the integral is negative. That is why an AREA question needs the region split at every crossing — otherwise positive and negative parts cancel and you understate it."
+      },
+      {
+       "id": "in_limits_swap",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "If ∫ from 1 to 5 of f(x) dx = 12, what is ∫ from 5 to 1 of f(x) dx?",
+       "answerNumber": -12,
+       "tolerance": 0,
+       "answerValue": "-12",
+       "explain": "Swapping the limits negates the integral. It follows straight from F(b) − F(a) becoming F(a) − F(b)."
+      }
+     ]
+    },
+    {
+     "id": "i3",
+     "title": "Exam-level integration",
+     "questions": [
+      {
+       "id": "in_exam_area",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "The curve y = x(4 − x) meets the x-axis at 0 and 4. What is the area enclosed? The answer is k/3. What is k?",
+       "answerNumber": 32,
+       "tolerance": 0,
+       "answerValue": "32",
+       "explain": "∫(4x − x²)dx from 0 to 4 = [2x² − x³/3] = 32 − 64/3 = 32/3, so k = 32. Sketching first tells you the curve is above the axis throughout, so no splitting is needed."
+      },
+      {
+       "id": "in_exam_volume",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "y = x is rotated about the x-axis from 0 to 3. The volume is kπ. What is k?",
+       "answerNumber": 9,
+       "tolerance": 0,
+       "answerValue": "9",
+       "explain": "V = π∫y² dx = π∫x² dx from 0 to 3 = π × 9, so k = 9. It is a cone of radius 3 and height 3: ⅓π(9)(3) = 9π ✓."
+      },
+      {
+       "id": "in_exam_kinematics",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "A particle has velocity v = 3t². How far does it travel between t = 0 and t = 2?",
+       "answerNumber": 8,
+       "tolerance": 0,
+       "answerValue": "8",
+       "explain": "Distance is ∫v dt = [t³] from 0 to 2 = 8. Integrating velocity gives displacement, and differentiating it gives acceleration — the same ladder the mechanics questions use."
+      },
+      {
+       "id": "in_exam_mean",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "What is the mean value of y = x² between x = 0 and x = 3?",
+       "answerNumber": 3,
+       "tolerance": 0,
+       "answerValue": "3",
+       "explain": "Mean = (1/(b−a))∫y dx = (1/3) × 9 = 3. The mean value is the height of the rectangle with the same area over the same width."
+      },
+      {
+       "id": "in_exam_split",
+       "type": "number",
+       "topic": "integration",
+       "prompt": "y = x³ from x = −2 to 2. What is the value of the definite integral?",
+       "answerNumber": 0,
+       "tolerance": 0,
+       "answerValue": "0",
+       "explain": "Zero, because x³ is an odd function and the negative area from −2 to 0 exactly cancels the positive area from 0 to 2. The AREA, though, is 8 — which is what the question would ask for if it wanted a non-zero answer. Spotting odd symmetry saves the whole calculation."
       }
      ]
     }
@@ -551,7 +1182,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_mechanics",
-   "index": 4,
+   "index": 5,
    "title": "Mechanics",
    "subtitle": "Kinematics, forces, momentum, energy.",
    "colour": "#f85149",
@@ -618,7 +1249,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_electricity",
-   "index": 5,
+   "index": 6,
    "title": "Electricity",
    "subtitle": "Current, resistance, circuits, power.",
    "colour": "#a371f7",
