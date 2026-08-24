@@ -312,16 +312,38 @@
 
   /* ----------------------------------------------------------- vectorAdd */
   global.QQViz.register('vectorAdd', function (host, api) {
-    var a = { x: 3, y: 4 }, b = { x: 1, y: 2 }, drag = 0;
+    /* THE VECTORS COME FROM THE QUESTION, AND THE NUMBERS CAN BE WITHHELD.
+     *
+     * This was hardcoded to a = (3,4), b = (1,2), with a readout printing the
+     * magnitudes, the dot product and the angle. Seven questions mounted it
+     * bare, and three of them had their exact answer displayed underneath:
+     * ve_mag asks for the magnitude of (3,4) and the readout said |a| = 5.00;
+     * ve_dot asks for the dot product of (3,4) and (1,2) and it said 11.0;
+     * ve_resultant asks for the resultant of 3 N east and 4 N north, which is
+     * the same 5.00. Others -- ve_add, ve_find_k, ve_angle -- name different
+     * vectors and were shown these two regardless.
+     *
+     * With reveal:false the arrows and the grid stay, so the geometry is still
+     * there to reason about, and only the computed numbers go.
+     */
+    var P = (api && api.params) || {};
+    var reveal = P.reveal !== false;
+    var a = { x: P.ax != null ? P.ax : 3, y: P.ay != null ? P.ay : 4 };
+    var b = { x: P.bx != null ? P.bx : 1, y: P.by != null ? P.by : 2 };
+    var showSum = P.sum !== false;
+    var drag = 0;
     var out = readout(host, 'Drag either arrow.');
     var stage = Stage(host, 0.95);
     function say() {
       var dp = a.x * b.x + a.y * b.y;
       var ma = Math.hypot(a.x, a.y), mb = Math.hypot(b.x, b.y);
       var ang = (ma && mb) ? Math.acos(Math.max(-1, Math.min(1, dp / (ma * mb)))) * 180 / Math.PI : 0;
-      out.innerHTML = '|a| = <b>' + ma.toFixed(2) + '</b>  |b| = <b>' + mb.toFixed(2) +
-        '</b>  a·b = <b>' + dp.toFixed(1) + '</b>  angle = <b>' + ang.toFixed(0) + '°</b>' +
-        (Math.abs(dp) < 0.05 ? ' — perpendicular' : '');
+      var comps = 'a = (' + a.x + ', ' + a.y + ')   b = (' + b.x + ', ' + b.y + ')';
+      out.innerHTML = reveal
+        ? comps + '<br>|a| = <b>' + ma.toFixed(2) + '</b>  |b| = <b>' + mb.toFixed(2) +
+          '</b>  a·b = <b>' + dp.toFixed(1) + '</b>  angle = <b>' + ang.toFixed(0) + '°</b>' +
+          (Math.abs(dp) < 0.05 ? ' — perpendicular' : '')
+        : comps + ' — drag them and work it out from the grid';
     }
     say();
     function arrow(g, ox, oy, s, v, col) {
@@ -338,14 +360,18 @@
     stage.draw = function (g, w, h) {
       var s = Math.min(w, h) / 11, ox = w / 2, oy = h / 2 + s;
       axes(g, w, h, ox, oy, s);
-      // resultant, drawn first so the components sit on top
-      g.setLineDash([5, 4]);
-      arrow(g, ox, oy, s, { x: a.x + b.x, y: a.y + b.y }, '#a371f7');
-      g.setLineDash([]);
+      // resultant, drawn first so the components sit on top. Suppressed where
+      // the question asks FOR the resultant -- drawing it is the answer.
+      if (showSum) {
+        g.setLineDash([5, 4]);
+        arrow(g, ox, oy, s, { x: a.x + b.x, y: a.y + b.y }, '#a371f7');
+        g.setLineDash([]);
+      }
       arrow(g, ox, oy, s, a, C.accent);
       arrow(g, ox, oy, s, b, C.gold);
       g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
-      g.fillText('dashed purple = a + b', w / 2, h - 6);
+      g.fillText(showSum ? 'dashed purple = a + b' : 'drag either arrow',
+                 w / 2, h - 6);
     };
     function move(ev) {
       if (!drag) return;

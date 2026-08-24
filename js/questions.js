@@ -1888,7 +1888,15 @@ window.QQ_DATA = {
        "answerValue": "5",
        "explain": "√(3² + 4²) = 5 — Pythagoras. Magnitude is just the length of the arrow, and the 3-4-5 triangle makes this one immediate.",
        "viz": "vectorAdd",
-       "vizHint": "Drag an arrow and watch its length."
+       "vizHint": "Count the grid squares along and up.",
+       "vizParams": {
+        "ax": 3,
+        "ay": 4,
+        "bx": 1,
+        "by": 2,
+        "sum": false,
+        "reveal": false
+       }
       },
       {
        "id": "ve_mag3",
@@ -1910,7 +1918,14 @@ window.QQ_DATA = {
        "answerValue": "2",
        "explain": "Add component by component: (4, 2), so b = 2. Geometrically it is the nose-to-tail rule.",
        "viz": "vectorAdd",
-       "vizHint": "The dashed arrow is the sum."
+       "vizHint": "The dashed arrow is the sum.",
+       "vizParams": {
+        "ax": 3,
+        "ay": 4,
+        "bx": 1,
+        "by": -2,
+        "reveal": false
+       }
       },
       {
        "id": "ve_scalar_mult",
@@ -1948,7 +1963,15 @@ window.QQ_DATA = {
        "answerValue": "11",
        "explain": "3×1 + 4×2 = 11. Multiply matching components and add. The result is a NUMBER, not a vector, which is why it is also called the scalar product.",
        "viz": "vectorAdd",
-       "vizHint": "The dot product is shown as you drag."
+       "vizHint": "Multiply the x parts, multiply the y parts, add.",
+       "vizParams": {
+        "ax": 3,
+        "ay": 4,
+        "bx": 1,
+        "by": 2,
+        "sum": false,
+        "reveal": false
+       }
       },
       {
        "id": "ve_dot3",
@@ -1970,7 +1993,14 @@ window.QQ_DATA = {
        "answerValue": "0",
        "explain": "Zero, because a·b = |a||b|cosθ and cos90 = 0. This is the fastest test for perpendicularity there is, and it works in any number of dimensions.",
        "viz": "vectorAdd",
-       "vizHint": "Make the two arrows perpendicular."
+       "vizHint": "Make the two arrows perpendicular and watch.",
+       "vizParams": {
+        "ax": 4,
+        "ay": 1,
+        "bx": 1,
+        "by": 3,
+        "sum": false
+       }
       },
       {
        "id": "ve_find_k",
@@ -1982,7 +2012,15 @@ window.QQ_DATA = {
        "answerValue": "-4",
        "explain": "Perpendicular means the dot product is zero: 12 + 3k = 0, so k = −4. Check: (2,3)·(6,−4) = 12 − 12 = 0 ✓.",
        "viz": "vectorAdd",
-       "vizHint": "Perpendicular means the dot product is zero."
+       "vizHint": "Perpendicular means the dot product is zero.",
+       "vizParams": {
+        "ax": 2,
+        "ay": 3,
+        "bx": 6,
+        "by": 1,
+        "sum": false,
+        "reveal": false
+       }
       },
       {
        "id": "ve_angle",
@@ -1994,7 +2032,15 @@ window.QQ_DATA = {
        "answerValue": "60",
        "explain": "cosθ = 6/(3×4) = 0.5, so θ = 60°. Rearranging a·b = |a||b|cosθ is how almost every angle-between-vectors question is done.",
        "viz": "vectorAdd",
-       "vizHint": "Watch the angle as you drag."
+       "vizHint": "Two arrows of length 3 and 4.",
+       "vizParams": {
+        "ax": 3,
+        "ay": 0,
+        "bx": 2,
+        "by": 3,
+        "sum": false,
+        "reveal": false
+       }
       }
      ]
     },
@@ -2012,7 +2058,15 @@ window.QQ_DATA = {
        "answerValue": "5",
        "explain": "Perpendicular forces combine by Pythagoras: √(9+16) = 5 N. Forces are vectors, so they add nose-to-tail and NOT arithmetically.",
        "viz": "vectorAdd",
-       "vizHint": "Forces add exactly like these arrows."
+       "vizHint": "Forces add exactly like these arrows.",
+       "vizParams": {
+        "ax": 3,
+        "ay": 0,
+        "bx": 0,
+        "by": 4,
+        "sum": false,
+        "reveal": false
+       }
       },
       {
        "id": "ve_resultant_angle",
