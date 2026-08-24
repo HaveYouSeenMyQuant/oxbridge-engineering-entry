@@ -248,11 +248,25 @@
     var tab = document.getElementById('tabTopics');
     if (tab) {
       tab.hidden = false;
-      tab.addEventListener('click', show);
+      /* Set the hash rather than switching the screen directly, exactly as the
+       * Answers tab does. Calling go('topics') straight left NO history entry,
+       * so the back button had nothing to return to and opening Topics was a
+       * one-way door on a phone. app.js routes on hashchange, which turns this
+       * into a normal, reversible navigation. */
+      tab.addEventListener('click', function () {
+        if ((location.hash || '').toLowerCase() === '#topics') { show(); return; }
+        location.hash = 'topics';
+      });
     }
     var road = document.getElementById('tabRoad');
     if (road) {
       road.addEventListener('click', function () {
+        /* Leaving Topics by the Road tab clears the hash, so the pair of tabs
+         * stay each other's inverse in history. */
+        if ((location.hash || '').toLowerCase() === '#topics') {
+          location.hash = 'road';
+          return;
+        }
         if (global.QQApp && QQApp.go) QQApp.go('path');
       });
     }
