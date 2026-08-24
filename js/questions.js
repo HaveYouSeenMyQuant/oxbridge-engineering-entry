@@ -3464,13 +3464,7 @@ window.QQ_DATA = {
        "answerNumber": 5.0,
        "tolerance": 0.001,
        "answerValue": "5",
-       "explain": "T = 1/f = 0.005 s = 5 ms. Period and frequency are reciprocals: one is seconds per cycle, the other cycles per second.",
-       "viz": "waveLab",
-       "vizHint": "Count the crests going past.",
-       "vizParams": {
-        "f": 4,
-        "lam": 2
-       }
+       "explain": "T = 1/f = 0.005 s = 5 ms. Period and frequency are reciprocals: one is seconds per cycle, the other cycles per second."
       },
       {
        "id": "wa_wavelength",
@@ -3480,14 +3474,7 @@ window.QQ_DATA = {
        "answerNumber": 2.0,
        "tolerance": 0.001,
        "answerValue": "2",
-       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not.",
-       "viz": "waveLab",
-       "vizHint": "Hold the speed and stretch the wave.",
-       "vizParams": {
-        "f": 2,
-        "lam": 4,
-        "reveal": false
-       }
+       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not."
       },
       {
        "id": "wa_transverse",
@@ -3507,13 +3494,7 @@ window.QQ_DATA = {
        "answerNumber": 600.0,
        "tolerance": 0.5,
        "answerValue": "600",
-       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head.",
-       "viz": "waveLab",
-       "vizHint": "The same relationship, at light speed.",
-       "vizParams": {
-        "f": 5,
-        "lam": 1
-       }
+       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head."
       }
      ]
     },
