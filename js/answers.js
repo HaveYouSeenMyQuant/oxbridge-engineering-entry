@@ -16,8 +16,106 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 149,
+ "count": 150,
  "entries": [
+  {
+   "slug": "too_slow_on_the_banked_bend",
+   "title": "Too slow on the banked bend",
+   "ts": "2026-08-24T19:50:26+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "DOWN THE BANK — towards the INSIDE of the bend.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. Forget friction for a moment and look at what the slope alone does. The road pushes on the tyres at right angles to its surface, so that push N leans inwards. Split it:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    vertically     N cos(theta) holds the car up against gravity",
+      "    horizontally   N sin(theta) points into the bend"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The horizontal part is the only thing bending the path. Divide the two and both N and the mass disappear:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    tan(theta) = v^2 / (r g)      so    v = sqrt(g r tan(theta))"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "For 20 degrees and a 50 m radius that is sqrt(9.81 x 50 x 0.364) = 13.4 m/s, about 30 mph. That is the speed the bend was built for."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "NOW GO SLOWER. The circle needs LESS inward force than before — v^2/r has fallen — but the bank is still pushing inwards just as hard, because it does not know how fast you are going. There is now too much inward force. The surplus pushes the car towards the middle of the bend, and the car slides DOWN the slope. Friction has to act UP the bank to stop it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    at 13.4 m/s   need 3.57 m/s^2 inward, bank supplies 3.57   balanced",
+      "    at 8 m/s      need 1.28 m/s^2 inward, bank supplies 3.57   too much: down"
+     ]
+    },
+    {
+     "h": "THE TWO ANSWERS PEOPLE GIVE, AND WHY THEY ARE WRONG.",
+     "t": "pre",
+     "lines": [
+      "  \"Up the bank.\"  That is what happens when you go too FAST: then the circle",
+      "  needs more than the bank supplies, the shortfall is made up by friction, and",
+      "  the car climbs if there is not enough of it. Going slowly is the same story",
+      "  with the sign reversed, and the feeling of being flung outwards in a car is",
+      "  the fast case, which is the one everybody has felt."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  \"Neither — friction holds it.\"  Usually true, and it dodges the question.",
+      "  Friction does hold it, and asking which WAY friction must act is the same as",
+      "  asking which way it would slide without it. On a slow bend, friction acts up",
+      "  the slope, which is exactly what an icy banked bend stops providing."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE CHECK THAT SETTLES IT. Take the speed to zero. The car is simply parked on a slope, and a car parked on a slope slides down it. Nothing about that changes as you creep up towards the design speed."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. On any banked or tilted problem, ask what the surface supplies REGARDLESS of speed, then compare it with what the motion demands. The difference, with its sign, is what friction is being asked to do — and the sign is the answer."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "the_hump_does_not_matter",
    "title": "The hump does not matter",
