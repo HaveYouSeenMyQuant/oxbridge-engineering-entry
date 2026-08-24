@@ -2037,7 +2037,7 @@ window.QQ_DATA = {
         "ax": 3,
         "ay": 0,
         "bx": 2,
-        "by": 3,
+        "by": 3.4641,
         "sum": false,
         "reveal": false
        }
