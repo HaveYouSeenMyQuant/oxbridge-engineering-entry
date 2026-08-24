@@ -16,8 +16,98 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 144,
+ "count": 145,
  "entries": [
+  {
+   "slug": "which_way_does_the_strip_curl",
+   "title": "Which way does the strip curl",
+   "ts": "2026-08-24T16:28:35+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "IT CURLS TOWARDS THE STEEL — the steel ends up on the INSIDE of the curve and the brass on the outside.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. Heat both by the same 100 degrees and they do not grow by the same amount:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    brass   100 mm x (1 + 19e-6 x 100) = 100.190 mm",
+      "    steel   100 mm x (1 + 12e-6 x 100) = 100.120 mm"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The brass is now 0.07 mm longer. But they are bonded along their whole length, so they are not free to be different lengths side by side. The only shape that lets a longer layer sit against a shorter one is a curve — and the longer layer has to take the OUTSIDE of it, because the outside of a bend is the longer path."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So the brass goes outside, the steel goes inside, and the strip curls towards the steel."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE CHECK THAT MAKES IT OBVIOUS. Think of a running track. The outside lane is longer than the inside lane. If two runners must stay side by side and one has to cover more ground, that one is in the outer lane. The brass is the outer lane."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "SEVEN HUNDREDTHS OF A MILLIMETRE DOES THAT? Yes, and this is the part worth sitting with. The deflection at the free end is far larger than the mismatch, because bending turns a tiny difference in LENGTH into a large difference in POSITION — the longer the strip and the thinner it is, the more it moves for the same mismatch. A strip a few centimetres long visibly swings."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "COOL IT INSTEAD and everything reverses: the brass shrinks more, so now it is the SHORT one, it takes the inside of the curve, and the strip bends the other way."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE YOU HAVE MET IT. Every mechanical thermostat: the strip carries a contact, the curl makes or breaks the circuit, and the temperature you dial in just moves the point at which it touches. Also the flashing indicator relay in an older car, and the trip in a thermal circuit breaker."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: the bond holds. Everything above depends on the two layers being unable to slide against each other — that is what forces the mismatch into a curve instead of letting one layer simply grow past the other. Heat a badly-bonded strip and it delaminates instead of curling, which is the usual way a cheap thermostat dies."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Two smaller ones worth knowing: the expansion coefficients drift with temperature, so 19 and 12 are room-temperature figures rather than constants, and the layers are taken as equally thick. Make one much thicker than the other and it dominates the bending."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When two joined things want to be different sizes and cannot be, the mismatch has to go somewhere. Ask what shape absorbs it. That one question also gets you thermal stress in a bridge, warping in a weld, and why a mug can crack when you pour boiling water into it."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "drop_it_down_the_copper_pipe",
    "title": "Drop it down the copper pipe",
