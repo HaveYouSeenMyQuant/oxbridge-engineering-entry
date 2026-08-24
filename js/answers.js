@@ -809,6 +809,20 @@ window.QQ_ANSWERS = {
      "h": null,
      "t": "p",
      "lines": [
+      "WHAT A REAL SHAFT DOES, raised by @jur1t in the comments on 2026-08-24 and worth the correction. Everything above assumes the car is in TRUE free fall. A real car is not: it has to push air out from underneath it and its shoes still rub on the guide rails, so it falls slightly slower than g. The ball, which has none of that, does fall at g — so it gains on the car and drifts gently down to the floor instead of hanging there indefinitely."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That does not change the answer to the question, which is about the frame and not about the upholstery: at the instant you let go, and for a good while after, the ball sits beside you rather than dropping. But \"the lift is in free fall\" is the assumption doing all the work, and it is worth being able to say so out loud — an interviewer asking this will often be waiting for exactly that."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
       "THE INTERVIEW MOVE. When something behaves strangely in an accelerating box, do not reason in the room's frame and then patch it. Ask what the acceleration is in the frame you care about, subtract, and see what is left. Here the subtraction leaves nothing at all, which is exactly why it feels so odd."
      ]
     }
