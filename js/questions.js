@@ -3551,7 +3551,15 @@ window.QQ_DATA = {
        "answerNumber": 1.2,
        "tolerance": 0.01,
        "answerValue": "1.2",
-       "explain": "Q = CV, in base units throughout: 100 µF is 100e-6 F, so Q = 100e-6 x 12 = 1.2e-3 C, which is 1.2 mC. The microfarads are where this goes wrong - a capacitance in µF and an answer wanted in mC is two unit conversions in one line, and doing the physics in farads and coulombs first makes both of them somebody else's problem."
+       "explain": "Q = CV, in base units throughout: 100 µF is 100e-6 F, so Q = 100e-6 x 12 = 1.2e-3 C, which is 1.2 mC. The microfarads are where this goes wrong - a capacitance in µF and an answer wanted in mC is two unit conversions in one line, and doing the physics in farads and coulombs first makes both of them somebody else's problem.",
+       "viz": "capLab",
+       "vizHint": "Both numbers you need are on the axes.",
+       "vizParams": {
+        "C": 100,
+        "V": 12,
+        "mode": "store",
+        "reveal": false
+       }
       },
       {
        "id": "el_cap_energy",
@@ -3561,7 +3569,15 @@ window.QQ_DATA = {
        "answerNumber": 7.2,
        "tolerance": 0.05,
        "answerValue": "7.2",
-       "explain": "E = ½CV² = 0.5 x 100e-6 x 144 = 7.2e-3 J = 7.2 mJ. The half is there because the capacitor charges up gradually: the first charge arrives with no voltage opposing it and the last arrives against the full V, so the average cost is V/2 per unit charge. It is the same ½ that appears in ½kx² for a spring, and for the same reason."
+       "explain": "E = ½CV² = 0.5 x 100e-6 x 144 = 7.2e-3 J = 7.2 mJ. The half is there because the capacitor charges up gradually: the first charge arrives with no voltage opposing it and the last arrives against the full V, so the average cost is V/2 per unit charge. It is the same ½ that appears in ½kx² for a spring, and for the same reason.",
+       "viz": "capLab",
+       "vizHint": "The energy is the shaded area. Look at its shape before you reach for a formula.",
+       "vizParams": {
+        "C": 100,
+        "V": 12,
+        "mode": "store",
+        "reveal": false
+       }
       },
       {
        "id": "el_cap_double_v",
@@ -3575,7 +3591,16 @@ window.QQ_DATA = {
        ],
        "answer": 2,
        "answerValue": "It quadruples",
-       "explain": "Energy goes as the SQUARE of the voltage, E = ½CV², so doubling V multiplies the energy by four. The charge only doubles, because Q = CV is linear. That difference is worth holding on to: it is why a capacitor bank at high voltage is dangerous out of proportion to its charge, and why the same trick appears in kinetic energy, where doubling the speed quadruples the energy."
+       "explain": "Energy goes as the SQUARE of the voltage, E = ½CV², so doubling V multiplies the energy by four. The charge only doubles, because Q = CV is linear. That difference is worth holding on to: it is why a capacitor bank at high voltage is dangerous out of proportion to its charge, and why the same trick appears in kinetic energy, where doubling the speed quadruples the energy.",
+       "viz": "capLab",
+       "vizHint": "The gold outline is the same capacitor at double the voltage. Count how many blue triangles fit in it.",
+       "vizParams": {
+        "C": 100,
+        "V": 12,
+        "mode": "store",
+        "compare": true,
+        "reveal": false
+       }
       },
       {
        "id": "el_cap_series",
@@ -3585,7 +3610,15 @@ window.QQ_DATA = {
        "answerNumber": 50.0,
        "tolerance": 0.5,
        "answerValue": "50",
-       "explain": "Capacitors combine the opposite way round from resistors. In series the reciprocals add: 1/C = 1/100 + 1/100, so C = 50 µF - LESS than either one. In parallel they simply add, giving 200 µF. Getting this backwards is the single most common capacitor mistake, and the reason is physical: putting them in series puts more insulator between the plates, and more separation means less capacitance."
+       "explain": "Capacitors combine the opposite way round from resistors. In series the reciprocals add: 1/C = 1/100 + 1/100, so C = 50 µF - LESS than either one. In parallel they simply add, giving 200 µF. Getting this backwards is the single most common capacitor mistake, and the reason is physical: putting them in series puts more insulator between the plates, and more separation means less capacitance.",
+       "viz": "capLab",
+       "vizHint": "Tap through to parallel and back. Watch what is shared and what adds.",
+       "vizParams": {
+        "C": 100,
+        "arrangement": "series",
+        "mode": "combine",
+        "reveal": false
+       }
       },
       {
        "id": "el_cap_tau",
@@ -3595,7 +3628,15 @@ window.QQ_DATA = {
        "answerNumber": 1.0,
        "tolerance": 0.02,
        "answerValue": "1",
-       "explain": "The time constant is τ = RC = 10,000 x 100e-6 = 1 second. It is worth checking that those units really do give seconds: ohms times farads is (V/A)(C/V) = C/A, and a coulomb per amp is a second. After one time constant a discharging capacitor has fallen to 1/e, about 37%, of its starting charge - not to zero, and not to half."
+       "explain": "The time constant is τ = RC = 10,000 x 100e-6 = 1 second. It is worth checking that those units really do give seconds: ohms times farads is (V/A)(C/V) = C/A, and a coulomb per amp is a second. After one time constant a discharging capacitor has fallen to 1/e, about 37%, of its starting charge - not to zero, and not to half.",
+       "viz": "capLab",
+       "vizHint": "The dashed line is what 'time constant' means. The number is yours to work out.",
+       "vizParams": {
+        "C": 100,
+        "R": 10,
+        "mode": "discharge",
+        "reveal": false
+       }
       }
      ]
     }
