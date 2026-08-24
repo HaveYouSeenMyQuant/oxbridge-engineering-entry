@@ -16,8 +16,84 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 141,
+ "count": 142,
  "entries": [
+  {
+   "slug": "how_far_does_the_crate_rise",
+   "title": "How far does the crate rise",
+   "ts": "2026-08-24T14:27:20+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ONE METRE. You hauled four metres and the crate came up a quarter of that.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. Four rope sections hold the moving block. For the block to come up by one metre, every one of those four sections has to get one metre shorter — and all that rope has to go somewhere. It goes through your hands. So"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    rope hauled  =  sections x rise",
+      "        4 m      =     4      x  1 m"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Nothing is lost and nothing is hidden; the rope you pulled in is simply shared out between the four sections that had to shorten."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE OTHER HALF, AND THE REAL POINT. The force goes the other way by exactly the same factor. Those four sections share the crate's weight, so if it weighs 1000 N, each section carries 250 N — and the one in your hand is one of them. You pull with 250 N."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    you pull    250 N through 4 m  =  1000 J",
+      "    crate gets 1000 N through 1 m  =  1000 J"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The work is identical. That is the whole of what a machine does: it trades force against distance and never gives you both. A pulley block, a lever, a gear train, a hydraulic press and a screw jack are all the same bargain in different packaging."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT ABOUT ONE PULLEY? A single fixed pulley has ONE section holding the load, so the ratio is one to one: haul four metres, it rises four metres, and you pull the full 1000 N. It buys you nothing but a change of direction — which is still worth having, because pulling down while standing is easier than lifting up."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. Whenever a machine seems to multiply force, find the distances. Energy in must equal energy out, so whatever the force is multiplied by, the distance is divided by. Count the rope sections and you have both numbers at once, without a formula."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_gpe",
+    "lesson": "p4",
+    "unit": 8,
+    "prompt": "How much gravitational potential energy does a 5 kg mass gain when lifted 4 m, with g = 10? Answer in joules."
+   }
+  },
   {
    "slug": "carbon_dating_cannot_touch_it",
    "title": "Carbon dating cannot touch it",
