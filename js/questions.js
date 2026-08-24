@@ -1707,7 +1707,16 @@ window.QQ_DATA = {
        "answerNumber": 6.244997998398397,
        "tolerance": 0.01,
        "answerValue": "6.245",
-       "explain": "c² = a² + b² − 2ab cosC = 25 + 49 − 35 = 39, so c = 6.24. Use the cosine rule when you have two sides and the angle BETWEEN them, or all three sides."
+       "explain": "c² = a² + b² − 2ab cosC = 25 + 49 − 35 = 39, so c = 6.24. Use the cosine rule when you have two sides and the angle BETWEEN them, or all three sides.",
+       "viz": "triangleLab",
+       "vizHint": "This is the triangle in the question. You are given both pieces; put them together.",
+       "vizParams": {
+        "a": 5,
+        "b": 7,
+        "C": 60,
+        "mode": "cosine",
+        "reveal": false
+       }
       },
       {
        "id": "tr_sine_rule",
@@ -1717,7 +1726,16 @@ window.QQ_DATA = {
        "answerNumber": 11.313708498984761,
        "tolerance": 0.01,
        "answerValue": "11.3137",
-       "explain": "a/sinA = b/sinB gives b = 8 × sin45/sin30 = 11.31. Use the sine rule when you have a matched side-angle PAIR."
+       "explain": "a/sinA = b/sinB gives b = 8 × sin45/sin30 = 11.31. Use the sine rule when you have a matched side-angle PAIR.",
+       "viz": "triangleLab",
+       "vizHint": "A different triangle. Drag anything and watch the two ratios stay equal — then use that on yours.",
+       "vizParams": {
+        "a": 6,
+        "b": 9,
+        "C": 70,
+        "mode": "sine",
+        "reveal": true
+       }
       },
       {
        "id": "tr_area",
@@ -1727,7 +1745,16 @@ window.QQ_DATA = {
        "answerNumber": 11.999999999999998,
        "tolerance": 0.01,
        "answerValue": "12",
-       "explain": "Area = ½ab sinC = ½ × 48 × 0.5 = 12. This is the half-base-times-height formula with the height written as b sinC."
+       "explain": "Area = ½ab sinC = ½ × 48 × 0.5 = 12. This is the half-base-times-height formula with the height written as b sinC.",
+       "viz": "triangleLab",
+       "vizHint": "The dashed line is the height. Base and height are both on screen.",
+       "vizParams": {
+        "a": 6,
+        "b": 8,
+        "C": 30,
+        "mode": "area",
+        "reveal": false
+       }
       },
       {
        "id": "tr_pythag_check",
@@ -1737,7 +1764,16 @@ window.QQ_DATA = {
        "answerNumber": 0,
        "tolerance": 0,
        "answerValue": "0",
-       "explain": "cos90 = 0, so the term vanishes and the cosine rule collapses to c² = a² + b² — Pythagoras. Pythagoras is the special case, not a separate result."
+       "explain": "cos90 = 0, so the term vanishes and the cosine rule collapses to c² = a² + b² — Pythagoras. Pythagoras is the special case, not a separate result.",
+       "viz": "triangleLab",
+       "vizHint": "Drag the angle round to 90° and watch what the correction term does.",
+       "vizParams": {
+        "a": 5,
+        "b": 7,
+        "C": 55,
+        "mode": "cosine",
+        "reveal": false
+       }
       },
       {
        "id": "tr_which_rule",
@@ -1751,7 +1787,16 @@ window.QQ_DATA = {
        ],
        "answer": 2,
        "answerValue": "The cosine rule",
-       "explain": "The cosine rule, rearranged to cosC = (a² + b² − c²)/2ab. The sine rule needs a matched side-angle pair, and with three sides you have no angle to start from."
+       "explain": "The cosine rule, rearranged to cosC = (a² + b² − c²)/2ab. The sine rule needs a matched side-angle pair, and with three sides you have no angle to start from.",
+       "viz": "triangleLab",
+       "vizHint": "Look at which quantities each rule needs.",
+       "vizParams": {
+        "a": 5,
+        "b": 7,
+        "C": 60,
+        "mode": "cosine",
+        "reveal": true
+       }
       }
      ]
     },
