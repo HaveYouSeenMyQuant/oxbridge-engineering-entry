@@ -373,7 +373,11 @@
       var m = moments();
       /* tilt from the net moment, capped so it stays on screen */
       var net = (m[1] - m[0]) / Math.max(1, Math.abs(m[0]) + Math.abs(m[1]));
-      var th = Math.max(-0.30, Math.min(0.30, net * 0.6));
+      /* Tilt is deliberately GENTLE. At the first cut's 0.30 rad the beam ran
+       * off the top and bottom of the panel and took both weights with it --
+       * seen on the live site, not in any check. The tilt only has to say
+       * WHICH WAY it goes; the numbers above say by how much. */
+      var th = Math.max(-0.13, Math.min(0.13, net * 0.30));
       var px = mode === 'pivot' ? cx - half + pivot * 2 * half : cx;
 
       /* the pivot: a triangle under the beam */

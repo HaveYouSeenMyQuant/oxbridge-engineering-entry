@@ -3120,18 +3120,7 @@ window.QQ_DATA = {
        "answerNumber": 100.0,
        "tolerance": 0,
        "answerValue": "100",
-       "explain": "Moment = force x perpendicular distance = 200 x 0.5 = 100 N m. The perpendicular part matters: push along the spanner instead of across it and the distance is zero, so the moment is zero however hard you push.",
-       "viz": "seeSaw",
-       "vizHint": "One weight, one distance. Watch what the moment does as it moves out.",
-       "vizParams": {
-        "mode": "load",
-        "w1": 0,
-        "w2": 200,
-        "d1": 1.0,
-        "d2": 0.2,
-        "span": 1.0,
-        "reveal": false
-       }
+       "explain": "Moment = force x perpendicular distance = 200 x 0.5 = 100 N m. The perpendicular part matters: push along the spanner instead of across it and the distance is zero, so the moment is zero however hard you push."
       },
       {
        "id": "me_balance",
