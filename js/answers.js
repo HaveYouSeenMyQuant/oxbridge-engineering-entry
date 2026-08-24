@@ -99,7 +99,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_v2",
+    "lesson": "p1",
+    "unit": 10,
+    "prompt": "A car decelerates from 20 m/s to rest in 40 m. What is the magnitude of its acceleration, in m/s²?"
+   }
   },
   {
    "slug": "twenty_newtons_lifts_a_car",
@@ -189,7 +195,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_graph_area",
+    "lesson": "p1",
+    "unit": 10,
+    "prompt": "On a velocity-time graph, a body goes from 0 to 12 m/s in 4 s at constant acceleration. What distance does it cover, in metres?"
+   }
   },
   {
    "slug": "the_angle_light_cannot_leave",
@@ -282,7 +294,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "wa_critical",
+    "lesson": "w2",
+    "unit": 12,
+    "prompt": "What is the critical angle for glass of refractive index 1.5, in degrees, to the nearest degree?"
+   }
   },
   {
    "slug": "one_dropped_one_fired",
@@ -358,7 +376,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_distance",
+    "lesson": "p1",
+    "unit": 10,
+    "prompt": "Same ball, same g = 10. How far has it fallen in 3 s, in metres?"
+   }
   },
   {
    "slug": "the_can_that_wastes_least",
@@ -437,7 +461,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "es_scale_area",
+    "lesson": "es5",
+    "unit": 13,
+    "prompt": "You double every length of an object. By what factor does its surface area grow?"
+   }
   },
   {
    "slug": "he_never_quite_catches_it",
@@ -2026,13 +2056,7 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer",
-   "road": {
-    "qid": "grid_paths",
-    "lesson": "u5l2",
-    "unit": 2,
-    "prompt": "You walk across a city grid to the corner three blocks east and three blocks north, never doubling back. How many different routes are there?"
-   }
+   "src": "answer"
   },
   {
    "slug": "sixty_in_the_pub_all_night",
@@ -2109,13 +2133,7 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer",
-   "road": {
-    "qid": "little_law",
-    "lesson": "u14l1",
-    "unit": 14,
-    "prompt": "A pub holds 60 people at any moment through the evening and each of them stays about three quarters of an hour — how many people walk through the door in an hour?"
-   }
+   "src": "answer"
   },
   {
    "slug": "two_kilometres_of_falling",
@@ -5134,13 +5152,7 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer",
-   "road": {
-    "qid": "pizza_size",
-    "lesson": "u3l1",
-    "unit": 5,
-    "prompt": "One 12-inch pizza, or two 8-inch pizzas, for the same money. Which gives you more pizza?"
-   }
+   "src": "answer"
   },
   {
    "slug": "sixty_there_thirty_back",
