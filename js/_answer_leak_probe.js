@@ -18,10 +18,18 @@
  * arbitrary units — showing up because the visual draws the question's own
  * data. Judge each one; do not chase the count to zero.
  *
- * As of 2026-08-24 the expected residue is 7:
+ * As of 2026-08-24 the expected residue is 6:
  *   mx_det2, mx_solve_x, mx_reflect_det, mx_shear_area,
- *   al_quad_roots, al_exam_disc, wa_wavelength
+ *   al_quad_roots, al_exam_disc
  * Anything OUTSIDE that list is new and wants looking at.
+ *
+ * wa_wavelength LEFT the list on 2026-08-24 when waveLab was reworked to take
+ * real units: it now opens at 4 m against an answer of 2 m, so the readout no
+ * longer contains the answer. The two questions added to waveLab at the same
+ * time (wa_speed, wa_light_wavelength) did not join the list -- wa_speed hides
+ * the speed entirely, and wa_light_wavelength opens at 400 nm against 600.
+ * Run after the gate removal, when every unit became reachable by anyone:
+ * NUMERIC 91 checked / 6 matches, TEXT 29 checked / 3 hits, all expected.
  */
 (function () {
   var bad = [], n = 0;

@@ -16,8 +16,117 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 136,
+ "count": 137,
  "entries": [
+  {
+   "slug": "two_heaters_wired_end_to_end",
+   "title": "Two heaters wired end to end",
+   "ts": "2026-08-24T11:02:59+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "FIVE HUNDRED WATTS. Not two kilowatts. Not one. Adding the second heater HALVED the heat, and each heater is now giving a quarter of what it is sold as.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. A heater is just a resistance, and the rating tells you what it is. At its rated voltage,"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P = V^2 / R    so    R = V^2 / P = 230^2 / 1000 = 52.9 ohms"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Put two of them end to end in one loop and they carry the SAME current, so the resistances add:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    R_total = 52.9 + 52.9 = 105.8 ohms"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The mains voltage has not changed. So the whole loop now dissipates"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P = V^2 / R_total = 230^2 / 105.8 = 500 W"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "and the two of them split it evenly: 250 W each."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRAP, AND IT CATCHES PEOPLE BOTH WAYS. Two confident wrong answers:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  \"2 kW — two kilowatt heaters, obviously.\"  That is the answer for two",
+      "  heaters wired SIDE BY SIDE, each across the full 230 V. That is how sockets",
+      "  actually work, and it is why the intuition feels right."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  \"1 kW — they must share the kilowatt.\"  This assumes the power is fixed and",
+      "  gets divided. It is not. Power is not a thing the mains hands out; it is",
+      "  what falls out of V and R."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT ACTUALLY CHANGED. Doubling the resistance halves the current — and the heat goes as I^2 R. The current is down by a factor of 2, so I^2 is down by 4, while R is up by 2: net, half. Each element sees only half the mains voltage across it, and a quarter of its rated power."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    one heater alone   1000 W",
+      "    two in series       500 W total   (250 W each)",
+      "    two side by side   2000 W total   (1000 W each)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When something is \"rated\" at a number, that number is not a property of the object — it is a property of the object AT A STATED VOLTAGE. Change the voltage across it and the rating tells you nothing directly. Go back to R, which really is fixed, and work forwards from there."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "the_lift_and_the_ball",
    "title": "The lift and the ball",
