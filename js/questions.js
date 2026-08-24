@@ -1513,15 +1513,7 @@ window.QQ_DATA = {
        "answerNumber": 8,
        "tolerance": 0.01,
        "answerValue": "8",
-       "explain": "V = π∫y²dx = π∫x dx from 0 to 4 = π[x²/2] = 8π, so k = 8. Rotating squares the function, which is why √x becomes an easy integral the moment you set it up.",
-       "viz": "areaUnder",
-       "vizHint": "The curve that gets spun round.",
-       "vizParams": {
-        "curve": "root",
-        "a": 0,
-        "b": 4,
-        "reveal": false
-       }
+       "explain": "V = π∫y²dx = π∫x dx from 0 to 4 = π[x²/2] = 8π, so k = 8. Rotating squares the function, which is why √x becomes an easy integral the moment you set it up."
       },
       {
        "id": "in_trapezium",
