@@ -959,7 +959,8 @@ window.QQ_DATA = {
        "vizHint": "Find somewhere the curve is falling.",
        "vizParams": {
         "curve": "cub3",
-        "x0": 0
+        "x0": 0,
+        "reveal": false
        }
       }
      ]
@@ -1163,10 +1164,10 @@ window.QQ_DATA = {
        "answerValue": "FALSE",
        "explain": "It could be a point of inflection — y = x³ at x = 0 has zero gradient but is neither a maximum nor a minimum. Zero gradient is necessary for a turning point, not sufficient.",
        "viz": "tangentSlide",
-       "vizHint": "A flat tangent is not always a turning point.",
+       "vizHint": "Hunt for the flat tangent, then look at what the curve does there.",
        "vizParams": {
         "curve": "cub4",
-        "x0": 0,
+        "x0": 1.2,
         "lo": -2,
         "hi": 2
        }
