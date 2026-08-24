@@ -3284,7 +3284,7 @@ window.QQ_ANSWERS = {
    "date": "22 Aug 2026",
    "topic": "physics",
    "q": null,
-   "a": "Because a voice is about the SIZE of the corner, and light is about a million times smaller.",
+   "a": "Because a voice is about the SIZE of the corner, and light is nearly two million times smaller.",
    "why": [
     {
      "h": null,
