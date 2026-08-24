@@ -705,7 +705,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "comment"
+   "src": "comment",
+   "road": {
+    "qid": "me_v2",
+    "lesson": "p1",
+    "unit": 10,
+    "prompt": "A car decelerates from 20 m/s to rest in 40 m. What is the magnitude of its acceleration, in m/s²?"
+   }
   },
   {
    "slug": "five_in_the_queue",
@@ -1752,7 +1758,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "in_constant",
+    "lesson": "i1",
+    "unit": 4,
+    "prompt": "Integrate 5 with respect to x. What is the coefficient of x?"
+   }
   },
   {
    "slug": "no_fraction_fits_the_diagonal",
@@ -1837,7 +1849,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "al_surd",
+    "lesson": "a1",
+    "unit": 2,
+    "prompt": "Rationalise 6/√3 and give the coefficient of √3."
+   }
   },
   {
    "slug": "the_power_that_ends_at_one",
@@ -1916,7 +1934,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "lg_log2",
+    "lesson": "g1",
+    "unit": 9,
+    "prompt": "What is log₂32?"
+   }
   },
   {
    "slug": "add_one_to_a_hundred",
@@ -1988,7 +2012,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "al_indices",
+    "lesson": "a1",
+    "unit": 2,
+    "prompt": "Simplify (2³)⁴ ÷ 2¹⁰ as a power of 2. What is the index?"
+   }
   },
   {
    "slug": "three_east_three_north",
@@ -2201,7 +2231,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_suvat",
+    "lesson": "p1",
+    "unit": 10,
+    "prompt": "A ball is dropped from rest. Taking g = 10 m/s², how fast is it moving after 3 s, in m/s?"
+   }
   },
   {
    "slug": "heat_the_ring_watch_the_hole",
@@ -2262,7 +2298,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "es_scale_area",
+    "lesson": "es5",
+    "unit": 13,
+    "prompt": "You double every length of an object. By what factor does its surface area grow?"
+   }
   },
   {
    "slug": "two_metres_looks_like",
@@ -2323,7 +2365,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "wa_snell",
+    "lesson": "w2",
+    "unit": 12,
+    "prompt": "Light enters glass (n = 1.5) from air at 30° to the normal. What is the angle of refraction, in degrees, to the nearest degree?"
+   }
   },
   {
    "slug": "heard_but_not_seen",
@@ -2371,7 +2419,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "wa_speed",
+    "lesson": "w1",
+    "unit": 12,
+    "prompt": "A wave has frequency 50 Hz and wavelength 6 m. What is its speed, in m/s?"
+   }
   },
   {
    "slug": "four_corners_two_totals",
@@ -2529,7 +2583,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "in_power",
+    "lesson": "i1",
+    "unit": 4,
+    "prompt": "Integrate 3x². What is the coefficient of x³ in the result?"
+   }
   },
   {
    "slug": "the_trail_of_a_rolling_coin",
@@ -2625,7 +2685,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "tr_soh",
+    "lesson": "t1",
+    "unit": 7,
+    "prompt": "A right-angled triangle has hypotenuse 10 and an angle of 30°. How long is the side opposite that angle?"
+   }
   },
   {
    "slug": "always_aiming_where_they_are",
@@ -2707,7 +2773,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "ve_add",
+    "lesson": "v1",
+    "unit": 8,
+    "prompt": "(3, 4) + (1, −2) has components (a, b). What is b?"
+   }
   },
   {
    "slug": "a_rolling_rectangles_trail",
