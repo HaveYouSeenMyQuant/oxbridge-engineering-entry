@@ -1281,6 +1281,12 @@
      * is not what the link said. Distinct from ?road=1, which is us testing
      * and is excluded from every comparison. */
     if (/^#road$/i.test(location.hash || '')) return 'road-link';
+    /* #topics, for the same reason #road exists. The topic browser is half of
+     * what this site offers -- a ladder per topic beside the road -- and until
+     * now boot() had no case for it, so a link straight to #topics quietly
+     * opened the ROAD instead. Anything that points at a topic (a caption, the
+     * bio, a link in an email) landed on the wrong screen. */
+    if (/^#topics$/i.test(location.hash || '')) return 'topics-link';
     if (/[?&]road=1/.test(location.search)) return 'road-forced';
     if (/[?&]play=1/.test(location.search)) return 'question-forced';
     if (/[?&]answers=1/.test(location.search)) return 'answers-forced';
@@ -1971,6 +1977,11 @@
      * denominator. */
     if (entryPathTaken === 'unsubscribe') {
       unsubscribe(UNSUB_HASH.exec(location.hash)[1]);
+      return;
+    }
+
+    if (entryPathTaken === 'topics-link') {
+      go('topics');
       return;
     }
 
