@@ -1193,3 +1193,16 @@ body.in-lesson .tabs { display: none; }
   border-color: #f0883e; background: rgba(240,136,62,0.10);
 }
 .mock-open .topic-step-n { background: rgba(240,136,62,0.20); color: #f0883e; }
+
+/* topic chips on the answers archive — see buildTopicChips in answers_ui.js */
+.ans-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 2px; }
+.ans-chip {
+  border: 1px solid var(--line, #2b3550); background: transparent;
+  color: var(--muted, #97a3ba); border-radius: 999px;
+  padding: 4px 10px; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.ans-chip:hover { border-color: var(--accent, #58a6ff); color: var(--fg, #e6edf3); }
+.ans-chip.on {
+  background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff);
+  color: #0b1020;
+}

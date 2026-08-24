@@ -1140,9 +1140,64 @@
   // ======================================================================
   // wiring
   // ======================================================================
+  /* TOPIC CHIPS.
+   *
+   * This archive holds every puzzle the account has posted, and most of them
+   * predate the engineering pivot: of 131 entries, 82 are tagged quiz or money.
+   * So a sixth-former who arrives from a mechanics reel, taps Answers and
+   * scrolls sees five things they came for and then a wall of dice, pizzas and
+   * loan repayments. Those entries are genuinely part of what this account
+   * posted and hiding them would misrepresent it, but nothing was helping the
+   * viewer get past them.
+   *
+   * The search index already contains e.topic, so a chip only has to type the
+   * search for you. No new filtering path, no second source of truth about what
+   * matches -- the chips drive the box that was already there.
+   */
+  function buildTopicChips() {
+    var host = document.getElementById('ansTools');
+    if (!host || document.getElementById('ansChips')) return;
+    var counts = {};
+    ENTRIES.forEach(function (e) {
+      if (e.topic) counts[e.topic] = (counts[e.topic] || 0) + 1;
+    });
+    /* the ones this site is actually for, first and in this order; then
+     * anything else that has at least four entries */
+    var FIRST = ['real_world', 'physics', 'calculus', 'geometry', 'estimation'];
+    var rest = Object.keys(counts).filter(function (t) {
+      return FIRST.indexOf(t) === -1 && counts[t] >= 4;
+    }).sort(function (a, b) { return counts[b] - counts[a]; });
+    var order = FIRST.filter(function (t) { return counts[t]; }).concat(rest);
+    if (!order.length) return;
+
+    var bar = el('div', 'ans-chips');
+    bar.id = 'ansChips';
+    function chip(label, value) {
+      var b = el('button', 'ans-chip', label);
+      b.addEventListener('click', function () {
+        query = value;
+        var box = document.getElementById('ansSearch');
+        if (box) box.value = value;
+        focusSlug = null;
+        Array.prototype.forEach.call(bar.children, function (c) {
+          c.classList.toggle('on', c === b);
+        });
+        render();
+      });
+      return b;
+    }
+    bar.appendChild(chip('All', ''));
+    order.forEach(function (t) {
+      bar.appendChild(chip(t.replace(/_/g, ' ') + ' ' + counts[t], t));
+    });
+    bar.firstChild.classList.add('on');
+    host.appendChild(bar);
+  }
+
   function boot() {
     $('#tabAnswers').hidden = false;
     $('#ansSearch').setAttribute('placeholder', 'Search ' + ENTRIES.length + ' answers');
+    buildTopicChips();
 
     $('#tabAnswers').addEventListener('click', function () {
       if (parse()) { open(null, 'tab'); return; }   // already here: back to the list
@@ -1154,6 +1209,10 @@
     });
     $('#ansBackAll').addEventListener('click', function () { open(null, 'back'); });
     $('#ansSearch').addEventListener('input', function (e) {
+      var bar = document.getElementById('ansChips');
+      if (bar) Array.prototype.forEach.call(bar.children, function (c) {
+        c.classList.toggle('on', c.textContent === 'All' && !e.target.value);
+      });
       query = e.target.value;
       focusSlug = null;
       render();
