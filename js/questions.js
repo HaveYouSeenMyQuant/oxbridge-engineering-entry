@@ -155,7 +155,8 @@ window.QQ_DATA = {
         "r1": 2,
         "c1": 3,
         "r2": 3,
-        "c2": 4
+        "c2": 4,
+        "reveal": false
        }
       },
       {

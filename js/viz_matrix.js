@@ -554,6 +554,11 @@
   global.QQViz.register('matShapes', function (host, api) {
     var P = (api && api.params) || {};
     var r1 = P.r1 || 2, c1 = P.c1 || 3, r2 = P.r2 || 3, c2 = P.c2 || 4;
+    /* mx_conform asks WHICH of the two orders is defined, and this readout
+     * answered it: "the inner numbers match, so the product is 2x4". Caught by
+     * looking at the rendered screen -- the text probe could not see it, because
+     * the answer is a phrase that shares no long words with the readout. */
+    var reveal = P.reveal !== false;
     var swapped = false;
     var row = controls(host);
     var out = readout(host, '');
@@ -566,8 +571,10 @@
     function say() {
       var L = left(), R = right(), fits = L[1] === R[0];
       out.innerHTML = '(' + L[0] + '×<b>' + L[1] + '</b>)(<b>' + R[0] + '</b>×' + R[1] + ') — ' +
-        (fits ? 'the inner numbers match, so the product is <b>' + L[0] + '×' + R[1] + '</b>'
-              : 'the inner numbers <b>differ</b>, so this product is undefined');
+        (reveal
+          ? (fits ? 'the inner numbers match, so the product is <b>' + L[0] + '×' + R[1] + '</b>'
+                  : 'the inner numbers <b>differ</b>, so this product is undefined')
+          : 'do the two inner numbers match?');
     }
     say();
     stage.draw = function (g, w, h) {
