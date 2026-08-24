@@ -1344,15 +1344,7 @@ window.QQ_DATA = {
        "answerNumber": 15,
        "tolerance": 0,
        "answerValue": "15",
-       "explain": "[x²] from 1 to 4 = 16 − 1 = 15. Check it geometrically: it is a trapezium with parallel sides 2 and 8 and width 3, area ½(2+8)(3) = 15 ✓.",
-       "viz": "areaUnder",
-       "vizHint": "Area under a straight line is still an area.",
-       "vizParams": {
-        "curve": "lin",
-        "a": 1,
-        "b": 4,
-        "reveal": false
-       }
+       "explain": "[x²] from 1 to 4 = 16 − 1 = 15. Check it geometrically: it is a trapezium with parallel sides 2 and 8 and width 3, area ½(2+8)(3) = 15 ✓."
       },
       {
        "id": "in_between",
@@ -2989,7 +2981,8 @@ window.QQ_DATA = {
        "vizHint": "Fire it. Watch the clock and the arc.",
        "vizParams": {
         "ang": 30,
-        "u": 20
+        "u": 20,
+        "reveal": false
        }
       },
       {
@@ -3005,7 +2998,8 @@ window.QQ_DATA = {
        "vizHint": "The apex of the arc.",
        "vizParams": {
         "ang": 30,
-        "u": 20
+        "u": 20,
+        "reveal": false
        }
       },
       {
@@ -3141,7 +3135,8 @@ window.QQ_DATA = {
        "vizParams": {
         "r1": 3,
         "r2": 5,
-        "series": true
+        "series": true,
+        "reveal": false
        }
       },
       {
@@ -3158,7 +3153,8 @@ window.QQ_DATA = {
        "vizParams": {
         "r1": 6,
         "r2": 6,
-        "series": false
+        "series": false,
+        "reveal": false
        }
       },
       {
@@ -3175,7 +3171,8 @@ window.QQ_DATA = {
        "vizParams": {
         "r1": 3,
         "r2": 6,
-        "series": false
+        "series": false,
+        "reveal": false
        }
       },
       {

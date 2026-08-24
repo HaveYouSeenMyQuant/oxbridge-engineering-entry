@@ -408,6 +408,7 @@
     var P = (api && api.params) || {};
     var ang = P.ang != null ? P.ang : 30,
         u = P.u != null ? P.u : 20, G = 10, t = 0, running = false;
+    var reveal = P.reveal !== false;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.72);
@@ -418,9 +419,14 @@
     function range() { return u * u * Math.sin(2 * ang * Math.PI / 180) / G; }
     function apex() { return Math.pow(u * Math.sin(ang * Math.PI / 180), 2) / (2 * G); }
     function say() {
-      out.innerHTML = ang + '°  ·  range <b>' + range().toFixed(1) +
-        ' m</b>  ·  height <b>' + apex().toFixed(1) +
-        ' m</b>  ·  time <b>' + flight().toFixed(2) + ' s</b>';
+      /* range, height and time are exactly what me_proj_time and
+       * me_proj_height ask for. With reveal:false the flight is still there to
+       * watch and to time by eye; the numbers are not handed over. */
+      out.innerHTML = reveal
+        ? ang + '°  ·  range <b>' + range().toFixed(1) +
+          ' m</b>  ·  height <b>' + apex().toFixed(1) +
+          ' m</b>  ·  time <b>' + flight().toFixed(2) + ' s</b>'
+        : ang + '° at ' + u + ' m/s  ·  press fire and watch the arc';
     }
     say();
     stage.draw = function (g, w, h) {
@@ -458,6 +464,7 @@
         r2 = P.r2 != null ? P.r2 : 6,
         series = P.series != null ? P.series : true,
         V = P.V != null ? P.V : 12;
+    var reveal = P.reveal !== false;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.6);
@@ -471,8 +478,15 @@
     function total() { return series ? r1 + r2 : 1 / (1 / r1 + 1 / r2); }
     function say() {
       var R = total();
-      out.innerHTML = (series ? 'Series' : 'Parallel') + ': R = <b>' +
-        R.toFixed(2) + ' Ω</b>, I = V/R = <b>' + (V / R).toFixed(2) + ' A</b>';
+      /* R and I are precisely what el_series, el_parallel and
+       * el_parallel_unequal ask for, and this printed both. reveal:false keeps
+       * the circuit and the two resistor values -- which the question states
+       * anyway -- and drops the totals. */
+      out.innerHTML = reveal
+        ? (series ? 'Series' : 'Parallel') + ': R = <b>' +
+          R.toFixed(2) + ' Ω</b>, I = V/R = <b>' + (V / R).toFixed(2) + ' A</b>'
+        : (series ? 'Series' : 'Parallel') + ': ' + r1 + ' Ω and ' + r2 +
+          ' Ω, supply ' + V + ' V — work the total out';
     }
     say();
     stage.draw = function (g, w, h) {
