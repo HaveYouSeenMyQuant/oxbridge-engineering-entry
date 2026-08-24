@@ -2941,7 +2941,16 @@ window.QQ_DATA = {
        "answerNumber": 10.0,
        "tolerance": 0.01,
        "answerValue": "10",
-       "explain": "mgh = ½mv², and the mass cancels: v = √(2gh) = √100 = 10 m/s. The mass cancelling is why everything falls at the same rate."
+       "explain": "mgh = ½mv², and the mass cancels: v = √(2gh) = √100 = 10 m/s. The mass cancelling is why everything falls at the same rate.",
+       "viz": "energyBars",
+       "vizHint": "Drag it down and watch one bar empty into the other.",
+       "vizParams": {
+        "m": 2,
+        "g": 10,
+        "h0": 5,
+        "h": 5,
+        "showSpeed": false
+       }
       },
       {
        "id": "me_power",

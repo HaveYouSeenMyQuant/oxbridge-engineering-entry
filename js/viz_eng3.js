@@ -417,3 +417,84 @@
     return { destroy: stage.destroy };
   });
 }(window));
+
+/* ========================================================= energyBars ======
+ * Energy changing form, as two bars whose total never moves.
+ *
+ * Lesson p4 (Energy and power) had FIVE questions and ZERO visuals, and none
+ * of the 36 registered visuals could illustrate any of them — nothing in the
+ * library drew energy at all. That gap was recorded on 2026-08-24 rather than
+ * filled with a near miss; this is the build it was waiting for.
+ *
+ * Drag the height. Gravitational energy falls, kinetic energy rises, and the
+ * two bars always sum to the same total — which is the whole idea, and is why
+ * the total bar is drawn as a fixed outline that the two colours fill.
+ *
+ * WHAT IT DOES NOT SHOW: a speed. `me_fall_speed` asks for the speed on
+ * landing, so the ENERGIES are the working and the speed is the answer. The
+ * readout carries joules and never m/s unless `showSpeed` is explicitly set.
+ */
+(function (global) {
+  'use strict';
+  var K = global.QQViz.kit;
+  var C = K.C, f = K.f, Stage = K.Stage;
+  var controls = K.controls, readout = K.readout, slider = K.slider;
+
+  global.QQViz.register('energyBars', function (host, api) {
+    var P = (api && api.params) || {};
+    var m = P.m != null ? P.m : 2;          // kg
+    var g = P.g != null ? P.g : 10;
+    var h0 = P.h0 != null ? P.h0 : 5;       // the drop, metres
+    var h = P.h != null ? P.h : h0;         // where it currently is
+    var showSpeed = P.showSpeed === true;   // OFF unless asked for
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.78);
+
+    slider(row, { min: 0, max: h0, step: h0 / 20, value: h, label: 'height' },
+      function (v) { h = v; api.onInteract('slider'); say(); });
+
+    function gpe() { return m * g * h; }
+    function ke() { return m * g * (h0 - h); }
+    function total() { return m * g * h0; }
+    function r1(x) { return Math.round(x * 10) / 10; }
+
+    function say() {
+      out.innerHTML =
+        'height <b>' + r1(h) + ' m</b>   ·   gravitational <b>' + r1(gpe()) +
+        ' J</b>   ·   kinetic <b>' + r1(ke()) + ' J</b>' +
+        (showSpeed && h < h0
+          ? '   ·   speed <b>' + r1(Math.sqrt(2 * g * (h0 - h))) + ' m/s</b>'
+          : '');
+    }
+    say();
+
+    stage.draw = function (gx, w, hh) {
+      var pad = 26, barW = 54, baseY = hh - 34, top = 22;
+      var span = baseY - top;
+      /* the falling object, at the height the slider says */
+      var ox = pad + 40;
+      var oy = baseY - span * (h / h0);
+      gx.fillStyle = C.line;
+      gx.fillRect(pad + 4, baseY, 72, 4);
+      gx.fillStyle = C.gold;
+      gx.beginPath(); gx.arc(ox, oy - 10, 11, 0, 7); gx.fill();
+      /* the two bars, sharing one fixed outline so the total is visibly fixed */
+      var bx = w - pad - barW * 2 - 26;
+      var frac = total() > 0 ? gpe() / total() : 0;
+      gx.strokeStyle = C.line; gx.lineWidth = 2;
+      gx.strokeRect(bx, top, barW, span);
+      gx.fillStyle = C.accent;
+      gx.fillRect(bx + 1, top + span * (1 - frac) + 1, barW - 2, span * frac - 2);
+      gx.strokeRect(bx + barW + 26, top, barW, span);
+      gx.fillStyle = C.good;
+      gx.fillRect(bx + barW + 27, top + span * frac + 1, barW - 2,
+                  span * (1 - frac) - 2);
+      gx.fillStyle = C.muted; gx.font = f(11, 700); gx.textAlign = 'center';
+      gx.fillText('gravitational', bx + barW / 2, hh - 16);
+      gx.fillText('kinetic', bx + barW + 26 + barW / 2, hh - 16);
+      gx.fillText('the two always add to the same total', w / 2, hh - 2);
+    };
+    return { destroy: stage.destroy };
+  });
+}(window));
