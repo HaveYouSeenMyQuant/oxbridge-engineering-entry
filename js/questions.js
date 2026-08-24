@@ -318,7 +318,15 @@ window.QQ_DATA = {
        "answerValue": "1",
        "explain": "Swap the diagonal, negate the off-diagonal, divide by the determinant 2: top-left becomes 2/2 = 1.",
        "viz": "matInv",
-       "vizHint": "Apply M, then apply M inverse."
+       "vizHint": "Apply M, then apply M inverse.",
+       "vizParams": {
+        "m": [
+         3,
+         4,
+         1,
+         2
+        ]
+       }
       },
       {
        "id": "mx_inv_check",
@@ -330,7 +338,16 @@ window.QQ_DATA = {
        "answerValue": "TRUE",
        "explain": "MM⁻¹ = M⁻¹M = I. Inverses are the one case where matrix multiplication does commute, and that is essentially what being an inverse means.",
        "viz": "matInv",
-       "vizHint": "Does it land exactly back where it started?"
+       "vizHint": "Does it land exactly back where it started?",
+       "vizParams": {
+        "m": [
+         3,
+         4,
+         1,
+         2
+        ],
+        "reveal": false
+       }
       },
       {
        "id": "mx_solve_x",

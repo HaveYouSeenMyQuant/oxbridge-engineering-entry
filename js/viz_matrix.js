@@ -274,7 +274,14 @@
 
   /* ------------------------------------------------------------- 4. matInv */
   global.QQViz.register('matInv', function (host, api) {
-    var M = [[3, 4], [1, 2]];
+    /* The matrix comes from the question, and the verdict can be withheld.
+     * mx_inv_check asks whether a matrix times its inverse gives the identity;
+     * the readout answered it outright with "M inverse has put every point back
+     * exactly where it started". With reveal:false the animation still runs and
+     * the student watches whether it lands back on the square. */
+    var P0 = (api && api.params) || {};
+    var reveal = P0.reveal !== false;
+    var M = P0.m ? [[P0.m[0], P0.m[1]], [P0.m[2], P0.m[3]]] : [[3, 4], [1, 2]];
     var d = M[0][0] * M[1][1] - M[0][1] * M[1][0];
     var Inv = [[M[1][1] / d, -M[0][1] / d], [-M[1][0] / d, M[0][0] / d]];
     var phase = 0;                       // 0 original, 1 transformed, 2 back
@@ -287,9 +294,12 @@
 
     function say() {
       out.innerHTML = phase === 1
-        ? 'M has stretched and sheared the square. Area is now <b>' + Math.abs(d) + '</b>×.'
-        : (phase === 2 ? 'M⁻¹ has put every point back exactly where it started.'
-                       : 'The unit square, before anything happens.');
+        ? 'M has stretched and sheared the square.' + (reveal
+            ? ' Area is now <b>' + Math.abs(d) + '</b>×.' : '')
+        : (phase === 2
+            ? (reveal ? 'M⁻¹ has put every point back exactly where it started.'
+                      : 'M⁻¹ applied. Watch where the corners land.')
+            : 'The unit square, before anything happens.');
     }
 
     var SQ = [[0, 0], [1, 0], [1, 1], [0, 1]];
