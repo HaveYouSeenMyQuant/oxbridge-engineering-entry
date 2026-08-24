@@ -16,8 +16,107 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 146,
+ "count": 147,
  "entries": [
+  {
+   "slug": "three_seconds_in_one_millisecond_out",
+   "title": "Three seconds in, one millisecond out",
+   "ts": "2026-08-24T17:49:54+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "THREE THOUSAND TIMES. Not a little more — three thousand.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ONE-LINE ROUTE. Whatever energy the battery put in over those three seconds is the same energy that comes back out during the flash. Nothing is created in between; the store just holds it. And power is energy per unit time, so if the energy is the same both ways, the powers are in the inverse ratio of the times:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P_out / P_in  =  t_in / t_out  =  3 s / 0.001 s  =  3000"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "You never need a component value. That is worth noticing on its own: the question looks like it needs the capacitance and the voltage, and it does not."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE LONG ROUTE, WHICH AGREES. A typical flash capacitor is about 100 microfarads charged to 300 volts:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    E = 1/2 C V^2 = 1/2 x 100e-6 x 300^2 = 4.5 J"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    charging   4.5 J over 3 s        = 1.5 W    (a trickle, easily done by",
+      "                                                 a small battery)",
+      "    flashing   4.5 J over 0.001 s    = 4500 W   (briefly brighter than",
+      "                                                 a room full of lights)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "and 4500 / 1.5 is 3000 again."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "ENERGY AND POWER ARE NOT THE SAME THING, and this is the cleanest example of the difference there is. The energy in that flash is about what it takes to lift a phone two metres — trivial. The POWER is enormous, because it is delivered in a slot a thousandth of a second wide. A small battery could never supply 4500 W directly; it does not have to, because it is never asked to supply it at all. It fills a bucket slowly and something else tips the bucket over."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE ELSE THIS IS THE WHOLE DESIGN. A defibrillator charges for seconds and delivers in milliseconds. So does a camera flash, a railgun, a spot welder, and the ignition coil in a petrol engine. Any time you see \"charges for a few seconds\", the device is buying power by spending time."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: that the energy going in comes back out. Not all of it does — some is lost warming the circuit while it charges, and the flash tube turns only part of what it gets into light rather than heat. So the ratio of USEFUL powers is somewhat under three thousand."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The argument itself survives all of that untouched, which is why it is worth making this way round: whatever fraction comes back, it comes back in a thousandth of the time it went in. The time ratio is doing the work and the efficiency only scales the answer."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When a number looks impossibly large, check whether it is an ENERGY or a POWER. Energies have to come from somewhere and be paid for; powers can be manufactured for free by shortening the window they are delivered in."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "how_slowly_can_you_swing_it",
    "title": "How slowly can you swing it",
