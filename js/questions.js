@@ -3847,7 +3847,14 @@ window.QQ_DATA = {
        "answerNumber": 29.999999999999993,
        "tolerance": 0.05,
        "answerValue": "30",
-       "explain": "1/f = 1/u + 1/v gives 1/v = 1/10 − 1/15 = 1/30, so v = 30 cm. The image is real and on the far side of the lens."
+       "explain": "1/f = 1/u + 1/v gives 1/v = 1/10 − 1/15 = 1/30, so v = 30 cm. The image is real and on the far side of the lens.",
+       "viz": "lensRay",
+       "vizHint": "Both givens are marked on the axis. The image is where the rays cross - read the construction, not a formula.",
+       "vizParams": {
+        "u": 15,
+        "f": 10,
+        "reveal": false
+       }
       },
       {
        "id": "wa_magnification",
@@ -3857,7 +3864,14 @@ window.QQ_DATA = {
        "answerNumber": 2.0,
        "tolerance": 0.01,
        "answerValue": "2",
-       "explain": "m = v/u = 30/15 = 2, so the image is twice the size of the object — and inverted, because it is real."
+       "explain": "m = v/u = 30/15 = 2, so the image is twice the size of the object — and inverted, because it is real.",
+       "viz": "lensRay",
+       "vizHint": "Same lens, same object. Compare the two arrows.",
+       "vizParams": {
+        "u": 15,
+        "f": 10,
+        "reveal": false
+       }
       },
       {
        "id": "wa_lens_far",
@@ -3867,7 +3881,14 @@ window.QQ_DATA = {
        "answerNumber": 30.0,
        "tolerance": 0.5,
        "answerValue": "30",
-       "explain": "Use 1/f = 1/u + 1/v, so 1/v = 1/20 − 1/60 = 3/60 − 1/60 = 2/60, giving v = 30 cm. Notice the image is CLOSER than the object this time: beyond twice the focal length the image comes in between f and 2f and is smaller than the object. Inside 2f it goes the other way, which is the whole difference between a projector and a magnifying glass."
+       "explain": "Use 1/f = 1/u + 1/v, so 1/v = 1/20 − 1/60 = 3/60 − 1/60 = 2/60, giving v = 30 cm. Notice the image is CLOSER than the object this time: beyond twice the focal length the image comes in between f and 2f and is smaller than the object. Inside 2f it goes the other way, which is the whole difference between a projector and a magnifying glass.",
+       "viz": "lensRay",
+       "vizHint": "A more distant object. Watch which way the crossing point moves as you slide it out.",
+       "vizParams": {
+        "u": 60,
+        "f": 20,
+        "reveal": false
+       }
       },
       {
        "id": "wa_harmonic",
@@ -3877,7 +3898,13 @@ window.QQ_DATA = {
        "answerNumber": 200,
        "tolerance": 0,
        "answerValue": "200",
-       "explain": "Harmonics are whole-number multiples of the fundamental, so the second is 200 Hz. This is why a string sounds like a note rather than a noise."
+       "explain": "Harmonics are whole-number multiples of the fundamental, so the second is 200 Hz. This is why a string sounds like a note rather than a noise.",
+       "viz": "standWave",
+       "vizHint": "Step up one harmonic and count the half-wavelengths.",
+       "vizParams": {
+        "n": 1,
+        "reveal": false
+       }
       },
       {
        "id": "wa_exam_freq_change",
@@ -3887,7 +3914,12 @@ window.QQ_DATA = {
        "statement": "When light passes from air into glass its frequency changes.",
        "answerBool": false,
        "answerValue": "FALSE",
-       "explain": "The frequency is set by the source and does not change. The SPEED drops and the WAVELENGTH shortens in proportion, keeping v = fλ consistent. Assuming the wrong one of the three is fixed is the usual error here."
+       "explain": "The frequency is set by the source and does not change. The SPEED drops and the WAVELENGTH shortens in proportion, keeping v = fλ consistent. Assuming the wrong one of the three is fixed is the usual error here.",
+       "viz": "refractBend",
+       "vizHint": "Watch which of the wave's properties changes at the boundary and which does not.",
+       "vizParams": {
+        "reveal": false
+       }
       }
      ]
     },
