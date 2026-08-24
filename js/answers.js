@@ -182,6 +182,27 @@ window.QQ_ANSWERS = {
      "h": null,
      "t": "p",
      "lines": [
+      "THE ASSUMPTION DOING THE WORK: the driver hears the siren DIRECTLY, and nothing else. That is the physics the question is about, and it is not quite the whole of what a real driver hears."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Sound also leaves the siren, crosses to a wall or a parked lorry, and comes back. On that path the ambulance IS moving relative to the reflector — closing on the things ahead, retreating from the things behind — so those returns come back shifted, and shifted TWICE over (once going, once returning). A driver in a narrow street with hard walls really does hear the note wander, and it is why a siren sounds different in a tunnel."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "None of that changes the answer: the note the siren makes and the note reaching the cab through the air directly are the same, because that path has no relative motion in it at all. But \"directly\" is the word doing the work, and saying it out loud is the difference between knowing the result and knowing the physics."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
       "THE INTERVIEW MOVE. Whenever a formula has a velocity in it, ask \"relative to what?\" before using it. Most Doppler mistakes, and a fair share of relativity ones, are that question left unasked."
      ]
     }
@@ -246,6 +267,27 @@ window.QQ_ANSWERS = {
      "t": "p",
      "lines": [
       "WHAT ABOUT ONE PULLEY? A single fixed pulley has ONE section holding the load, so the ratio is one to one: haul four metres, it rises four metres, and you pull the full 1000 N. It buys you nothing but a change of direction — which is still worth having, because pulling down while standing is easier than lifting up."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: the block is IDEAL — the sheaves turn freely, the rope is weightless and perfectly flexible, and nothing rubs. That is what lets the work in equal the work out exactly."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A real block does not. Each sheave costs a few per cent to bearing friction and to the effort of bending a stiff rope round it, and those losses compound: a four-sheave block might return 85 to 90 per cent of what you put in, so you pull rather more than 250 N. The DISTANCES are unaffected — four metres of rope still lifts the crate one metre, because that is geometry and geometry does not have losses. It is the force that pays."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Worth knowing which half of the bargain is exact and which is approximate: the rope-counting is exact, the force division is the ideal case."
      ]
     },
     {
