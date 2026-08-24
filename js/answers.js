@@ -16,8 +16,155 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 147,
+ "count": 148,
  "entries": [
+  {
+   "slug": "twice_the_board_eight_times_the_dip",
+   "title": "Twice the board, eight times the dip",
+   "ts": "2026-08-24T18:29:53+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "EIGHT TIMES FURTHER. Not twice, and not four times.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. For a beam held at one end with a load on the other, the tip drops by"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    delta = F L^3 / (3 E I)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Everything in that except L is unchanged — same board, same person, same material, same cross-section. So the dip goes as the CUBE of the length, and doubling L multiplies it by 2 x 2 x 2 = 8."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THE CUBE COMES FROM, without the formula. Two separate things get worse at once when you lengthen the board:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "list",
+     "lines": [
+      "the MOMENT at the root is F x L, so it grows with L. Twice the length,"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    twice the twisting effort at the fixed end."
+     ]
+    },
+    {
+     "h": null,
+     "t": "list",
+     "lines": [
+      "but the board also has more length over which to curve, and the tip is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    further from every bit of that curvature. Each of those contributes",
+      "    another factor of L."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Three factors of L, one cube. This is the same reason a long shelf sags so much more than a short one, and why the fix is almost never a thicker shelf — it is a bracket halfway along, which halves L and so divides the sag by eight."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE OTHER CUBE, WHICH IS THE USEFUL ONE. The second moment of area of a rectangle is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I = b t^3 / 12"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "so the THICKNESS is cubed too, the other way up. Double the thickness of the board and the dip divides by eight. Double the WIDTH and it only halves — width appears once, thickness three times. That is why a plank is far stiffer on its edge than laid flat, and why joists are tall and thin rather than short and wide."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A REAL NUMBER. A 3 m fibreglass board, 400 mm wide and 50 mm thick, with a 70 kg person on the end:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I     = 0.40 x 0.050^3 / 12   = 4.17e-6 m^4",
+      "    delta = 700 x 3^3 / (3 x 10e9 x 4.17e-6) = 0.151 m"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "about 15 cm, which is roughly what you see at a pool. Make it 6 m and the same person puts the tip 1.2 m down — which is why competition boards are thicker and stiffer, not merely longer."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK, and it is worth saying out loud. delta = F L^3 / (3 E I) is SMALL-DEFLECTION theory: it assumes the board bends only slightly, so its length along the curve is still near enough L and the slope stays shallow. At 3 m the tip drops 0.151 m, a twentieth of the length, and that is comfortably inside it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "At 6 m the same sum gives 1.2 m, which is a FIFTH of the length — and there the assumption is being stretched. A real board that far over is measurably stiffer than the formula predicts, because the geometry has changed: part of the load is now carried along the board rather than across it. The factor of eight is exactly right as the answer to the question asked (how the formula scales), and the 1.2 m should be read as \"far more than 15 cm, and past where this formula is trustworthy\" rather than as a measurement."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is the honest version, and an interviewer will usually be pleased to hear the limit of a formula quoted alongside it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. Before reaching for a formula, count how many times the length enters the problem. If it enters three times, no amount of intuition about \"twice as long\" will save you."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "three_seconds_in_one_millisecond_out",
    "title": "Three seconds in, one millisecond out",
