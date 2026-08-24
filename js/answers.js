@@ -16,8 +16,83 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 142,
+ "count": 143,
  "entries": [
+  {
+   "slug": "what_does_the_driver_hear",
+   "title": "What does the driver hear",
+   "ts": "2026-08-24T15:07:02+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ONE STEADY NOTE, AND IT NEVER CHANGES. The driver hears exactly the note the siren makes — 900 Hz if that is what it emits — from the moment it is switched on until it is switched off.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. The Doppler shift depends on the motion BETWEEN the source and the listener, not on how fast either is going. The driver and the siren are bolted to the same vehicle: the distance between them never changes, so no wavefront is ever squeezed or stretched on its way to the cab. Sitting still in a stationary ambulance and doing 70 on a motorway sound identical from the driver's seat."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT YOU HEARD INSTEAD. For a stationary listener and a source moving at v,"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    approaching   f = f0 x c/(c − v) = 900 x 343/323 = 955.7 Hz",
+      "    receding      f = f0 x c/(c + v) = 900 x 343/363 = 850.4 Hz"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "so as it passed you the note fell by about 105 Hz — near enough two semitones, which is why it is so obvious. Both figures straddle the true 900 Hz, and the true note is what the driver had the whole time."
+     ]
+    },
+    {
+     "h": "THE TWO WRONG ANSWERS, AND WHY THEY ARE THE SAME MISTAKE.",
+     "t": "pre",
+     "lines": [
+      "  \"The driver hears it drop too.\"  This treats the drop as something that",
+      "  happens to the SIREN. It does not; the siren is unchanged throughout. The",
+      "  drop happens to the sound on its way to you."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  \"The driver hears it higher, because they are driving into their own",
+      "  sound.\"  This is the one that feels most like physics, and it is still the",
+      "  same error: the driver is not catching up on the sound, because the sound",
+      "  they hear left the siren a few metres away and they have not moved relative",
+      "  to it at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE CHECK THAT SETTLES IT. Put v = 0 in either formula and the shift vanishes. The v that matters is the RELATIVE one, and for the driver it is zero at every speed."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. Whenever a formula has a velocity in it, ask \"relative to what?\" before using it. Most Doppler mistakes, and a fair share of relativity ones, are that question left unasked."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "how_far_does_the_crate_rise",
    "title": "How far does the crate rise",
