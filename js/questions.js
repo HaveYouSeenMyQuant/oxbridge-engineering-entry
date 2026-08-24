@@ -3437,7 +3437,15 @@ window.QQ_DATA = {
        "answerNumber": 1920,
        "tolerance": 0,
        "answerValue": "1920",
-       "explain": "P = VI = 1920 W, near enough 2 kW. The other two forms, P = I²R and P = V²/R, follow by substituting Ohm's law and are quicker when you know the resistance instead."
+       "explain": "P = VI = 1920 W, near enough 2 kW. The other two forms, P = I²R and P = V²/R, follow by substituting Ohm's law and are quicker when you know the resistance instead.",
+       "viz": "powerBox",
+       "vizHint": "Both sides are given. The power is the area.",
+       "vizParams": {
+        "V": 240,
+        "I": 8,
+        "mode": "vi",
+        "reveal": false
+       }
       },
       {
        "id": "el_power_i2r",
@@ -3447,7 +3455,15 @@ window.QQ_DATA = {
        "answerNumber": 45,
        "tolerance": 0,
        "answerValue": "45",
-       "explain": "P = I²R = 9 × 5 = 45 W. The square on the current is why doubling the current quadruples the heating — and why transmission lines run at high voltage and low current."
+       "explain": "P = I²R = 9 × 5 = 45 W. The square on the current is why doubling the current quadruples the heating — and why transmission lines run at high voltage and low current.",
+       "viz": "powerBox",
+       "vizHint": "Drag the current and watch BOTH sides grow. That is where the square in I²R comes from.",
+       "vizParams": {
+        "I": 3,
+        "R": 5,
+        "mode": "i2r",
+        "reveal": false
+       }
       },
       {
        "id": "el_energy_kwh",
@@ -3457,7 +3473,17 @@ window.QQ_DATA = {
        "answerNumber": 1.0,
        "tolerance": 0.001,
        "answerValue": "1",
-       "explain": "2 kW × 0.5 h = 1 kWh. A kilowatt-hour is an energy, not a power: it is what you are billed for."
+       "explain": "2 kW × 0.5 h = 1 kWh. A kilowatt-hour is an energy, not a power: it is what you are billed for.",
+       "viz": "powerBox",
+       "vizHint": "Same rectangle, different units: power along one side, time along the other.",
+       "vizParams": {
+        "power": 2,
+        "t": 30,
+        "pUnit": "kW",
+        "tUnit": "min",
+        "mode": "energy",
+        "reveal": false
+       }
       },
       {
        "id": "el_energy_j",
@@ -3467,7 +3493,17 @@ window.QQ_DATA = {
        "answerNumber": 7200,
        "tolerance": 0,
        "answerValue": "7200",
-       "explain": "E = Pt = 7200 J. A watt is a joule per second, so power times time is always an energy."
+       "explain": "E = Pt = 7200 J. A watt is a joule per second, so power times time is always an energy.",
+       "viz": "powerBox",
+       "vizHint": "Watts and seconds this time, and the area is joules.",
+       "vizParams": {
+        "power": 60,
+        "t": 120,
+        "pUnit": "W",
+        "tUnit": "s",
+        "mode": "energy",
+        "reveal": false
+       }
       },
       {
        "id": "el_fuse",
@@ -3477,7 +3513,16 @@ window.QQ_DATA = {
        "answerNumber": 4.0,
        "tolerance": 0.001,
        "answerValue": "4",
-       "explain": "I = P/V = 4 A, so it would need a 5 A fuse — the next size up, never the next size down."
+       "explain": "I = P/V = 4 A, so it would need a 5 A fuse — the next size up, never the next size down.",
+       "viz": "powerBox",
+       "vizHint": "Here you are given the AREA and one side. Same rectangle, turned round.",
+       "vizParams": {
+        "P": 920,
+        "V": 230,
+        "mode": "vi",
+        "unknown": "side",
+        "reveal": false
+       }
       }
      ]
     },
