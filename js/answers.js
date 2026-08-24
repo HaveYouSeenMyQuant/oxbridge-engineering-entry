@@ -107,6 +107,20 @@ window.QQ_ANSWERS = {
      "h": null,
      "t": "p",
      "lines": [
+      "THE ASSUMPTION DOING THE WORK, in two parts. First, the retarding force is taken as proportional to SPEED. That is right while the magnet is slow and the field pattern in the wall keeps up with it; push it much faster and the relationship bends. Second, and more honestly: the coupling constant used above is CALIBRATED to what a neodymium magnet in a copper pipe is observed to do, not derived from the wall thickness and conductivity. Deriving it is a real piece of electromagnetism and a different question."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So treat the seconds as \"several, and you can watch it\" rather than as a prediction. What IS exact, and is the whole answer, is the direction: the induced current opposes the change that made it, so the force is always upwards, always resisting, and always larger the faster it goes."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
       "THE INTERVIEW MOVE. When a material property seems to settle the question, ask which property actually matters HERE. \"Not magnetic\" is about attraction at rest; this question is about a changing field, and the property that governs that is conductivity."
      ]
     }
