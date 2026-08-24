@@ -47,6 +47,44 @@
       host.remove();
     });
   }); });
-  console.log('checked=' + n + ' matches=' + bad.length + ' :: ' + bad.join(', '));
-  return bad;
+  console.log('NUMERIC  checked=' + n + ' matches=' + bad.length + ' :: ' + bad.join(', '));
+
+  /* PART TWO: choice and true/false questions, where a leak is a WORD rather
+   * than a number. This half found mx_singular_system, whose visual said "the
+   * lines are parallel" under a question whose answer is that they are
+   * parallel -- a leak I had created myself hours earlier by making that
+   * question open on a singular system so the picture would match it. The
+   * det-zero branch was the one string in the file with no reveal guard.
+   *
+   * Expected residue as of 2026-08-24: lg_loglog_axes and lg_loglin_axes share
+   * only the generic word "against", and es_square_cube shares "volume"
+   * because the visual labels a bar that way while showing the mechanism.
+   */
+  var hits = [], m = 0;
+  function words(x) {
+    return String(x).toLowerCase().replace(/[^a-z ]/g, ' ').split(/\s+/)
+      .filter(function (w) { return w.length >= 5; });
+  }
+  QQ_DATA.units.forEach(function (u) { u.lessons.forEach(function (l) {
+    l.questions.forEach(function (q) {
+      if (!q.viz || q.answerNumber != null || q.answerValue == null) return;
+      m++;
+      var host = document.createElement('div');
+      host.setAttribute('style', 'width:340px;height:250px');
+      document.body.appendChild(host);
+      try {
+        var v = QQViz.mount(q.viz, host, {
+          params: q.vizParams || {}, data: QQ_DATA.vizData,
+          onInteract: function () {}, regions: null
+        });
+        var t = (host.textContent || '').toLowerCase();
+        var shared = words(q.answerValue).filter(function (w) { return t.indexOf(w) >= 0; });
+        if (shared.length) hits.push(q.id + '{' + shared.join('+') + '}');
+        if (v && v.destroy) v.destroy();
+      } catch (e) { hits.push(q.id + ':THREW'); }
+      host.remove();
+    });
+  }); });
+  console.log('TEXT     checked=' + m + ' hits=' + hits.length + ' :: ' + hits.join(', '));
+  return { numeric: bad, text: hits };
 })();
