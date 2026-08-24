@@ -197,10 +197,10 @@ window.QQ_ANSWERS = {
    ],
    "src": "answer",
    "road": {
-    "qid": "me_graph_area",
-    "lesson": "p1",
+    "qid": "me_hydraulic",
+    "lesson": "p6",
     "unit": 8,
-    "prompt": "On a velocity-time graph, a body goes from 0 to 12 m/s in 4 s at constant acceleration. What distance does it cover, in metres?"
+    "prompt": "A hydraulic jack has pistons of 2 cm² and 50 cm². You push the small one with 20 N. What force does the large one deliver, in newtons?"
    }
   },
   {
