@@ -3054,16 +3054,7 @@ window.QQ_DATA = {
        "answerNumber": 3.0,
        "tolerance": 0.05,
        "answerValue": "3",
-       "explain": "Pressure is force over area, and the area has to be in metres squared: 2 cm² is 2 × 10⁻⁴ m². The force is 60 × 10 = 600 N, so p = 600 / 2e-4 = 3 × 10⁶ Pa = 3 MPa. That is about thirty atmospheres, and it is why a stiletto dents a wooden floor when an elephant standing on the same floor does not: the elephant weighs far more but spreads it over a thousand times the area.",
-       "viz": "fluidPressure",
-       "vizHint": "Pressure is force spread over an area.",
-       "vizParams": {
-        "rho": 1000,
-        "g": 10,
-        "h": 10,
-        "depth": 2,
-        "reveal": false
-       }
+       "explain": "Pressure is force over area, and the area has to be in metres squared: 2 cm² is 2 × 10⁻⁴ m². The force is 60 × 10 = 600 N, so p = 600 / 2e-4 = 3 × 10⁶ Pa = 3 MPa. That is about thirty atmospheres, and it is why a stiletto dents a wooden floor when an elephant standing on the same floor does not: the elephant weighs far more but spreads it over a thousand times the area."
       },
       {
        "id": "me_hydrostatic",
