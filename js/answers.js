@@ -16,8 +16,109 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 132,
+ "count": 133,
  "entries": [
+  {
+   "slug": "ten_times_taller_and_it_cannot_stand",
+   "title": "Ten times taller and it cannot stand",
+   "ts": "2026-08-24T08:13:16+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NO. IT WOULD BE TEN TIMES WORSE OFF THAN YOU ARE, and its legs would fail under nothing but its own weight.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TWO NUMBERS THAT DISAGREE. Scale every length by 10 and two things grow at different rates:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    STRENGTH follows the CROSS-SECTION of the bone, which is an area — two",
+      "    lengths multiplied — so it grows by 10 x 10 = 100."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    WEIGHT follows VOLUME, which is three lengths multiplied, so it grows by",
+      "    10 x 10 x 10 = 1000."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The giant is 100 times stronger and 1000 times heavier. Strength per unit of weight is therefore 100/1000 = one TENTH of yours. Ten times taller means ten times worse, and in general the ratio goes as 1/k: the penalty is not a quirk of the number 10, it applies at every size."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THIS IS THE SQUARE-CUBE LAW, and it is a geometric fact, not a biological one. Nothing about the material changed — the bone is the same bone. The two exponents, 2 for area and 3 for volume, simply refuse to keep pace."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT IT EXPLAINS, all with the same one line:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    An ant lifts many times its own weight; an elephant cannot. Not stronger",
+      "    muscle — a better ratio, because it is small."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    Real large animals are not scaled-up small ones. An elephant's leg bones",
+      "    are disproportionately THICK, precisely to buy back the area they lost."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    A mouse survives a fall that kills a horse: drag follows area, weight",
+      "    follows volume, so terminal velocity goes as the square root of size."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    Crushed ice melts faster than a block: surface area per unit volume is",
+      "    6/L, so smaller means relatively more surface."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When you are asked whether something can be scaled up, do not reach for numbers. Ask which quantities follow an area and which follow a volume, and the answer usually falls out before any arithmetic does."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "es_square_cube",
+    "lesson": "es5",
+    "unit": 11,
+    "prompt": "Why can an ant carry many times its own weight while an elephant cannot?"
+   }
+  },
   {
    "slug": "the_second_speaker_makes_it_quieter",
    "title": "The second speaker makes it quieter",
