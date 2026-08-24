@@ -16,8 +16,122 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 145,
+ "count": 146,
  "entries": [
+  {
+   "slug": "how_slowly_can_you_swing_it",
+   "title": "How slowly can you swing it",
+   "ts": "2026-08-24T17:09:43+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ABOUT 3.1 METRES PER SECOND — and the surprise is how slow that is: one turn every two seconds, half a revolution a second. Slower than that and the water leaves the bucket.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THE NUMBER COMES FROM. Look only at the top of the circle, which is the hardest point. To go round, the water must accelerate towards the centre — and at the top, \"towards the centre\" is straight DOWN. The acceleration it needs is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    a = v^2 / r"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Gravity is already pulling it down at g, for nothing. The bucket can also push its contents inward — that is what the base of a bucket does — but it cannot PULL them outward; there is nothing to hold on with. So:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    v^2/r  >  g     the water needs more than gravity gives, the bucket makes",
+      "                    up the rest by pushing, and everything stays in",
+      "    v^2/r  <  g     gravity is more than enough, the water would need holding",
+      "                    back, and nothing can hold it. It carries on in a straight",
+      "                    line while the bucket curves away. That is the pour."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The edge is where they are equal:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    v^2/r = g   →   v = sqrt(g r) = sqrt(9.81 x 1) = 3.13 m/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "One turn at that speed takes 2 pi r / v = 2.0 seconds."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE MASS IS NOT IN IT. No m appears anywhere above, and that is not an accident — the weight to be carried and the force gravity supplies grow in exactly the same proportion. A full bucket and a half-full one have the same critical speed, and so does a bucket of bricks."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT ACTUALLY GOES WRONG WHEN YOU GO TOO SLOW. Not that the water \"falls out\" in the sense of pouring downwards over the rim — it keeps going in the straight line it was already travelling, and the bucket curves away from underneath it. From the ground it looks like the bucket threw it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A LONGER ROPE NEEDS A HIGHER SPEED. v = sqrt(g r), so doubling the rope needs 1.41 times the speed. But the circle is twice as big, so each turn takes LONGER: T = 2 pi sqrt(r/g), up by the same 1.41. That is the pendulum relationship wearing a different hat."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: the rope stays TAUT and the water is treated as a single lump at the end of it. Both matter."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A rope can only pull, never push, which is exactly why the condition bites at the top and nowhere else — that is the one point where \"taut\" and \"fast enough\" are the same requirement. And a real bucket has a rim: a little water can be held by the sides even below the critical speed, so the failure is a slop rather than a clean dump, and it starts slightly before the number says."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The number is the speed at which the WATER stops needing the bucket. That is the physics the question is about, and the rim is upholstery."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. For anything on a vertical circle — a bucket, a rollercoaster, a bicycle over a humpback bridge, water in a spin dryer — go straight to the worst point and ask what is available there. Everything else in the loop has an easier time than that one place."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "which_way_does_the_strip_curl",
    "title": "Which way does the strip curl",
