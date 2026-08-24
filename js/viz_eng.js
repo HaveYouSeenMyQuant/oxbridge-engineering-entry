@@ -110,24 +110,68 @@
 
   /* -------------------------------------------------------- tangentSlide */
   global.QQViz.register('tangentSlide', function (host, api) {
-    var x0 = 1;
+    /* THE CURVE COMES FROM THE QUESTION, and the gradient can be withheld.
+     *
+     * This was hardcoded to y = x cubed minus 3x with a readout printing the
+     * gradient at the slider, and eight questions mounted it bare. ca_two_stat
+     * asks for the stationary points OF THAT EXACT CURVE, so sliding onto one
+     * made the visual announce "stationary" -- the answer, handed over. Four
+     * more questions name different curves (4x cubed, x cubed minus 5x plus 2,
+     * x squared minus 6x plus 5, x cubed minus 2x) and were all shown the same
+     * unrelated cubic.
+     */
+    var P = (api && api.params) || {};
+    var reveal = P.reveal !== false;
+    var CURVES = {
+      cub3:  { f: function (x) { return x * x * x - 3 * x; },
+               d: function (x) { return 3 * x * x - 3; },  label: 'y = x³ − 3x' },
+      cub4:  { f: function (x) { return 4 * x * x * x; },
+               d: function (x) { return 12 * x * x; },     label: 'y = 4x³' },
+      cub2:  { f: function (x) { return x * x * x - 2 * x; },
+               d: function (x) { return 3 * x * x - 2; },  label: 'y = x³ − 2x' },
+      sum:   { f: function (x) { return x * x * x - 5 * x + 2; },
+               d: function (x) { return 3 * x * x - 5; },  label: 'y = x³ − 5x + 2' },
+      para:  { f: function (x) { return x * x - 6 * x + 5; },
+               d: function (x) { return 2 * x - 6; },      label: 'y = x² − 6x + 5' }
+    };
+    var C0 = CURVES[P.curve] || CURVES.cub3;
+    var fn = C0.f, df = C0.d;
+    var x0 = P.x0 != null ? P.x0 : 1;
+    var lo = P.lo != null ? P.lo : -2.5, hi = P.hi != null ? P.hi : 2.5;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.95);
-    slider(row, { min: -2.5, max: 2.5, step: 0.1, value: x0, label: 'x' },
+    slider(row, { min: lo, max: hi, step: 0.1, value: x0, label: 'x' },
       function (v) { x0 = v; api.onInteract('slider'); say(); });
-    var fn = function (x) { return x * x * x - 3 * x; };
-    var df = function (x) { return 3 * x * x - 3; };
     function say() {
-      out.innerHTML = 'y = x³ − 3x  ·  at x = <b>' + (+x0.toFixed(1)) +
-        '</b>, gradient dy/dx = <b>' + (+df(x0).toFixed(2)) + '</b>' +
-        (Math.abs(df(x0)) < 0.06 ? ' — stationary' : '');
+      out.innerHTML = C0.label + '  ·  at x = <b>' + (+x0.toFixed(1)) + '</b>' +
+        (reveal
+          ? ', gradient dy/dx = <b>' + (+df(x0).toFixed(2)) + '</b>' +
+            (Math.abs(df(x0)) < 0.06 ? ' — stationary' : '')
+          : ' — watch the tangent tilt, and find where it goes flat');
     }
     say();
     stage.draw = function (g, w, h) {
-      var s = Math.min(w, h) / 9, ox = w / 2, oy = h / 2;
+      /* fit the curve that was asked for, rather than assuming it fits a box
+       * sized for one particular cubic */
+      var top = 0.001, bot = 0, i;
+      for (i = 0; i <= 80; i++) {
+        var yv = fn(lo + (hi - lo) * i / 80);
+        if (!isFinite(yv)) continue;
+        if (yv > top) top = yv;
+        if (yv < bot) bot = yv;
+      }
+      var span = Math.max(Math.abs(top), Math.abs(bot), 1) * 1.25;
+      var s = Math.min((w * 0.86) / Math.max(1e-6, (hi - lo)), (h - 40) / (2 * span));
+      var ox = w / 2 - ((lo + hi) / 2) * s, oy = h / 2;
       axes(g, w, h, ox, oy, s);
-      plot(g, w, h, ox, oy, s, fn, C.accent);
+      g.strokeStyle = C.accent; g.lineWidth = 2.5; g.beginPath();
+      for (i = 0; i <= 160; i++) {
+        var x = lo + (hi - lo) * i / 160, y = fn(x);
+        var px = ox + x * s, py = oy - y * s;
+        if (i === 0) g.moveTo(px, py); else g.lineTo(px, py);
+      }
+      g.stroke();
       var y0 = fn(x0), m = df(x0);
       g.strokeStyle = C.gold; g.lineWidth = 2;
       g.beginPath();

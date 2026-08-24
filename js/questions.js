@@ -900,7 +900,14 @@ window.QQ_DATA = {
        "answerValue": "48",
        "explain": "dy/dx = 12x², and 12 × 4 = 48. Multiply by the index, then drop it by one. The derivative is a FUNCTION: feed it an x and it returns the gradient there.",
        "viz": "tangentSlide",
-       "vizHint": "Slide the point. The gold line is the tangent."
+       "vizHint": "Slide the point. The gold line is the tangent.",
+       "vizParams": {
+        "curve": "cub4",
+        "x0": 2,
+        "lo": -2,
+        "hi": 3,
+        "reveal": false
+       }
       },
       {
        "id": "ca_constant",
@@ -922,7 +929,12 @@ window.QQ_DATA = {
        "answerValue": "-2",
        "explain": "dy/dx = 3x² − 5, which is 3 − 5 = −2 at x = 1. Differentiation goes term by term, and the negative gradient tells you the curve is falling there.",
        "viz": "tangentSlide",
-       "vizHint": "Read the gradient off the tangent."
+       "vizHint": "Read the gradient off the tangent.",
+       "vizParams": {
+        "curve": "sum",
+        "x0": 1,
+        "reveal": false
+       }
       },
       {
        "id": "ca_neg_power",
@@ -944,7 +956,11 @@ window.QQ_DATA = {
        "answerValue": "TRUE",
        "explain": "The derivative IS the gradient of the tangent. Falling means the tangent slopes downward, which is a negative gradient. Reading a sign off a sketch is often all a question needs.",
        "viz": "tangentSlide",
-       "vizHint": "Find somewhere the curve is falling."
+       "vizHint": "Find somewhere the curve is falling.",
+       "vizParams": {
+        "curve": "cub3",
+        "x0": 0
+       }
       }
      ]
     },
@@ -1018,7 +1034,14 @@ window.QQ_DATA = {
        "answerValue": "3",
        "explain": "dy/dx = 2x − 6 = 0 gives x = 3. The second derivative is 2, positive, so it is a minimum — at (3, −4).",
        "viz": "tangentSlide",
-       "vizHint": "Find where the tangent goes flat."
+       "vizHint": "Find where the tangent goes flat.",
+       "vizParams": {
+        "curve": "para",
+        "x0": 1,
+        "lo": -1,
+        "hi": 7,
+        "reveal": false
+       }
       },
       {
        "id": "ca_two_stat",
@@ -1030,7 +1053,12 @@ window.QQ_DATA = {
        "answerValue": "1",
        "explain": "dy/dx = 3x² − 3 = 0 gives x = ±1. The larger is 1, where the second derivative 6x is positive — a minimum. At x = −1 it is negative, a maximum.",
        "viz": "tangentSlide",
-       "vizHint": "There are two flat points. Find both."
+       "vizHint": "There are two flat points. Find both.",
+       "vizParams": {
+        "curve": "cub3",
+        "x0": 0,
+        "reveal": false
+       }
       },
       {
        "id": "ca_nature",
@@ -1046,7 +1074,11 @@ window.QQ_DATA = {
        "answerValue": "A maximum",
        "explain": "Negative second derivative means the gradient is decreasing through the point — the curve is bending downward, so the stationary point is a maximum.",
        "viz": "tangentSlide",
-       "vizHint": "Compare the two flat points."
+       "vizHint": "Compare the two flat points.",
+       "vizParams": {
+        "curve": "cub3",
+        "x0": -1
+       }
       },
       {
        "id": "ca_optimise",
@@ -1084,7 +1116,12 @@ window.QQ_DATA = {
        "answerValue": "1",
        "explain": "dy/dx = 3x² − 2, which is 3 − 2 = 1 at x = 1. The derivative IS the gradient function: feed it an x and it hands back the slope of the tangent at that point.",
        "viz": "tangentSlide",
-       "vizHint": "Slide to x = 1."
+       "vizHint": "Slide to x = 1.",
+       "vizParams": {
+        "curve": "cub2",
+        "x0": 0,
+        "reveal": false
+       }
       },
       {
        "id": "ca_normal",
@@ -1126,7 +1163,13 @@ window.QQ_DATA = {
        "answerValue": "FALSE",
        "explain": "It could be a point of inflection — y = x³ at x = 0 has zero gradient but is neither a maximum nor a minimum. Zero gradient is necessary for a turning point, not sufficient.",
        "viz": "tangentSlide",
-       "vizHint": "A flat tangent is not always a turning point."
+       "vizHint": "A flat tangent is not always a turning point.",
+       "vizParams": {
+        "curve": "cub4",
+        "x0": 0,
+        "lo": -2,
+        "hi": 2
+       }
       }
      ]
     },
