@@ -453,6 +453,14 @@
 
     slider(row, { min: 0, max: h0, step: h0 / 20, value: h, label: 'height' },
       function (v) { h = v; api.onInteract('slider'); say(); });
+    /* An optional MASS slider, so the same picture serves a question that asks
+     * how much energy a given mass gains. Off by default: for the falling-speed
+     * question the mass is irrelevant and a slider for it would be a red
+     * herring dressed as a control. */
+    if (P.massSlider === true) {
+      slider(row, { min: 1, max: 8, step: 1, value: m, label: 'mass (kg)' },
+        function (v) { m = v; api.onInteract('slider'); say(); });
+    }
 
     function gpe() { return m * g * h; }
     function ke() { return m * g * (h0 - h); }

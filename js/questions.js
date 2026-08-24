@@ -2931,7 +2931,17 @@ window.QQ_DATA = {
        "answerNumber": 200.0,
        "tolerance": 0,
        "answerValue": "200",
-       "explain": "GPE = mgh = 5×10×4 = 200 J. Only the VERTICAL height matters; the path taken is irrelevant, which is what makes gravity a conservative force."
+       "explain": "GPE = mgh = 5×10×4 = 200 J. Only the VERTICAL height matters; the path taken is irrelevant, which is what makes gravity a conservative force.",
+       "viz": "energyBars",
+       "vizHint": "Set it to 5 kg and 4 m and read the gravitational bar.",
+       "vizParams": {
+        "m": 2,
+        "g": 10,
+        "h0": 6,
+        "h": 6,
+        "massSlider": true,
+        "showSpeed": false
+       }
       },
       {
        "id": "me_fall_speed",
