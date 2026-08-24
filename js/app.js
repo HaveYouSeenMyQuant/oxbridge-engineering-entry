@@ -2015,6 +2015,32 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
+  /* THE BACK BUTTON.
+   *
+   * Routing used to happen once, at boot, and nowhere else. So on a phone:
+   * open Topics, press back, and nothing visibly happens -- the hash returns
+   * to #road while the topics screen stays on screen. Press back again and you
+   * leave the site altogether. The app read as stuck at exactly the moment
+   * somebody was trying to look around it.
+   *
+   * This routes on hashchange as well. It deliberately does nothing while a
+   * lesson is open: a stray hash change must not throw away a lesson in
+   * progress, and the lesson has its own close button. Answers deep links are
+   * left to answers_ui.js, which owns that screen.
+   */
+  global.addEventListener('hashchange', function () {
+    if (document.body.classList.contains('in-lesson')) return;
+    var h = (location.hash || '').toLowerCase();
+    var want = null;
+    if (/^#topics$/.test(h)) want = 'topics';
+    else if (/^#road$/.test(h) || h === '' || h === '#') want = 'path';
+    else if (/^#answers\b/.test(h)) want = 'answers';
+    if (!want) return;
+    var already = document.getElementById('screen-' + want);
+    if (already && already.classList.contains('on')) return;
+    go(want);
+  });
+
   global.QQApp = {
     go: go, renderPath: renderPath, currentLesson: currentLesson,
     startLesson: startLesson, allLessons: allLessons,
