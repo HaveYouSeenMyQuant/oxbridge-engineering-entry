@@ -300,3 +300,116 @@
     return { destroy: stage.destroy };
   });
 })(window);
+
+/* ============================================================ seeSaw ======
+ * Moments, as a thing that tips rather than a formula that balances.
+ *
+ * Unit 8 gained a Moments and stability lesson on 2026-08-24 and nothing
+ * registered could draw it: the visuals list had 27 entries and not one beam,
+ * pivot or balance among them.
+ *
+ * TWO MODES, because the same picture answers two different questions:
+ *   mode 'load'   the pivot is fixed at the centre and you move the second
+ *                 weight. Balance when W1.d1 = W2.d2.
+ *   mode 'pivot'  the weights are pinned to the ends and you move the PIVOT.
+ *                 The point where it balances IS the centre of mass, which is
+ *                 the whole content of me_com_two and is much easier to
+ *                 believe when you have found it by hand.
+ *
+ * The beam TILTS by the net moment, so being wrong is visible before any
+ * number is read. `reveal:false` hides the verdict line but never the two
+ * moments themselves -- those are the working, not the answer.
+ */
+(function (global) {
+  'use strict';
+  var K = global.QQViz.kit;
+  var C = K.C, f = K.f, Stage = K.Stage;
+  var controls = K.controls, readout = K.readout, slider = K.slider;
+
+  global.QQViz.register('seeSaw', function (host, api) {
+    var P = (api && api.params) || {};
+    var mode = P.mode === 'pivot' ? 'pivot' : 'load';
+    var w1 = P.w1 != null ? P.w1 : 300;
+    var w2 = P.w2 != null ? P.w2 : 600;
+    var span = P.span != null ? P.span : 1.0;      // half-length, metres
+    var d1 = P.d1 != null ? P.d1 : 1.0;
+    var d2 = P.d2 != null ? P.d2 : 0.9;
+    var pivot = P.pivot != null ? P.pivot : 0.35;  // 0..1 along the beam
+    var unit = P.unit || 'N';
+    var reveal = P.reveal !== false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.72);
+
+    if (mode === 'load') {
+      slider(row, { min: 0.1, max: span, step: 0.05, value: d2,
+                    label: 'distance of the second one' },
+        function (v) { d2 = v; api.onInteract('slider'); say(); });
+    } else {
+      slider(row, { min: 0.05, max: 0.95, step: 0.05, value: pivot,
+                    label: 'pivot position' },
+        function (v) { pivot = v; api.onInteract('slider'); say(); });
+    }
+
+    /* left and right moments about the pivot, in the same units both ways */
+    function moments() {
+      if (mode === 'load') return [w1 * d1, w2 * d2];
+      return [w1 * (pivot * span), w2 * ((1 - pivot) * span)];
+    }
+    function r2(x) { return Math.round(x * 100) / 100; }
+    function say() {
+      var m = moments();
+      var bal = Math.abs(m[0] - m[1]) < 1e-6;
+      out.innerHTML =
+        'left <b>' + r2(m[0]) + '</b> vs right <b>' + r2(m[1]) + '</b>' +
+        (reveal ? ('   ·   ' + (bal ? '<b>balanced</b>'
+                                    : 'it tips ' + (m[0] > m[1] ? 'left' : 'right')))
+                : '');
+    }
+    say();
+
+    stage.draw = function (g, w, h) {
+      var mid = h / 2, cx = w / 2, half = w * 0.36;
+      var m = moments();
+      /* tilt from the net moment, capped so it stays on screen */
+      var net = (m[1] - m[0]) / Math.max(1, Math.abs(m[0]) + Math.abs(m[1]));
+      var th = Math.max(-0.30, Math.min(0.30, net * 0.6));
+      var px = mode === 'pivot' ? cx - half + pivot * 2 * half : cx;
+
+      /* the pivot: a triangle under the beam */
+      g.fillStyle = C.line;
+      g.beginPath();
+      g.moveTo(px, mid + 6); g.lineTo(px - 16, mid + 40); g.lineTo(px + 16, mid + 40);
+      g.closePath(); g.fill();
+
+      function at(dx) {          /* a point dx px along the tilted beam */
+        return [px + dx * Math.cos(th), mid + dx * Math.sin(th)];
+      }
+      var L = at(-(px - (cx - half))), R = at((cx + half) - px);
+      g.strokeStyle = C.accent; g.lineWidth = 7; g.lineCap = 'round';
+      g.beginPath(); g.moveTo(L[0], L[1]); g.lineTo(R[0], R[1]); g.stroke();
+
+      /* the two weights, drawn where they actually sit */
+      function block(pt, wt, lab) {
+        var s = 12 + 16 * Math.min(1, wt / Math.max(w1, w2));
+        g.fillStyle = C.gold;
+        K.roundRect(g, pt[0] - s / 2, pt[1] - s - 4, s, s, 3); g.fill();
+        g.fillStyle = C.fg; g.font = f(11, 700); g.textAlign = 'center';
+        g.fillText(lab, pt[0], pt[1] - s - 9);
+      }
+      if (mode === 'load') {
+        block(at(-half * (d1 / span)), w1, w1 + ' ' + unit);
+        block(at(half * (d2 / span)), w2, w2 + ' ' + unit);
+      } else {
+        block(L, w1, w1 + ' ' + unit);
+        block(R, w2, w2 + ' ' + unit);
+      }
+
+      g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
+      g.fillText(mode === 'pivot'
+        ? 'move the pivot until it sits level'
+        : 'moment = weight x distance from the pivot', cx, h - 6);
+    };
+    return { destroy: stage.destroy };
+  });
+}(window));

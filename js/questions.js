@@ -3120,7 +3120,18 @@ window.QQ_DATA = {
        "answerNumber": 100.0,
        "tolerance": 0,
        "answerValue": "100",
-       "explain": "Moment = force x perpendicular distance = 200 x 0.5 = 100 N m. The perpendicular part matters: push along the spanner instead of across it and the distance is zero, so the moment is zero however hard you push."
+       "explain": "Moment = force x perpendicular distance = 200 x 0.5 = 100 N m. The perpendicular part matters: push along the spanner instead of across it and the distance is zero, so the moment is zero however hard you push.",
+       "viz": "seeSaw",
+       "vizHint": "One weight, one distance. Watch what the moment does as it moves out.",
+       "vizParams": {
+        "mode": "load",
+        "w1": 0,
+        "w2": 200,
+        "d1": 1.0,
+        "d2": 0.2,
+        "span": 1.0,
+        "reveal": false
+       }
       },
       {
        "id": "me_balance",
@@ -3130,7 +3141,18 @@ window.QQ_DATA = {
        "answerNumber": 0.5,
        "tolerance": 0.001,
        "answerValue": "0.5",
-       "explain": "Balance means the two moments are equal: 300 x 1 = 600 x d, so d = 0.5 m. Twice the weight sits half the distance out. The plank's own weight does not appear because it is uniform and pivoted at its centre, so its moment about that point is zero."
+       "explain": "Balance means the two moments are equal: 300 x 1 = 600 x d, so d = 0.5 m. Twice the weight sits half the distance out. The plank's own weight does not appear because it is uniform and pivoted at its centre, so its moment about that point is zero.",
+       "viz": "seeSaw",
+       "vizHint": "Move the adult until the two moments match.",
+       "vizParams": {
+        "mode": "load",
+        "w1": 300,
+        "w2": 600,
+        "d1": 1.0,
+        "d2": 0.9,
+        "span": 1.0,
+        "reveal": true
+       }
       },
       {
        "id": "me_topple",
@@ -3155,7 +3177,18 @@ window.QQ_DATA = {
        "answerNumber": 0.75,
        "tolerance": 0.001,
        "answerValue": "0.75",
-       "explain": "The centre of mass sits closer to the heavier one, in inverse proportion: 2 x d = 6 x (1 - d), so 8d = 6 and d = 0.75 m. Check it the other way: it is 0.25 m from the 6 kg mass, and 6 x 0.25 = 1.5 = 2 x 0.75."
+       "explain": "The centre of mass sits closer to the heavier one, in inverse proportion: 2 x d = 6 x (1 - d), so 8d = 6 and d = 0.75 m. Check it the other way: it is 0.25 m from the 6 kg mass, and 6 x 0.25 = 1.5 = 2 x 0.75.",
+       "viz": "seeSaw",
+       "vizHint": "Move the PIVOT until it sits level. Where it balances is the answer.",
+       "vizParams": {
+        "mode": "pivot",
+        "w1": 2,
+        "w2": 6,
+        "span": 1.0,
+        "pivot": 0.3,
+        "unit": "kg",
+        "reveal": true
+       }
       },
       {
        "id": "me_stack_limit",
