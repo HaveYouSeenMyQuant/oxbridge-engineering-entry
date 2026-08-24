@@ -16,8 +16,103 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 143,
+ "count": 144,
  "entries": [
+  {
+   "slug": "drop_it_down_the_copper_pipe",
+   "title": "Drop it down the copper pipe",
+   "ts": "2026-08-24T15:47:41+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "SECONDS, NOT HALF A SECOND. A dropped stone clears a metre of pipe in",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    t = sqrt(2h/g) = sqrt(2 x 1 / 9.81) = 0.45 s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The magnet takes several seconds to drift out of the bottom, and with a strong magnet and a thick-walled pipe you can comfortably watch it go. Nothing is holding it and nothing is touching it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY, AND WHY \"COPPER IS NOT MAGNETIC\" IS TRUE AND IRRELEVANT. Copper is not attracted to a magnet, and that is the wrong property to be thinking about. Copper is an excellent CONDUCTOR, and the magnet is moving."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    1. As the magnet falls, the magnetic field through each ring of pipe wall",
+      "       ahead of it grows, and through each ring behind it shrinks.",
+      "    2. A changing field through a conducting loop drives a current round it.",
+      "       The pipe wall is a stack of such loops.",
+      "    3. Lenz's law fixes the direction: the induced current always opposes the",
+      "       change that produced it. So the ring ahead is driven to repel the",
+      "       magnet and the ring behind is driven to attract it. Both act upwards."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The magnet is falling through a brake it is creating itself."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PART WORTH NOTICING. The retarding force depends on the SPEED, because speed is what sets how fast the field is changing. So the magnet does not stop, and it does not fall freely either: it accelerates until the drag matches its weight,"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    mg = k v      so      v = mg / k"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "and then descends at that steady speed. It has a terminal velocity, in the same way a parachutist does, but with no air involved."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE BIT THAT CATCHES PEOPLE OUT. A STRONGER magnet falls SLOWER, not faster. Doubling the field strength roughly doubles the induced current AND doubles the force on it, so the braking goes up faster than the weight does. Same for a thicker or more conductive wall."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE YOU HAVE MET THIS. It is how the speedometer in an older car works, how a train's eddy-current brake works, and why the aluminium disc in an electricity meter spins at a steady rate rather than accelerating."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When a material property seems to settle the question, ask which property actually matters HERE. \"Not magnetic\" is about attraction at rest; this question is about a changing field, and the property that governs that is conductivity."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "what_does_the_driver_hear",
    "title": "What does the driver hear",
