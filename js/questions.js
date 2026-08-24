@@ -34,11 +34,11 @@ window.QQ_DATA = {
        "topic": "matrices",
        "prompt": "A matrix has 3 rows and 2 columns. What is its order?",
        "choices": [
+        "6 × 1",
         "2 × 3",
-        "3 × 2",
-        "6 × 1"
+        "3 × 2"
        ],
-       "answer": 1,
+       "answer": 2,
        "answerValue": "3 × 2",
        "explain": "Order is always rows first, then columns — 3 × 2 here. It is worth being fussy about this from the start, because whether two matrices can be multiplied at all is decided entirely by their orders.",
        "viz": "matGrid",
@@ -141,12 +141,12 @@ window.QQ_DATA = {
        "topic": "matrices",
        "prompt": "Which product is defined: a 2 × 3 matrix times a 3 × 4 matrix, or a 3 × 4 times a 2 × 3?",
        "choices": [
-        "2×3 times 3×4",
         "3×4 times 2×3",
         "Both",
-        "Neither"
+        "Neither",
+        "2×3 times 3×4"
        ],
-       "answer": 0,
+       "answer": 3,
        "answerValue": "2×3 times 3×4",
        "explain": "The inner numbers must match: (2 × 3)(3 × 4) works because the 3s meet, and the result is 2 × 4 — the outer numbers. The other way round, 4 and 2 do not match, so nothing is defined.",
        "viz": "matShapes",
@@ -385,11 +385,11 @@ window.QQ_DATA = {
        "topic": "matrices",
        "prompt": "A 2 × 2 system has determinant zero. What does that tell you about the two lines?",
        "choices": [
+        "They are perpendicular",
         "They cross at exactly one point",
-        "They are parallel — no solution, or the same line with infinitely many",
-        "They are perpendicular"
+        "They are parallel — no solution, or the same line with infinitely many"
        ],
-       "answer": 1,
+       "answer": 2,
        "answerValue": "They are parallel — no solution, or the same line with infinitely many",
        "explain": "Zero determinant means the rows are multiples of each other, so the two lines have the same gradient. Either they never meet (no solutions) or they are the same line (infinitely many). Exactly one solution is precisely what a non-zero determinant guarantees.",
        "viz": "solveLines",
@@ -411,11 +411,11 @@ window.QQ_DATA = {
        "topic": "matrices",
        "prompt": "Which matrix rotates the plane 90° anticlockwise about the origin?",
        "choices": [
-        "[0 −1; 1 0]",
         "[0 1; −1 0]",
-        "[−1 0; 0 −1]"
+        "[−1 0; 0 −1]",
+        "[0 −1; 1 0]"
        ],
-       "answer": 0,
+       "answer": 2,
        "answerValue": "[0 −1; 1 0]",
        "explain": "Track where the basis vectors go. (1,0) must land on (0,1) and (0,1) on (−1,0) — and those images ARE the columns of the matrix. That trick answers every transformation-matrix question without memorising anything.move.",
        "viz": "transformPlane",
@@ -465,11 +465,11 @@ window.QQ_DATA = {
        "topic": "matrices",
        "prompt": "You rotate by R and then reflect by F. Which single matrix does the job?",
        "choices": [
-        "RF",
         "FR",
-        "R + F"
+        "R + F",
+        "RF"
        ],
-       "answer": 1,
+       "answer": 0,
        "answerValue": "FR",
        "explain": "FR — the one applied FIRST sits nearest the vector, on the right, because it acts on the vector first: F(Rv) = (FR)v. Reading composition left to right is the classic error, and it gives a different transformation whenever the two do not commute.",
        "viz": "matCompose",
@@ -1744,11 +1744,11 @@ window.QQ_DATA = {
        "topic": "trigonometry",
        "prompt": "You know all three sides of a triangle and want an angle. Which rule?",
        "choices": [
+        "Either works equally well",
         "The sine rule",
-        "The cosine rule",
-        "Either works equally well"
+        "The cosine rule"
        ],
-       "answer": 1,
+       "answer": 2,
        "answerValue": "The cosine rule",
        "explain": "The cosine rule, rearranged to cosC = (a² + b² − c²)/2ab. The sine rule needs a matched side-angle pair, and with three sides you have no angle to start from."
       }
@@ -2565,11 +2565,11 @@ window.QQ_DATA = {
        "topic": "logs",
        "prompt": "Radioactive counts fall as N = N0 e^(-kt). Which plot gives a straight line, and what is its gradient?",
        "choices": [
+        "N against ln t, gradient -k",
         "ln N against t, gradient -k",
-        "lg N against lg t, gradient -k",
-        "N against ln t, gradient -k"
+        "lg N against lg t, gradient -k"
        ],
-       "answer": 0,
+       "answer": 1,
        "answerValue": "ln N against t, gradient -k",
        "explain": "Taking natural logs: ln N = ln N0 - k t. That is straight when ln N is plotted against t (not against ln t), with gradient -k and intercept ln N0. Natural logs are the natural choice here because the law is written with e; using lg would still straighten it, but the gradient would come out as -k/ln(10) and that extra factor is easy to forget.",
        "viz": "logPlot",
@@ -3343,11 +3343,11 @@ window.QQ_DATA = {
        "topic": "electricity",
        "prompt": "You double the voltage across a capacitor. What happens to the energy it stores?",
        "choices": [
-        "It quadruples",
         "It doubles",
-        "It stays the same"
+        "It stays the same",
+        "It quadruples"
        ],
-       "answer": 0,
+       "answer": 2,
        "answerValue": "It quadruples",
        "explain": "Energy goes as the SQUARE of the voltage, E = ½CV², so doubling V multiplies the energy by four. The charge only doubles, because Q = CV is linear. That difference is worth holding on to: it is why a capacitor bank at high voltage is dangerous out of proportion to its charge, and why the same trick appears in kinetic energy, where doubling the speed quadruples the energy."
       },
@@ -3627,11 +3627,11 @@ window.QQ_DATA = {
        "topic": "waves",
        "prompt": "Two loudspeakers play the same note in phase. At a point the path difference from the two speakers is exactly two wavelengths. What do you hear?",
        "choices": [
-        "A loud spot - the waves arrive in phase",
         "A quiet spot - the waves cancel",
-        "Nothing distinctive; path difference does not matter"
+        "Nothing distinctive; path difference does not matter",
+        "A loud spot - the waves arrive in phase"
        ],
-       "answer": 0,
+       "answer": 2,
        "answerValue": "A loud spot - the waves arrive in phase",
        "explain": "A path difference of a WHOLE number of wavelengths means one wave has slipped forward by complete cycles, so it arrives in step with the other. Crest meets crest: constructive, and loud. Whole numbers of wavelengths give maxima; odd numbers of half-wavelengths give minima.",
        "viz": "interfere",
@@ -3763,11 +3763,11 @@ window.QQ_DATA = {
        "topic": "waves",
        "prompt": "What is different about a standing wave compared with a travelling wave?",
        "choices": [
-        "It transfers no net energy along the string",
         "It has no wavelength",
-        "Its frequency changes along the string"
+        "Its frequency changes along the string",
+        "It transfers no net energy along the string"
        ],
-       "answer": 0,
+       "answer": 2,
        "answerValue": "It transfers no net energy along the string",
        "explain": "A standing wave is two identical travelling waves going opposite ways, so the energy they carry cancels out and nothing is transported along the string - the energy just sloshes between kinetic and elastic in place. It certainly has a wavelength (the distance between alternate nodes is one whole one) and a single frequency everywhere.",
        "viz": "standWave",
@@ -3850,11 +3850,11 @@ window.QQ_DATA = {
        "topic": "estimation",
        "prompt": "In an estimation question, what matters most?",
        "choices": [
-        "Getting the exact number",
         "Getting the right power of ten with a defensible method",
-        "Using a calculator"
+        "Using a calculator",
+        "Getting the exact number"
        ],
-       "answer": 1,
+       "answer": 0,
        "answerValue": "Getting the right power of ten with a defensible method",
        "explain": "The examiner is testing whether you can break a problem into pieces you can each guess to within a factor of two or three. Errors partly cancel, and the order of magnitude survives. State your assumptions — they earn the marks.",
        "viz": "magnitudeLine",
@@ -4019,11 +4019,11 @@ window.QQ_DATA = {
        "topic": "estimation",
        "prompt": "Which of these could possibly be a formula for a speed? (g is an acceleration, h a height.)",
        "choices": [
+        "sqrt(2gh^2)",
         "sqrt(2gh)",
-        "2gh",
-        "sqrt(2gh^2)"
+        "2gh"
        ],
-       "answer": 0,
+       "answer": 1,
        "answerValue": "sqrt(2gh)",
        "explain": "Put the units in. g is m/s^2 and h is m, so gh is m^2/s^2, and the square root of that is m/s - a speed. The second, 2gh, is m^2/s^2, which is a speed SQUARED. The third gives m^3/s^2, which is nothing at all. You can reject two of the three without knowing any physics, and that is the point: units are a check you can always run."
       },
@@ -4033,11 +4033,11 @@ window.QQ_DATA = {
        "topic": "estimation",
        "prompt": "A pendulum's period depends on its length L and on g. Only one combination of those has units of TIME. Which?",
        "choices": [
+        "L/g",
         "sqrt(L/g)",
-        "sqrt(gL)",
-        "L/g"
+        "sqrt(gL)"
        ],
-       "answer": 0,
+       "answer": 1,
        "answerValue": "sqrt(L/g)",
        "explain": "L is m and g is m/s^2, so L/g is s^2 and its square root is seconds. sqrt(gL) gives m/s, a speed; L/g gives s^2. So the period MUST be a number times sqrt(L/g) - and indeed it is 2*pi*sqrt(L/g). Dimensions cannot give you the 2*pi, but they give you the whole shape of the answer for free, including the fact that the mass cannot appear."
       },
@@ -4067,11 +4067,11 @@ window.QQ_DATA = {
        "topic": "estimation",
        "prompt": "You estimate a car's braking distance and get 4 seconds. What has gone wrong?",
        "choices": [
-        "The answer has the wrong units - a distance cannot be in seconds",
         "Nothing; 4 seconds is a reasonable braking distance",
-        "The answer is too small"
+        "The answer is too small",
+        "The answer has the wrong units - a distance cannot be in seconds"
        ],
-       "answer": 0,
+       "answer": 2,
        "answerValue": "The answer has the wrong units - a distance cannot be in seconds",
        "explain": "A distance is measured in metres, so an answer in seconds cannot be a distance whatever its size. Checking the units of your OWN answer, before checking whether the number looks sensible, catches a whole class of algebra slips - typically dividing where you should have multiplied."
       }
@@ -4119,11 +4119,11 @@ window.QQ_DATA = {
        "topic": "estimation",
        "prompt": "Why can an ant carry many times its own weight while an elephant cannot?",
        "choices": [
+        "Gravity is weaker at an ant's size",
         "Muscle strength follows cross-sectional AREA while weight follows VOLUME",
-        "Ants have denser muscle than elephants",
-        "Gravity is weaker at an ant's size"
+        "Ants have denser muscle than elephants"
        ],
-       "answer": 0,
+       "answer": 1,
        "answerValue": "Muscle strength follows cross-sectional AREA while weight follows VOLUME",
        "explain": "A muscle's strength is set by its cross-section, which scales as length squared, while weight scales as length cubed. So strength-to-weight goes as 1/length: scale an animal up by 2 and it becomes half as strong for its weight. Nothing about ant muscle is special - it is geometry, and the same argument sets how tall a tree or a building can be.",
        "viz": "scaleBox",
