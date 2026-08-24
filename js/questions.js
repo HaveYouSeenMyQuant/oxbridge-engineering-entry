@@ -2284,7 +2284,7 @@ window.QQ_DATA = {
        "vizHint": "Slide the power and watch the value.",
        "vizParams": {
         "base": 2,
-        "x": 5,
+        "x": 2,
         "reveal": false
        }
       },
@@ -2301,7 +2301,7 @@ window.QQ_DATA = {
        "vizHint": "Same ladder, base ten.",
        "vizParams": {
         "base": 10,
-        "x": 3,
+        "x": 1,
         "reveal": false
        }
       },
@@ -2328,7 +2328,7 @@ window.QQ_DATA = {
        "vizHint": "What power leaves you at 1?",
        "vizParams": {
         "base": 5,
-        "x": 0,
+        "x": 3,
         "reveal": false
        }
       },
@@ -2414,7 +2414,7 @@ window.QQ_DATA = {
        "vizHint": "Base four this time.",
        "vizParams": {
         "base": 4,
-        "x": 3,
+        "x": 1,
         "reveal": false
        }
       }
