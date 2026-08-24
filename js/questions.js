@@ -1338,7 +1338,12 @@ window.QQ_DATA = {
        "answerNumber": 1,
        "tolerance": 0,
        "answerValue": "1",
-       "explain": "Raise the index by one and divide by the new index: 3x³/3 = x³, so the coefficient is 1. Integration is differentiation run backwards, which is why the check is always to differentiate your answer."
+       "explain": "Raise the index by one and divide by the new index: 3x³/3 = x³, so the coefficient is 1. Integration is differentiation run backwards, which is why the check is always to differentiate your answer.",
+       "viz": "antiDeriv",
+       "vizHint": "The slope of the lower curve is the height of the upper one. Which curve has that slope everywhere?",
+       "vizParams": {
+        "pair": "power"
+       }
       },
       {
        "id": "in_constant",
@@ -1368,7 +1373,13 @@ window.QQ_DATA = {
        "answerNumber": 20,
        "tolerance": 0,
        "answerValue": "20",
-       "explain": "∫(6x+4)dx = 3x² + 4x + c, which at x = 2 is 12 + 8 = 20. Each term integrates separately, exactly as each term differentiates separately — integration is linear."
+       "explain": "∫(6x+4)dx = 3x² + 4x + c, which at x = 2 is 12 + 8 = 20. Each term integrates separately, exactly as each term differentiates separately — integration is linear.",
+       "viz": "antiDeriv",
+       "vizHint": "Two terms, and each one integrates on its own. The tangent is at the x the question asks about.",
+       "vizParams": {
+        "pair": "sum",
+        "x0": 2
+       }
       },
       {
        "id": "in_neg",
@@ -1378,7 +1389,13 @@ window.QQ_DATA = {
        "answerNumber": -0.5,
        "tolerance": 0.001,
        "answerValue": "-0.5",
-       "explain": "−1/x = −0.5 at x = 2. The power rule works for every index except −1, where the integral is ln|x| instead — the one exception worth memorising."
+       "explain": "−1/x = −0.5 at x = 2. The power rule works for every index except −1, where the integral is ln|x| instead — the one exception worth memorising.",
+       "viz": "antiDeriv",
+       "vizHint": "A negative power is no different: still the curve whose slope matches the height above.",
+       "vizParams": {
+        "pair": "invsq",
+        "x0": 2
+       }
       }
      ]
     },
