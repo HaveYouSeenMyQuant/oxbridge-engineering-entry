@@ -194,9 +194,15 @@
 
     var btn = el('button', 'ans-play');
     btn.type = 'button';
+    /* The label used to hedge when the question was sequence-locked -- "This
+     * one is on the road" rather than "Play this one" -- because pressing it
+     * could not actually open the thing it was naming. Since the owner asked
+     * for the sequence dependency to go (2026-08-24), openLesson takes
+     * ignoreSequence and the button can do what it says. A lock no longer
+     * changes what the visitor is promised, so it no longer changes the
+     * wording. */
     btn.appendChild(el('b', null,
-      mapped ? (lock ? 'This one is on the road' : 'Play this one')
-             : 'Rather solve one yourself?'));
+      mapped ? 'Play this one' : 'Rather solve one yourself?'));
     btn.appendChild(el('span', null, prompt));
     btn.addEventListener('click', function (ev) {
       ev.stopPropagation();
@@ -209,13 +215,14 @@
         gated: locked()
       });
       clearHash();
-      if (!lock) { QQApp.openLesson(lessonId); return; }
-      /* Locked. Saying no to somebody who just asked to play is the worst
-       * thing this page could do, so put them on the road instead, looking at
-       * the node they came for, with the mascot standing where they start. */
-      QQApp.go('path');
-      var node = doc.querySelector('.node-holder[data-lesson="' + lessonId + '"]');
-      if (node) setTimeout(function () { node.scrollIntoView({ block: 'center' }); }, 60);
+      /* Open the question that was named, locked or not. This used to send a
+       * sequence-locked visitor to the path view to look at the node instead,
+       * which was the best available answer when the lock was real: the whole
+       * point of the button is that somebody who would rather solve than pay
+       * is worth keeping, and bouncing them to a map is most of a refusal.
+       * The lock is no longer enforced on a direct pick, so the honest thing
+       * is to hand them the question. */
+      QQApp.openLesson(lessonId, { ignoreSequence: true, from: 'answers' });
     });
     host.appendChild(btn);
   }
@@ -426,7 +433,7 @@
     goBtn.addEventListener('click', function () {
       QQA.track('answers_road_question_started', props({ msShown: Date.now() - roadOfferAt }));
       clearHash();
-      QQApp.openLesson(next.lessonId);
+      QQApp.openLesson(next.lessonId, { ignoreSequence: true, from: 'answers' });
     });
     laterBtn.addEventListener('click', function () {
       QQA.track('answers_road_question_dismissed', props({ msShown: Date.now() - roadOfferAt }));
