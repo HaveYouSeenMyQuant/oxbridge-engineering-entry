@@ -16,8 +16,91 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 140,
+ "count": 141,
  "entries": [
+  {
+   "slug": "carbon_dating_cannot_touch_it",
+   "title": "Carbon dating cannot touch it",
+   "ts": "2026-08-24T13:46:55+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "BECAUSE THERE IS NOTHING LEFT TO MEASURE. Carbon-14 has a half-life of 5,730 years, and 65 million years is over ELEVEN THOUSAND half-lives.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE FIRST WAY TO SEE IT. Each half-life leaves half of what there was, so after n of them the fraction remaining is 2 to the minus n:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    n = 65,000,000 / 5,730  =  11,344 half-lives",
+      "    fraction left = 2^-11344  =  about 10^-3415"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "There is no way to picture that number. The observable universe holds roughly 10^80 atoms, so 10^-3415 of anything is not a small amount — it is a quantity that has no physical meaning at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE SECOND WAY, WHICH IS THE ONE WORTH KNOWING. Exponential decay is a smooth curve on paper, but a real sample is a FINITE PILE OF ATOMS, and you cannot have half an atom. A kilogram of fresh carbon contains about"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    5 x 10^22 carbon atoms  x  1.3 x 10^-12 carbon-14 share",
+      "      =  about 6.5 x 10^10 carbon-14 atoms"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Sixty-five billion atoms sounds like plenty, but halving repeatedly gets through it fast: log2(6.5 x 10^10) is only about 36. After roughly 36 half-lives — about 206,000 years — the expected number of carbon-14 atoms left in a whole kilogram drops below ONE. The curve does not gently approach zero; the sample simply runs out."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PRACTICAL LIMIT is earlier still, around 50,000 years, because you need enough atoms left to count against contamination and background — about 0.2% of the original at that point."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "SO WHAT IS ACTUALLY USED? Isotopes with half-lives matched to the age. Potassium-40 has a half-life of 1.25 billion years and uranium-238 4.5 billion, so after 65 million years most of it is still there and the ratio is measurable. The rule is general: choose a clock whose half-life is the same order as the thing you are timing."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. Whenever a method is applied outside its range, ask how many half-lives, doublings or time constants fit into the interval. If the answer is more than about fifty, the quantity is gone — and often it is the finite number of ATOMS, not the mathematics, that ends it first."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "lg_halflife_k",
+    "lesson": "lg5",
+    "unit": 7,
+    "prompt": "A decay has constant k = 0.05 per year in N = N0 e^(-kt). What is the half-life, in years? Give two decimal places."
+   }
+  },
   {
    "slug": "why_not_just_send_it_at_230",
    "title": "Why not just send it at 230",
