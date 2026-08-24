@@ -1167,7 +1167,9 @@
     var rest = Object.keys(counts).filter(function (t) {
       return FIRST.indexOf(t) === -1 && counts[t] >= 4;
     }).sort(function (a, b) { return counts[b] - counts[a]; });
-    var order = FIRST.filter(function (t) { return counts[t]; }).concat(rest);
+    /* a chip reading "estimation 1" costs a row of the viewer's screen and
+     * saves them nothing, so a topic needs at least two entries to earn one */
+    var order = FIRST.filter(function (t) { return counts[t] >= 2; }).concat(rest);
     if (!order.length) return;
 
     var bar = el('div', 'ans-chips');
