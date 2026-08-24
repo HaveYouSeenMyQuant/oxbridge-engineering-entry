@@ -2194,7 +2194,17 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0.001,
        "answerValue": "3",
-       "explain": "√(1 + 4 + 4) = 3. The formula does not change with dimension: square every component, add, take the root. (1,2,2) and (2,-1,2) are both worth recognising — they are the 3D equivalents of the 3-4-5 triangle."
+       "explain": "√(1 + 4 + 4) = 3. The formula does not change with dimension: square every component, add, take the root. (1,2,2) and (2,-1,2) are both worth recognising — they are the 3D equivalents of the 3-4-5 triangle.",
+       "viz": "vec3Box",
+       "vizHint": "Do it in two steps: across the floor first, then up.",
+       "vizParams": {
+        "a": [
+         1,
+         2,
+         2
+        ],
+        "reveal": false
+       }
       },
       {
        "id": "ve3_dist",
@@ -2204,7 +2214,23 @@ window.QQ_DATA = {
        "answerNumber": 5,
        "tolerance": 0.001,
        "answerValue": "5",
-       "explain": "Subtract to get the vector between them, (3, 4, 0), then take its magnitude: √(9+16+0) = 5. Distance is just the length of the joining vector, which is why the two formulas look the same."
+       "explain": "Subtract to get the vector between them, (3, 4, 0), then take its magnitude: √(9+16+0) = 5. Distance is just the length of the joining vector, which is why the two formulas look the same.",
+       "viz": "vec3Box",
+       "vizHint": "A distance between two points is the length of their difference. The box is drawn on that difference.",
+       "vizParams": {
+        "a": [
+         4,
+         6,
+         3
+        ],
+        "b": [
+         1,
+         2,
+         3
+        ],
+        "mode": "diff",
+        "reveal": false
+       }
       },
       {
        "id": "ve3_dot_angle",
@@ -2260,7 +2286,17 @@ window.QQ_DATA = {
        "answerNumber": 3,
        "tolerance": 0.001,
        "answerValue": "3",
-       "explain": "√(4 + 1 + 4) = 3. Dividing the direction by 3 gives a unit direction, after which the parameter t measures actual distance travelled along the line."
+       "explain": "√(4 + 1 + 4) = 3. Dividing the direction by 3 gives a unit direction, after which the parameter t measures actual distance travelled along the line.",
+       "viz": "vec3Box",
+       "vizHint": "Same two steps, and a negative component makes no difference to a length.",
+       "vizParams": {
+        "a": [
+         2,
+         1,
+         -2
+        ],
+        "reveal": false
+       }
       },
       {
        "id": "ve3_parallel_k",
