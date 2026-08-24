@@ -16,8 +16,90 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 133,
+ "count": 134,
  "entries": [
+  {
+   "slug": "how_far_can_the_stack_lean",
+   "title": "How far can the stack lean",
+   "ts": "2026-08-24T08:56:23+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "AS FAR AS YOU LIKE. There is no limit at all — with enough blocks a stack can hang out over a metre, a mile, any distance you name, with nothing holding it down but its own weight.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THE OVERHANG COMES FROM. Work from the top down. The top block can jut half its length past the one beneath it before its centre of mass passes the edge below. That PAIR has its centre of mass a quarter of a block back from the lower block's edge, so the pair can jut a quarter further. The next allows a sixth, then an eighth, and so on. The total for n blocks is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    1/2 + 1/4 + 1/6 + 1/8 + ... + 1/2n",
+      "      =  ½ (1 + 1/2 + 1/3 + ... + 1/n)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "which is one half of the HARMONIC series."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THAT MEANS NO LIMIT. The harmonic series diverges. It grows without bound, just very slowly — roughly as ln(n). So the overhang has no ceiling, and you can reach any distance you choose if you are patient enough."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE NUMBERS, and they are worth seeing:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    1 block     0.500 block lengths",
+      "    2 blocks    0.750",
+      "    3 blocks    0.917",
+      "    4 blocks    1.042   ← clear of the table entirely",
+      "    10 blocks   1.465",
+      "    31 blocks   2.014",
+      "    100 blocks  2.594"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "FOUR BLOCKS is the striking one. Four is enough for the top block to hang completely clear of the table edge, with nothing underneath it at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "AND WHY IT IS SLOW. Doubling the overhang takes roughly SQUARING the number of blocks: 31 blocks reach two block lengths, and about 1,200 would be needed for three. Divergence and practicality are different questions, which is exactly the distinction an interviewer is looking for."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE MOVE WORTH LEARNING. When something looks bounded, check whether the thing that accumulates is a series, and whether that series converges. \"It gets smaller every time\" does not mean \"it adds up to something finite\" — that is the whole difference between 1/2^n and 1/n."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "ten_times_taller_and_it_cannot_stand",
    "title": "Ten times taller and it cannot stand",
