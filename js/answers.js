@@ -16,8 +16,77 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 134,
+ "count": 135,
  "entries": [
+  {
+   "slug": "which_way_do_you_push_the_bars",
+   "title": "Which way do you push the bars",
+   "ts": "2026-08-24T09:36:15+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "YOU PUSH THE LEFT BAR FORWARD — which steers the front wheel briefly to the RIGHT. To go left, you steer right first. It is called countersteering, every rider above walking pace does it, and almost none of them know they are doing it.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY YOU CANNOT SIMPLY STEER LEFT. Going round a corner needs a force pointing INTO the corner, and the only horizontal force available is friction where the tyres meet the road. That force acts at ground level, well below your centre of mass. Applied to an upright bike it does not turn you — it pushes the wheels out from under you and topples the bike outwards."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So before you can turn left, the bike has to LEAN left, far enough that gravity and the ground reaction line up through the centre of mass. How far is set by the speed and the corner:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    tan(theta) = v² / (r g)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "At 8 m/s round a 15 m corner that is tan(theta) = 64/147 = 0.435, a lean of about 23 degrees. Faster or tighter and it grows fast: 12 m/s round the same corner needs 44 degrees."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "AND HOW DO YOU MAKE IT LEAN? You cannot push against thin air. What you can do is move the wheels OUT from under yourself — and steering briefly right slides the tyre contact patch to the right of your centre of mass, so gravity drops you to the left. Once the lean is established you steer back into the turn and hold it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "THE SEQUENCE, then: push left bar → wheel points right → bike falls left →",
+      "steer left → round the corner. The first move is opposite to the destination."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "TRY IT AND SEE. On a straight quiet road at any decent speed, push gently on the left grip. The bike goes left. Push the right grip and it goes right. It feels wrong the first time, and it is the thing every motorcycle course teaches on day one, because in an emergency the instinct to steer TOWARD the danger is what puts riders into it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When a system will not respond to the obvious input, ask what has to be true before that input can work at all — and whether reaching that state needs the opposite input first. Cranes, ships and rockets all have versions of this."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "how_far_can_the_stack_lean",
    "title": "How far can the stack lean",
