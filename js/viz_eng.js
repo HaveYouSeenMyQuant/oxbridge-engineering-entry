@@ -279,6 +279,11 @@
   global.QQViz.register('unitCircle', function (host, api) {
     var P = (api && api.params) || {};
     var deg = P.deg != null ? P.deg : 30;
+    /* sin and cos are printed to three decimals, which on several questions is
+     * the answer or one step from it. reveal:false keeps the drawing -- the
+     * green height and the blue width are still there to read off the grid --
+     * and drops the numbers. */
+    var reveal = P.reveal !== false;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 1.0);
@@ -286,8 +291,10 @@
       function (v) { deg = v; api.onInteract('slider'); say(); });
     function say() {
       var r = deg * Math.PI / 180;
-      out.innerHTML = deg + '°  ·  sin = <b>' + Math.sin(r).toFixed(3) +
-        '</b>  cos = <b>' + Math.cos(r).toFixed(3) + '</b>';
+      out.innerHTML = deg + '°' + (reveal
+        ? '  ·  sin = <b>' + Math.sin(r).toFixed(3) +
+          '</b>  cos = <b>' + Math.cos(r).toFixed(3) + '</b>'
+        : '  ·  green is the height, blue is the width — read them off the grid');
     }
     say();
     stage.draw = function (g, w, h) {

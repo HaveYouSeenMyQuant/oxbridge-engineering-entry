@@ -1643,7 +1643,11 @@ window.QQ_DATA = {
        "answerValue": "5",
        "explain": "opposite = hypotenuse × sin30 = 10 × 0.5 = 5. The 30-60-90 triangle always has its short side exactly half the hypotenuse, which is worth recognising on sight.",
        "viz": "unitCircle",
-       "vizHint": "The circle is the triangle, scaled to radius 1."
+       "vizHint": "The circle is the triangle, scaled to radius 1.",
+       "vizParams": {
+        "deg": 30,
+        "reveal": false
+       }
       },
       {
        "id": "tr_adj",
@@ -1677,7 +1681,8 @@ window.QQ_DATA = {
        "viz": "unitCircle",
        "vizHint": "Drag to 45° and compare the two legs.",
        "vizParams": {
-        "deg": 45
+        "deg": 45,
+        "reveal": false
        }
       },
       {
@@ -1690,7 +1695,10 @@ window.QQ_DATA = {
        "answerValue": "FALSE",
        "explain": "Never. sinθ is the ratio of a side to the hypotenuse, and the hypotenuse is always the longest side, so the ratio cannot exceed 1. Getting sinθ > 1 in a solution is a reliable sign of an error earlier on.",
        "viz": "unitCircle",
-       "vizHint": "How long can the green line get?"
+       "vizHint": "How long can the green line get?",
+       "vizParams": {
+        "deg": 30
+       }
       }
      ]
     },
@@ -1805,7 +1813,8 @@ window.QQ_DATA = {
        "viz": "unitCircle",
        "vizHint": "Two angles share a sine. Find the other.",
        "vizParams": {
-        "deg": 150
+        "deg": 30,
+        "reveal": false
        }
       },
       {
@@ -1834,7 +1843,11 @@ window.QQ_DATA = {
        "answerValue": "0.8",
        "explain": "sin²θ + cos²θ = 1, so cosθ = √(1 − 0.36) = 0.8. The 3-4-5 triangle again, scaled to a hypotenuse of 1.",
        "viz": "unitCircle",
-       "vizHint": "sin and cos are the two legs of one triangle."
+       "vizHint": "sin and cos are the two legs of one triangle.",
+       "vizParams": {
+        "deg": 35,
+        "reveal": false
+       }
       },
       {
        "id": "tr_tan_identity",
@@ -1846,7 +1859,11 @@ window.QQ_DATA = {
        "answerValue": "0.75",
        "explain": "tanθ = sinθ/cosθ = 0.75. That identity, together with sin² + cos² = 1, generates most of the others.",
        "viz": "unitCircle",
-       "vizHint": "tan is the ratio of the two legs."
+       "vizHint": "tan is the ratio of the two legs.",
+       "vizParams": {
+        "deg": 35,
+        "reveal": false
+       }
       },
       {
        "id": "tr_small_angle",
