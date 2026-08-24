@@ -16,8 +16,101 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 148,
+ "count": 149,
  "entries": [
+  {
+   "slug": "the_hump_does_not_matter",
+   "title": "The hump does not matter",
+   "ts": "2026-08-24T19:10:01+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NEITHER. They empty at exactly the same rate, and the height of the hump makes no difference at all.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. Follow one parcel of water from the surface of the tank to the outlet. Going up over the hump it slows down, trading speed for height. Coming down the far side it speeds up again, trading the height back. Those two exchanges cancel exactly, and what is left is the NET drop — from the water surface to the outlet:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    v = sqrt(2 g h)     h = surface to outlet, and nothing else"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "With a 0.60 m drop that is sqrt(2 x 9.81 x 0.60) = 3.4 m/s at both outlets. The hump does not appear in the expression, so it cannot change the answer."
+     ]
+    },
+    {
+     "h": "THE TWO WRONG ANSWERS, AND WHY THEY ARE THE SAME MISTAKE.",
+     "t": "pre",
+     "lines": [
+      "  \"The tall one is slower — the water has further to climb.\"  It does, and it",
+      "  gets every bit of that back on the way down. You are counting the cost and",
+      "  forgetting the refund."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  \"The tall one is faster — it falls further afterwards.\"  It falls further,",
+      "  from higher up, and arrives at the same place. You are counting the refund",
+      "  and forgetting the cost."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Both are looking at one leg of the journey. Only the two ENDPOINTS matter, which is what \"conservative field\" means in practice: the path is irrelevant, the height difference is everything."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT DOES CHANGE THINGS. Lower the outlet and it runs faster. Raise the outlet to the water surface and it stops dead — zero drop, zero flow — which is the same statement, and it is how you switch a siphon off without touching the tank."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ONE THING THE HUMP CAN DO. Go high enough and the siphon fails altogether, because it is atmospheric pressure that holds the column up over the bend. The ceiling is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    h = p / (rho g) = 101325 / (1000 x 9.81) = 10.3 m"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Below that the hump is irrelevant; above it, nothing works at all. There is no gradual penalty in between, which is exactly why people expect one."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When something travels a path and you are asked about the result, check whether the quantity depends on the path or only on the ends. Height, and anything derived from it, only cares about the ends. That single question also disposes of \"does a longer ramp need less work\" and most of gravitational potential energy."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "twice_the_board_eight_times_the_dip",
    "title": "Twice the board, eight times the dip",
