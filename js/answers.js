@@ -16,8 +16,118 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 139,
+ "count": 140,
  "entries": [
+  {
+   "slug": "why_not_just_send_it_at_230",
+   "title": "Why not just send it at 230",
+   "ts": "2026-08-24T13:06:07+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "BECAUSE THE ENERGY LOST HEATING THE CABLES GOES AS ONE OVER THE VOLTAGE SQUARED — and at 230 V it would not merely be wasteful, it would be impossible.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ONE LINE THAT DOES IT. A cable has resistance R, and the power it wastes as heat is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    loss = I squared x R"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Note what is NOT in that: the voltage. The loss depends on the CURRENT. Now, to deliver a power P you need"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P = V x I,  so  I = P / V"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Put the two together:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    loss = (P/V) squared x R"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "For a fixed amount of power delivered, raising the voltage lowers the current in proportion, and the loss falls as the SQUARE of that. Double the voltage and you waste a quarter as much. Raise it a thousandfold and you waste a millionth."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE NUMBERS, for 400 MW down a line of 10 ohms:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    at 400,000 V    current 1,000 A          loss 10 MW      2.5% of the power",
+      "    at 230 V        current 1,739,130 A      loss 30,000 GW"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That second figure is not a large waste. It is seventy-five thousand times MORE power than you were trying to send in the first place, which simply cannot happen — the line would fail long before. Sending household voltage across the country is not expensive, it is impossible."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY NOT JUST USE THICKER CABLE? Because resistance falls in proportion to cross-sectional area, so to make up the same factor you would need about three million times the copper. Transformers are stupendously cheaper."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY 230 AT THE SOCKET, THEN? Because high voltage is dangerous, and once the power has arrived the distances are short — a few tens of metres of house wiring has so little resistance that the loss no longer matters. You pay the transformer cost once, at the point where the trade-off flips."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When asked why some engineering system uses an extreme value, look for a quantity that scales as a SQUARE. Whatever is being squared is usually the thing the design is really built around — here it is the current, and every transformer on the grid exists to keep it small."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_ohm",
+    "lesson": "e1",
+    "unit": 9,
+    "prompt": "A 12 V supply drives 3 A through a resistor. What is its resistance, in ohms?"
+   }
+  },
   {
    "slug": "aim_straight_or_upstream",
    "title": "Aim straight or upstream",
