@@ -2790,9 +2790,7 @@ window.QQ_DATA = {
        "answerNumber": 10.0,
        "tolerance": 0,
        "answerValue": "10",
-       "explain": "F = ma = 4 × 2.5 = 10 N. The word RESULTANT matters: it is the vector sum of every force acting, not any single one of them.",
-       "viz": "vtGraph",
-       "vizHint": "Force changes the gradient, not the height."
+       "explain": "F = ma = 4 × 2.5 = 10 N. The word RESULTANT matters: it is the vector sum of every force acting, not any single one of them."
       },
       {
        "id": "me_weight",
@@ -2812,9 +2810,7 @@ window.QQ_DATA = {
        "answerNumber": 600.0,
        "tolerance": 0,
        "answerValue": "600",
-       "explain": "R − mg = ma, so R = m(g + a) = 50 × 12 = 600 N. That is why you feel heavier as a lift starts upward: the floor pushes harder than your weight.",
-       "viz": "incline",
-       "vizHint": "Set the slope flat and think about up and down."
+       "explain": "R − mg = ma, so R = m(g + a) = 50 × 12 = 600 N. That is why you feel heavier as a lift starts upward: the floor pushes harder than your weight."
       },
       {
        "id": "me_friction",
@@ -2824,9 +2820,7 @@ window.QQ_DATA = {
        "answerNumber": 0.25,
        "tolerance": 0.001,
        "answerValue": "0.25",
-       "explain": "Steady speed means zero resultant, so friction = 25 N. With F = μR and R = mg = 100 N, μ = 0.25.",
-       "viz": "incline",
-       "vizHint": "The green arrow is what friction has to work against."
+       "explain": "Steady speed means zero resultant, so friction = 25 N. With F = μR and R = mg = 100 N, μ = 0.25."
       },
       {
        "id": "me_incline",
