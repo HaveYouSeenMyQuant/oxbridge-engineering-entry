@@ -125,6 +125,20 @@
     var CURVES = {
       cub3:  { f: function (x) { return x * x * x - 3 * x; },
                d: function (x) { return 3 * x * x - 3; },  label: 'y = x³ − 3x' },
+      /* added 2026-08-24 for lesson c2, which had no visual: one curve per
+       * differentiation rule, so the tangent is drawn on the curve the
+       * question actually names rather than a stand-in. Each is opened at the
+       * x the question asks about, with the gradient withheld -- the tangent
+       * shows the method, the number stays the student's. */
+      chain5: { f: function (x) { return Math.pow(2 * x + 1, 5); },
+                d: function (x) { return 10 * Math.pow(2 * x + 1, 4); },
+                label: 'y = (2x + 1)⁵' },
+      prod3:  { f: function (x) { return x * x * (x + 3); },
+                d: function (x) { return 3 * x * x + 6 * x; },
+                label: 'y = x²(x + 3)' },
+      quot1:  { f: function (x) { return (x + 1) / x; },
+                d: function (x) { return -1 / (x * x); },
+                label: 'y = (x + 1)/x' },
       cub4:  { f: function (x) { return 4 * x * x * x; },
                d: function (x) { return 12 * x * x; },     label: 'y = 4x³' },
       cub2:  { f: function (x) { return x * x * x - 2 * x; },
@@ -135,6 +149,12 @@
                d: function (x) { return 2 * x - 6; },      label: 'y = x² − 6x + 5' }
     };
     var C0 = CURVES[P.curve] || CURVES.cub3;
+    /* What to say when the gradient is withheld. The default suits the
+     * stationary-point questions this visual was built for; the c2 rule
+     * questions ask for the gradient AT a named x, where "find where it goes
+     * flat" is advice about a different question. */
+    var heldMsg = P.heldMsg ||
+      'watch the tangent tilt, and find where it goes flat';
     var fn = C0.f, df = C0.d;
     var x0 = P.x0 != null ? P.x0 : 1;
     var lo = P.lo != null ? P.lo : -2.5, hi = P.hi != null ? P.hi : 2.5;
@@ -148,7 +168,7 @@
         (reveal
           ? ', gradient dy/dx = <b>' + (+df(x0).toFixed(2)) + '</b>' +
             (Math.abs(df(x0)) < 0.06 ? ' — stationary' : '')
-          : ' — watch the tangent tilt, and find where it goes flat');
+          : ' — ' + heldMsg);
     }
     say();
     stage.draw = function (g, w, h) {

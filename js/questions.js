@@ -995,7 +995,17 @@ window.QQ_DATA = {
        "answerNumber": 10,
        "tolerance": 0,
        "answerValue": "10",
-       "explain": "Chain rule: 5(2x+1)⁴ × 2 = 10(2x+1)⁴, which is 10 at x = 0. Differentiate the outside, leave the inside alone, then multiply by the derivative of the inside."
+       "explain": "Chain rule: 5(2x+1)⁴ × 2 = 10(2x+1)⁴, which is 10 at x = 0. Differentiate the outside, leave the inside alone, then multiply by the derivative of the inside.",
+       "viz": "tangentSlide",
+       "vizHint": "The tangent is drawn where the question asks. A chain rule is two rates multiplied - how fast the bracket changes, and how fast the fifth power changes with it.",
+       "vizParams": {
+        "curve": "chain5",
+        "x0": 0,
+        "lo": -1.2,
+        "hi": 0.35,
+        "heldMsg": "the tangent is sitting at the x you were asked about; work out its slope",
+        "reveal": false
+       }
       },
       {
        "id": "ca_product",
@@ -1005,7 +1015,17 @@ window.QQ_DATA = {
        "answerNumber": 9,
        "tolerance": 0,
        "answerValue": "9",
-       "explain": "Expanding first gives y = x³ + 3x², so dy/dx = 3x² + 6x = 9 at x = 1. The product rule gives the same answer; expanding is safer when the expansion is easy."
+       "explain": "Expanding first gives y = x³ + 3x², so dy/dx = 3x² + 6x = 9 at x = 1. The product rule gives the same answer; expanding is safer when the expansion is easy.",
+       "viz": "tangentSlide",
+       "vizHint": "Expand it first if you like - the curve is the same curve either way, and so is the tangent.",
+       "vizParams": {
+        "curve": "prod3",
+        "x0": 1,
+        "lo": -3.5,
+        "hi": 1.6,
+        "heldMsg": "the tangent is sitting at the x you were asked about; work out its slope",
+        "reveal": false
+       }
       },
       {
        "id": "ca_quotient",
@@ -1015,7 +1035,17 @@ window.QQ_DATA = {
        "answerNumber": -1,
        "tolerance": 0,
        "answerValue": "-1",
-       "explain": "Rewrite as 1 + x⁻¹, so dy/dx = −x⁻² = −1 at x = 1. Splitting the fraction avoids the quotient rule entirely — always worth checking whether you can."
+       "explain": "Rewrite as 1 + x⁻¹, so dy/dx = −x⁻² = −1 at x = 1. Splitting the fraction avoids the quotient rule entirely — always worth checking whether you can.",
+       "viz": "tangentSlide",
+       "vizHint": "Note which way the curve is heading at x = 1 before you work out the number - the sign is half the answer.",
+       "vizParams": {
+        "curve": "quot1",
+        "x0": 1,
+        "lo": 0.3,
+        "hi": 3.2,
+        "heldMsg": "the tangent is sitting at the x you were asked about; is it rising or falling?",
+        "reveal": false
+       }
       },
       {
        "id": "ca_second",
