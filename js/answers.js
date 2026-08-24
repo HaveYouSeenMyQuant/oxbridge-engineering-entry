@@ -125,7 +125,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "el_series",
+    "lesson": "e2",
+    "unit": 9,
+    "prompt": "Resistors of 3 Ω and 5 Ω in series. What is the total resistance, in ohms?"
+   }
   },
   {
    "slug": "the_lift_and_the_ball",
@@ -188,7 +194,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_lift",
+    "lesson": "p2",
+    "unit": 8,
+    "prompt": "A 50 kg person stands in a lift accelerating upward at 2 m/s², g = 10. What is the normal reaction force, in newtons?"
+   }
   },
   {
    "slug": "which_way_do_you_push_the_bars",
@@ -257,7 +269,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_friction",
+    "lesson": "p2",
+    "unit": 8,
+    "prompt": "A 10 kg block on a rough floor needs 25 N to keep moving steadily. What is the coefficient of friction, given g = 10? Give a decimal."
+   }
   },
   {
    "slug": "how_far_can_the_stack_lean",
