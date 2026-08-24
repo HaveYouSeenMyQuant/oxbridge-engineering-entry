@@ -16,8 +16,97 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 138,
+ "count": 139,
  "entries": [
+  {
+   "slug": "aim_straight_or_upstream",
+   "title": "Aim straight or upstream",
+   "ts": "2026-08-24T12:24:51+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "POINT STRAIGHT AT THE FAR BANK. It is the quicker crossing, and by a wide margin — and the striking part is that the current does not slow it down by even a fraction of a second.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "SPLIT THE VELOCITY IN TWO. Your swimming velocity has a component ACROSS the river and a component ALONG it. Only the across component carries you over, so the crossing time is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    time = width / (across component)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Point straight over and the whole of your two metres per second is the across component:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    time = 100 / 2 = 50 seconds"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Angle upstream to cancel the drift and you must aim at 30 degrees, because sin(30) = 1/2 = current/swim speed. Now only the cosine of your speed points across:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    across = 2 x cos(30) = 1.73 m/s",
+      "    time = 100 / 1.73 = 57.7 seconds"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Nearly eight seconds longer, a 13% penalty, for the privilege of landing directly opposite."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE CURRENT CANNOT SLOW YOU AT ALL. The flow runs ALONG the bank, at right angles to the direction you are trying to travel. Perpendicular components are independent: the current adds nothing to your across velocity and takes nothing away. Whether the river runs at zero or at one metre per second or at nineteen, if you point straight over you arrive in exactly 50 seconds. All the current does is decide WHERE you land — here, 50 metres downstream."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "This is the same idea as the ball dropped beside a ball fired horizontally. Motion at right angles does not interfere."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT YOU ARE REALLY CHOOSING between is not speed against slowness, it is time against position: the fastest crossing lands you downstream, and landing opposite costs you time. Which is right depends on what is on the far bank, and an interviewer asking this usually wants to hear that distinction rather than a number."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "ve_resultant",
+    "lesson": "v3",
+    "unit": 6,
+    "prompt": "Forces of 3 N east and 4 N north act on a body. What is the magnitude of the resultant, in newtons?"
+   }
+  },
   {
    "slug": "three_kilowatts_from_one",
    "title": "Three kilowatts from one",
