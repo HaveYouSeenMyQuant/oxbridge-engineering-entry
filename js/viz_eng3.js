@@ -506,3 +506,92 @@
     return { destroy: stage.destroy };
   });
 }(window));
+
+/* ============================================================= ohmLab ======
+ * One resistor, one supply, and the third quantity following from the other
+ * two — with an optional internal resistance for terminal-pd questions.
+ *
+ * Lesson e1 (Current, voltage, resistance) has FIVE questions and ZERO
+ * visuals. circuitLab is the obvious candidate and cannot do the job: it draws
+ * TWO resistors with a series/parallel toggle, while every e1 question is about
+ * a single resistor, a charge, or a battery's internal resistance. Mapping it
+ * would be a picture that shares a topic and cannot show the question — the
+ * fault the 2026-08-23 audit removed sixteen of.
+ *
+ * `r_int > 0` adds the battery's own resistance and reports the TERMINAL pd,
+ * which is what a real cell does and what el_emf asks about.
+ */
+(function (global) {
+  'use strict';
+  var K = global.QQViz.kit;
+  var C = K.C, f = K.f, Stage = K.Stage;
+  var controls = K.controls, readout = K.readout, slider = K.slider;
+
+  global.QQViz.register('ohmLab', function (host, api) {
+    var P = (api && api.params) || {};
+    var V = P.V != null ? P.V : 12;
+    var R = P.R != null ? P.R : 6;
+    var rInt = P.r_int != null ? P.r_int : 0;
+    var reveal = P.reveal !== false;
+    var row = controls(host);
+    var out = readout(host, '');
+    var stage = Stage(host, 0.62);
+
+    slider(row, { min: P.vMin != null ? P.vMin : 1, max: P.vMax != null ? P.vMax : 60,
+                  step: P.vStep != null ? P.vStep : 1, value: V, label: 'supply (V)' },
+      function (v) { V = v; api.onInteract('slider'); say(); });
+    slider(row, { min: P.rMin != null ? P.rMin : 1, max: P.rMax != null ? P.rMax : 30,
+                  step: P.rStep != null ? P.rStep : 1, value: R, label: 'resistance (Ω)' },
+      function (v) { R = v; api.onInteract('slider'); say(); });
+
+    function current() { return V / (R + rInt); }
+    function terminal() { return V - current() * rInt; }
+    function r2(x) { return Math.round(x * 100) / 100; }
+
+    function say() {
+      var i = current();
+      var bits = ['supply <b>' + V + ' V</b>', 'resistance <b>' + R + ' Ω</b>'];
+      if (reveal) bits.push('current <b>' + r2(i) + ' A</b>');
+      if (rInt > 0) {
+        bits.push('internal <b>' + rInt + ' Ω</b>');
+        if (reveal) bits.push('terminal pd <b>' + r2(terminal()) + ' V</b>');
+      }
+      out.innerHTML = bits.join('   ·   ');
+    }
+    say();
+
+    var t0 = performance.now();
+    stage.draw = function (g, w, h) {
+      var t = (performance.now() - t0) / 1000;
+      var x0 = 34, x1 = w - 34, top = 26, bot = h - 34;
+      g.strokeStyle = C.muted; g.lineWidth = 2.5;
+      g.beginPath();
+      g.moveTo(x0, top); g.lineTo(x1, top); g.lineTo(x1, bot);
+      g.lineTo(x0, bot); g.lineTo(x0, top); g.stroke();
+      /* the cell on the left edge, its plates scaled by the supply */
+      var cy = (top + bot) / 2, hgt = 10 + 16 * (V / 60);
+      g.strokeStyle = C.good; g.lineWidth = 3;
+      g.beginPath(); g.moveTo(x0 - 9, cy - hgt); g.lineTo(x0 + 9, cy - hgt); g.stroke();
+      g.beginPath(); g.moveTo(x0 - 5, cy + hgt); g.lineTo(x0 + 5, cy + hgt); g.stroke();
+      /* the resistor on the top wire, wider as R grows */
+      var rw = 26 + 40 * (R / 30), rx = (x0 + x1) / 2;
+      g.fillStyle = C.panel; g.strokeStyle = C.accent; g.lineWidth = 2;
+      K.roundRect(g, rx - rw / 2, top - 11, rw, 22, 5); g.fill(); g.stroke();
+      /* charge moving round, at a rate that follows the current */
+      var i = current(), n = 14;
+      for (var k = 0; k < n; k++) {
+        var ph = ((t * Math.min(1.6, i * 0.35) + k / n) % 1);
+        var per = 2 * ((x1 - x0) + (bot - top)), d = ph * per, px, py;
+        if (d < (x1 - x0)) { px = x0 + d; py = top; }
+        else if (d < (x1 - x0) + (bot - top)) { px = x1; py = top + (d - (x1 - x0)); }
+        else if (d < 2 * (x1 - x0) + (bot - top)) { px = x1 - (d - (x1 - x0) - (bot - top)); py = bot; }
+        else { px = x0; py = bot - (d - 2 * (x1 - x0) - (bot - top)); }
+        g.fillStyle = C.gold;
+        g.beginPath(); g.arc(px, py, 3.6, 0, 7); g.fill();
+      }
+      g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
+      g.fillText('the dots move as fast as the current', w / 2, h - 6);
+    };
+    return { destroy: stage.destroy };
+  });
+}(window));

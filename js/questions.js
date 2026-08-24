@@ -2933,15 +2933,8 @@ window.QQ_DATA = {
        "answerValue": "200",
        "explain": "GPE = mgh = 5×10×4 = 200 J. Only the VERTICAL height matters; the path taken is irrelevant, which is what makes gravity a conservative force.",
        "viz": "energyBars",
-       "vizHint": "Set it to 5 kg and 4 m and read the gravitational bar.",
-       "vizParams": {
-        "m": 2,
-        "g": 10,
-        "h0": 6,
-        "h": 6,
-        "massSlider": true,
-        "showSpeed": false
-       }
+       "vizHint": "ohmLab",
+       "vizParams": "Set it to 5 kg and 4 m and read the gravitational bar."
       },
       {
        "id": "me_fall_speed",
@@ -2953,14 +2946,8 @@ window.QQ_DATA = {
        "answerValue": "10",
        "explain": "mgh = ½mv², and the mass cancels: v = √(2gh) = √100 = 10 m/s. The mass cancelling is why everything falls at the same rate.",
        "viz": "energyBars",
-       "vizHint": "Drag it down and watch one bar empty into the other.",
-       "vizParams": {
-        "m": 2,
-        "g": 10,
-        "h0": 5,
-        "h": 5,
-        "showSpeed": false
-       }
+       "vizHint": "ohmLab",
+       "vizParams": "Drag it down and watch one bar empty into the other."
       },
       {
        "id": "me_power",
@@ -3233,7 +3220,18 @@ window.QQ_DATA = {
        "answerNumber": 4.0,
        "tolerance": 0,
        "answerValue": "4",
-       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing."
+       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing.",
+       "viz": "ohmLab",
+       "vizHint": "Find the resistance that gives 3 A on a 12 V supply.",
+       "vizParams": {
+        "V": 12,
+        "R": 6,
+        "vMin": 1,
+        "vMax": 24,
+        "rMin": 1,
+        "rMax": 12,
+        "reveal": true
+       }
       },
       {
        "id": "el_charge",
@@ -3253,7 +3251,18 @@ window.QQ_DATA = {
        "answerNumber": 45,
        "tolerance": 0,
        "answerValue": "45",
-       "explain": "V = IR = 45 V. Ohm's law again, in the third of its three arrangements."
+       "explain": "V = IR = 45 V. Ohm's law again, in the third of its three arrangements.",
+       "viz": "ohmLab",
+       "vizHint": "Fix the resistance at 15 and raise the supply until 3 A flows.",
+       "vizParams": {
+        "V": 20,
+        "R": 15,
+        "vMin": 5,
+        "vMax": 60,
+        "rMin": 5,
+        "rMax": 30,
+        "reveal": true
+       }
       },
       {
        "id": "el_ohmic",
@@ -3273,7 +3282,19 @@ window.QQ_DATA = {
        "answerNumber": 7,
        "tolerance": 0,
        "answerValue": "7",
-       "explain": "V = ε − Ir = 9 − 2 = 7 V. Some of the emf is dropped inside the battery itself, which is why a battery's terminal voltage sags under load."
+       "explain": "V = ε − Ir = 9 − 2 = 7 V. Some of the emf is dropped inside the battery itself, which is why a battery's terminal voltage sags under load.",
+       "viz": "ohmLab",
+       "vizHint": "A real cell has resistance of its own. Watch the terminal pd as the current rises.",
+       "vizParams": {
+        "V": 9,
+        "R": 8,
+        "r_int": 1,
+        "vMin": 3,
+        "vMax": 12,
+        "rMin": 1,
+        "rMax": 12,
+        "reveal": true
+       }
       }
      ]
     },
