@@ -7,9 +7,16 @@
  *
  * It owns no content and no lesson logic. The bank is the single source of
  * truth, the ladder is the order lessons already appear in, and opening one
- * goes through QQApp.openLesson so a locked lesson meets exactly the same wall
- * it would meet on the road. If this file were deleted the site would still
- * work; only the shortcut would be gone.
+ * goes through QQApp.openLesson. If this file were deleted the site would
+ * still work; only the shortcut would be gone.
+ *
+ * NO SEQUENTIAL LOCKING HERE (owner instruction, 2026-08-24: "remove the
+ * sequential dependencies on the topics page. You can select any question you
+ * want on there"). Every rung opens, in any order, whether or not the one
+ * above it is finished -- the call passes { ignoreSequence: true }. This used
+ * to hand a reviser "The road goes in order. Finish the one before", which is
+ * the road's rule leaking into the screen that exists to escape it. The ROAD
+ * itself still goes in order; that is what makes it a road.
  */
 (function (global) {
   'use strict';
@@ -228,7 +235,11 @@
               topic: topic, lessonId: r.lesson.id, step: i + 1
             });
           }
-          if (global.QQApp && QQApp.openLesson) QQApp.openLesson(r.lesson.id);
+          /* ignoreSequence: this screen is the way OUT of the road's order.
+           * Every rung is openable, in any order, always. */
+          if (global.QQApp && QQApp.openLesson) {
+            QQApp.openLesson(r.lesson.id, { ignoreSequence: true, from: 'topics' });
+          }
         });
         li.appendChild(b);
         list.appendChild(li);

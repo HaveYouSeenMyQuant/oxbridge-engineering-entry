@@ -709,12 +709,31 @@
     startLesson(unit, lesson);
   }
 
-  function onLessonTap(unit, lesson, i) {
+  /* `opts.ignoreSequence` lets a caller open a lesson out of order.
+   *
+   * The ROAD is a path and stays one: tapping a later node on the map still
+   * says "finish the one before", because that ordering is the whole point of
+   * a road. TOPICS is not a path -- it is the revision door, and somebody
+   * three weeks from an exam who opens "Moments and stability" means it. Being
+   * told to go and finish Motion in a straight line first is the road's rule
+   * leaking into a screen that exists to escape it. (Owner instruction,
+   * 2026-08-24: "remove the sequential dependencies on the topics page. You
+   * can select any question you want on there.")
+   *
+   * Only the SEQUENCE lock is bypassed. Nothing else is, so if a lock is ever
+   * added back for another reason it still applies here. */
+  function onLessonTap(unit, lesson, i, opts) {
     var lock = lessonLock(unit, lesson, i);
     if (lock === 'email') {
       QQA.track('locked_lesson_tapped', { unitId: unit.id, lessonId: lesson.id, reason: 'email' });
       showWall(unit, 'hard');
       return;
+    }
+    if (lock === 'sequence' && opts && opts.ignoreSequence) {
+      QQA.track('lesson_opened_out_of_order', {
+        unitId: unit.id, lessonId: lesson.id, from: opts.from || 'unknown'
+      });
+      lock = false;
     }
     if (lock === 'sequence') {
       QQA.track('locked_lesson_tapped', { unitId: unit.id, lessonId: lesson.id, reason: 'sequence' });
@@ -2068,10 +2087,10 @@
      * its "play this one" link. It goes through onLessonTap, not startLesson,
      * so a locked lesson still meets the wall or the in-order sheet exactly as
      * it would if the node itself had been tapped. */
-    openLesson: function (lessonId) {
+    openLesson: function (lessonId, opts) {
       var x = allLessons().filter(function (n) { return n.lesson.id === lessonId; })[0];
       if (!x) return false;
-      onLessonTap(x.unit, x.lesson, x.indexInUnit);
+      onLessonTap(x.unit, x.lesson, x.indexInUnit, opts);
       return true;
     },
 
