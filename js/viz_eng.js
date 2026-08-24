@@ -139,6 +139,24 @@
       quot1:  { f: function (x) { return (x + 1) / x; },
                 d: function (x) { return -1 / (x * x); },
                 label: 'y = (x + 1)/x' },
+      /* added 2026-08-24 for lesson c5. Four of its five questions are
+       * stationary-point questions, which is what this visual is for. */
+      exam9:  { f: function (x) { return x * x * x - 6 * x * x + 9 * x; },
+                d: function (x) { return 3 * x * x - 12 * x + 9; },
+                label: 'y = x³ − 6x² + 9x' },
+      chain2: { f: function (x) { return Math.pow(x * x + 1, 3); },
+                d: function (x) { return 6 * x * Math.pow(x * x + 1, 2); },
+                label: 'y = (x² + 1)³' },
+      ladder: { f: function (x) { return 2 * x * x * x - 9 * x * x + 12 * x; },
+                d: function (x) { return 6 * x * x - 18 * x + 12; },
+                label: 'y = 2x³ − 9x² + 12x' },
+      /* the cylinder's SURFACE AREA against its radius, with the volume held
+       * at 16pi. An optimisation question is a stationary-point question
+       * wearing a hat, and it only looks like one once the thing being
+       * minimised is drawn as a curve. */
+      cylS:   { f: function (r) { return 2 * Math.PI * r * r + 32 * Math.PI / r; },
+                d: function (r) { return 4 * Math.PI * r - 32 * Math.PI / (r * r); },
+                label: 'surface area against radius (volume fixed at 16π)' },
       cub4:  { f: function (x) { return 4 * x * x * x; },
                d: function (x) { return 12 * x * x; },     label: 'y = 4x³' },
       cub2:  { f: function (x) { return x * x * x - 2 * x; },

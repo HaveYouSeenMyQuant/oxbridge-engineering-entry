@@ -1234,7 +1234,16 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "With V = πr²h = 16π, h = 16/r². Surface area A = 2πr² + 2πrh = 2πr² + 32π/r. dA/dr = 4πr − 32π/r² = 0 gives r³ = 8, so r = 2 and h = 4 — the height is the diameter, which is the classic result."
+       "explain": "With V = πr²h = 16π, h = 16/r². Surface area A = 2πr² + 2πrh = 2πr² + 32π/r. dA/dr = 4πr − 32π/r² = 0 gives r³ = 8, so r = 2 and h = 4 — the height is the diameter, which is the classic result.",
+       "viz": "tangentSlide",
+       "vizHint": "This is the surface area plotted against the radius, with the volume fixed. Minimising it is the same job as finding where the tangent goes flat.",
+       "vizParams": {
+        "curve": "cylS",
+        "x0": 3.4,
+        "lo": 1.0,
+        "hi": 4.0,
+        "reveal": false
+       }
       },
       {
        "id": "ca_exam_curve",
@@ -1244,7 +1253,16 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "dy/dx = 3x² − 12x + 9 = 3(x−1)(x−3), zero at x = 1 and x = 3. Two points: a maximum at (1, 4) and a minimum at (3, 0)."
+       "explain": "dy/dx = 3x² − 12x + 9 = 3(x−1)(x−3), zero at x = 1 and x = 3. Two points: a maximum at (1, 4) and a minimum at (3, 0).",
+       "viz": "tangentSlide",
+       "vizHint": "Slide across and count how many times the tangent goes flat.",
+       "vizParams": {
+        "curve": "exam9",
+        "x0": 0,
+        "lo": -0.5,
+        "hi": 4.5,
+        "reveal": false
+       }
       },
       {
        "id": "ca_exam_inflect",
@@ -1264,7 +1282,17 @@ window.QQ_DATA = {
        "answerNumber": 24,
        "tolerance": 0,
        "answerValue": "24",
-       "explain": "dy/dx = 3(x²+1)² × 2x = 6x(x²+1)², which at x = 1 is 6 × 4 = 24."
+       "explain": "dy/dx = 3(x²+1)² × 2x = 6x(x²+1)², which at x = 1 is 6 × 4 = 24.",
+       "viz": "tangentSlide",
+       "vizHint": "The tangent is at the x you were asked about. Two rates multiplied again: the bracket, and the cube.",
+       "vizParams": {
+        "curve": "chain2",
+        "x0": 1,
+        "lo": -1.5,
+        "hi": 1.5,
+        "heldMsg": "the tangent is at the x you were asked about; work out its slope",
+        "reveal": false
+       }
       },
       {
        "id": "ca_exam_ladder",
@@ -1274,7 +1302,16 @@ window.QQ_DATA = {
        "answerNumber": 5,
        "tolerance": 0,
        "answerValue": "5",
-       "explain": "dy/dx = 6x² − 18x + 12 = 6(x−1)(x−2), so x = 1 gives y = 5 and x = 2 gives y = 4. The larger stationary value is 5 — and note it is a MAXIMUM at the smaller x, which a sketch makes obvious."
+       "explain": "dy/dx = 6x² − 18x + 12 = 6(x−1)(x−2), so x = 1 gives y = 5 and x = 2 gives y = 4. The larger stationary value is 5 — and note it is a MAXIMUM at the smaller x, which a sketch makes obvious.",
+       "viz": "tangentSlide",
+       "vizHint": "Find both flat points, then compare how HIGH the curve is at each - the question asks for a y, not an x.",
+       "vizParams": {
+        "curve": "ladder",
+        "x0": 0,
+        "lo": -0.2,
+        "hi": 3.2,
+        "reveal": false
+       }
       }
      ]
     }
