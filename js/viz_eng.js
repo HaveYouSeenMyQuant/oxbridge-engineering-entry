@@ -143,12 +143,39 @@
 
   /* ----------------------------------------------------------- areaUnder */
   global.QQViz.register('areaUnder', function (host, api) {
+    /* THE CURVE AND THE LIMITS COME FROM THE QUESTION.
+     *
+     * This used to be hardcoded to y = x squared from 0 to 3, with a readout
+     * that ended "the exact integral is 9". Five questions mounted it. One of
+     * them asks for exactly that integral, so the picture printed its own
+     * answer; two others are about y = 2x and y = x(4 - x) and were shown a
+     * parabola that has nothing to do with them; and the true/false about a
+     * NEGATIVE integral was illustrated with an area entirely above the axis.
+     *
+     * Now the curve, the limits and whether the exact value is revealed all
+     * come from vizParams, and the Riemann sum is what the rectangles actually
+     * compute rather than a number typed into a string.
+     */
+    var P = (api && api.params) || {};
+    var A = P.a != null ? P.a : 0, B = P.b != null ? P.b : 3;
+    var reveal = P.reveal !== false;
+    var CURVES = {
+      sq:     { f: function (x) { return x * x; },            label: 'y = x²' },
+      lin:    { f: function (x) { return 2 * x; },            label: 'y = 2x' },
+      inv2:   { f: function (x) { return 1 / (x * x); },      label: 'y = x⁻²' },
+      sine:   { f: function (x) { return Math.sin(x); },      label: 'y = sin x' },
+      hump:   { f: function (x) { return x * (4 - x); },      label: 'y = x(4 − x)' },
+      dome:   { f: function (x) { return 4 - x * x; },        label: 'y = 4 − x²' },
+      cubic:  { f: function (x) { return x * x * x; },        label: 'y = x³' },
+      polysum:{ f: function (x) { return 3 * x * x + 2 * x; }, label: 'y = 3x² + 2x' },
+      root:   { f: function (x) { return Math.sqrt(Math.max(0, x)); }, label: 'y = √x' }
+    };
+    var C0 = CURVES[P.curve] || CURVES.sq;
+    var fn = C0.f;
     var n = 4;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.9);
-    var A = 0, B = 3;
-    var fn = function (x) { return x * x; };
     slider(row, { min: 1, max: 60, step: 1, value: n, label: 'rectangles' },
       function (v) { n = v; api.onInteract('slider'); say(); });
     function riemann() {
@@ -157,24 +184,49 @@
       return s;
     }
     function say() {
-      out.innerHTML = n + ' rectangles give <b>' + riemann().toFixed(3) +
-        '</b>; the exact integral is <b>9</b>';
+      var r = riemann();
+      out.innerHTML = n + ' rectangle' + (n === 1 ? '' : 's') + ' give <b>' +
+        r.toFixed(3) + '</b>' + (reveal
+          ? '; the exact integral is <b>' + (P.exact != null ? P.exact : '?') + '</b>'
+          : ' — slide it up and see what it settles on');
     }
     say();
     stage.draw = function (g, w, h) {
-      var s = Math.min(w / 5, h / 11), ox = w * 0.18, oy = h - 28;
+      /* the scale has to fit whatever curve was asked for, including one that
+       * dips below the axis -- the hardcoded version could only ever draw a
+       * shape that fitted y = x squared on 0..3 */
+      var lo = 0, hi = 0.001, i, dxs = (B - A) / 80;
+      for (i = 0; i <= 80; i++) {
+        var yv = fn(A + i * dxs);
+        if (isFinite(yv)) { if (yv > hi) hi = yv; if (yv < lo) lo = yv; }
+      }
+      var span = Math.max(Math.abs(hi), Math.abs(lo)) * 1.15;
+      var s = Math.min((w * 0.72) / Math.max(1e-6, (B - A)), (h - 46) / (2 * span));
+      var ox = w * 0.16, oy = h - 30 - (lo < 0 ? (h - 46) / 2 : 0);
       axes(g, w, h, ox, oy, s);
       var dx = (B - A) / n;
-      for (var i = 0; i < n; i++) {
-        var xl = A + i * dx, yv = fn(xl + dx / 2);
-        g.fillStyle = 'rgba(88,166,255,0.28)';
-        g.fillRect(ox + xl * s, oy - yv * s, dx * s, yv * s);
-        g.strokeStyle = 'rgba(88,166,255,0.55)'; g.lineWidth = 1;
-        g.strokeRect(ox + xl * s, oy - yv * s, dx * s, yv * s);
+      for (i = 0; i < n; i++) {
+        var xl = A + i * dx, yy = fn(xl + dx / 2);
+        if (!isFinite(yy)) continue;
+        g.fillStyle = yy >= 0 ? 'rgba(88,166,255,0.28)' : 'rgba(248,81,73,0.28)';
+        g.fillRect(ox + (xl - A) * s, oy - Math.max(yy, 0) * s,
+                   dx * s, Math.abs(yy) * s);
+        g.strokeStyle = yy >= 0 ? 'rgba(88,166,255,0.55)' : 'rgba(248,81,73,0.55)';
+        g.lineWidth = 1;
+        g.strokeRect(ox + (xl - A) * s, oy - Math.max(yy, 0) * s,
+                     dx * s, Math.abs(yy) * s);
       }
-      plot(g, w, h, ox, oy, s, fn, C.gold);
+      /* the curve itself, drawn over the range the question names */
+      g.strokeStyle = C.gold; g.lineWidth = 2.5; g.beginPath();
+      for (i = 0; i <= 120; i++) {
+        var x = A + (B - A) * i / 120, y = fn(x);
+        if (!isFinite(y)) continue;
+        var px = ox + (x - A) * s, py = oy - y * s;
+        if (i === 0) g.moveTo(px, py); else g.lineTo(px, py);
+      }
+      g.stroke();
       g.fillStyle = C.muted; g.font = f(11, 600); g.textAlign = 'center';
-      g.fillText('y = x² from 0 to 3', w / 2, h - 6);
+      g.fillText(C0.label + ' from ' + A + ' to ' + B, w / 2, h - 6);
     };
     return { destroy: stage.destroy };
   });

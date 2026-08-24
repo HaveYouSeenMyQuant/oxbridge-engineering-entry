@@ -1267,7 +1267,13 @@ window.QQ_DATA = {
        "answerValue": "9",
        "explain": "[x³/3] from 0 to 3 = 27/3 − 0 = 9. A definite integral needs no constant, because it cancels when you subtract the two limits.",
        "viz": "areaUnder",
-       "vizHint": "Add rectangles and watch the total settle."
+       "vizHint": "Add rectangles and watch the total settle.",
+       "vizParams": {
+        "curve": "sq",
+        "a": 0,
+        "b": 3,
+        "reveal": false
+       }
       },
       {
        "id": "in_area",
@@ -1279,7 +1285,13 @@ window.QQ_DATA = {
        "answerValue": "15",
        "explain": "[x²] from 1 to 4 = 16 − 1 = 15. Check it geometrically: it is a trapezium with parallel sides 2 and 8 and width 3, area ½(2+8)(3) = 15 ✓.",
        "viz": "areaUnder",
-       "vizHint": "Area under a curve, built from strips."
+       "vizHint": "Area under a straight line is still an area.",
+       "vizParams": {
+        "curve": "lin",
+        "a": 1,
+        "b": 4,
+        "reveal": false
+       }
       },
       {
        "id": "in_between",
@@ -1301,7 +1313,13 @@ window.QQ_DATA = {
        "answerValue": "TRUE",
        "explain": "Where the curve is below the axis the integral is negative. That is why an AREA question needs the region split at every crossing — otherwise positive and negative parts cancel and you understate it.",
        "viz": "areaUnder",
-       "vizHint": "What would happen below the axis?"
+       "vizHint": "Watch the strips that fall below the axis.",
+       "vizParams": {
+        "curve": "cubic",
+        "a": -2,
+        "b": 2,
+        "exact": 0
+       }
       },
       {
        "id": "in_limits_swap",
@@ -1329,7 +1347,13 @@ window.QQ_DATA = {
        "answerValue": "32",
        "explain": "∫(4x − x²)dx from 0 to 4 = [2x² − x³/3] = 32 − 64/3 = 32/3, so k = 32. Sketching first tells you the curve is above the axis throughout, so no splitting is needed.",
        "viz": "areaUnder",
-       "vizHint": "More strips, closer to the true area."
+       "vizHint": "More strips, closer to the true area.",
+       "vizParams": {
+        "curve": "hump",
+        "a": 0,
+        "b": 4,
+        "reveal": false
+       }
       },
       {
        "id": "in_exam_volume",
@@ -1361,7 +1385,13 @@ window.QQ_DATA = {
        "answerValue": "3",
        "explain": "Mean = (1/(b−a))∫y dx = (1/3) × 9 = 3. The mean value is the height of the rectangle with the same area over the same width.",
        "viz": "areaUnder",
-       "vizHint": "The mean is the height of the equivalent rectangle."
+       "vizHint": "The mean is the height of the equivalent rectangle.",
+       "vizParams": {
+        "curve": "sq",
+        "a": 0,
+        "b": 3,
+        "reveal": false
+       }
       },
       {
        "id": "in_exam_split",
@@ -1387,7 +1417,15 @@ window.QQ_DATA = {
        "answerNumber": 12,
        "tolerance": 0.001,
        "answerValue": "12",
-       "explain": "[x³ + x²] from 0 to 2 = 8 + 4 = 12. Integrate term by term and substitute the limits once, at the end — substituting into each term separately is where the arithmetic goes wrong."
+       "explain": "[x³ + x²] from 0 to 2 = 8 + 4 = 12. Integrate term by term and substitute the limits once, at the end — substituting into each term separately is where the arithmetic goes wrong.",
+       "viz": "areaUnder",
+       "vizHint": "Strips under the curve, added up.",
+       "vizParams": {
+        "curve": "polysum",
+        "a": 0,
+        "b": 2,
+        "reveal": false
+       }
       },
       {
        "id": "in_neg_power_def",
@@ -1397,7 +1435,15 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "∫x⁻²dx = −x⁻¹, so [−1/x] from 1 to 3 = −1/3 + 1 = 2/3, giving k = 2. The power rule handles every index except −1."
+       "explain": "∫x⁻²dx = −x⁻¹, so [−1/x] from 1 to 3 = −1/3 + 1 = 2/3, giving k = 2. The power rule handles every index except −1.",
+       "viz": "areaUnder",
+       "vizHint": "The curve falls away fast.",
+       "vizParams": {
+        "curve": "inv2",
+        "a": 1,
+        "b": 3,
+        "reveal": false
+       }
       },
       {
        "id": "in_area_parabola",
@@ -1407,7 +1453,15 @@ window.QQ_DATA = {
        "answerNumber": 32,
        "tolerance": 0.5,
        "answerValue": "32",
-       "explain": "The curve meets the axis at x = ±2, and ∫(4 − x²)dx from −2 to 2 = [4x − x³/3] = 32/3. Finding the limits by solving y = 0 first is the step people skip."
+       "explain": "The curve meets the axis at x = ±2, and ∫(4 − x²)dx from −2 to 2 = [4x − x³/3] = 32/3. Finding the limits by solving y = 0 first is the step people skip.",
+       "viz": "areaUnder",
+       "vizHint": "The dome sits on the axis at -2 and 2.",
+       "vizParams": {
+        "curve": "dome",
+        "a": -2,
+        "b": 2,
+        "reveal": false
+       }
       },
       {
        "id": "in_trig_def",
@@ -1417,7 +1471,15 @@ window.QQ_DATA = {
        "answerNumber": 1,
        "tolerance": 0.001,
        "answerValue": "1",
-       "explain": "[−cos x] from 0 to π/2 = 0 + 1 = 1. Integrating sine gives MINUS cosine, and the minus sign is the single most dropped one in the topic."
+       "explain": "[−cos x] from 0 to π/2 = 0 + 1 = 1. Integrating sine gives MINUS cosine, and the minus sign is the single most dropped one in the topic.",
+       "viz": "areaUnder",
+       "vizHint": "One arch of the sine curve.",
+       "vizParams": {
+        "curve": "sine",
+        "a": 0,
+        "b": 1.5708,
+        "reveal": false
+       }
       },
       {
        "id": "in_mean_parabola",
@@ -1427,7 +1489,15 @@ window.QQ_DATA = {
        "answerNumber": 8,
        "tolerance": 0.5,
        "answerValue": "8",
-       "explain": "Mean = (1/4) × 32/3 = 8/3, so k = 8. The mean value is the height of the rectangle with the same area over the same width — worth picturing rather than memorising."
+       "explain": "Mean = (1/4) × 32/3 = 8/3, so k = 8. The mean value is the height of the rectangle with the same area over the same width — worth picturing rather than memorising.",
+       "viz": "areaUnder",
+       "vizHint": "Mean height, not total area.",
+       "vizParams": {
+        "curve": "dome",
+        "a": -2,
+        "b": 2,
+        "reveal": false
+       }
       }
      ]
     },
@@ -1443,7 +1513,15 @@ window.QQ_DATA = {
        "answerNumber": 8,
        "tolerance": 0.01,
        "answerValue": "8",
-       "explain": "V = π∫y²dx = π∫x dx from 0 to 4 = π[x²/2] = 8π, so k = 8. Rotating squares the function, which is why √x becomes an easy integral the moment you set it up."
+       "explain": "V = π∫y²dx = π∫x dx from 0 to 4 = π[x²/2] = 8π, so k = 8. Rotating squares the function, which is why √x becomes an easy integral the moment you set it up.",
+       "viz": "areaUnder",
+       "vizHint": "The curve that gets spun round.",
+       "vizParams": {
+        "curve": "root",
+        "a": 0,
+        "b": 4,
+        "reveal": false
+       }
       },
       {
        "id": "in_trapezium",
