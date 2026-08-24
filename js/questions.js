@@ -3880,6 +3880,77 @@ window.QQ_DATA = {
        }
       }
      ]
+    },
+    {
+     "id": "e6",
+     "title": "Magnetism and induction",
+     "questions": [
+      {
+       "id": "el_mag_force",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A wire 0.5 m long carries 3 A at right angles to a 0.2 T magnetic field. What force acts on it, in newtons?",
+       "answerNumber": 0.3,
+       "tolerance": 0.01,
+       "answerValue": "0.3",
+       "explain": "F = B I L = 0.2 x 3 x 0.5 = 0.3 N. The right angle matters: line the wire up ALONG the field instead and the force is zero however large the current, because only the part of the wire across the field feels anything."
+      },
+      {
+       "id": "el_mag_dir",
+       "type": "choice",
+       "topic": "electricity",
+       "prompt": "That wire is in a field pointing away from you and the current runs to the right. Which way is the force?",
+       "choices": [
+        "Upwards",
+        "Downwards",
+        "To the left",
+        "Back along the field, away from you"
+       ],
+       "answer": 0,
+       "answerValue": "Upwards",
+       "explain": "Upwards. Fleming's left hand: first finger along the field (away from you), second finger along the current (right), and the thumb gives the force (up). The force is perpendicular to BOTH the current and the field, which is why it can never push the wire along its own length."
+      },
+      {
+       "id": "el_lenz",
+       "type": "choice",
+       "topic": "electricity",
+       "prompt": "A magnet is pushed north-pole-first into a coil. Which way does the induced current flow, seen from the magnet's side?",
+       "choices": [
+        "No current flows until the magnet stops moving",
+        "So that the coil's near face becomes a north pole",
+        "So that the coil's near face becomes a south pole",
+        "Whichever way the coil is wound decides it"
+       ],
+       "answer": 1,
+       "answerValue": "So that the coil's near face becomes a north pole",
+       "explain": "It becomes a NORTH pole, which pushes the magnet back out. Lenz's law: the induced current always opposes the change that made it. If it helped instead, the magnet would accelerate in, making more current, which would pull harder still -- free energy, and the reason the minus sign in e = -N dPhi/dt is not decoration."
+      },
+      {
+       "id": "el_mag_brake",
+       "type": "choice",
+       "topic": "electricity",
+       "prompt": "A strong magnet is dropped down a vertical COPPER pipe. Copper is not magnetic. What happens?",
+       "choices": [
+        "It falls far more slowly than it would in air",
+        "It falls exactly as it would in air — copper is not magnetic",
+        "It sticks to the inside of the pipe",
+        "It falls faster, pulled down by the copper"
+       ],
+       "answer": 0,
+       "answerValue": "It falls far more slowly than it would in air",
+       "explain": "It drifts down, taking seconds over a drop that would otherwise take a fraction of one. Copper is not attracted to a magnet, but it conducts: the moving field drives circular currents in the pipe wall, and by Lenz's law those currents oppose the motion that made them. The energy for the braking comes out of the magnet's fall and ends up as heat in the copper."
+      },
+      {
+       "id": "el_transformer",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A transformer has 100 turns on the primary and 20 on the secondary. The primary is on 230 V. What is the secondary voltage, in volts?",
+       "answerNumber": 46.0,
+       "tolerance": 0.1,
+       "answerValue": "46",
+       "explain": "Vs = Vp x Ns/Np = 230 x 20/100 = 46 V. Fewer turns out than in, so the voltage steps DOWN -- and the current steps up by the same factor, because a transformer moves power around rather than making it. It also only works on alternating current: with a steady current the flux never changes, so nothing is induced at all."
+      }
+     ]
     }
    ]
   },
