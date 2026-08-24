@@ -3569,14 +3569,14 @@ window.QQ_DATA = {
        "explain": "m = v/u = 30/15 = 2, so the image is twice the size of the object — and inverted, because it is real."
       },
       {
-       "id": "wa_standing",
+       "id": "wa_lens_far",
        "type": "number",
        "topic": "waves",
-       "prompt": "A string 2 m long is fixed at both ends. What is the wavelength of its fundamental, in metres?",
-       "answerNumber": 4,
-       "tolerance": 0,
-       "answerValue": "4",
-       "explain": "The fundamental fits half a wavelength between the fixed ends, so λ = 2L = 4 m. Each higher harmonic adds another half wavelength."
+       "prompt": "An object sits 60 cm from a converging lens of focal length 20 cm. How far from the lens is the image, in centimetres?",
+       "answerNumber": 30.0,
+       "tolerance": 0.5,
+       "answerValue": "30",
+       "explain": "Use 1/f = 1/u + 1/v, so 1/v = 1/20 − 1/60 = 3/60 − 1/60 = 2/60, giving v = 30 cm. Notice the image is CLOSER than the object this time: beyond twice the focal length the image comes in between f and 2f and is smaller than the object. Inside 2f it goes the other way, which is the whole difference between a projector and a magnifying glass."
       },
       {
        "id": "wa_harmonic",
