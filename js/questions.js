@@ -3371,6 +3371,72 @@ window.QQ_DATA = {
        "explain": "It can overhang as far as you like, given enough blocks. Each block from the top down can be offset by half, a quarter, a sixth and so on — the harmonic series, which grows without limit. Four blocks already clear a whole block length. It grows painfully slowly, though: reaching two block lengths takes 31 blocks."
       }
      ]
+    },
+    {
+     "id": "p8",
+     "title": "Circular motion and gravity",
+     "questions": [
+      {
+       "id": "me_circ_accel",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A car goes round a bend of radius 25 m at a steady 10 m/s. What is its acceleration, in m/s²?",
+       "answerNumber": 4.0,
+       "tolerance": 0.01,
+       "answerValue": "4",
+       "explain": "a = v² / r = 100 / 25 = 4 m/s². Steady speed is not steady velocity: the direction is changing the whole way round, and a change of velocity is an acceleration even when the speedometer never moves."
+      },
+      {
+       "id": "me_circ_direction",
+       "type": "choice",
+       "topic": "mechanics",
+       "prompt": "Which way does that acceleration point?",
+       "choices": [
+        "Outwards, away from the centre",
+        "There is no acceleration — the speed is constant",
+        "Straight towards the centre of the bend",
+        "Forwards, along the direction of travel"
+       ],
+       "answer": 2,
+       "answerValue": "Straight towards the centre of the bend",
+       "explain": "Towards the centre. The velocity vector is swinging round, and the change between one instant and the next points inward. That is why it is called centripetal: centre-seeking."
+      },
+      {
+       "id": "me_circ_cut",
+       "type": "choice",
+       "topic": "mechanics",
+       "prompt": "A ball on a string is whirled in a horizontal circle and the string snaps. Seen from above, which way does the ball go?",
+       "choices": [
+        "It carries on curving for a moment, then straightens",
+        "It falls immediately with no sideways motion",
+        "Straight on, along the tangent",
+        "Straight outwards, away from the centre"
+       ],
+       "answer": 2,
+       "answerValue": "Straight on, along the tangent",
+       "explain": "Along the tangent. The string was the only thing pulling it inwards; remove it and there is nothing to bend the path, so Newton's first law takes over and it continues in the direction it was already going. It never had an outward velocity to fly out along."
+      },
+      {
+       "id": "me_circ_outward",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "A rider on a fairground roundabout is pushed outwards by a force.",
+       "statement": "A rider on a fairground roundabout is pushed outwards by a force.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "FALSE, and this is the most durable wrong idea in mechanics. No outward force acts. The rider's body tries to continue in a straight line, the seat gets in the way, and the seat pushes them INWARDS to bend their path into the circle. What is felt as being flung out is the seat pressing in."
+      },
+      {
+       "id": "me_orbit_speed",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A satellite orbits at a radius of 7 000 km, where gravity gives an acceleration of 8 m/s². How fast is it going, in km/s, to two significant figures?",
+       "answerNumber": 7.5,
+       "tolerance": 0.15,
+       "answerValue": "7.5",
+       "explain": "In orbit, gravity supplies exactly the centripetal acceleration and nothing else: v² / r = g. So v = sqrt(g r) = sqrt(8 x 7 000 000) = 7 483 m/s, about 7.5 km/s. An orbit is not a place where gravity stops; it is a fall that keeps missing."
+      }
+     ]
     }
    ]
   },
