@@ -346,7 +346,15 @@
     function say() {
       var det = a1 * b2 - b1 * a2;
       if (Math.abs(det) < 1e-9) {
-        out.innerHTML = 'det = <b>0</b> — the lines are parallel. No single crossing point.';
+        /* THIS BRANCH HAD NO REVEAL GUARD, and mx_singular_system asks what a
+         * zero determinant says about the two lines. Its answer is "they are
+         * parallel", and this sentence said exactly that. The fault was mine:
+         * earlier tonight I set that question to OPEN on a singular system so
+         * the picture would match the question, which walked it straight into
+         * the one unguarded string in the file. */
+        out.innerHTML = reveal
+          ? 'det = <b>0</b> — the lines are parallel. No single crossing point.'
+          : 'det = <b>0</b> — look at what the two lines are doing.';
       } else {
         var x = (c1 * b2 - b1 * c2) / det, y = (a1 * c2 - c1 * a2) / det;
         out.innerHTML = reveal
