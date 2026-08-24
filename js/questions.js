@@ -3054,7 +3054,16 @@ window.QQ_DATA = {
        "answerNumber": 3.0,
        "tolerance": 0.05,
        "answerValue": "3",
-       "explain": "Pressure is force over area, and the area has to be in metres squared: 2 cm² is 2 × 10⁻⁴ m². The force is 60 × 10 = 600 N, so p = 600 / 2e-4 = 3 × 10⁶ Pa = 3 MPa. That is about thirty atmospheres, and it is why a stiletto dents a wooden floor when an elephant standing on the same floor does not: the elephant weighs far more but spreads it over a thousand times the area."
+       "explain": "Pressure is force over area, and the area has to be in metres squared: 2 cm² is 2 × 10⁻⁴ m². The force is 60 × 10 = 600 N, so p = 600 / 2e-4 = 3 × 10⁶ Pa = 3 MPa. That is about thirty atmospheres, and it is why a stiletto dents a wooden floor when an elephant standing on the same floor does not: the elephant weighs far more but spreads it over a thousand times the area.",
+       "viz": "fluidPressure",
+       "vizHint": "Pressure is force spread over an area.",
+       "vizParams": {
+        "rho": 1000,
+        "g": 10,
+        "h": 10,
+        "depth": 2,
+        "reveal": false
+       }
       },
       {
        "id": "me_hydrostatic",
@@ -3064,7 +3073,16 @@ window.QQ_DATA = {
        "answerNumber": 100.0,
        "tolerance": 1.0,
        "answerValue": "100",
-       "explain": "p = ρgh = 1000 × 10 × 10 = 100,000 Pa = 100 kPa. Notice what that number is: roughly one atmosphere. Ten metres of water weighs about as much as the entire atmosphere above you, which is why a diver at 10 m is at two atmospheres in total, and why a suction pump can never lift water more than about ten metres however good the vacuum."
+       "explain": "p = ρgh = 1000 × 10 × 10 = 100,000 Pa = 100 kPa. Notice what that number is: roughly one atmosphere. Ten metres of water weighs about as much as the entire atmosphere above you, which is why a diver at 10 m is at two atmospheres in total, and why a suction pump can never lift water more than about ten metres however good the vacuum.",
+       "viz": "fluidPressure",
+       "vizHint": "Slide down and watch what grows with depth.",
+       "vizParams": {
+        "rho": 1000,
+        "g": 10,
+        "h": 10,
+        "depth": 4,
+        "reveal": false
+       }
       },
       {
        "id": "me_pressure_shape",
