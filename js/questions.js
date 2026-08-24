@@ -1614,7 +1614,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_trig",
-   "index": 7,
+   "index": 5,
    "title": "Trigonometry",
    "subtitle": "Right-angled triangles, sine and cosine rules, radians, identities.",
    "colour": "#e3b341",
@@ -1893,7 +1893,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_vectors",
-   "index": 8,
+   "index": 6,
    "title": "Vectors",
    "subtitle": "Magnitude, the dot product, forces and equilibrium.",
    "colour": "#db6d28",
@@ -2252,7 +2252,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_logs",
-   "index": 9,
+   "index": 7,
    "title": "Logarithms and exponentials",
    "subtitle": "Log laws, solving for an exponent, growth and decay.",
    "colour": "#7ee787",
@@ -2675,7 +2675,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_mechanics",
-   "index": 10,
+   "index": 8,
    "title": "Mechanics",
    "subtitle": "Kinematics, forces, momentum, energy, projectiles.",
    "colour": "#f85149",
@@ -3046,7 +3046,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_electricity",
-   "index": 11,
+   "index": 9,
    "title": "Electricity",
    "subtitle": "Current, resistance, circuits, power.",
    "colour": "#a371f7",
@@ -3377,7 +3377,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_waves",
-   "index": 12,
+   "index": 10,
    "title": "Waves and optics",
    "subtitle": "Wave equation, refraction, lenses, standing waves.",
    "colour": "#39c5cf",
@@ -3789,7 +3789,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_estimation",
-   "index": 13,
+   "index": 11,
    "title": "Estimation",
    "subtitle": "Orders of magnitude and Fermi problems — the PAT's favourite.",
    "colour": "#bc8cff",

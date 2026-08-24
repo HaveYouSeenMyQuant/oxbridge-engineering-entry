@@ -103,7 +103,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "me_v2",
     "lesson": "p1",
-    "unit": 10,
+    "unit": 8,
     "prompt": "A car decelerates from 20 m/s to rest in 40 m. What is the magnitude of its acceleration, in m/s²?"
    }
   },
@@ -199,7 +199,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "me_graph_area",
     "lesson": "p1",
-    "unit": 10,
+    "unit": 8,
     "prompt": "On a velocity-time graph, a body goes from 0 to 12 m/s in 4 s at constant acceleration. What distance does it cover, in metres?"
    }
   },
@@ -298,7 +298,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_critical",
     "lesson": "w2",
-    "unit": 12,
+    "unit": 10,
     "prompt": "What is the critical angle for glass of refractive index 1.5, in degrees, to the nearest degree?"
    }
   },
@@ -380,7 +380,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "me_distance",
     "lesson": "p1",
-    "unit": 10,
+    "unit": 8,
     "prompt": "Same ball, same g = 10. How far has it fallen in 3 s, in metres?"
    }
   },
@@ -465,7 +465,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "es_scale_area",
     "lesson": "es5",
-    "unit": 13,
+    "unit": 11,
     "prompt": "You double every length of an object. By what factor does its surface area grow?"
    }
   },
@@ -709,7 +709,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "me_v2",
     "lesson": "p1",
-    "unit": 10,
+    "unit": 8,
     "prompt": "A car decelerates from 20 m/s to rest in 40 m. What is the magnitude of its acceleration, in m/s²?"
    }
   },
@@ -1938,7 +1938,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "lg_log2",
     "lesson": "g1",
-    "unit": 9,
+    "unit": 7,
     "prompt": "What is log₂32?"
    }
   },
@@ -2235,7 +2235,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "me_suvat",
     "lesson": "p1",
-    "unit": 10,
+    "unit": 8,
     "prompt": "A ball is dropped from rest. Taking g = 10 m/s², how fast is it moving after 3 s, in m/s?"
    }
   },
@@ -2302,7 +2302,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "es_scale_area",
     "lesson": "es5",
-    "unit": 13,
+    "unit": 11,
     "prompt": "You double every length of an object. By what factor does its surface area grow?"
    }
   },
@@ -2369,7 +2369,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_snell",
     "lesson": "w2",
-    "unit": 12,
+    "unit": 10,
     "prompt": "Light enters glass (n = 1.5) from air at 30° to the normal. What is the angle of refraction, in degrees, to the nearest degree?"
    }
   },
@@ -2423,7 +2423,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_speed",
     "lesson": "w1",
-    "unit": 12,
+    "unit": 10,
     "prompt": "A wave has frequency 50 Hz and wavelength 6 m. What is its speed, in m/s?"
    }
   },
@@ -2689,7 +2689,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "tr_soh",
     "lesson": "t1",
-    "unit": 7,
+    "unit": 5,
     "prompt": "A right-angled triangle has hypotenuse 10 and an angle of 30°. How long is the side opposite that angle?"
    }
   },
@@ -2777,7 +2777,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "ve_add",
     "lesson": "v1",
-    "unit": 8,
+    "unit": 6,
     "prompt": "(3, 4) + (1, −2) has components (a, b). What is b?"
    }
   },
