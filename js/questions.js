@@ -2457,7 +2457,8 @@ window.QQ_DATA = {
        "vizHint": "Halving is just a negative power of two.",
        "vizParams": {
         "base": 2,
-        "x": 4
+        "x": 1,
+        "reveal": false
        }
       },
       {
