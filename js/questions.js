@@ -3454,7 +3454,23 @@ window.QQ_DATA = {
        "answerNumber": 300,
        "tolerance": 0,
        "answerValue": "300",
-       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two."
+       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two.",
+       "viz": "waveLab",
+       "vizHint": "The question's own wave. Change either slider and see what has to give.",
+       "vizParams": {
+        "f": 50,
+        "lam": 6,
+        "fMin": 10,
+        "fMax": 100,
+        "fStep": 5,
+        "fUnit": "Hz",
+        "lamMin": 1,
+        "lamMax": 10,
+        "lamStep": 0.5,
+        "lamUnit": "m",
+        "vUnit": "m/s",
+        "reveal": false
+       }
       },
       {
        "id": "wa_period",
@@ -3474,7 +3490,23 @@ window.QQ_DATA = {
        "answerNumber": 2.0,
        "tolerance": 0.001,
        "answerValue": "2",
-       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not."
+       "explain": "λ = v/f = 2 m. Low notes have long wavelengths, which is why bass carries round corners and through walls while treble does not.",
+       "viz": "waveLab",
+       "vizHint": "Set the frequency to 170 Hz, then hunt for the wavelength that makes the speed 340 m/s.",
+       "vizParams": {
+        "f": 170,
+        "lam": 4,
+        "fMin": 50,
+        "fMax": 500,
+        "fStep": 10,
+        "fUnit": "Hz",
+        "lamMin": 0.5,
+        "lamMax": 6,
+        "lamStep": 0.25,
+        "lamUnit": "m",
+        "vUnit": "m/s",
+        "reveal": true
+       }
       },
       {
        "id": "wa_transverse",
@@ -3494,7 +3526,25 @@ window.QQ_DATA = {
        "answerNumber": 600.0,
        "tolerance": 0.5,
        "answerValue": "600",
-       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head."
+       "explain": "λ = v/f = 6×10⁻⁷ m = 600 nm, which is orange. Visible light runs roughly 400 nm (violet) to 700 nm (red), and that range is worth carrying in your head.",
+       "viz": "waveLab",
+       "vizHint": "Terahertz and nanometres, so the numbers fit on a slider. Find the pair that gives 3x10^8 m/s.",
+       "vizParams": {
+        "f": 500,
+        "lam": 400,
+        "fMin": 400,
+        "fMax": 800,
+        "fStep": 10,
+        "fUnit": "THz",
+        "fSI": 1000000000000.0,
+        "lamMin": 300,
+        "lamMax": 800,
+        "lamStep": 10,
+        "lamUnit": "nm",
+        "lamSI": 1e-09,
+        "vUnit": "m/s",
+        "reveal": true
+       }
       }
      ]
     },

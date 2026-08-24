@@ -99,7 +99,11 @@
   function locked() {
     /* auth.js is the only module that decides this, for the road and for here.
      * Guarded because the archive must still draw if auth is ever pulled. */
-    try { return !(global.QQAuth && QQAuth.hasAccess()); } catch (e) { return true; }
+    /* Fails OPEN. Nothing on this site is gated any more (owner instruction,
+     * 2026-08-24), so if auth.js is ever pulled or throws, the archive must
+     * still show the answers rather than fall back to a wall that no longer
+     * exists. This used to return true -- locked -- on the same error. */
+    try { return !(global.QQAuth && QQAuth.hasAccess()); } catch (e) { return false; }
   }
 
   function utm() {

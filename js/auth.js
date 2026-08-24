@@ -406,7 +406,19 @@
     /* Everything past unit 1 is gated on this one predicate. A real session
      * makes it true; so does a device-local address, which is what keeps the
      * signed-out road working exactly as it did. */
-    hasAccess: function () { return !!(this.isSignedIn() || QQStore.hasEmail()); },
+    /* NOTHING ON THIS SITE IS GATED (owner instruction, 2026-08-24: "remove
+     * all email requirements, never ask for an email"). This is the one
+     * predicate the road and the answers archive ask, so returning true here
+     * opens every question, every lesson and every answer page for everybody,
+     * signed in or not.
+     *
+     * Sign-in still WORKS and is still worth having -- it is what syncs
+     * progress across devices -- it just no longer buys access to anything,
+     * because there is nothing left to buy. Everything below this line is
+     * kept rather than deleted so that turning gating back on is a one-line
+     * change and not an archaeology exercise. */
+    hasAccess: function () { return true; },
+    hasAccessStrict: function () { return !!(this.isSignedIn() || QQStore.hasEmail()); },
 
     signOut: function () {
       var had = !!session;

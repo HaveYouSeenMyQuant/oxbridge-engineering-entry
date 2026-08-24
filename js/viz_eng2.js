@@ -57,51 +57,95 @@
 
   /* ------------------------------------------------------------- waveLab --
    * v = f x lambda, shown as a constraint you cannot escape rather than a
-   * formula to memorise: change one and something else must give. */
+   * formula to memorise: change one and something else must give.
+   *
+   * REAL UNITS. The first version ran both sliders 1 to 6 in arbitrary units,
+   * so it read "f = 2, lambda = 3" beside questions naming 50 Hz, 170 Hz and
+   * 5x10^14 Hz. Right relation, wrong numbers -- so it was pulled off all four
+   * of them. It now takes a range and a unit for each axis, and a scale
+   * factor to SI so the speed it reports is a real speed:
+   *
+   *   fMin/fMax/fStep/fUnit/fSI     lamMin/lamMax/lamStep/lamUnit/lamSI
+   *
+   * with v = (f*fSI) x (lam*lamSI) printed in vUnit. Defaults reproduce a
+   * plain 1-6 lab for anything that wants one.
+   *
+   * THE DRAWING IS NORMALISED TO THE RANGE, not to the raw numbers: one
+   * wavelength spans (lam/lamMax) of the width, and the crest travels at
+   * (f/fMax) of a fixed rate. Nothing on screen depends on whether the
+   * numbers are hertz or terahertz, so 500 THz draws exactly as well as 50 Hz.
+   */
   global.QQViz.register('waveLab', function (host, api) {
     var P = (api && api.params) || {};
-    var freq = P.f != null ? P.f : 2;      // arbitrary units for the picture
-    var lam = P.lam != null ? P.lam : 3;
+    var fMin = P.fMin != null ? P.fMin : 1,
+        fMax = P.fMax != null ? P.fMax : 6,
+        fStep = P.fStep != null ? P.fStep : 1,
+        fUnit = P.fUnit || '', fSI = P.fSI != null ? P.fSI : 1;
+    var lMin = P.lamMin != null ? P.lamMin : 1,
+        lMax = P.lamMax != null ? P.lamMax : 6,
+        lStep = P.lamStep != null ? P.lamStep : 1,
+        lUnit = P.lamUnit || '', lSI = P.lamSI != null ? P.lamSI : 1;
+    var vUnit = P.vUnit || '';
+    var freq = P.f != null ? P.f : fMin + (fMax - fMin) / 2;
+    var lam = P.lam != null ? P.lam : lMin + (lMax - lMin) / 2;
     var reveal = P.reveal !== false;
     var row = controls(host);
     var out = readout(host, '');
     var stage = Stage(host, 0.62);
-    slider(row, { min: 1, max: 6, step: 1, value: freq, label: 'frequency' },
+    slider(row, { min: fMin, max: fMax, step: fStep, value: freq, label: 'frequency' },
       function (v) { freq = v; api.onInteract('slider'); say(); });
-    slider(row, { min: 1, max: 6, step: 1, value: lam, label: 'wavelength' },
+    slider(row, { min: lMin, max: lMax, step: lStep, value: lam, label: 'wavelength' },
       function (v) { lam = v; api.onInteract('slider'); say(); });
+    /* A speed can land anywhere from 3x10^8 to 300, so it is formatted rather
+     * than pasted: big and small numbers go to one exponent, the middle to
+     * plain digits. */
+    function fmt(x) {
+      if (x === 0) return '0';
+      var a = Math.abs(x);
+      if (a >= 1e6 || a < 1e-3) {
+        var e = Math.floor(Math.log(a) / Math.LN10);
+        var m = x / Math.pow(10, e);
+        return (Math.round(m * 100) / 100) + '\u00d710<sup>' + e + '</sup>';
+      }
+      return String(Math.round(x * 1000) / 1000);
+    }
+    function speed() { return (freq * fSI) * (lam * lSI); }
+    function unit(u) { return u ? ' ' + u : ''; }
     function say() {
-      out.innerHTML = 'f = <b>' + freq + '</b>, &lambda; = <b>' + lam + '</b>' +
-        (reveal ? '   ·   v = f&lambda; = <b>' + (freq * lam) + '</b>' : '');
+      out.innerHTML = 'f = <b>' + fmt(freq) + unit(fUnit) + '</b>, &lambda; = <b>' +
+        fmt(lam) + unit(lUnit) + '</b>' +
+        (reveal ? '   \u00b7   v = f&lambda; = <b>' + fmt(speed()) + unit(vUnit) + '</b>' : '');
     }
     say();
     var t0 = performance.now();
     stage.draw = function (g, w, h) {
       var t = (performance.now() - t0) / 1000;
       var mid = h / 2 - 6, amp = Math.min(30, h / 5);
-      var pxPerLam = (w - 30) / (7 - lam + 1);
+      /* one wavelength as a fraction of the widest the slider allows, so the
+       * picture stays honest across four orders of magnitude of real units */
+      var span = w - 30;
+      var pxPerLam = Math.max(18, span * (lam / lMax));
+      var rate = (freq / fMax) * 0.9;          /* crests per second on screen */
       g.strokeStyle = C.accent; g.lineWidth = 2.5;
       g.beginPath();
       for (var px = 15; px <= w - 15; px += 2) {
-        var phase = (px - 15) / pxPerLam - freq * t * 0.6;
+        var phase = (px - 15) / pxPerLam - rate * t;
         var y = mid - amp * Math.sin(2 * Math.PI * phase);
         if (px === 15) g.moveTo(px, y); else g.lineTo(px, y);
       }
       g.stroke();
-      /* one marked crest, so the SPEED is visible and not just asserted */
-      var crestPhase = Math.ceil(freq * t * 0.6);
-      var cx = 15 + (crestPhase + 0.25 + freq * t * 0.6 - crestPhase) * pxPerLam;
-      cx = 15 + ((0.25 + freq * t * 0.6) % (7 - lam + 1)) * pxPerLam;
+      /* one marked crest, so the SPEED is visible and not merely asserted */
+      var cx = 15 + ((0.25 + rate * t) % (span / pxPerLam)) * pxPerLam;
       if (cx < w - 15) {
         g.fillStyle = C.gold;
         g.beginPath(); g.arc(cx, mid - amp, 5, 0, 7); g.fill();
       }
-      /* the wavelength, drawn as a measured span */
+      /* the wavelength, drawn as a measured span and labelled in its own unit */
       g.strokeStyle = C.good; g.lineWidth = 2;
       g.beginPath();
       g.moveTo(15, h - 20); g.lineTo(15 + pxPerLam, h - 20); g.stroke();
       g.fillStyle = C.good; g.font = f(11, 700); g.textAlign = 'center';
-      g.fillText('one wavelength', 15 + pxPerLam / 2, h - 6);
+      g.fillText(fmt(lam) + unit(lUnit), 15 + pxPerLam / 2, h - 6);
     };
     return { destroy: stage.destroy };
   });
