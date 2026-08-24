@@ -4393,7 +4393,31 @@ window.QQ_DATA = {
        ],
        "answer": 1,
        "answerValue": "sqrt(2gh)",
-       "explain": "Put the units in. g is m/s^2 and h is m, so gh is m^2/s^2, and the square root of that is m/s - a speed. The second, 2gh, is m^2/s^2, which is a speed SQUARED. The third gives m^3/s^2, which is nothing at all. You can reject two of the three without knowing any physics, and that is the point: units are a check you can always run."
+       "explain": "Put the units in. g is m/s^2 and h is m, so gh is m^2/s^2, and the square root of that is m/s - a speed. The second, 2gh, is m^2/s^2, which is a speed SQUARED. The third gives m^3/s^2, which is nothing at all. You can reject two of the three without knowing any physics, and that is the point: units are a check you can always run.",
+       "viz": "dimCheck",
+       "vizHint": "Tap each one and see what it is made of. Nothing here tells you which is a speed - you have to know that a speed is a length over a time.",
+       "vizParams": {
+        "exprs": [
+         {
+          "label": "sqrt(2gh²)",
+          "M": 0,
+          "L": 1.5,
+          "T": -1
+         },
+         {
+          "label": "sqrt(2gh)",
+          "M": 0,
+          "L": 1,
+          "T": -1
+         },
+         {
+          "label": "2gh",
+          "M": 0,
+          "L": 2,
+          "T": -2
+         }
+        ]
+       }
       },
       {
        "id": "es_dim_pendulum",
@@ -4407,7 +4431,31 @@ window.QQ_DATA = {
        ],
        "answer": 1,
        "answerValue": "sqrt(L/g)",
-       "explain": "L is m and g is m/s^2, so L/g is s^2 and its square root is seconds. sqrt(gL) gives m/s, a speed; L/g gives s^2. So the period MUST be a number times sqrt(L/g) - and indeed it is 2*pi*sqrt(L/g). Dimensions cannot give you the 2*pi, but they give you the whole shape of the answer for free, including the fact that the mass cannot appear."
+       "explain": "L is m and g is m/s^2, so L/g is s^2 and its square root is seconds. sqrt(gL) gives m/s, a speed; L/g gives s^2. So the period MUST be a number times sqrt(L/g) - and indeed it is 2*pi*sqrt(L/g). Dimensions cannot give you the 2*pi, but they give you the whole shape of the answer for free, including the fact that the mass cannot appear.",
+       "viz": "dimCheck",
+       "vizHint": "A period is measured in seconds. Tap through and see which of these is made of nothing but time.",
+       "vizParams": {
+        "exprs": [
+         {
+          "label": "L/g",
+          "M": 0,
+          "L": 0,
+          "T": 2
+         },
+         {
+          "label": "sqrt(L/g)",
+          "M": 0,
+          "L": 0,
+          "T": 1
+         },
+         {
+          "label": "sqrt(gL)",
+          "M": 0,
+          "L": 1,
+          "T": -1
+         }
+        ]
+       }
       },
       {
        "id": "es_dim_constant",
