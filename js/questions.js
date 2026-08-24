@@ -3041,6 +3041,62 @@ window.QQ_DATA = {
        "vizHint": "Horizontal and vertical are independent."
       }
      ]
+    },
+    {
+     "id": "p6",
+     "title": "Pressure and fluids",
+     "questions": [
+      {
+       "id": "me_pressure",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 60 kg person stands on one stiletto heel of area 2 cm². Taking g = 10, what pressure does it put on the floor, in megapascals?",
+       "answerNumber": 3.0,
+       "tolerance": 0.05,
+       "answerValue": "3",
+       "explain": "Pressure is force over area, and the area has to be in metres squared: 2 cm² is 2 × 10⁻⁴ m². The force is 60 × 10 = 600 N, so p = 600 / 2e-4 = 3 × 10⁶ Pa = 3 MPa. That is about thirty atmospheres, and it is why a stiletto dents a wooden floor when an elephant standing on the same floor does not: the elephant weighs far more but spreads it over a thousand times the area."
+      },
+      {
+       "id": "me_hydrostatic",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "How much does the pressure increase 10 m below the surface of water? Take ρ = 1000 kg/m³ and g = 10. Give your answer in kilopascals.",
+       "answerNumber": 100.0,
+       "tolerance": 1.0,
+       "answerValue": "100",
+       "explain": "p = ρgh = 1000 × 10 × 10 = 100,000 Pa = 100 kPa. Notice what that number is: roughly one atmosphere. Ten metres of water weighs about as much as the entire atmosphere above you, which is why a diver at 10 m is at two atmospheres in total, and why a suction pump can never lift water more than about ten metres however good the vacuum."
+      },
+      {
+       "id": "me_pressure_shape",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "The pressure at the bottom of a container depends on the shape of the container.",
+       "statement": "The pressure at the bottom of a container depends on the shape of the container.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It depends only on the DEPTH, the density and g — not on the shape and not on how much liquid there is. A narrow tube and a wide tank filled to the same height have the same pressure at the bottom, which feels wrong because the tank holds far more water. The resolution is that the extra weight in the wide tank is carried by the base being wider, and the sloping walls of an odd-shaped vessel push down or up on the liquid to make up the difference. It is known as the hydrostatic paradox."
+      },
+      {
+       "id": "me_upthrust",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "An object of volume 2 litres is held completely under water. Taking ρ = 1000 kg/m³ and g = 10, what upthrust acts on it, in newtons?",
+       "answerNumber": 20.0,
+       "tolerance": 0.2,
+       "answerValue": "20",
+       "explain": "The upthrust equals the WEIGHT OF THE FLUID DISPLACED, which is Archimedes' principle. 2 litres is 0.002 m³, so the water displaced has mass 1000 × 0.002 = 2 kg and weight 20 N. Note what does not appear: the object's own mass. A 2 litre lump of lead and a 2 litre lump of cork feel the same upthrust — they differ in whether that upthrust is enough to hold them up."
+      },
+      {
+       "id": "me_hydraulic",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A hydraulic jack has pistons of 2 cm² and 50 cm². You push the small one with 20 N. What force does the large one deliver, in newtons?",
+       "answerNumber": 500.0,
+       "tolerance": 1.0,
+       "answerValue": "500",
+       "explain": "The pressure is the same throughout the fluid, so F₂ = F₁ × A₂/A₁ = 20 × 50/2 = 500 N — twenty-five times what you put in, which is exactly the area ratio. Energy is not created: the small piston must travel twenty-five times as far as the large one rises, so the work in equals the work out. That is the trade every force multiplier makes, from a lever to a pulley to a gear train."
+      }
+     ]
     }
    ]
   },
