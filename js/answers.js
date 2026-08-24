@@ -16,8 +16,99 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 137,
+ "count": 138,
  "entries": [
+  {
+   "slug": "three_kilowatts_from_one",
+   "title": "Three kilowatts from one",
+   "ts": "2026-08-24T11:43:33+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NO, IT IS REAL, AND IT IS SITTING IN THOUSANDS OF HOMES. The trick is that the box does not MAKE heat. It MOVES it.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THE OTHER TWO KILOWATTS COME FROM. A heat pump is a fridge pointed the other way. A fridge takes heat out of the food and dumps it into your kitchen; a heat pump takes heat out of the cold air outside and dumps it into your sitting room. The electricity does not become the heat — it drives the pump that carries the heat uphill, from cold to warm."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So the energy balance is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    heat delivered  =  work you paid for  +  heat scavenged from outside",
+      "        3 kW        =         1 kW        +          2 kW"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Nothing is created and the first law is untouched. Only ONE of those three kilowatts came out of the socket."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "BUT SURELY COLD AIR HAS NO HEAT IN IT? At 0 degrees Celsius the air is still 273 degrees above absolute zero, and every one of those degrees is energy you can take. Cold is not the absence of heat, it is just less of it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "HOW GOOD CAN IT GET? The ceiling is set by the two temperatures, and it is generous:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    ceiling  =  T_warm / (T_warm − T_cold)",
+      "             =  294 / (294 − 273)",
+      "             =  14"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Fourteen kilowatts of heat per kilowatt of electricity, in principle. Real units manage 3 or 4 — a fifth to a quarter of the limit — and they get worse as it gets colder outside, because the gap in the denominator widens: at −20 °C the ceiling has already fallen to about 7."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE COMPARISON THAT MATTERS. A plain electric bar heater turns 1 kW of electricity into exactly 1 kW of heat. It is 100% efficient and it cannot be beaten, because every joule becomes heat. The heat pump is not more efficient than that — the word does not apply. It is doing a different job: not converting energy, but transporting it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When a number looks like it breaks conservation, check whether the device is CONVERTING energy or MOVING it. Converters are capped at 100%. Movers are not, and the ratio you quote for them is not an efficiency at all."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_charge",
+    "lesson": "e1",
+    "unit": 9,
+    "prompt": "A current of 2 A flows for 30 s. How much charge passes, in coulombs?"
+   }
+  },
   {
    "slug": "two_heaters_wired_end_to_end",
    "title": "Two heaters wired end to end",
