@@ -2325,10 +2325,11 @@ window.QQ_DATA = {
        "answerValue": "0",
        "explain": "Zero, because 5⁰ = 1. The log of 1 is zero in EVERY base, which is worth knowing as an instant answer.",
        "viz": "powerLadder",
-       "vizHint": "What power gives one?",
+       "vizHint": "What power leaves you at 1?",
        "vizParams": {
         "base": 5,
-        "x": 0
+        "x": 0,
+        "reveal": false
        }
       },
       {
@@ -3481,13 +3482,7 @@ window.QQ_DATA = {
        "answerNumber": 25,
        "tolerance": 0,
        "answerValue": "25",
-       "explain": "The angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°.",
-       "viz": "refractBend",
-       "vizHint": "Watch the angles either side of the normal.",
-       "vizParams": {
-        "n": 1.5,
-        "deg": 25
-       }
+       "explain": "The angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°."
       }
      ]
     },
