@@ -1644,7 +1644,17 @@ window.QQ_DATA = {
        "answerNumber": 2.75,
        "tolerance": 0.001,
        "answerValue": "2.75",
-       "explain": "h = 0.5, so T = (h/2)[f(0) + 2(f(0.5)+f(1)+f(1.5)) + f(2)] = 0.25[0 + 2(0.25+1+2.25) + 4] = 2.75. The exact value is 2.667, so the estimate is HIGH — always the case for a curve that bends upward, because the chords sit above it."
+       "explain": "h = 0.5, so T = (h/2)[f(0) + 2(f(0.5)+f(1)+f(1.5)) + f(2)] = 0.25[0 + 2(0.25+1+2.25) + 4] = 2.75. The exact value is 2.667, so the estimate is HIGH — always the case for a curve that bends upward, because the chords sit above it.",
+       "viz": "areaUnder",
+       "vizHint": "Four strips, and the tops slope to meet the curve at both ends. Add the areas.",
+       "vizParams": {
+        "curve": "sq",
+        "a": 0,
+        "b": 2,
+        "rule": "trapezium",
+        "hideEstimate": true,
+        "reveal": false
+       }
       },
       {
        "id": "in_trap_over",

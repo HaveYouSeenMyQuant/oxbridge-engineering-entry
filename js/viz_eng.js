@@ -260,17 +260,40 @@
     var stage = Stage(host, 0.9);
     slider(row, { min: 1, max: 60, step: 1, value: n, label: 'rectangles' },
       function (v) { n = v; api.onInteract('slider'); say(); });
-    function riemann() {
-      var s = 0, dx = (B - A) / n;
-      for (var i = 0; i < n; i++) s += fn(A + (i + 0.5) * dx) * dx;
+    /* WHICH RULE. This computed the MIDPOINT sum and called it "rectangles",
+     * which is right for the questions it was built for and wrong for a
+     * trapezium-rule question: on y = x^2 over 0..2 with four strips the
+     * midpoint rule gives 2.625 and the trapezium rule gives 2.75. Mounting
+     * the midpoint version on a trapezium question would print a plausible
+     * number that is not the one being asked for -- worse than no visual. */
+    var rule = P.rule || 'midpoint';
+    function estimate() {
+      var s = 0, dx = (B - A) / n, i;
+      if (rule === 'trapezium') {
+        s = (fn(A) + fn(B)) / 2;
+        for (i = 1; i < n; i++) s += fn(A + i * dx);
+        return s * dx;
+      }
+      for (i = 0; i < n; i++) s += fn(A + (i + 0.5) * dx) * dx;
       return s;
     }
+    /* HIDING THE ESTIMATE IS A SEPARATE DECISION FROM HIDING THE EXACT VALUE,
+     * and getting them confused breaks nine questions. Nine of the ten
+     * areaUnder pairings ask for the exact integral and pass reveal:false;
+     * for those, WATCHING the sum converge as you add strips is the whole
+     * lesson, so the running estimate must stay on screen and only `exact` is
+     * withheld. in_trapezium is the exception: it asks for the four-strip
+     * estimate itself, so there the number on screen would be the answer. */
+    var hideEstimate = !!P.hideEstimate;
     function say() {
-      var r = riemann();
-      out.innerHTML = n + ' rectangle' + (n === 1 ? '' : 's') + ' give <b>' +
-        r.toFixed(3) + '</b>' + (reveal
+      var r = estimate();
+      var noun = rule === 'trapezium' ? 'strip' : 'rectangle';
+      out.innerHTML = n + ' ' + noun + (n === 1 ? '' : 's') + ' give <b>' +
+        (hideEstimate ? '?' : r.toFixed(3)) + '</b>' + (reveal
           ? '; the exact integral is <b>' + (P.exact != null ? P.exact : '?') + '</b>'
-          : ' — slide it up and see what it settles on');
+          : (hideEstimate
+              ? ' — add them up yourself'
+              : ' — slide it up and see what it settles on'));
     }
     say();
     stage.draw = function (g, w, h) {
@@ -287,6 +310,24 @@
       var ox = w * 0.16, oy = h - 30 - (lo < 0 ? (h - 46) / 2 : 0);
       axes(g, w, h, ox, oy, s);
       var dx = (B - A) / n;
+      if (rule === 'trapezium') {
+        /* Drawn as actual trapezia with sloping tops. The whole content of
+         * "does it over- or under-estimate" is whether that sloping top sits
+         * above the curve or below it, and a rectangle cannot show it. */
+        for (i = 0; i < n; i++) {
+          var x0t = A + i * dx, x1t = x0t + dx;
+          var y0t = fn(x0t), y1t = fn(x1t);
+          if (!isFinite(y0t) || !isFinite(y1t)) continue;
+          g.fillStyle = 'rgba(88,166,255,0.26)';
+          g.beginPath();
+          g.moveTo(ox + (x0t - A) * s, oy);
+          g.lineTo(ox + (x0t - A) * s, oy - y0t * s);
+          g.lineTo(ox + (x1t - A) * s, oy - y1t * s);
+          g.lineTo(ox + (x1t - A) * s, oy);
+          g.closePath(); g.fill();
+          g.strokeStyle = 'rgba(88,166,255,0.6)'; g.lineWidth = 1; g.stroke();
+        }
+      } else
       for (i = 0; i < n; i++) {
         var xl = A + i * dx, yy = fn(xl + dx / 2);
         if (!isFinite(yy)) continue;
