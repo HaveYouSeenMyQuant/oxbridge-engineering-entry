@@ -208,7 +208,7 @@ window.QQ_DATA = {
        "answerNumber": 2,
        "tolerance": 0,
        "answerValue": "2",
-       "explain": "The identity changes nothing: AI = IA = A. It is the matrix version of multiplying by 1, and it is the reason an inverse is defined as the matrix that gets you back to I."
+       "explain": "The top-left entry is 2, unchanged. The identity changes nothing: AI = IA = A. It is the matrix version of multiplying by 1, and it is the reason an inverse is defined as the matrix that gets you back to I."
       }
      ]
     },
@@ -281,7 +281,7 @@ window.QQ_DATA = {
        "answerNumber": -6,
        "tolerance": 0,
        "answerValue": "-6",
-       "explain": "Magnitude 6 for the area, negative for the flip. The SIGN of a determinant records whether the transformation preserves orientation — a reflection has a negative determinant, a rotation a positive one.",
+       "explain": "The determinant is −6: magnitude 6 for the area, negative for the flip. The SIGN of a determinant records whether the transformation preserves orientation — a reflection has a negative determinant, a rotation a positive one.",
        "viz": "detArea",
        "vizHint": "Cross the arrows over and watch the sign.",
        "vizParams": {
@@ -1382,7 +1382,7 @@ window.QQ_DATA = {
        "answerNumber": -12,
        "tolerance": 0,
        "answerValue": "-12",
-       "explain": "Swapping the limits negates the integral. It follows straight from F(b) − F(a) becoming F(a) − F(b)."
+       "explain": "It is −12. Swapping the limits negates the integral. It follows straight from F(b) − F(a) becoming F(a) − F(b)."
       }
      ]
     },
@@ -3540,7 +3540,7 @@ window.QQ_DATA = {
        "answerNumber": 25,
        "tolerance": 0,
        "answerValue": "25",
-       "explain": "The angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°."
+       "explain": "It reflects at 25° as well: the angle of reflection equals the angle of incidence, both measured from the normal. A question quoting the angle from the SURFACE is trying to catch you: that would be 65°."
       }
      ]
     },
@@ -4059,7 +4059,7 @@ window.QQ_DATA = {
        "answerNumber": 1.0,
        "tolerance": 0.01,
        "answerValue": "1",
-       "explain": "Energy per unit TIME is power, and dividing energy's units by seconds gives exactly kg m^2 s^-3 - the watt. Force is kg m s^-2 and momentum is kg m s^-1, neither of which match. Recognising a quantity from its units is quick to practise and repeatedly useful, because it tells you what a number in front of you can possibly mean."
+       "explain": "It is power, so the answer to enter is 1. Energy per unit TIME is power, and dividing energy's units by seconds gives exactly kg m^2 s^-3 - the watt. Force is kg m s^-2 and momentum is kg m s^-1, neither of which match. Recognising a quantity from its units is quick to practise and repeatedly useful, because it tells you what a number in front of you can possibly mean."
       },
       {
        "id": "es_dim_reject",
