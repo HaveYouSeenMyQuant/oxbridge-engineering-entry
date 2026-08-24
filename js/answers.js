@@ -16,8 +16,98 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 150,
+ "count": 151,
  "entries": [
+  {
+   "slug": "the_glass_is_not_the_point",
+   "title": "The glass is not the point",
+   "ts": "2026-08-24T20:32:10+00:00",
+   "date": "24 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "THE GAP, and it is not close. The air between the panes does about 99% of the work, and the two sheets of glass together do about 1%.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE SUM. Thermal resistance of a slab is its thickness divided by how well the material conducts:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    R = t / k"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    one pane   0.004 m / 1.0  W/mK   = 0.0040",
+      "    the gap    0.016 m / 0.026 W/mK  = 0.6154"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The gap is about 150 times the resistance of a pane. Stack them in series -- resistances add, exactly like resistors -- and the unit comes to"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    R = 0.0040 + 0.6154 + 0.0040 = 0.6234"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "of which the glass contributes 0.0080, or 1.3%."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE THICKNESS IS THE RED HERRING. The gap is only FOUR times thicker than a pane. It wins 150 to 1 because still air conducts about 40 times worse than glass, and that is the number doing the work. Glass feels like an insulator because it is cold to touch, but cold-to-touch means it is CARRYING heat away from your hand, which is the opposite of what an insulator does."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "SO WHAT IS THE SECOND PANE FOR? Not for its own resistance -- it is there to hold the gap. Without it there is no trapped layer, and a single 4 mm pane has R = 0.004, which is roughly one hundred and fifty times worse than the sealed unit. The glass is the packaging; the air is the product."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "AND WHY NOT A MUCH BIGGER GAP? Because past about 16 to 20 mm the air stops being still. It starts to circulate -- warm air up the inner face, cold air down the outer -- and convection carries heat across far faster than conduction ever did. The gap is chosen to be exactly as wide as it can be without the air beginning to turn over. Argon is used instead of air because it is heavier and more sluggish, so it starts convecting later."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: conduction only. The sum above ignores convection inside the gap, which is what sets the 16 mm limit, and it ignores radiation straight across from pane to pane, which in a plain air unit is a real fraction of the loss and is what low-emissivity coatings exist to stop. A full window calculation carries all three; the point of this one is that even the crudest version already settles the question by two orders of magnitude."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. For layers in series, compare t/k and not t. People compare thicknesses because thicknesses are visible; the conductivity is usually the bigger lever by far."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "too_slow_on_the_banked_bend",
    "title": "Too slow on the banked bend",
