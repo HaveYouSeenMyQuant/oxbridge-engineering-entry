@@ -3131,15 +3131,7 @@ window.QQ_DATA = {
        "answerNumber": 4.0,
        "tolerance": 0,
        "answerValue": "4",
-       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing.",
-       "viz": "circuitLab",
-       "vizHint": "I = V/R, live.",
-       "vizParams": {
-        "r1": 4,
-        "r2": 4,
-        "series": true,
-        "V": 12
-       }
+       "explain": "R = V/I = 4 Ω. Ohm's law rearranges three ways and the paper will use all of them, so it is worth being able to write any one of V, I and R in terms of the other two without pausing."
       },
       {
        "id": "el_charge",
@@ -3462,14 +3454,7 @@ window.QQ_DATA = {
        "answerNumber": 300,
        "tolerance": 0,
        "answerValue": "300",
-       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two.",
-       "viz": "waveLab",
-       "vizHint": "Change one and see what the speed does.",
-       "vizParams": {
-        "f": 2,
-        "lam": 3,
-        "reveal": false
-       }
+       "explain": "v = fλ = 300 m/s. This one equation connects the three quantities and is rearranged constantly, so it is worth being able to write any of the three in terms of the other two."
       },
       {
        "id": "wa_period",
