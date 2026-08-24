@@ -357,7 +357,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_stack_limit",
+    "lesson": "p7",
+    "unit": 8,
+    "prompt": "A stack of identical blocks on a table can never overhang the edge by more than one block length in total."
+   }
   },
   {
    "slug": "ten_times_taller_and_it_cannot_stand",

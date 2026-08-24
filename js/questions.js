@@ -3107,6 +3107,67 @@ window.QQ_DATA = {
        "explain": "The pressure is the same throughout the fluid, so F₂ = F₁ × A₂/A₁ = 20 × 50/2 = 500 N — twenty-five times what you put in, which is exactly the area ratio. Energy is not created: the small piston must travel twenty-five times as far as the large one rises, so the work in equals the work out. That is the trade every force multiplier makes, from a lever to a pulley to a gear train."
       }
      ]
+    },
+    {
+     "id": "p7",
+     "title": "Moments and stability",
+     "questions": [
+      {
+       "id": "me_moment",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A 200 N force acts at the end of a spanner, 0.5 m from the bolt and at right angles to it. What is the moment about the bolt, in newton metres?",
+       "answerNumber": 100.0,
+       "tolerance": 0,
+       "answerValue": "100",
+       "explain": "Moment = force x perpendicular distance = 200 x 0.5 = 100 N m. The perpendicular part matters: push along the spanner instead of across it and the distance is zero, so the moment is zero however hard you push."
+      },
+      {
+       "id": "me_balance",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A uniform plank pivots at its centre. A 300 N child sits 1 m from the pivot. How far from the pivot, in metres, must a 600 N adult sit on the other side to balance it?",
+       "answerNumber": 0.5,
+       "tolerance": 0.001,
+       "answerValue": "0.5",
+       "explain": "Balance means the two moments are equal: 300 x 1 = 600 x d, so d = 0.5 m. Twice the weight sits half the distance out. The plank's own weight does not appear because it is uniform and pivoted at its centre, so its moment about that point is zero."
+      },
+      {
+       "id": "me_topple",
+       "type": "choice",
+       "topic": "mechanics",
+       "prompt": "A box is tilted further and further. At what moment does it topple rather than fall back?",
+       "choices": [
+        "When its centre of mass passes outside the base",
+        "When it is tilted past 45 degrees",
+        "When its centre of mass rises above half its height",
+        "When the floor stops being able to hold it up"
+       ],
+       "answer": 0,
+       "answerValue": "When its centre of mass passes outside the base",
+       "explain": "It topples exactly when the vertical line through the centre of mass leaves the base. Inside the base, gravity's moment about the tipping edge pulls it back; outside, the same moment carries it over. The angle depends on the shape — a wide low box survives far past 45 degrees, a tall thin one nothing like it."
+      },
+      {
+       "id": "me_com_two",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "Two masses, 2 kg and 6 kg, sit at the ends of a light rod 1 m long. How far from the 2 kg mass, in metres, is their centre of mass?",
+       "answerNumber": 0.75,
+       "tolerance": 0.001,
+       "answerValue": "0.75",
+       "explain": "The centre of mass sits closer to the heavier one, in inverse proportion: 2 x d = 6 x (1 - d), so 8d = 6 and d = 0.75 m. Check it the other way: it is 0.25 m from the 6 kg mass, and 6 x 0.25 = 1.5 = 2 x 0.75."
+      },
+      {
+       "id": "me_stack_limit",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "A stack of identical blocks on a table can never overhang the edge by more than one block length in total.",
+       "statement": "A stack of identical blocks on a table can never overhang the edge by more than one block length in total.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It can overhang as far as you like, given enough blocks. Each block from the top down can be offset by half, a quarter, a sixth and so on — the harmonic series, which grows without limit. Four blocks already clear a whole block length. It grows painfully slowly, though: reaching two block lengths takes 31 blocks."
+      }
+     ]
     }
    ]
   },
