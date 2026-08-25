@@ -3808,6 +3808,26 @@ window.QQ_DATA = {
        "explain": "They are the same temperature — a thermometer says so. What your hand senses is not temperature but the RATE heat leaves it, and metal conducts hundreds of times better than wood, so it drains heat from your skin far faster. Feeling cold is a measurement of heat flow, which is why the same air temperature feels different in wind and why tiled floors feel colder than carpet."
       },
       {
+       "id": "th_trapped_air",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "Loft insulation works mainly because the glass fibre itself is a poor conductor of heat.",
+       "statement": "Loft insulation works mainly because the glass fibre itself is a poor conductor of heat.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Glass conducts at about 1.0 W/m·K and still air at 0.026 — the fibre is roughly FORTY TIMES worse than the air it sits in. Its job is not to insulate but to hold air still, because moving air carries heat away by convection and trapped air cannot. That is why fluffing insulation up helps and squashing it flat ruins it, and why two thin blankets beat one thick one."
+      },
+      {
+       "id": "th_water_conducts",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "Water conducts heat at 0.60 W/m·K and air at 0.026 W/m·K. How many times better does water conduct, to the nearest whole number?",
+       "answerNumber": 23.076923076923077,
+       "tolerance": 0.6,
+       "answerValue": "23.0769",
+       "explain": "About 23 times. It is why a 20 °C swimming pool feels cold while 20 °C air feels mild: both are below body temperature, but water pulls heat out of you more than twenty times faster. The temperature is the same; the RATE is not."
+      },
+      {
        "id": "th_vacuum_flask",
        "type": "truefalse",
        "topic": "thermal",
