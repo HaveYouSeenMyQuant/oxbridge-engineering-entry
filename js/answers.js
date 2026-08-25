@@ -16,8 +16,107 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 156,
+ "count": 157,
  "entries": [
+  {
+   "slug": "it_never_actually_sits_at_230",
+   "title": "It never actually sits at 230",
+   "ts": "2026-08-25T08:21:52+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "BECAUSE 230 IS THE ROOT MEAN SQUARE, and that is the only average that answers the question anyone actually cares about: how much does it HEAT things.",
+   "why": [
+    {
+     "h": "THE TWO OBVIOUS AVERAGES BOTH FAIL.",
+     "t": "pre",
+     "lines": [
+      "  The plain average over a cycle is ZERO. The wave is above the axis exactly as",
+      "  long as it is below, and the two cancel perfectly. Correct arithmetic,",
+      "  useless answer — by that measure the mains is not there at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  The average SIZE, ignoring sign, is 2/pi times the peak:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "      2/pi x 325.3 = 207 V"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  That is a real number and it is close enough to 230 to feel like the answer.",
+      "  It is not, and the reason is the whole point."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE SQUARE. Power does not care about the sign of the voltage — a negative voltage across a heater heats it just as well, because P = V^2/R and the square throws the sign away. So the average that matters is the average of V SQUARED, not of V:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "      mean of V^2  =  half the peak squared",
+      "      so V_rms     =  peak / sqrt(2)  =  325.3 / 1.414  =  230 V"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is the definition, and it is chosen to make one sentence true: a resistor on this supply gets exactly as hot as it would on a steady 230 V battery. Every mains appliance rating is written on that basis, which is why a 2 kW heater really does deliver 2 kW."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY NOT 207. Because the average of the square is not the square of the average. Squaring weights the big values more heavily than the small ones, so the peaks count for more than their share — and the answer comes out above the mean magnitude, not equal to it. 230 sits between 207 and 325 for exactly that reason."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT IT MEANS FOR THE INSULATION. Nothing in an appliance is designed for 230. It has to survive 325, twice per cycle, a hundred times a second, and the insulation is rated on the PEAK. Confusing the two is how equipment gets specified to fail."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: a clean sine. The peak-over-root-two rule is true for a sine and for nothing else. A square wave has V_rms equal to its peak; a spiky waveform from a cheap inverter has a much higher peak for the same heating, which is exactly why \"true RMS\" meters exist and why the cheap ones read wrong on anything that is not a sine."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When you are asked to average something, ask what the average is FOR. Averaging the quantity is right when the effect is linear in it; when the effect goes as the square, you have to average the square."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_power",
+    "lesson": "e3",
+    "unit": 10,
+    "prompt": "A 240 V kettle draws 8 A. What is its power, in watts?"
+   }
+  },
   {
    "slug": "grab_the_shaft_and_hold_it",
    "title": "Grab the shaft and hold it",
