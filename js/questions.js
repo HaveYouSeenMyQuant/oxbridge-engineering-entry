@@ -3668,6 +3668,52 @@ window.QQ_DATA = {
        "explain": "FALSE, and this is the trap the double-glazing question sets. Resistances in series ADD, so doubling one layer halves only THAT layer's contribution. If it already dominates, you nearly halve the loss; if it is a small part of the total — like the glass in a double-glazed unit — you can double it and change almost nothing. Always ask what share of the total resistance the layer holds before you thicken it."
       }
      ]
+    },
+    {
+     "id": "h3",
+     "title": "Heat that travels as light",
+     "questions": [
+      {
+       "id": "th_radiation_t4",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "A body at 300 K is heated to 600 K. The power it radiates goes as the fourth power of the absolute temperature. By what FACTOR does the radiated power increase?",
+       "answerNumber": 16.0,
+       "tolerance": 0,
+       "answerValue": "16",
+       "explain": "Power goes as T⁴, so doubling the absolute temperature multiplies it by 2⁴ = 16. Not by 2, and not by 4. This is why something only twice as hot in kelvin is dazzling rather than merely brighter, and why a small rise in the temperature of a filament costs so much more power."
+      },
+      {
+       "id": "th_wien_peak",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "A lamp filament sits at 2900 K. Taking Wien's constant as 2.9 × 10⁻³ m·K, at what wavelength does it radiate most strongly? Give your answer in nanometres.",
+       "answerNumber": 1000.0,
+       "tolerance": 5.0,
+       "answerValue": "1000",
+       "explain": "λ(peak) = 2.9 × 10⁻³ / 2900 = 1 × 10⁻⁶ m = 1000 nm. The eye stops at about 750 nm, so the filament's brightest wavelength is INFRARED — past the red end of vision. That is the real reason an old filament lamp is such a poor lamp: most of what it makes, you cannot see."
+      },
+      {
+       "id": "th_radiation_vacuum",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "Radiation is the only one of the three ways heat travels that can cross a vacuum.",
+       "statement": "Radiation is the only one of the three ways heat travels that can cross a vacuum.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "TRUE. Conduction needs matter in contact and convection needs a fluid to move; both stop dead in a vacuum. Radiation is light, and light needs nothing to travel through — which is how the Sun's heat reaches us across empty space, and why a vacuum flask is silvered rather than merely sealed."
+      },
+      {
+       "id": "th_hotter_longer",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "As an object gets hotter, the wavelength it radiates most strongly gets LONGER.",
+       "statement": "As an object gets hotter, the wavelength it radiates most strongly gets LONGER.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "FALSE — it gets SHORTER. Wien's law puts the peak at a constant divided by the temperature, so heating something moves its peak the other way: from infrared, towards red, then on towards blue. It is why a bar glows dull red before it glows white, and never the other way about."
+      }
+     ]
     }
    ],
    "index": 9
