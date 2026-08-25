@@ -16,8 +16,72 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 168,
+ "count": 169,
  "entries": [
+  {
+   "slug": "the_battery_reads_lower_under_load",
+   "title": "The battery reads lower under load",
+   "ts": "2026-08-25T16:55:02+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "HALF AN OHM.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    the volts that went missing  =  12.0 − 10.5  =  1.5 V",
+      "    they were lost inside the battery, at 3 A",
+      "    r  =  1.5 / 3  =  0.5 Ω"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE READING FELL AT ALL. A real battery is not a source of fixed voltage. It is a source of fixed EMF with a resistance in series inside it, and that resistance carries the same current as everything else. So the moment current flows, some of the EMF is spent pushing it through the battery itself and never reaches the terminals. With nothing connected, no current flows, nothing is lost, and you measure the EMF exactly — which is why the \"12 V\" on the label is only true when the battery is doing nothing at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY 3.5 Ω IS THE GOOD WRONG ANSWER. It is 10.5 / 3, which is real arithmetic and gives a real resistance — the EXTERNAL one, the lamp. That is the thing the battery is driving, not the thing inside it. The two live in the same circuit and add up:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    external  10.5 / 3  =  3.5 Ω",
+      "    internal   1.5 / 3  =  0.5 Ω",
+      "    total     12.0 / 3  =  4.0 Ω"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Notice the total uses the EMF and not the reading. That is the check worth doing: if your two resistances do not add to emf/I, you have used the wrong voltage somewhere."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE IT BITES. It is why a car's headlights dim when the starter turns over — the starter pulls hundreds of amps, so the loss inside the battery becomes several volts. It is why an old battery \"has voltage\" on a meter and still cannot start anything: its internal resistance has risen, so it collapses the moment it is asked for current. And it is why a battery gets warm in use — that missing power has to go somewhere, and it is heating the battery from inside."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_emf",
+    "lesson": "e1",
+    "unit": 10,
+    "prompt": "A battery of emf 9 V has internal resistance 1 Ω and drives 2 A. What is the terminal voltage, in volts?"
+   }
+  },
   {
    "slug": "a_glass_filled_to_the_brim",
    "title": "A glass filled to the brim",
