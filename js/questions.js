@@ -2935,6 +2935,46 @@ window.QQ_DATA = {
        }
       },
       {
+       "id": "me_avg_speed_roundtrip",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "You drive to a town at 30 km/h and return along the same road at 60 km/h. What is your average speed for the whole journey, in km/h?",
+       "answerNumber": 40.0,
+       "tolerance": 0.05,
+       "answerValue": "40",
+       "explain": "40 km/h, not 45. Average speed is total distance over total time, and you spend TWICE as long on the slow half, so it carries twice the weight. Averaging the two numbers would only be right if you spent equal TIME at each speed."
+      },
+      {
+       "id": "me_stopping_v2",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A car doubles its speed. Braking just as hard, by what factor does its braking distance grow?",
+       "answerNumber": 4.0,
+       "tolerance": 0.01,
+       "answerValue": "4",
+       "explain": "Four. v² = u² + 2as with v = 0 gives s = u²/2a, so the distance goes as the SQUARE of the speed. Twice the speed is four times the distance, and this is the single most useful consequence of that equation."
+      },
+      {
+       "id": "me_third_second",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A stone is dropped from rest. Taking g = 10 m/s², how far does it fall during the THIRD second alone, in metres?",
+       "answerNumber": 25,
+       "tolerance": 0.05,
+       "answerValue": "25",
+       "explain": "25 m. It has fallen 45 m by 3 s and 20 m by 2 s, so the third second alone accounts for the difference. Successive seconds cover 5, 15, 25, 35 m - the odd numbers - which is worth recognising when a question hands you one interval."
+      },
+      {
+       "id": "me_thinking_squares",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "Thinking distance grows with the square of speed, just as braking distance does.",
+       "statement": "Thinking distance grows with the square of speed, just as braking distance does.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Thinking distance is speed × reaction time, and the reaction time does not change with speed - so it grows in PROPORTION to speed, not as its square. Only the braking part squares. That is why stopping distances stretch out so sharply at speed: one term is linear and the other is quadratic."
+      },
+      {
        "id": "me_decel_negative",
        "type": "truefalse",
        "topic": "mechanics",
@@ -4208,6 +4248,26 @@ window.QQ_DATA = {
         "mode": "combine",
         "reveal": false
        }
+      },
+      {
+       "id": "el_cap_charge_loss",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A capacitor is charged from a battery through a resistor. What percentage of the energy the battery supplies ends up stored in the capacitor?",
+       "answerNumber": 50.0,
+       "tolerance": 0.5,
+       "answerValue": "50",
+       "explain": "Exactly half. The battery does work QV = CV², the capacitor ends up holding ½CV², and the difference is dissipated in the resistor. The striking part is that the resistance never appears: half is lost whatever resistor you use."
+      },
+      {
+       "id": "el_cap_thicker_wire",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "Charging a capacitor through a thicker, lower-resistance wire wastes less energy as heat.",
+       "statement": "Charging a capacitor through a thicker, lower-resistance wire wastes less energy as heat.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It wastes exactly the same. Lower resistance means a larger current for a shorter time, and the two changes cancel: the loss is ½CV² regardless. Reaching for P = I²R and expecting a smaller R to help is the natural move, and it misses that I and the duration both change too."
       },
       {
        "id": "el_cap_tau",
