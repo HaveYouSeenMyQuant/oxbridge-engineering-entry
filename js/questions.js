@@ -3834,14 +3834,14 @@ window.QQ_DATA = {
        "explain": "TRUE. Conduction needs matter in contact and convection needs a fluid to move; both stop dead in a vacuum. Radiation is light, and light needs nothing to travel through — which is how the Sun's heat reaches us across empty space, and why a vacuum flask is silvered rather than merely sealed."
       },
       {
-       "id": "th_radiation_ratio",
+       "id": "th_radiation_net",
        "type": "number",
        "topic": "thermal",
-       "prompt": "A body at 300 K is heated to 900 K. By what factor does the power it radiates go up?",
-       "answerNumber": 81.0,
+       "prompt": "A body at 400 K sits in surroundings at 300 K. Radiation goes as T⁴ both ways. What percentage of the power it radiates is its NET loss?",
+       "answerNumber": 68.359375,
        "tolerance": 0.5,
-       "answerValue": "81",
-       "explain": "81. Three times the absolute temperature, and the fourth power turns that into 3⁴. This is why a filament barely warm to look at becomes blinding over a fairly small change in temperature."
+       "answerValue": "68.3594",
+       "explain": "About 68%. It radiates as 400⁴ and absorbs as 300⁴, so the net is 1 − (300/400)⁴ = 0.684. Everything radiates all the time; what you feel is the DIFFERENCE. It is why a body at room temperature is not cooling at all — it emits and absorbs in equal measure — and why the T⁴ law on its own overstates every real heat loss."
       },
       {
        "id": "th_dull_red_infrared",
