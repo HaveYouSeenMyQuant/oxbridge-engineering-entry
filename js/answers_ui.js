@@ -469,8 +469,19 @@
    * long list is the classic way to make a phone stutter. It is on every
    * browser we ship to; the plain-rect fallback below exists so that a
    * browser without it loses the offer's timing rather than the offer. */
+  /* The live observer, held so a stale one can be shut down. Found on
+   * 2026-08-25: 2 of 10 stall reports carried connected=false, i.e. the
+   * sentinel had been detached while its observer was still watching it. A
+   * detached target never intersects anything, so that watch could never
+   * fire again -- and because reached() is what calls offerRoad(), the
+   * reader silently lost the road offer, not merely the measurement. */
+  var endObs = null;
+
   function watchForEnd(body, entry) {
     if (roadOfferDone) return;
+    /* Opening a second answer used to leave the first watch running against
+     * a node no longer in the document. Shut it down before arming a new one. */
+    if (endObs) { try { endObs.disconnect(); } catch (e) {} endObs = null; }
     var end = el('div', 'ans-end');
     end.setAttribute('aria-hidden', 'true');
     body.appendChild(end);
@@ -527,6 +538,17 @@
           vis: global.document ? global.document.visibilityState : null
         });
       } catch (e) {}
+
+      /* Recovery, deliberately AFTER the track() above so the diagnostic still
+       * records the detached state rather than hiding it. If the sentinel was
+       * dropped but the answer body is still on the page, put it back and
+       * watch it again -- otherwise this reader can never be offered the road. */
+      try {
+        if (!end.isConnected && body.isConnected && endObs) {
+          body.appendChild(end);
+          endObs.observe(end);
+        }
+      } catch (e) {}
     }, 12000);
 
     if (global.IntersectionObserver) {
@@ -538,6 +560,7 @@
           return;
         }
       }, { threshold: 0.9 });
+      endObs = obs;
       /* observe AFTER the node is in the document. card() inserts the body
        * later, so observing now registers a DETACHED target -- whether that
        * reports once connected is the open question, and deferring makes the
