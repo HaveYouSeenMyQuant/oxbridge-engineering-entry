@@ -16,8 +16,71 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 163,
+ "count": 164,
  "entries": [
+  {
+   "slug": "two_crossed_filters_and_a_third",
+   "title": "Two crossed filters and a third",
+   "ts": "2026-08-25T13:34:33+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "AN EIGHTH OF THE ORIGINAL BEAM — 12.5%. You added a filter to a stack that was passing nothing, and light came out.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    unpolarised light in                     100%",
+      "    through the first filter                  50%     (half, always)",
+      "    through the 45° filter    x cos²45°       25%",
+      "    through the crossed filter x cos²45°    12.5%"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"STILL NOTHING\" IS THE ANSWER ALMOST EVERYONE GIVES. Because it is exactly right for anything that only absorbs. Stack two pieces of smoked glass and you get less light; add a third and you get less again. A polariser looks like it belongs to that family and does not. It does not remove part of the beam and pass the rest through unchanged — it REWRITES what comes out, so that everything leaving it is polarised along its own axis, whatever came in."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is the whole trick. Light arriving at the second filter is no longer the light that left the first: the 45° filter has re-aimed it, and something at 45° to the crossed filter is not blocked by it. The third filter did not let more of the old beam through. It made a new one."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"A QUARTER\" IS THE OTHER GOOD WRONG ANSWER. Half through the first, then cos²45° is a half, giving 25% — and then it stops. The crossed filter takes its own cos²45° as well. Two factors of a half after the first filter, not one."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "45° IS THE BEST YOU CAN DO, and that is worth checking rather than assuming. Put the middle filter at angle θ and the fraction is ½cos²θ·cos²(90°−θ), which is largest at exactly 45°. Nearer either neighbour and one of the two cosines collapses."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE YOU HAVE SEEN THIS. It is why an LCD screen goes black at some angles through polarised sunglasses, and why a stressed piece of clear plastic between two polarisers blooms into colour — the plastic is doing what the 45° filter does, rotating the light on its way through."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "wa_polar_malus",
+    "lesson": "l6",
+    "unit": 11,
+    "prompt": "Light that is ALREADY polarised meets a filter whose axis is 60° to it. What fraction of it gets through? Give a decimal."
+   }
+  },
   {
    "slug": "the_thermometer_in_the_white_box",
    "title": "The thermometer in the white box",
