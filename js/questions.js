@@ -4699,6 +4699,52 @@ window.QQ_DATA = {
      ]
     },
     {
+     "id": "l6",
+     "title": "Polarisation",
+     "questions": [
+      {
+       "id": "wa_polar_one",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Completely unpolarised light passes through a single polarising filter. What FRACTION of the intensity gets through? Give a decimal.",
+       "answerNumber": 0.5,
+       "tolerance": 0.01,
+       "answerValue": "0.5",
+       "explain": "Half — and it does not matter which way you turn the filter. Unpolarised light is an even mixture of every orientation, so whatever axis the filter has, half the intensity lines up with it on average. The turning only starts to matter once the light is already polarised."
+      },
+      {
+       "id": "wa_polar_malus",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Light that is ALREADY polarised meets a filter whose axis is 60° to it. What fraction of it gets through? Give a decimal.",
+       "answerNumber": 0.25,
+       "tolerance": 0.01,
+       "answerValue": "0.25",
+       "explain": "Malus's law: the fraction is cos²θ, and cos60° = 0.5, so cos²60° = 0.25. Note it is the cosine SQUARED — at 60° a quarter survives, not a half. And at 90° the cosine is zero, which is why crossed filters pass nothing at all."
+      },
+      {
+       "id": "wa_polar_sound",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "Sound travelling through air can be polarised.",
+       "statement": "Sound travelling through air can be polarised.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "FALSE. Polarisation means picking out one direction of OSCILLATION across the direction of travel, and sound in air is longitudinal — it oscillates along its direction of travel, so there is no sideways direction to pick out. Only transverse waves can be polarised, which is one way we know light is transverse."
+      },
+      {
+       "id": "wa_polar_crossed",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "Two polarising filters with their axes at 90° to each other pass essentially no light.",
+       "statement": "Two polarising filters with their axes at 90° to each other pass essentially no light.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "TRUE. The first filter leaves the light polarised along its own axis; the second is at 90° to that, and cos²90° = 0. What is surprising is what happens if you then slide a THIRD filter between them at 45° — the pair that passed nothing starts to pass light again."
+      }
+     ]
+    },
+    {
      "id": "w6",
      "title": "The Doppler effect",
      "questions": [
