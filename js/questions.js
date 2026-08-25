@@ -3311,6 +3311,36 @@ window.QQ_DATA = {
        }
       },
       {
+       "id": "me_straw_push",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "You draw a drink up a straw by pulling the liquid upwards.",
+       "statement": "You draw a drink up a straw by pulling the liquid upwards.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "You cannot pull a liquid. What you do is lower the pressure inside the straw, and ATMOSPHERIC pressure - pressing on the surface of the drink in the glass - pushes the liquid up. Every drink through a straw is powered by the weight of the air in the room."
+      },
+      {
+       "id": "me_suction_limit",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "Because it is the atmosphere doing the pushing, there is a limit to how high suction can raise water. Taking atmospheric pressure as 101 kPa, ρ = 1000 kg/m³ and g = 10, what is that limit, in metres?",
+       "answerNumber": 10.1,
+       "tolerance": 0.1,
+       "answerValue": "10.1",
+       "explain": "About 10 m. Set ρgh equal to atmospheric pressure and that is all the push available, even with a perfect vacuum above. It is why deep wells need a pump at the BOTTOM rather than a longer pipe at the top, and it is the same reason a mercury barometer stands only 760 mm high."
+      },
+      {
+       "id": "me_upthrust_depth",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "The upthrust on a fully submerged object increases the deeper it goes.",
+       "statement": "The upthrust on a fully submerged object increases the deeper it goes.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It does not change. Upthrust is the weight of fluid displaced, and a fully submerged object displaces the same volume however deep it sits. The pressure on it rises with depth, but it rises on the top face as well as the bottom, and only the DIFFERENCE between those two lifts - which stays the same."
+      },
+      {
        "id": "me_pressure_shape",
        "type": "truefalse",
        "topic": "mechanics",
@@ -3872,6 +3902,36 @@ window.QQ_DATA = {
         "rMax": 30,
         "reveal": true
        }
+      },
+      {
+       "id": "el_current_used_up",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "Current is used up as it passes through a lamp, so less comes out of it than went in.",
+       "statement": "Current is used up as it passes through a lamp, so less comes out of it than went in.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Exactly the same current comes out. Charge is conserved and has nowhere to go: in a series circuit the current is identical at every point. What the lamp uses up is ENERGY - each coulomb leaves with less of it, which is what the drop in voltage across the lamp measures."
+      },
+      {
+       "id": "el_drift_speed",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "When you flick a switch, the electrons travel from the switch to the bulb at close to the speed of light.",
+       "statement": "When you flick a switch, the electrons travel from the switch to the bulb at close to the speed of light.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "The electrons drift at well under a millimetre per second - slower than a snail. What moves at near light speed is the electric FIELD, which sets electrons already sitting in the filament moving almost at once. Nothing has to make the journey for the lamp to light."
+      },
+      {
+       "id": "el_bird_line",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "A bird can perch on a single high-voltage line unharmed because there is almost no potential difference between its feet.",
+       "statement": "A bird can perch on a single high-voltage line unharmed because there is almost no potential difference between its feet.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Current needs a potential DIFFERENCE, not a high potential. The bird sits at 400,000 V and does not care, because both feet sit at the same 400,000 V and the few centimetres of cable between them drop almost nothing. Touch a second line, or the ground, and the difference appears."
       },
       {
        "id": "el_ohmic",
