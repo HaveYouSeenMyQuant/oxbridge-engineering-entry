@@ -106,7 +106,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "th_gap_dominates",
+    "lesson": "h2",
+    "unit": 9,
+    "prompt": "A double-glazed window is 4 mm glass, then a 16 mm air gap, then 4 mm glass. Which part does most of the insulating?"
+   }
   },
   {
    "slug": "too_slow_on_the_banked_bend",
@@ -204,7 +210,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_circ_accel",
+    "lesson": "p8",
+    "unit": 8,
+    "prompt": "A car goes round a bend of radius 25 m at a steady 10 m/s. What is its acceleration, in m/s²?"
+   }
   },
   {
    "slug": "the_hump_does_not_matter",
@@ -543,7 +555,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "el_cap_energy",
+    "lesson": "e5",
+    "unit": 10,
+    "prompt": "That same 100 µF capacitor at 12 V. How much energy does it store, in millijoules?"
+   }
   },
   {
    "slug": "how_slowly_can_you_swing_it",
@@ -657,7 +675,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_circ_outward",
+    "lesson": "p8",
+    "unit": 8,
+    "prompt": "A rider on a fairground roundabout is pushed outwards by a force."
+   }
   },
   {
    "slug": "which_way_does_the_strip_curl",
@@ -860,7 +884,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "el_mag_brake",
     "lesson": "e6",
-    "unit": 9,
+    "unit": 10,
     "prompt": "A strong magnet is dropped down a vertical COPPER pipe. Copper is not magnetic. What happens?"
    }
   },
@@ -1246,7 +1270,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "el_ohm",
     "lesson": "e1",
-    "unit": 9,
+    "unit": 10,
     "prompt": "A 12 V supply drives 3 A through a resistor. What is its resistance, in ohms?"
    }
   },
@@ -1426,7 +1450,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "el_charge",
     "lesson": "e1",
-    "unit": 9,
+    "unit": 10,
     "prompt": "A current of 2 A flows for 30 s. How much charge passes, in coulombs?"
    }
   },
@@ -1541,7 +1565,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "el_series",
     "lesson": "e2",
-    "unit": 9,
+    "unit": 10,
     "prompt": "Resistors of 3 Ω and 5 Ω in series. What is the total resistance, in ohms?"
    }
   },
@@ -1888,7 +1912,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "es_square_cube",
     "lesson": "es5",
-    "unit": 11,
+    "unit": 12,
     "prompt": "Why can an ant carry many times its own weight while an elephant cannot?"
    }
   },
@@ -1971,7 +1995,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_path_quiet",
     "lesson": "w4",
-    "unit": 10,
+    "unit": 11,
     "prompt": "Two speakers 1 m apart play a 1700 Hz note in phase; sound travels at 340 m/s. What is the SMALLEST path difference, in metres, that gives a quiet spot?"
    }
   },
@@ -2255,7 +2279,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_critical",
     "lesson": "w2",
-    "unit": 10,
+    "unit": 11,
     "prompt": "What is the critical angle for glass of refractive index 1.5, in degrees, to the nearest degree?"
    }
   },
@@ -2422,7 +2446,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "es_scale_area",
     "lesson": "es5",
-    "unit": 11,
+    "unit": 12,
     "prompt": "You double every length of an object. By what factor does its surface area grow?"
    }
   },
@@ -4259,7 +4283,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "es_scale_area",
     "lesson": "es5",
-    "unit": 11,
+    "unit": 12,
     "prompt": "You double every length of an object. By what factor does its surface area grow?"
    }
   },
@@ -4326,7 +4350,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_snell",
     "lesson": "w2",
-    "unit": 10,
+    "unit": 11,
     "prompt": "Light enters glass (n = 1.5) from air at 30° to the normal. What is the angle of refraction, in degrees, to the nearest degree?"
    }
   },
@@ -4380,7 +4404,7 @@ window.QQ_ANSWERS = {
    "road": {
     "qid": "wa_speed",
     "lesson": "w1",
-    "unit": 10,
+    "unit": 11,
     "prompt": "A wave has frequency 50 Hz and wavelength 6 m. What is its speed, in m/s?"
    }
   },

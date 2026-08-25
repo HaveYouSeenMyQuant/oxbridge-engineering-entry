@@ -3441,8 +3441,146 @@ window.QQ_DATA = {
    ]
   },
   {
+   "id": "u_thermal",
+   "title": "Thermal physics",
+   "subtitle": "Heat, temperature, and why the gap does the work.",
+   "colour": "#e3a008",
+   "free": false,
+   "syllabus": "ESAT Physics · PAT",
+   "lessons": [
+    {
+     "id": "h1",
+     "title": "Heat and temperature",
+     "questions": [
+      {
+       "id": "th_specific_heat",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "How much energy does it take to warm 2 kg of water by 30 °C? Water's specific heat capacity is 4200 J/kg°C. Give your answer in kilojoules.",
+       "answerNumber": 252.0,
+       "tolerance": 0.5,
+       "answerValue": "252",
+       "explain": "E = m c ΔT = 2 x 4200 x 30 = 252 000 J = 252 kJ. Water's specific heat is enormous compared with most materials, which is why the sea warms slowly, why a hot water bottle works, and why cooling towers use water rather than anything else."
+      },
+      {
+       "id": "th_temp_vs_energy",
+       "type": "choice",
+       "topic": "thermal",
+       "prompt": "A bath of water at 40 °C and a cup of tea at 90 °C. Which holds more thermal energy?",
+       "choices": [
+        "There is not enough information — it depends on the material",
+        "The bath",
+        "The tea",
+        "They hold the same"
+       ],
+       "answer": 1,
+       "answerValue": "The bath",
+       "explain": "The bath, easily. Temperature tells you how hot each PARTICLE is on average; energy depends on how many particles there are as well. A bath is perhaps 300 times the mass of a cup, so even at less than half the temperature rise it holds far more energy. Confusing the two is why 'hotter' and 'more heat' sound like the same statement and are not."
+      },
+      {
+       "id": "th_latent",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "How much energy does it take to melt 0.5 kg of ice that is already at 0 °C? The latent heat of fusion is 334 kJ/kg. Give your answer in kilojoules.",
+       "answerNumber": 167.0,
+       "tolerance": 0.5,
+       "answerValue": "167",
+       "explain": "E = m L = 0.5 x 334 = 167 kJ, and the temperature does not move a degree while it happens. All of that energy goes into breaking the bonds that hold the solid together. It is why ice in a drink holds the temperature down until the last piece has gone, and not a moment longer."
+      },
+      {
+       "id": "th_gas_pressure",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "A sealed rigid container of gas is at 100 kPa and 300 K. It is heated to 600 K. What is the new pressure, in kPa?",
+       "answerNumber": 200.0,
+       "tolerance": 1.0,
+       "answerValue": "200",
+       "explain": "At constant volume the pressure is proportional to the ABSOLUTE temperature, so doubling 300 K to 600 K doubles 100 kPa to 200 kPa. The absolute scale is what makes that true: doubling 27 °C to 54 °C is not doubling anything, because 27 °C is 300 K and 54 °C is 327 K."
+      },
+      {
+       "id": "th_equilibrium",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "Two objects left in contact end up at the same temperature, not with the same amount of energy.",
+       "statement": "Two objects left in contact end up at the same temperature, not with the same amount of energy.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "TRUE. Energy flows until the temperatures match, and then it stops — that is what thermal equilibrium means. The two can hold wildly different amounts of energy at that point, because energy depends on mass and material as well as temperature. A bath and a teaspoon left in the same room finish at the same temperature and nothing like the same energy."
+      }
+     ]
+    },
+    {
+     "id": "h2",
+     "title": "Conduction and insulation",
+     "questions": [
+      {
+       "id": "th_conduction",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "Heat flows through a sheet of glass 2 m² in area and 4 mm thick, with 20 °C across it. Glass conducts at 1.0 W/m°C. What is the rate of heat flow, in watts?",
+       "answerNumber": 10000.0,
+       "tolerance": 10.0,
+       "answerValue": "10000",
+       "explain": "P = k A ΔT / t = 1.0 x 2 x 20 / 0.004 = 10 000 W. Ten kilowatts through one window pane, which is why a single sheet of glass is close to useless as insulation on its own — and the whole reason anybody bothers with a second one."
+      },
+      {
+       "id": "th_gap_dominates",
+       "type": "choice",
+       "topic": "thermal",
+       "prompt": "A double-glazed window is 4 mm glass, then a 16 mm air gap, then 4 mm glass. Which part does most of the insulating?",
+       "choices": [
+        "The air gap, by a very long way",
+        "The two sheets of glass together",
+        "They contribute about equally",
+        "The glass, because it is solid"
+       ],
+       "answer": 0,
+       "answerValue": "The air gap, by a very long way",
+       "explain": "The air gap, and it is not close. Thermal resistance is thickness divided by conductivity, R = t/k. Glass: 0.004/1.0 = 0.0040. Air: 0.016/0.026 = 0.6154. The gap is about 150 times the resistance of a pane, so of the total 0.6234 the two panes contribute 0.0080 — about 1%. The glass is there to hold the air still, not to insulate."
+      },
+      {
+       "id": "th_metal_feels_cold",
+       "type": "choice",
+       "topic": "thermal",
+       "prompt": "A metal rail and a wooden bench have been outside all night, at the same temperature. Why does the metal feel colder?",
+       "choices": [
+        "It really is colder than the wood",
+        "Metal holds less heat than wood",
+        "Your hand warms the wood up instantly",
+        "It carries heat away from your hand faster"
+       ],
+       "answer": 3,
+       "answerValue": "It carries heat away from your hand faster",
+       "explain": "They are the same temperature — a thermometer says so. What your hand senses is not temperature but the RATE heat leaves it, and metal conducts hundreds of times better than wood, so it drains heat from your skin far faster. Feeling cold is a measurement of heat flow, which is why the same air temperature feels different in wind and why tiled floors feel colder than carpet."
+      },
+      {
+       "id": "th_vacuum_flask",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "The silvering inside a vacuum flask is there to reduce radiation, not conduction.",
+       "statement": "The silvering inside a vacuum flask is there to reduce radiation, not conduction.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "TRUE, and the flask is worth knowing because it attacks all three routes separately. The vacuum removes conduction and convection, since both need something to travel through. Radiation needs nothing at all and crosses the vacuum unaffected, so the silvering reflects it back. Take the silvering away and the vacuum still works — just less well."
+      },
+      {
+       "id": "th_thicker_always",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "Doubling the thickness of an insulating layer always halves the heat lost through the wall.",
+       "statement": "Doubling the thickness of an insulating layer always halves the heat lost through the wall.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "FALSE, and this is the trap the double-glazing question sets. Resistances in series ADD, so doubling one layer halves only THAT layer's contribution. If it already dominates, you nearly halve the loss; if it is a small part of the total — like the glass in a double-glazed unit — you can double it and change almost nothing. Always ask what share of the total resistance the layer holds before you thicken it."
+      }
+     ]
+    }
+   ],
+   "index": 9
+  },
+  {
    "id": "u_electricity",
-   "index": 9,
+   "index": 10,
    "title": "Electricity",
    "subtitle": "Current, resistance, circuits, power.",
    "colour": "#a371f7",
@@ -3956,7 +4094,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_waves",
-   "index": 10,
+   "index": 11,
    "title": "Waves and optics",
    "subtitle": "Wave equation, refraction, lenses, standing waves.",
    "colour": "#39c5cf",
@@ -4424,7 +4562,7 @@ window.QQ_DATA = {
   },
   {
    "id": "u_estimation",
-   "index": 11,
+   "index": 12,
    "title": "Estimation",
    "subtitle": "Orders of magnitude and Fermi problems — the PAT's favourite.",
    "colour": "#bc8cff",
