@@ -16,8 +16,129 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 155,
+ "count": 156,
  "entries": [
+  {
+   "slug": "grab_the_shaft_and_hold_it",
+   "title": "Grab the shaft and hold it",
+   "ts": "2026-08-25T07:42:33+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "IT GOES UP, AND HARD. About twelve times the running current, and the heating in the windings goes up by the SQUARE of that.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY A SPINNING MOTOR TAKES SO LITTLE. A motor is a generator that happens to be driven. As the rotor turns, it generates a voltage of its own that OPPOSES the supply — the back EMF. What the winding resistance actually sees is the difference:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I = (V - E) / R"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Running freely, the back EMF climbs until it is nearly the whole supply. With 12 V, a back EMF of 11 V and a winding resistance of 1 ohm:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I = (12 - 11) / 1 = 1 A"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is why a free-running motor draws almost nothing. It is not that it is efficient; it is that it is fighting itself."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "NOW HOLD THE SHAFT. The rotor stops, so it generates nothing, so E = 0:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I = (12 - 0) / 1 = 12 A"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Twelve times the current from a circuit nobody has touched. And the winding does not care about current, it cares about I^2 R:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    running   1^2 x 1  =    1 W",
+      "    stalled  12^2 x 1  =  144 W"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A hundred and forty-four times the heat, into the same small coil of wire, with the fan no longer turning. That is why a jammed drill smells hot in seconds and why \"stall current\" is the number a motor is protected against, not its running current."
+     ]
+    },
+    {
+     "h": "THE TWO ANSWERS PEOPLE GIVE.",
+     "t": "pre",
+     "lines": [
+      "  \"It drops to zero, it is not doing anything now.\"  It stops doing WORK, which",
+      "  is the output. The input is the opposite: all 12 V is now pushed across bare",
+      "  copper. A motor doing no useful work is a motor drawing the most."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "  \"It stays the same.\"  This treats the motor as a resistor, and its resistance",
+      "  has not changed. But a motor is not a resistor: its speed sets the back EMF,",
+      "  and the back EMF is most of what limits the current."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: a steady state, and inductance ignored. In the first milliseconds the winding's inductance resists the change, so the current ramps rather than jumps; and many motors have a thermal cutout or a driver that limits current precisely because the stall figure is destructive. Nothing in that changes the direction or the size of the effect — it changes how long you have."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When something rotating or moving is part of a circuit, ask what voltage the MOTION is generating. Motors, dynamos, regenerative brakes and the eddy-current brake in a train are all one idea: motion makes a voltage that opposes whatever caused the motion."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_lenz",
+    "lesson": "e6",
+    "unit": 10,
+    "prompt": "A magnet is pushed north-pole-first into a coil. Which way does the induced current flow, seen from the magnet's side?"
+   }
+  },
   {
    "slug": "frozen_at_the_top_of_the_throw",
    "title": "Frozen at the top of the throw",
