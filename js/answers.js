@@ -16,8 +16,75 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 154,
+ "count": 155,
  "entries": [
+  {
+   "slug": "frozen_at_the_top_of_the_throw",
+   "title": "Frozen at the top of the throw",
+   "ts": "2026-08-25T07:01:56+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "9.81 METRES PER SECOND SQUARED, STRAIGHT DOWN — exactly what it was on the way up and exactly what it will be on the way down. Nothing about it changes at the top.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"ZERO\" IS THE ANSWER ALMOST EVERYONE GIVES. The ball is momentarily at rest, and rest feels like nothing happening. But acceleration is not how fast something is going, it is how fast its velocity is CHANGING — and at the top the velocity is changing as fast as it ever does, from a whisker upward to a whisker downward."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ARGUMENT THAT SETTLES IT. Suppose the acceleration really were zero at the top. Zero acceleration and zero velocity means nothing changes — so the ball would sit up there for ever. It does not. The fact that it comes back down at all is proof the acceleration was never zero."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY IT DOES NOT REVERSE EITHER. Acceleration follows the FORCE, not the motion, and the only force on the ball is the earth pulling it down. That pull does not know or care which way the ball is travelling. It is 9.81 m/s² down while the ball rises, while it hangs, and while it falls — one number, unchanged, for the whole flight."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    thrown at 20 m/s  ->  apex after 2.04 s, 20.39 m up"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The velocity passes through zero at 2.04 s; the acceleration passes through nothing at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT THE MISTAKE COSTS ELSEWHERE. \"Negative acceleration means slowing down\" is the same error wearing different clothes — a car with negative acceleration that is already reversing is speeding up. Acceleration and velocity are independent: knowing one tells you nothing about the sign of the other."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: no air. With drag the acceleration is NOT the same on the way up and the way down — going up, drag and gravity both act downward; coming down they oppose, so the ball decelerates less than it accelerated. It still is not zero at the top, where the speed and therefore the drag are zero, and the acceleration there is exactly g even in air."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_decel_negative",
+    "lesson": "p1",
+    "unit": 8,
+    "prompt": "An object with negative acceleration must be slowing down."
+   }
+  },
   {
    "slug": "straight_across_with_no_resistor",
    "title": "Straight across with no resistor",
