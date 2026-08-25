@@ -16,8 +16,82 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 152,
+ "count": 153,
  "entries": [
+  {
+   "slug": "twenty_five_times_less_water",
+   "title": "Twenty-five times less water",
+   "ts": "2026-08-25T05:42:39+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NONE OF THEM. All three taps are under exactly the same pressure, and the amount of water above them has nothing to do with it.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT THE PRESSURE ACTUALLY DEPENDS ON. Only the depth:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    p = rho g h = 1000 x 9.81 x 0.40 = 3,924 Pa"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "There is no term in that expression for width, for shape, or for volume, because none of them belong there. Same depth, same water, same pressure — whether there are twelve litres above the tap or half a litre."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"THE FAT ONE\" FEELS RIGHT AND IS NOT. More water does weigh more, and that part of the intuition is sound. The mistake is that pressure is not weight, it is weight PER UNIT AREA — and the fat vessel spreads its extra weight over a proportionally bigger bottom. Double the area and you double the weight sitting on it, so the ratio is untouched. That is the whole trick, and it is why the flared vessel does not win: the extra water it holds is sitting over the sloped glass, not over the tap, and the glass carries it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"TWENTY-FIVE TIMES LESS\" IS THE BETTER MISTAKE. The volumes really are in a 25:1 ratio — 12.6 litres against 0.50 litres — so applying it is a reasonable move on a real number. But that ratio belongs to the WEIGHT of the water, and the question asks about pressure. Divide by the base area and the 25 cancels out completely."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PART THAT SOUNDS LIKE A TRICK AND IS NOT. Because only depth counts, a very thin pipe of water can generate a very large pressure — a tube of water one storey high pushes as hard as a lake of the same depth. Pascal is said to have burst a sealed barrel by connecting a long thin pipe to it and pouring in a jug of water. The barrel does not care that it is only a jug; it feels the height."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: the water is STILL, and every vessel is open to the air at the top. Get water moving and pressure starts trading against speed instead. Seal the top and you can pressurise the space above the water, at which point the vessel very much does matter."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THIS SHOWS UP. A dam is designed for the DEPTH of the reservoir, not its surface area — which is why a deep narrow valley is the expensive one to dam and a shallow lake stretching for miles is not. And it is why the header tank in a loft is placed high rather than made big."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_pressure_shape",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "The pressure at the bottom of a container depends on the shape of the container."
+   }
+  },
   {
    "slug": "you_land_at_the_same_speed_either_way",
    "title": "You land at the same speed either way",
