@@ -16,8 +16,142 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 160,
+ "count": 161,
  "entries": [
+  {
+   "slug": "throw_it_so_it_never_comes_back",
+   "title": "Throw it so it never comes back",
+   "ts": "2026-08-25T11:19:51+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ABOUT 11.2 KILOMETRES PER SECOND. Twenty five thousand miles an hour.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is escape velocity from the Earth's surface, and the striking part is what is NOT in the formula."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE IT COMES FROM. To escape, the thing you throw needs enough kinetic energy to climb all the way out of the Earth's gravitational well:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    ½mv²  =  GMm/R"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The m — the mass of whatever you threw — appears on BOTH sides and cancels:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    v = sqrt(2GM/R)",
+      "      = sqrt(2 x 6.67e-11 x 5.97e24 / 6.37e6)",
+      "      = 11,190 m/s  ≈  11.2 km/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A marble and a battleship need exactly the same speed. Mass never enters it, for the same reason everything falls at the same rate."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A SHORTCUT WORTH KNOWING. Since g = GM/R², the same answer comes out of surface gravity alone:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    v = sqrt(2gR) = sqrt(2 x 9.81 x 6.37e6) = 11,180 m/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Same number, no need for G or the Earth's mass — useful when a paper gives you g and a radius and nothing else."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "AND ITS RELATION TO ORBIT. Circular orbital speed at the surface is sqrt(GM/R) = 7.9 km/s. Escape is exactly sqrt(2) times that. Getting away entirely costs only about 41% more speed than going round and round."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "OTHER WORLDS, same formula:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    Moon      2.4 km/s     which is why its \"atmosphere\" left long ago",
+      "    Earth    11.2 km/s",
+      "    Jupiter  60   km/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: no air, and no third body."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The 11.2 km/s falls out of energy conservation with gravity as the only force. A real object thrown at that speed from the surface would not get out — it would be destroyed by the atmosphere within seconds, and even surviving it would lose a large slice of that speed to drag on the way up. This is why rockets do not try to reach escape velocity at ground level; they climb slowly through the thick air first and do their real accelerating where there is none. The figure is what you need at the top of the atmosphere, not at the bottom."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "And \"never comes back\" means never comes back to EARTH. The Sun is still there, and something that has just escaped the Earth is in orbit around the Sun, not gone. Escaping the solar system from here needs about 42 km/s relative to the Sun — which is why the Voyagers used Jupiter to get the rest of it rather than carrying the fuel."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT IT IS NOT. It is not a speed limit you must reach to leave — a rocket with a working engine can climb out arbitrarily slowly. Escape velocity is the speed needed by something that is THROWN and then coasts, with nothing pushing it afterwards. That distinction is exactly what a good interviewer will push on."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_suvat",
+    "lesson": "p1",
+    "unit": 8,
+    "prompt": "A ball is dropped from rest. Taking g = 10 m/s², how fast is it moving after 3 s, in m/s?"
+   }
+  },
   {
    "slug": "one_trolley_hits_a_still_one",
    "title": "One trolley hits a still one",
