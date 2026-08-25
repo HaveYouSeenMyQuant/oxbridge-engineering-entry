@@ -16,8 +16,97 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 157,
+ "count": 158,
  "entries": [
+  {
+   "slug": "two_tubes_of_different_bore",
+   "title": "Two tubes of different bore",
+   "ts": "2026-08-25T09:02:25+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "THE NARROW ONE, and exactly twice as high.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    h = 2 gamma cos(theta) / (rho g r)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The radius is on the BOTTOM, so halve the bore and you double the climb. For clean glass and water, taking gamma = 0.0728 N/m and theta near zero:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    bore radius 1.0 mm    h = 14.8 mm",
+      "    bore radius 0.5 mm    h = 29.7 mm"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY IT GOES UP AT ALL. Water wets glass, so the surface curves up the wall and the surface tension pulling along that contact line has an upward component. That force acts around the CIRCUMFERENCE, which goes as r. The weight it has to hold up is a column of water, which goes as the AREA, r squared. So"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    lift / weight  ~  r / r^2  =  1 / r"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Halve the radius and the lifting force falls by two while the load falls by four — the tube wins by the difference, and the water goes twice as far."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"THE WIDE ONE, THERE IS MORE ROOM\" IS THE TRAP. More water does go up the wide tube: twice the height in a quarter of the area still leaves the wide one carrying more total mass. The question asks about HEIGHT, and height is exactly where the narrow tube wins."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "AND WHY A BUCKET IS FLAT. Put r = 50 mm into the same expression and the rise is 0.3 mm — invisible against the size of the bucket. The effect never switches off; it just gets swamped. Capillary rise matters at the scale where 1/r is large, which is why it moves water through soil, up a paper towel, and through the xylem of a plant, and why none of those are made of wide pipes."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: clean glass and pure water, which is what makes theta near zero. Grease the tube and theta rises, cos(theta) shrinks, and the climb drops with it. Push theta past 90 degrees and cos goes NEGATIVE and the liquid is pushed DOWN below the outside level — which is exactly what mercury does in glass, and why a mercury meniscus curves the other way."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When a shape gets smaller, ask which quantities go as the length, which as the area, and which as the volume. Anything held up by a perimeter and weighed down by an area gets better as it shrinks — the same reasoning that lets an insect stand on water and stops you doing it."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_surface_per_length",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "Surface tension is a force per unit AREA of the liquid surface."
+   }
+  },
   {
    "slug": "it_never_actually_sits_at_230",
    "title": "It never actually sits at 230",
