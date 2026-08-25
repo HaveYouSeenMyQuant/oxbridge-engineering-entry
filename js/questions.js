@@ -3498,6 +3498,21 @@ window.QQ_DATA = {
        "explain": "At constant volume the pressure is proportional to the ABSOLUTE temperature, so doubling 300 K to 600 K doubles 100 kPa to 200 kPa. The absolute scale is what makes that true: doubling 27 °C to 54 °C is not doubling anything, because 27 °C is 300 K and 54 °C is 327 K."
       },
       {
+       "id": "th_bimetal",
+       "type": "choice",
+       "topic": "thermal",
+       "prompt": "A strip of steel and brass is bonded face to face and heated. Brass expands about 1.6 times as much as steel. Which way does the strip curl?",
+       "choices": [
+        "It bows around the steel, with the steel on the inside",
+        "It bows around the brass, with the brass on the inside",
+        "It stays flat — both halves are the same length",
+        "It depends which metal is on top"
+       ],
+       "answer": 0,
+       "answerValue": "It bows around the steel, with the steel on the inside",
+       "explain": "Around the STEEL. Over 200 mm and 100 °C the brass gains about 0.38 mm and the steel about 0.24 mm. They are stuck together, so they cannot slide past each other, and the only way a longer strip and a shorter strip can stay bonded is by curving — with the longer one on the OUTSIDE of the bend, where there is more room. The brass ends up outside, the steel inside. This is a thermostat: the curl closes a contact at a set temperature."
+      },
+      {
        "id": "th_equilibrium",
        "type": "truefalse",
        "topic": "thermal",
@@ -4555,6 +4570,72 @@ window.QQ_DATA = {
        "tolerance": 0.15,
        "answerValue": "9.5",
        "explain": "The grating equation is d sin(theta) = n lambda. First get the slit spacing: 300 lines per mm is 300000 lines per metre, so d = 1/300000 = 3.33e-6 m. Then sin(theta) = n lambda / d = (1 x 550e-9)/3.33e-6 = 0.165, giving theta = 9.5 degrees. The per-millimetre-to-per-metre step is where most of the lost marks are."
+      }
+     ]
+    },
+    {
+     "id": "w6",
+     "title": "The Doppler effect",
+     "questions": [
+      {
+       "id": "wa_dop_toward",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "An ambulance siren sounds at 500 Hz. It drives towards you at 30 m/s. Sound travels at 340 m/s. What frequency do you hear, in Hz, to the nearest whole number?",
+       "answerNumber": 548.0,
+       "tolerance": 1.0,
+       "answerValue": "548",
+       "explain": "f = f₀ v / (v − vs) = 500 x 340 / 310 = 548 Hz. Each crest is emitted from slightly closer than the one before, so they arrive bunched up. Nothing about the siren changes — it is still making 500 Hz — what changes is how often the crests reach you."
+      },
+      {
+       "id": "wa_dop_away",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "The same ambulance has passed and is now going away at 30 m/s. What do you hear now, in Hz, to the nearest whole number?",
+       "answerNumber": 459.0,
+       "tolerance": 1.0,
+       "answerValue": "459",
+       "explain": "f = f₀ v / (v + vs) = 500 x 340 / 370 = 459 Hz. Note the drop is not symmetric with the rise: 548 is 48 above, 459 is 41 below. The v−vs on the way in and v+vs on the way out are not mirror images, which is why a passing siren sounds like it falls further than it rose."
+      },
+      {
+       "id": "wa_dop_driver",
+       "type": "choice",
+       "topic": "waves",
+       "prompt": "What does the DRIVER of that ambulance hear as it speeds up, passes you, and drives away?",
+       "choices": [
+        "One steady note that never changes",
+        "The same rise and fall that you hear",
+        "A note that rises the whole time",
+        "Nothing — the cab is insulated from the siren"
+       ],
+       "answer": 0,
+       "answerValue": "One steady note that never changes",
+       "explain": "One steady note. The Doppler effect depends entirely on relative motion between source and listener, and the driver is not moving relative to their own siren — they carry it with them. The crests leave the siren and reach the driver at exactly the rate they were made, however fast the ambulance is going. The driver is the only person on the road who never hears the note change."
+      },
+      {
+       "id": "wa_dop_speed",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "A moving source makes the sound itself travel faster through the air.",
+       "statement": "A moving source makes the sound itself travel faster through the air.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "FALSE, and it is the misconception the whole effect rests on. The speed of sound is set by the AIR — its temperature and what it is made of — and not by whatever made the sound. A moving source changes where each crest STARTS, so the crests end up spaced more closely, but every one of them then travels at the same 340 m/s."
+      },
+      {
+       "id": "wa_dop_redshift",
+       "type": "choice",
+       "topic": "waves",
+       "prompt": "Light from distant galaxies is shifted towards the red. What does that say about them?",
+       "choices": [
+        "They are moving away from us",
+        "They are moving towards us",
+        "They are hotter than nearby galaxies",
+        "They are made of different elements"
+       ],
+       "answer": 0,
+       "answerValue": "They are moving away from us",
+       "explain": "They are receding. Red is the long-wavelength, low-frequency end of the visible spectrum, so a shift towards red is the same stretching-out that drops the pitch of a siren going away. That one observation, repeated across the sky, is the evidence the universe is expanding."
       }
      ]
     }

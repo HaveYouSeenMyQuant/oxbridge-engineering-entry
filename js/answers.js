@@ -309,7 +309,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "me_hydrostatic",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "How much does the pressure increase 10 m below the surface of water? Take ρ = 1000 kg/m³ and g = 10. Give your answer in kilopascals."
+   }
   },
   {
    "slug": "twice_the_board_eight_times_the_dip",
@@ -771,7 +777,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "th_bimetal",
+    "lesson": "h1",
+    "unit": 9,
+    "prompt": "A strip of steel and brass is bonded face to face and heated. Brass expands about 1.6 times as much as steel. Which way does the strip curl?"
+   }
   },
   {
    "slug": "drop_it_down_the_copper_pipe",
@@ -982,7 +994,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "wa_dop_driver",
+    "lesson": "w6",
+    "unit": 11,
+    "prompt": "What does the DRIVER of that ambulance hear as it speeds up, passes you, and drives away?"
+   }
   },
   {
    "slug": "how_far_does_the_crate_rise",
