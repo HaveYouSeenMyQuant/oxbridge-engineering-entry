@@ -3437,6 +3437,72 @@ window.QQ_DATA = {
        "explain": "In orbit, gravity supplies exactly the centripetal acceleration and nothing else: v² / r = g. So v = sqrt(g r) = sqrt(8 x 7 000 000) = 7 483 m/s, about 7.5 km/s. An orbit is not a place where gravity stops; it is a fall that keeps missing."
       }
      ]
+    },
+    {
+     "id": "p9",
+     "title": "Materials and bending",
+     "questions": [
+      {
+       "id": "ma_stress",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A steel rod of cross-section 4 x 10⁻⁴ m² carries a pull of 2000 N. What is the stress, in megapascals?",
+       "answerNumber": 5.0,
+       "tolerance": 0.05,
+       "answerValue": "5",
+       "explain": "Stress = force / area = 2000 / 0.0004 = 5 000 000 Pa = 5 MPa. Stress is what the MATERIAL feels, which is why it is force per unit area and not force: the same 2000 N through a thinner rod is a bigger stress and breaks sooner."
+      },
+      {
+       "id": "ma_strain",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "That rod is 4 m long and stretches by 2 mm under the load. What is the strain? Give it as a decimal.",
+       "answerNumber": 0.0005,
+       "tolerance": 2e-05,
+       "answerValue": "0.0005",
+       "explain": "Strain = extension / original length = 0.002 / 4 = 0.0005. It has no units at all — it is a length divided by a length — which is what lets you compare a stretched rod with a stretched bridge cable."
+      },
+      {
+       "id": "ma_young",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "For that same rod, what is the Young's modulus, in gigapascals?",
+       "answerNumber": 10.0,
+       "tolerance": 0.1,
+       "answerValue": "10",
+       "explain": "E = stress / strain = 5 x 10⁶ / 5 x 10⁻⁴ = 1 x 10¹⁰ Pa = 10 GPa. It is the stiffness of the MATERIAL and nothing to do with the shape: a thick bar and a thin wire of the same steel have the same Young's modulus, and behave completely differently because their areas differ."
+      },
+      {
+       "id": "ma_cantilever",
+       "type": "choice",
+       "topic": "mechanics",
+       "prompt": "A diving board dips a certain amount with someone standing on the end. Replace it with a board of the same width and thickness but TWICE the length. How much further does the end dip, with the same person on it?",
+       "choices": [
+        "Twice as far",
+        "Four times as far",
+        "The same — it is the same board and the same weight",
+        "About eight times as far"
+       ],
+       "answer": 3,
+       "answerValue": "About eight times as far",
+       "explain": "About eight times. The dip of a cantilever goes as delta = F L³ / (3 E I), so it depends on the CUBE of the length: double the length and you multiply the dip by 2³ = 8. Two is the intuitive answer and four is the answer that sounds like it has had some thought put into it. Both are wrong for the same reason — the length enters three separate times, and they multiply."
+      },
+      {
+       "id": "ma_scale_both",
+       "type": "choice",
+       "topic": "mechanics",
+       "prompt": "Now double the length AND double the thickness. What happens to the dip?",
+       "choices": [
+        "It is twice as big",
+        "It is halved",
+        "It stays about the same",
+        "It is eight times bigger"
+       ],
+       "answer": 2,
+       "answerValue": "It stays about the same",
+       "explain": "About the same. Doubling the length multiplies the dip by 8, and doubling the thickness divides it by 8 — because the second moment of area goes as the cube of the thickness, I = b t³ / 12. The two cancel. This is why a scale model of a bridge does not sag like the real one, and why you cannot judge a big structure by looking at a small copy of it."
+      }
+     ]
     }
    ]
   },
