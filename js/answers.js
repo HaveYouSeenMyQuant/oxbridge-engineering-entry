@@ -16,8 +16,92 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 164,
+ "count": 165,
  "entries": [
+  {
+   "slug": "hold_a_thumb_up_and_swap_eyes",
+   "title": "Hold a thumb up and swap eyes",
+   "ts": "2026-08-25T14:15:03+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "TWICE AS BIG. Not four times — and \"four times\" is the answer most people with some physics reach for.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY NOT FOUR. Brightness falls as 1/d², gravity falls as 1/d², sound intensity falls as 1/d². Reaching for the square is trained behaviour, not carelessness. But those are quantities spread over the surface of a sphere, and the sphere's area is what carries the square. A parallax is an ANGLE, and an angle is just opposite over adjacent — halve the adjacent side and the angle doubles."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    eyes 6.5 cm apart, thumb at 60 cm  ->  jump of 6.20°",
+      "    the same thumb at 30 cm            ->  jump of 12.37°"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Not exactly double — 1.994 rather than 2.000 — because the angle is an arctangent and only behaves perfectly for small angles. At star distances it is exact for every purpose you will ever have."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"IT IS THE SAME\" IS WRONG. Nothing about the thumb changed, which is true and beside the point. What changes is the angle between the two lines of sight, and that is set by how far away the thumb is, not by how big it is."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT THIS IS ACTUALLY FOR. Swap your two eyes for the Earth at opposite ends of its orbit and you have the only direct way anyone has ever measured the distance to a star."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    Proxima Centauri, 4.25 light years  ->  0.77 arcseconds",
+      "    Sirius, 8.6 light years             ->  0.38 arcseconds",
+      "    a typical naked-eye star, 300 ly    ->  0.011 arcseconds"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Your thumb's jump is about 29,000 times bigger than Proxima's."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "AND WHY IT RUNS OUT. Because the angle goes as 1/d, a star ten times further gives a jump ten times smaller. Push far enough and it drops below what any instrument can resolve, and the method simply stops — which is why parallax measures the near stars and everything beyond them is measured another way."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Note what does NOT limit it: brightness. A faint nearby star has a large parallax and a brilliant distant one has a tiny parallax. The limit is angular resolution, and the only cure is a longer baseline — and the Earth's orbit is the longest one we have."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "tr_small_angle",
+    "lesson": "t4",
+    "unit": 5,
+    "prompt": "Using the small-angle approximation, what is sin(0.02) to three decimal places, with 0.02 in radians?"
+   }
+  },
   {
    "slug": "two_crossed_filters_and_a_third",
    "title": "Two crossed filters and a third",
