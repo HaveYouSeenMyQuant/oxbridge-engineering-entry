@@ -1773,6 +1773,36 @@ window.QQ_DATA = {
        }
       },
       {
+       "id": "tr_mach_cone",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "The shock cone behind a supersonic jet has a half-angle θ given by sin θ = 1/M, where M is the Mach number. A jet flies at Mach 2. What is θ, in degrees?",
+       "answerNumber": 30.0,
+       "tolerance": 0.5,
+       "answerValue": "30",
+       "explain": "30°. sin θ = 1/2, so θ = 30°. Faster means a NARROWER cone, which is the part people get backwards: at Mach 1 the angle is 90° and the cone is a flat wall, and it closes up as the aircraft speeds up."
+      },
+      {
+       "id": "tr_double_angle_height",
+       "type": "truefalse",
+       "topic": "trigonometry",
+       "prompt": "Double the angle of elevation and you double the height reached, for a fixed slope length.",
+       "statement": "Double the angle of elevation and you double the height reached, for a fixed slope length.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "Sine is not linear. Going from 30° to 60° multiplies the height by sin60/sin30 = 1.73, not 2 — and from 45° to 90° it multiplies by only 1.41. The gain per degree shrinks as you climb, which is why the last few degrees of a ramp buy so little."
+      },
+      {
+       "id": "tr_gradient_degrees",
+       "type": "number",
+       "topic": "trigonometry",
+       "prompt": "A road sign says the gradient is 1 in 10. What angle is that to the horizontal, in degrees, to one decimal place?",
+       "answerNumber": 5.7106,
+       "tolerance": 0.06,
+       "answerValue": "5.7106",
+       "explain": "5.7°, not 10. A 1-in-10 gradient means tan θ = 0.1, so θ = 5.7°. Gradients and angles are only close for small slopes, and the habit of reading one as the other breaks badly by the time a road is steep."
+      },
+      {
        "id": "tr_sin_max",
        "type": "truefalse",
        "topic": "trigonometry",
