@@ -3570,6 +3570,36 @@ window.QQ_DATA = {
        "explain": "FALSE, and this is the most durable wrong idea in mechanics. No outward force acts. The rider's body tries to continue in a straight line, the seat gets in the way, and the seat pushes them INWARDS to bend their path into the circle. What is felt as being flung out is the seat pressing in."
       },
       {
+       "id": "me_iss_gravity",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "The ISS orbits about 400 km up, and Earth's radius is 6 371 km. Gravity falls as 1/r². What percentage of surface gravity acts on it up there?",
+       "answerNumber": 88.53389732040488,
+       "tolerance": 0.6,
+       "answerValue": "88.5339",
+       "explain": "About 89%. Astronauts are not floating because gravity is absent — it is nearly as strong as it is on the ground. They float because the station and everyone in it are in FREE FALL, falling around the Earth together. Weightlessness is about acceleration, not about gravity going away."
+      },
+      {
+       "id": "me_orbit_double_r",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "Double a satellite's orbital radius and its orbital speed halves.",
+       "statement": "Double a satellite's orbital radius and its orbital speed halves.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "It falls by 1/√2, to about 71%, because v = √(GM/r) — the speed goes as the inverse SQUARE ROOT of the radius, not the inverse. The period does more than double, though, because the orbit is both longer and slower."
+      },
+      {
+       "id": "me_geo_period",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A satellite has to stay above one spot on the equator. What must its orbital period be, in hours?",
+       "answerNumber": 24.0,
+       "tolerance": 0.2,
+       "answerValue": "24",
+       "explain": "24 hours — it has to turn at exactly the rate the Earth does. That single requirement fixes the radius at about 42 000 km from the centre, so there is only ONE geostationary orbit and every such satellite shares it. (Strictly it is the sidereal day, 23 h 56 min.)"
+      },
+      {
        "id": "me_orbit_speed",
        "type": "number",
        "topic": "mechanics",
