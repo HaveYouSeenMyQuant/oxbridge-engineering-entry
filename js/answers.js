@@ -16,8 +16,96 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 153,
+ "count": 154,
  "entries": [
+  {
+   "slug": "straight_across_with_no_resistor",
+   "title": "Straight across with no resistor",
+   "ts": "2026-08-25T06:22:03+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "IT LIGHTS BRILLIANTLY, AND THEN IT IS DEAD. A few milliseconds of the brightest light it will ever produce, and the junction is gone.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE RESISTOR IS NOT OPTIONAL. Work out what the current should be with the resistor in place. The LED drops about 2 V no matter what, so 7 V is left for everything else:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I = (9 - 2) / 330 = 21 mA"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "which is what a small LED is built for. Now take the resistor out. The 7 V is still there and it is now dropped across nothing but the battery's own internal resistance, a couple of ohms:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    I = (9 - 2) / 2 = 3.5 A"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is more than a hundred and fifty times the rated current. A real PP3 cannot actually deliver 3.5 A — its voltage collapses under the attempt — so the true figure is smaller and depends on how fresh the battery is, somewhere in the region of one to three amps. It does not matter. Anything above about 100 mA kills the die, and the current gets there in microseconds."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PART THAT IS ACTUALLY THE PHYSICS. A resistor obeys I = V/R, so its current is set by the voltage across it. A diode does not: above its forward voltage its current rises roughly EXPONENTIALLY with voltage, so a tenth of a volt more can multiply the current tenfold. That means the LED cannot set its own operating point in any stable way — a fraction of a volt of extra supply, or the drop falling slightly as the die warms, runs the current away."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Something else in the circuit has to decide the current, and the resistor is that something. It is not there to protect the LED from the voltage. It is there because a diode has no opinion about current, and a circuit needs one."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"NOTHING WILL HAPPEN, 9 V IS TOO MUCH FOR A 2 V LED\" IS ALSO WRONG. It treats the forward voltage as a requirement to be matched, like a socket. It is not: it is the voltage the diode settles at once current is flowing. Supply more and it does not refuse, it takes more current."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: an ordinary indicator LED and an ordinary battery. Some modern LED products have a resistor or a driver chip built into the package, and those really can be connected straight across a stated voltage. If it survives, something in there was doing the resistor's job."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. For any component, ask what SETS the current through it. For a resistor, the voltage does. For a diode, a transistor or a motor at stall, something else in the circuit must, and finding out what is most of circuit design."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_ohm",
+    "lesson": "e1",
+    "unit": 10,
+    "prompt": "A 12 V supply drives 3 A through a resistor. What is its resistance, in ohms?"
+   }
+  },
   {
    "slug": "twenty_five_times_less_water",
    "title": "Twenty-five times less water",
