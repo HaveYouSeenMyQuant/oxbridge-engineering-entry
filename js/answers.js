@@ -16,8 +16,79 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 166,
+ "count": 167,
  "entries": [
+  {
+   "slug": "row_128_of_pascals_triangle",
+   "title": "Row 128 of Pascal's triangle",
+   "ts": "2026-08-25T15:35:13+00:00",
+   "date": "25 Aug 2026",
+   "topic": "number_theory",
+   "q": null,
+   "a": "TWO. Out of a hundred and twenty nine numbers, exactly two are odd.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Almost everybody guesses somewhere near half — sixty-odd — because the entries look like arbitrary large numbers and arbitrary numbers are odd about half the time. These are not arbitrary."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE RULE. The number of odd entries in row n is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    2 ^ (the number of 1s in the binary form of n)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "128 in binary is 10000000 — a single 1 — so row 128 has 2^1 = 2 odd entries, and they are the two at the ends, which are both 1. Every single one of the 127 numbers between them is even."
+     ]
+    },
+    {
+     "h": "CHECK IT ON SMALL ROWS",
+     "t": "pre",
+     "lines": [
+      "    row 4   = 1 4 6 4 1          100 in binary, one 1  -> 2 odd    correct",
+      "    row 5   = 1 5 10 10 5 1      101, two 1s           -> 4 odd    correct",
+      "    row 6   = 1 6 15 20 15 6 1   110, two 1s           -> 4 odd    correct",
+      "    row 100 = ...                1100100, three 1s     -> 8 odd"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY IT IS TRUE. Kummer's theorem says the power of 2 dividing \"n choose k\" is the number of carries when you add k to n-k in binary. An entry is odd exactly when there are no carries — which happens exactly when the 1-bits of k are a subset of the 1-bits of n. So the odd entries correspond to subsets of n's 1-bits, and a set of b bits has 2^b subsets. Hence 2^b odd entries."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Rows just below a power of two go the other way: row 127 is 1111111, seven 1s, so ALL 128 of its entries are odd."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PICTURE NOBODY EXPECTS. Colour every odd entry and leave the even ones blank, and Pascal's triangle turns into the Sierpinski gasket — the same fractal you get by stepping halfway towards random corners forever. The rows that are nearly all even are the big blank triangles; the rows just under a power of two are the solid lines beneath them."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "swap_the_lamp_for_a_brighter_red",
    "title": "Swap the lamp for a brighter red",
