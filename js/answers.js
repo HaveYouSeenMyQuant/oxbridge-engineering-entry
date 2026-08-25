@@ -16,8 +16,90 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 161,
+ "count": 162,
  "entries": [
+  {
+   "slug": "which_way_should_the_cold_pipe_run",
+   "title": "Which way should the cold pipe run",
+   "ts": "2026-08-25T12:04:39+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "THE OPPOSITE WAY. Counterflow, and it is not a small win.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ARITHMETIC. Take hot in at 90 and out at 50, cold in at 20 and out at 45. The driving force is the log-mean of the two end differences:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    counterflow   ends are 90−45 = 45 and 50−20 = 30    LMTD = 37.0 K",
+      "    parallel      ends are 90−20 = 70 and 50−45 =  5    LMTD = 24.6 K"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Half as much driving temperature again, from the same pipes, the same fluids and the same flow rates. Since the heat moved is U A x LMTD, that is a third off the area you need — a physically smaller, cheaper exchanger for exactly the same duty."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY PARALLEL FLOW THROWS ITS ADVANTAGE AWAY. It does start better: 70 degrees of difference at the inlet, against counterflow's 45. But the two streams are running towards the same place, so they converge — and by the outlet there are only 5 degrees left to work with. All the heat transfer happens in the first stretch and the rest of the exchanger is nearly idle. Counterflow spreads the difference evenly along the whole length, and evenly is worth more than a good start."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PART THAT SETTLES IT. Parallel flow cannot bring the cold stream out hotter than the hot stream leaves — the two ends up side by side and neither can pass the other. Counterflow can: the cold outlet meets the hot INLET, so it can be heated past the hot outlet temperature entirely. Want cold out at 60 while hot leaves at 50? Counterflow does it. In parallel flow the sum has a negative temperature difference in it and simply has no solution."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is why it is a decision and not an optimisation: one arrangement is better, and the other cannot do the job at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "BOTH MOVE THE SAME ENERGY. Nothing here breaks conservation — for the same terminal temperatures and flow rates the duty is identical. What changes is the temperature difference available to push it through, and therefore how much metal you need to buy."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: the two streams only exchange with each other. Real exchangers lose some heat to the surroundings, the wall has its own resistance, and at very low flow rates the fluid inside a pipe stratifies instead of mixing. None of that changes the direction of the answer; all of it changes the size of the win."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE YOU HAVE MET IT. Every car radiator, every condensing boiler, the heat recovery in a ventilation system — and in your own body, where the arteries and veins in an arm run alongside each other in opposite directions so that blood returning cold from the hand is warmed by blood on its way out."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "th_conduction",
+    "lesson": "h2",
+    "unit": 9,
+    "prompt": "Heat flows through a sheet of glass 2 m² in area and 4 mm thick, with 20 °C across it. Glass conducts at 1.0 W/m°C. What is the rate of heat flow, in watts?"
+   }
+  },
   {
    "slug": "throw_it_so_it_never_comes_back",
    "title": "Throw it so it never comes back",
