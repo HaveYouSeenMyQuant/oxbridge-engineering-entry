@@ -16,8 +16,104 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 151,
+ "count": 152,
  "entries": [
+  {
+   "slug": "you_land_at_the_same_speed_either_way",
+   "title": "You land at the same speed either way",
+   "ts": "2026-08-25T05:02:49+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ABOUT 38 TIMES HARDER — and if you answered 50, you did the right physics and dropped two terms. That is the interesting part of this question.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "FIRST, WHY IT IS NOT \"NO DIFFERENCE\". You do arrive at the same speed —"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    v = sqrt(2gh) = sqrt(2 x 9.81 x 1.5) = 5.4 m/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "and you have exactly the same momentum to get rid of either way. That much of the naive answer is correct. But the momentum is not what hurts you; the RATE you shed it is. Spread the same change over a longer stop and the load drops in proportion. Nothing about the fall changes — everything about the stop does."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ENERGY BALANCE. While you are stopping you travel a further distance d, and gravity keeps working on you the whole way down. So the work done on you is mg(h + d), not mgh:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    mg(h + d) = F d        ->        F/mg = (h + d)/d"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    locked legs, d = 1 cm  :  (1.50 + 0.01)/0.01  =  151 x body weight",
+      "    folding,     d = 50 cm :  (1.50 + 0.50)/0.50  =    4 x body weight"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    ratio = 151/4 = 38"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "151 g is not a figure you walk away from; that is how ankles and spines break from heights that sound harmless. 4 g is a brisk landing and nothing more. The whole difference is what your knees do in the last half metre."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY 50 IS WRONG, AND WHY IT IS THE BETTER MISTAKE. Reach for F = mgh/d and you get 150 and 3, and a ratio of exactly 50 — the ratio of the stopping distances. It over-states the benefit by about a third, for two reasons that both cut the same way: your weight is still pressing down while you stop (the +1 that turns 3 into 4), and the folding landing falls through the extra half metre, arriving with more energy to lose than the locked one. The shortcut is fine when d is tiny compared with h. Here d is a third of h, so it is not."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: a CONSTANT stopping load. Real legs do not deliver constant load — the peak is higher than this average, and the shape of the curve is what a running shoe or a crash mat is designed to flatten. So 38 is the ratio of the averages, and it is the honest comparison; the ratio of the true peaks depends on how you fold and is not something you can get from these three numbers."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THIS SHOWS UP. It is the entire design brief for crumple zones, airbags, crash mats, climbing rope stretch and packaging foam. None of them reduce the momentum you have to lose. Every one of them buys distance."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_force_rate",
+    "lesson": "p3",
+    "unit": 8,
+    "prompt": "A jet of water delivers 20 kg per second at 5 m/s onto a wall and stops dead. What force does it exert, in newtons?"
+   }
+  },
   {
    "slug": "the_glass_is_not_the_point",
    "title": "The glass is not the point",
