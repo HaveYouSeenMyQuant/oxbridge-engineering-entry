@@ -16,8 +16,85 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 167,
+ "count": 168,
  "entries": [
+  {
+   "slug": "a_glass_filled_to_the_brim",
+   "title": "A glass filled to the brim",
+   "ts": "2026-08-25T16:15:12+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NOT A DROP. The level does not move at all — not up, not down.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    floating, the cube pushes aside its own WEIGHT of water",
+      "    melted, the cube BECOMES exactly that weight of water"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "and the same weight of water takes up the same room whether it arrived by being pushed aside or by melting. So the water that appears fits precisely into the hole the cube was already making."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"IT OVERFLOWS\" FEELS RIGHT. Because there IS a lump standing proud of the surface — about 8% of the cube — and it does have to go somewhere. What that argument misses is that the ice will SHRINK as it melts, and it shrinks by exactly the size of that lump. The two are not a coincidence; they are the same fact stated twice."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    ice     917 kg per m³",
+      "    water  1000 kg per m³",
+      "    so a floating cube sits 91.7% under, and 8.3% proud"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE NUMBERS. A 50 g cube displaces 50 ml of water while it floats. Melted, it IS 50 ml of water. Nothing changed."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"THE LEVEL FALLS\" IS THE CLEVERER MISTAKE. Ice really is less dense than water and really does shrink on melting, so someone who knows that reaches for a falling level. But the shrinkage was already accounted for by the part above the surface, which was never displacing anything to begin with."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THIS ACTUALLY MATTERS. Sea ice melting does not raise sea level, for exactly this reason — the Arctic ice cap could vanish entirely and the oceans would sit where they are. Ice sitting on LAND is a completely different matter: Greenland and Antarctica are not floating, so what they add is all new water. That distinction is the whole reason the two are counted separately."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ONE ASSUMPTION: the ice is floating freely and is pure. A cube held under by a straw, or ice with a stone frozen into it, breaks the argument — and salt water changes the numbers, which is why the sea-ice version is very slightly more subtle than the glass."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_upthrust",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "An object of volume 2 litres is held completely under water. Taking ρ = 1000 kg/m³ and g = 10, what upthrust acts on it, in newtons?"
+   }
+  },
   {
    "slug": "row_128_of_pascals_triangle",
    "title": "Row 128 of Pascal's triangle",
