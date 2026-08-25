@@ -944,8 +944,25 @@
     input.autocomplete = 'off';
     input.setAttribute('aria-label', 'your answer');
     input.placeholder = q.placeholder || 'your answer';
+    /* A MINUS SIGN IS A LEGAL ANSWER (fixed 2026-08-25, reported by the owner
+     * against the determinant question).
+     *
+     * The old sanitiser was replace(/[^0-9.]/g, ''), which deleted the minus
+     * as fast as you typed it. FOURTEEN questions in this bank have a negative
+     * answer -- mx_det_neg is -6, al_complete is -13, ca_neg_power is -0.25 --
+     * and every one of them was unanswerable. Not hard: impossible.
+     *
+     * Still sanitised, because the point of stripping was to stop stray text:
+     * a minus is kept only at the FRONT and only once, and only one decimal
+     * point survives. "-" alone stays un-ready, because parseFloat gives NaN
+     * and ready() already tests for that. */
     input.addEventListener('input', function () {
-      var cleaned = input.value.replace(/[^0-9.]/g, '');
+      var cleaned = input.value.replace(/[^0-9.\-]/g, '');
+      var negative = cleaned.charAt(0) === '-';
+      cleaned = cleaned.replace(/-/g, '');
+      var bits = cleaned.split('.');
+      if (bits.length > 2) cleaned = bits.shift() + '.' + bits.join('');
+      if (negative) cleaned = '-' + cleaned;
       if (cleaned !== input.value) input.value = cleaned;
       onChange();
     });
