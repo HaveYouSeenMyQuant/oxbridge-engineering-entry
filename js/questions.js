@@ -3108,8 +3108,15 @@ window.QQ_DATA = {
        "answerValue": "200",
        "explain": "GPE = mgh = 5×10×4 = 200 J. Only the VERTICAL height matters; the path taken is irrelevant, which is what makes gravity a conservative force.",
        "viz": "energyBars",
-       "vizHint": "ohmLab",
-       "vizParams": "Set it to 5 kg and 4 m and read the gravitational bar."
+       "vizHint": "Set it to 5 kg and 4 m and read the gravitational bar.",
+       "vizParams": {
+        "m": 2,
+        "g": 10,
+        "h0": 6,
+        "h": 6,
+        "massSlider": true,
+        "showSpeed": false
+       }
       },
       {
        "id": "me_fall_speed",
@@ -3121,8 +3128,14 @@ window.QQ_DATA = {
        "answerValue": "10",
        "explain": "mgh = ½mv², and the mass cancels: v = √(2gh) = √100 = 10 m/s. The mass cancelling is why everything falls at the same rate.",
        "viz": "energyBars",
-       "vizHint": "ohmLab",
-       "vizParams": "Drag it down and watch one bar empty into the other."
+       "vizHint": "Drag it down and watch one bar empty into the other.",
+       "vizParams": {
+        "m": 2,
+        "g": 10,
+        "h0": 5,
+        "h": 5,
+        "showSpeed": false
+       }
       },
       {
        "id": "me_power",
