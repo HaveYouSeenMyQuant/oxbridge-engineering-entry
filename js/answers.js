@@ -16,8 +16,84 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 158,
+ "count": 159,
  "entries": [
+  {
+   "slug": "stretch_the_wire_to_twice_its_length",
+   "title": "Stretch the wire to twice its length",
+   "ts": "2026-08-25T09:53:58+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "FOUR TIMES BIGGER. Not twice — four times, and the second factor of two is the one almost everyone leaves out.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    R = ρL / A"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Doubling the length doubles R. But the copper had to come from somewhere: the same volume now fills twice the length, so the cross-section is HALVED, and halving A doubles R again. Two doublings, one from each end of the fraction."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    length   x2      ->  R x2",
+      "    area     x½      ->  R x2",
+      "                        R x4"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"IT DOUBLES\" IS THE BEST WRONG ANSWER HERE. It uses the right formula honestly and changes one variable. Nothing about it is careless; it just treats A as though it were fixed, when the stretch is what changed it. If you had somehow doubled the length while keeping the thickness, doubling would be exactly right — but you cannot, not without more copper."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"IT STAYS THE SAME\" IS THE OTHER ONE. Resistance feels like a property of the object, the way mass is. It is not. The same lump of copper can be given any resistance you like by choosing what shape to draw it into. The property that does NOT change is the RESISTIVITY ρ, which belongs to the material and not to the piece — and keeping those two apart is most of what this question is for."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "IN GENERAL. Stretch by a factor k and the resistance goes up by k². Pull a wire to ten times its length and it has a hundred times the resistance."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    x3  ->  x9        x10  ->  x100"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE IT BITES. It is why drawing wire finer is not a cheap way to save copper: halve the diameter to save metal and the area falls by four, so the resistance quadruples and the heat it wastes quadruples with it. It is also why an over-stretched extension lead runs warm, and why a filament is made thin deliberately — a lamp WANTS the resistance."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_resistivity_property",
+    "lesson": "e1",
+    "unit": 10,
+    "prompt": "Resistivity belongs to the material, while resistance depends on the shape of the particular piece as well."
+   }
+  },
   {
    "slug": "two_tubes_of_different_bore",
    "title": "Two tubes of different bore",
