@@ -3299,6 +3299,36 @@ window.QQ_DATA = {
        "tolerance": 1.0,
        "answerValue": "500",
        "explain": "The pressure is the same throughout the fluid, so F₂ = F₁ × A₂/A₁ = 20 × 50/2 = 500 N — twenty-five times what you put in, which is exactly the area ratio. Energy is not created: the small piston must travel twenty-five times as far as the large one rises, so the work in equals the work out. That is the trade every force multiplier makes, from a lever to a pulley to a gear train."
+      },
+      {
+       "id": "me_surface_per_length",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "Surface tension is a force per unit AREA of the liquid surface.",
+       "statement": "Surface tension is a force per unit AREA of the liquid surface.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "FALSE — it is a force per unit LENGTH, measured in newtons per metre. That distinction does real work: the pull acts along a LINE where the surface meets something, such as the rim of a tube, so it grows with the perimeter. The weight it has to hold up fills a volume instead. Those two scale differently with size, which is why surface tension dominates everything at small scales and is negligible at large ones."
+      },
+      {
+       "id": "me_surface_force",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A soap film is stretched on a wire frame whose sliding edge is 8 cm long. Taking the surface tension as 0.072 N/m, what force pulls on that edge? Remember a film has two surfaces. Give your answer in millinewtons.",
+       "answerNumber": 11.52,
+       "tolerance": 0.05,
+       "answerValue": "11.52",
+       "explain": "F = 2γL, and the 2 is the part people drop: a soap film has a front surface and a back surface, and each one pulls. So F = 2 × 0.072 × 0.08 = 0.01152 N = 11.52 mN. A single free surface, such as the top of a puddle, would give half that."
+      },
+      {
+       "id": "me_droplet_sphere",
+       "type": "truefalse",
+       "topic": "mechanics",
+       "prompt": "A free-falling droplet pulls itself into a sphere because a sphere has the smallest surface area for a given volume.",
+       "statement": "A free-falling droplet pulls itself into a sphere because a sphere has the smallest surface area for a given volume.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "TRUE. Surface tension is the surface behaving as though it wants to be as small as possible, and for a fixed volume nothing beats a sphere. It is the same reason bubbles are round and why a droplet on a waxy leaf beads up instead of spreading out."
       }
      ]
     },
