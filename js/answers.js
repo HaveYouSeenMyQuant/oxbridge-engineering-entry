@@ -16,8 +16,97 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 162,
+ "count": 163,
  "entries": [
+  {
+   "slug": "the_thermometer_in_the_white_box",
+   "title": "The thermometer in the white box",
+   "ts": "2026-08-25T12:54:50+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NO. Not by a hundredth of a degree. It reads five, and it goes on reading five however hard it blows.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. Wind chill is not a temperature. It is a statement about the RATE at which a warm object loses heat, and a dry thermometer sitting at air temperature is not a warm object — it has no temperature difference to drive any loss at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Write down what the wind actually changes. For an object cooling by convection,"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P = h A (T_object − T_air)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The wind raises h, the heat transfer coefficient — from around 8 W/m^2K in still air to perhaps 45 in a brisk wind. But look what h multiplies. For the thermometer, T_object − T_air is ZERO, and any h times zero is still zero. The wind arrives, finds nothing to carry away, and leaves."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "FOR YOU IT IS ENTIRELY DIFFERENT, because you are not at air temperature. Bare skin sits near 33 degrees, so the bracket is 28 degrees, and the wind is multiplying something real:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    still   8 x 28  =  224 W/m^2",
+      "    windy  45 x 28  = 1260 W/m^2"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Five and a half times the heat loss, from air that has not changed temperature at all. \"Feels like minus two\" means \"you lose heat as fast as you would in still air at minus two\". It is a sentence about YOU, not about the air, and it is why a wind-chill figure needs a person in it to mean anything."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TELL. Wind chill has no effect on anything that is not warmer than the air. It cannot cool a parked car below air temperature, it cannot freeze a pipe that is already at air temperature, and it will never take a puddle below zero on a day when the air is above it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: the thermometer is DRY and SHADED. Wet it and the answer changes completely — evaporation is a different mechanism, it does take the reading below air temperature, and the wind speeds it up. That is precisely what a wet-bulb thermometer is for, and it is why you feel cold getting out of a swimming pool on a warm day. Put it in the sun instead and it sits ABOVE air temperature, and there the wind really does cool it. The Stevenson screen exists to remove both of those."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE INTERVIEW MOVE. When something \"feels\" a certain way, ask whether the quantity in question is a STATE or a RATE. Temperature is a state; comfort is almost always a rate. Most of the confusion around heating, insulation and wind chill is those two being swapped."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "th_metal_feels_cold",
+    "lesson": "h2",
+    "unit": 9,
+    "prompt": "A metal rail and a wooden bench have been outside all night, at the same temperature. Why does the metal feel colder?"
+   }
+  },
   {
    "slug": "which_way_should_the_cold_pipe_run",
    "title": "Which way should the cold pipe run",
