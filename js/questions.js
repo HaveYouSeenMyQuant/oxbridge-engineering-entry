@@ -3824,6 +3824,26 @@ window.QQ_DATA = {
        "explain": "It does not. As current rises the filament heats up and its resistance INCREASES, so the current-voltage graph curves rather than staying straight. Ohm's law holds only at constant temperature, which is what 'ohmic' means."
       },
       {
+       "id": "el_resistivity",
+       "type": "number",
+       "topic": "electricity",
+       "prompt": "A copper wire is 2 m long with a cross-section of 1 mm². Copper's resistivity is 1.68 × 10⁻⁸ Ω·m. What is its resistance, in milliohms?",
+       "answerNumber": 33.6,
+       "tolerance": 0.2,
+       "answerValue": "33.6",
+       "explain": "R = ρL/A. Watch the units: 1 mm² is 1 × 10⁻⁶ m², not 1 × 10⁻³. So R = 1.68 × 10⁻⁸ × 2 / 1 × 10⁻⁶ = 0.0336 Ω = 33.6 mΩ. Ordinary wire has a resistance in milliohms, which is why we can usually pretend connecting wire has none at all."
+      },
+      {
+       "id": "el_resistivity_property",
+       "type": "truefalse",
+       "topic": "electricity",
+       "prompt": "Resistivity belongs to the material, while resistance depends on the shape of the particular piece as well.",
+       "statement": "Resistivity belongs to the material, while resistance depends on the shape of the particular piece as well.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "TRUE, and keeping the two apart matters. Resistivity ρ is a property of copper itself and is the same for every piece of it. Resistance is ρL/A, so the SAME copper can be given almost any resistance you like by choosing how long and how thick to draw it. That is why a thin filament and a fat cable made of the same metal behave so differently."
+      },
+      {
        "id": "el_emf",
        "type": "number",
        "topic": "electricity",
