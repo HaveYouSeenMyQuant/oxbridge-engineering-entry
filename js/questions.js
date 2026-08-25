@@ -3734,6 +3734,26 @@ window.QQ_DATA = {
        "explain": "TRUE. Conduction needs matter in contact and convection needs a fluid to move; both stop dead in a vacuum. Radiation is light, and light needs nothing to travel through — which is how the Sun's heat reaches us across empty space, and why a vacuum flask is silvered rather than merely sealed."
       },
       {
+       "id": "th_radiation_ratio",
+       "type": "number",
+       "topic": "thermal",
+       "prompt": "A body at 300 K is heated to 900 K. By what factor does the power it radiates go up?",
+       "answerNumber": 81.0,
+       "tolerance": 0.5,
+       "answerValue": "81",
+       "explain": "81. Three times the absolute temperature, and the fourth power turns that into 3⁴. This is why a filament barely warm to look at becomes blinding over a fairly small change in temperature."
+      },
+      {
+       "id": "th_dull_red_infrared",
+       "type": "truefalse",
+       "topic": "thermal",
+       "prompt": "A bar glowing dull red radiates more power as infrared than as visible light.",
+       "statement": "A bar glowing dull red radiates more power as infrared than as visible light.",
+       "answerBool": true,
+       "answerValue": "TRUE",
+       "explain": "Comfortably more. At around 1000 K the peak sits near 2900 nm, deep in the infrared, and the visible red you can see is only the short-wavelength tail of the curve. That is why a red-hot bar feels hot from a distance long before it looks bright."
+      },
+      {
        "id": "th_hotter_longer",
        "type": "truefalse",
        "topic": "thermal",
@@ -4394,6 +4414,56 @@ window.QQ_DATA = {
         "vUnit": "m/s",
         "reveal": true
        }
+      },
+      {
+       "id": "wa_echo_depth",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "A ship pings the seabed and hears the echo 0.40 s later. Sound travels at 1500 m/s in water. How deep is it, in metres?",
+       "answerNumber": 300.0,
+       "tolerance": 0.5,
+       "answerValue": "300",
+       "explain": "300 m, not 600. The sound made the trip TWICE - down and back - so the time you measure covers twice the depth. Halving it is the whole of echo ranging, and it is the step people drop."
+      },
+      {
+       "id": "wa_echo_whole_time",
+       "type": "truefalse",
+       "topic": "waves",
+       "prompt": "To find the distance to a reflector, multiply the speed of sound by the whole time from ping to echo.",
+       "statement": "To find the distance to a reflector, multiply the speed of sound by the whole time from ping to echo.",
+       "answerBool": false,
+       "answerValue": "FALSE",
+       "explain": "That gives the round TRIP, which is twice the distance. Halve it. The same applies to radar, lidar and a bat: anything that finds range by listening for its own reflection."
+      },
+      {
+       "id": "wa_thunder_gap",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "You see the flash and hear the thunder 6.0 s later. Taking sound as 340 m/s, how far away was the strike, in kilometres?",
+       "answerNumber": 2.04,
+       "tolerance": 0.05,
+       "answerValue": "2.04",
+       "explain": "2.04 km. Light crosses that distance in about 7 microseconds, so the flash is effectively instant and the whole delay belongs to the sound. Three seconds to the kilometre is the usual rule of thumb, and this is where it comes from."
+      },
+      {
+       "id": "wa_standing_spacing",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "In a standing wave the hotspots sit half a wavelength apart. Melted spots in a microwave are 6.1 cm apart. What is the wavelength, in centimetres?",
+       "answerNumber": 12.2,
+       "tolerance": 0.05,
+       "answerValue": "12.2",
+       "explain": "12.2 cm. Neighbouring antinodes are half a wavelength apart, so the spacing you can measure with a bar of chocolate is half the answer - double it."
+      },
+      {
+       "id": "wa_microwave_freq",
+       "type": "number",
+       "topic": "waves",
+       "prompt": "Those hotspots give a wavelength of 12.2 cm. Taking the speed of light as 3×10⁸ m/s, what frequency is the oven running at, in gigahertz?",
+       "answerNumber": 2.459016393442623,
+       "tolerance": 0.03,
+       "answerValue": "2.45902",
+       "explain": "2.46 GHz, which is what the plate on the back of the oven says. A bar of chocolate and a ruler measure the speed of light to within a few per cent, which is the point of the experiment."
       }
      ]
     },
