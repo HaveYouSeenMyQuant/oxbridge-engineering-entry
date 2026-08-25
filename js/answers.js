@@ -16,8 +16,79 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 169,
+ "count": 170,
  "entries": [
+  {
+   "slug": "it_sits_over_one_spot_all_day",
+   "title": "It sits over one spot all day",
+   "ts": "2026-08-25T17:35:16+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ABOUT 3,075 METRES PER SECOND — roughly 11,000 km/h, which is around nine times the speed of sound.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    orbit radius       42,164 km from the Earth's CENTRE",
+      "    one lap            23 h 56 min (a sidereal day, not 24 h)",
+      "    speed = 2πr / T    = 3,075 m/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"ZERO\" IS THE ANSWER THE WORD INVITES. Geostationary means stationary with respect to THE GROUND, and to nothing else. The satellite and the dish pointing at it are both being carried round by the same rotation; neither is standing still in any other sense. If it really were motionless it would fall straight down, because nothing is holding it up — it stays up by moving sideways fast enough to keep missing."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY 465 M/S IS THE CLEVER ANSWER, AND WHAT IT DROPS. It is the speed of the equator itself, and the reasoning behind it is right: same angular speed, one lap a day, which is exactly why the satellite keeps station. What it drops is the radius. The satellite goes round a circle 6.6 times bigger in the very same time:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    the equator          6,371 km   ->    465 m/s",
+      "    the satellite       42,164 km   ->  3,075 m/s",
+      "    ratio                42,164 / 6,371 = 6.62"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Same angular speed, six and a half times the distance, six and a half times the speed."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE SIDEREAL DAY. The satellite must keep pace with the Earth's rotation relative to the stars, not to the Sun, and those differ by about four minutes a day because the Earth is also going round the Sun. Using 24 hours instead puts the orbit 77 km too high — small, but it is the difference between holding station and drifting slowly out of position."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT IT COSTS TO BE UP THERE. Thirty-six thousand kilometres is far: the round trip for a signal is about a quarter of a second, which is why a satellite phone call has that pause in it, and why nobody plays a fast game over one."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_orbit_speed",
+    "lesson": "p8",
+    "unit": 8,
+    "prompt": "A satellite orbits at a radius of 7 000 km, where gravity gives an acceleration of 8 m/s². How fast is it going, in km/s, to two significant figures?"
+   }
+  },
   {
    "slug": "the_battery_reads_lower_under_load",
    "title": "The battery reads lower under load",
