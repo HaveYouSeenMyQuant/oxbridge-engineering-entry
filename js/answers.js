@@ -16,8 +16,76 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 159,
+ "count": 160,
  "entries": [
+  {
+   "slug": "one_trolley_hits_a_still_one",
+   "title": "One trolley hits a still one",
+   "ts": "2026-08-25T10:35:38+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "EXACTLY HALF OF IT. Not most, not nearly all — half, and half of it is gone for good as heat, sound and bent buffers.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    before   one trolley moving, one still     8 J",
+      "    after    both moving together              4 J"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"ALL OF IT\" IS THE ANSWER MOST GOOD STUDENTS GIVE. Energy IS conserved. Nothing was destroyed. But KINETIC energy is not a conserved quantity, and the question asks about kinetic energy specifically. The missing half is still in the room — it is in the warmth of the buffers, the bang you heard, and the metal that is now very slightly bent. This is the difference between \"energy is conserved\" and \"kinetic energy is conserved\", and only the first is a law."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"A QUARTER\" IS THE OTHER GOOD WRONG ANSWER. The trolleys leave at half the speed, and kinetic energy goes as speed squared, so a quarter feels right. It drops one term: the moving MASS has doubled. Half the speed squared is a quarter, times twice the mass, is a half."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT MOMENTUM DOES MEANWHILE. It is untouched — 4 kg m/s before, 4 kg m/s after. Two conservation laws walk into this collision and only one walks out, which is exactly why you have to know which one you are allowed to use."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE SPEED DOES NOT MATTER, AND THAT IS THE REAL POINT. Try it at 1 m/s or at 100 m/s: still exactly half. The speed cancels, and what is left depends only on the masses:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    fraction left = m(moving) / (m(moving) + m(still))"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So identical trolleys always lose half. A moving trolley hitting a stationary one of TWICE its mass keeps a third. Hitting one of nine times its mass keeps a tenth — which is why a small thing hitting a big thing is such an efficient way to turn motion into heat, and why that is exactly how a forging hammer is supposed to work."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_ke_conserved",
+    "lesson": "p3",
+    "unit": 8,
+    "prompt": "Kinetic energy is conserved when two objects stick together in a collision."
+   }
+  },
   {
    "slug": "stretch_the_wire_to_twice_its_length",
    "title": "Stretch the wire to twice its length",
