@@ -16,8 +16,83 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 165,
+ "count": 166,
  "entries": [
+  {
+   "slug": "swap_the_lamp_for_a_brighter_red",
+   "title": "Swap the lamp for a brighter red",
+   "ts": "2026-08-25T14:55:11+00:00",
+   "date": "25 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "NONE. Not fewer — none at all, however long you leave it and however bright you make it.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "ONE ELECTRON ABSORBS ONE PHOTON. That is the whole thing. Light arrives in lumps, and an electron takes a lump or it takes nothing; it cannot save up two small ones. So what matters is the energy of a SINGLE photon, and that depends on the colour alone:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    E = hc / lambda"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    blue  450 nm  ->  2.757 eV",
+      "    red   650 nm  ->  1.909 eV"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The metal holds its electrons with a work function of about 2.30 eV. Blue clears it with 0.46 eV to spare, which the electron keeps as speed. Red is 0.39 eV short, and being short is fatal: a photon that cannot free an electron does nothing at all. Turning the red lamp up sends MORE photons, each still too small. A hundred times nothing is nothing."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"A HUNDRED TIMES MORE\" IS NOT A SILLY ANSWER. It is what classical physics predicts, and predicts confidently. If light were a wave, energy would arrive smoothly, an electron would soak it up until it had enough, and a brighter lamp would simply mean a shorter wait. That is a clean, sensible theory, and this experiment is where it died — not on a technicality, but because the wait never ends no matter how bright the lamp gets."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY \"ABOUT SEVEN TENTHS AS MANY\" IS THE BETTER MISTAKE. Knowing E = hf and scaling by it gives 1.909/2.757 = 0.692, so about seven tenths. That is a real calculation on real numbers, and it is the answer you give if you have the formula but not the THRESHOLD. Below the threshold the ratio is not small, it is zero — the behaviour changes kind, not just size."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE THRESHOLD IS A WAVELENGTH YOU CAN NAME: 539 nm for this metal, which is green. Every colour bluer than that works at any brightness; every colour redder fails at any brightness. That cliff edge is the fingerprint of light being lumpy, and it is why this experiment, not the double slit, is what won Einstein the Nobel Prize."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE ASSUMPTION DOING THE WORK: one photon per electron. At the intensity of a laboratory lamp that is right. Fire a strong enough laser and two photons can arrive at one electron close enough together to add up — two-photon photoemission is real, and it takes an intensity roughly a billion times higher than anything in this scene."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "wa_light_wavelength",
+    "lesson": "w1",
+    "unit": 11,
+    "prompt": "Light travels at 3×10⁸ m/s. What is the wavelength of light of frequency 5×10¹⁴ Hz, in nanometres?"
+   }
+  },
   {
    "slug": "hold_a_thumb_up_and_swap_eyes",
    "title": "Hold a thumb up and swap eyes",
