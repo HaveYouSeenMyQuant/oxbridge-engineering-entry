@@ -5045,7 +5045,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_pizzas",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "A shop offers eight toppings. How many different pizzas have exactly three different toppings?"
+   }
   },
   {
    "slug": "the_gap_between_two_dice",
@@ -7359,7 +7365,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "lg_compound",
+    "lesson": "g3",
+    "unit": 7,
+    "prompt": "£1000 grows at 5% a year for 10 years. What is it worth, to the nearest pound?"
+   }
   },
   {
    "slug": "six_panels_how_many_posts",
