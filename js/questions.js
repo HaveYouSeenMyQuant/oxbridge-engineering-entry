@@ -4659,7 +4659,7 @@ window.QQ_DATA = {
        "id": "wa_microwave_freq",
        "type": "number",
        "topic": "waves",
-       "prompt": "Those hotspots give a wavelength of 12.2 cm. Taking the speed of light as 3×10⁸ m/s, what frequency is the oven running at, in gigahertz?",
+       "prompt": "Those hotspots give a wavelength of 12.2 cm. Taking the speed of light as 3×10⁸ m/s, what frequency is the oven running at, in gigahertz, to two decimal places?",
        "answerNumber": 2.459016393442623,
        "tolerance": 0.03,
        "answerValue": "2.45902",
