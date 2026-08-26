@@ -299,7 +299,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_pascal_row",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "In Pascal's triangle, the top row is row 0. What do the entries in row 10 add up to?"
+   }
   },
   {
    "slug": "swap_the_lamp_for_a_brighter_red",
@@ -4272,7 +4278,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_both_red",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "A bag holds 4 red and 6 blue counters. Two are taken out without replacement. What is the probability both are red? Give it as a decimal to three places."
+   }
   },
   {
    "slug": "weigh_yourself_for_your_heart",
@@ -4449,7 +4461,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_pizzas",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "A shop offers eight toppings. How many different pizzas have exactly three different toppings?"
+   }
   },
   {
    "slug": "the_frog_comes_home",
@@ -4590,7 +4608,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_at_least_one",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "A fair die is rolled three times. What is the probability of at least one six? Give it as a decimal to three places."
+   }
   },
   {
    "slug": "which_light_do_you_meet",
@@ -4722,7 +4746,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_double_or_six",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "Two fair dice are thrown. What is the probability of a double OR at least one six? Give it as a decimal to three places."
+   }
   },
   {
    "slug": "the_letters_of_banana",

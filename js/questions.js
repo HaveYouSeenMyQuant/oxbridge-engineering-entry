@@ -5599,6 +5599,73 @@ window.QQ_DATA = {
      ]
     }
    ]
+  },
+  {
+   "id": "u_probability",
+   "index": 13,
+   "title": "Probability",
+   "subtitle": "Counting, overlap and chance — ESAT maths, and the topic this bank was missing.",
+   "colour": "#5fd39b",
+   "free": false,
+   "syllabus": "ESAT",
+   "lessons": [
+    {
+     "id": "pb1",
+     "title": "Counting and chance",
+     "questions": [
+      {
+       "id": "pb_at_least_one",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "A fair die is rolled three times. What is the probability of at least one six? Give it as a decimal to three places.",
+       "answerNumber": 0.421,
+       "tolerance": 0.002,
+       "answerValue": "0.421",
+       "explain": "Do the opposite. The chance of NO six on one roll is 5/6, so on three rolls it is (5/6)³ = 125/216. At least one six is everything else: 1 − 125/216 = 91/216 = 0.421. Adding 1/6 three times gives 0.5 and is wrong — those three events overlap, and you would be counting the overlaps twice."
+      },
+      {
+       "id": "pb_double_or_six",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "Two fair dice are thrown. What is the probability of a double OR at least one six? Give it as a decimal to three places.",
+       "answerNumber": 0.444,
+       "tolerance": 0.002,
+       "answerValue": "0.444",
+       "explain": "Count them. Doubles: 6 of the 36. At least one six: 11 of the 36. But (6,6) is in both lists, so it has been counted twice: 6 + 11 − 1 = 16, and 16/36 = 4/9 = 0.444. Subtracting the overlap is the whole trick, and forgetting it gives 17/36."
+      },
+      {
+       "id": "pb_pizzas",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "A shop offers eight toppings. How many different pizzas have exactly three different toppings?",
+       "answerNumber": 56.0,
+       "tolerance": 0.5,
+       "answerValue": "56",
+       "explain": "Choose 3 from 8 where order does not matter: 8×7×6 = 336 ordered picks, but each set of three has been counted 3×2×1 = 6 times, so 336/6 = 56. If order DID matter the answer would be 336 — the divide-by-six is the difference between a pizza and a podium."
+      },
+      {
+       "id": "pb_pascal_row",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "In Pascal's triangle, the top row is row 0. What do the entries in row 10 add up to?",
+       "answerNumber": 1024.0,
+       "tolerance": 0.5,
+       "answerValue": "1024",
+       "explain": "2¹⁰ = 1024. Every row doubles the one above it, because each entry gets copied into the two below. It also counts something real: row 10 adds up to the number of ways to answer ten yes-or-no questions, which is 2 × 2 × ... ten times."
+      },
+      {
+       "id": "pb_both_red",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "A bag holds 4 red and 6 blue counters. Two are taken out without replacement. What is the probability both are red? Give it as a decimal to three places.",
+       "answerNumber": 0.133,
+       "tolerance": 0.002,
+       "answerValue": "0.133",
+       "explain": "The first is red with probability 4/10. Given that, only 3 reds are left among 9 counters, so the second is red with probability 3/9. Multiply: (4/10)(3/9) = 12/90 = 2/15 = 0.133. Using 4/10 twice gives 0.16 and quietly assumes you put the first counter back."
+      }
+     ]
+    }
+   ]
   }
  ]
 };
