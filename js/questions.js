@@ -5654,6 +5654,46 @@ window.QQ_DATA = {
        "explain": "2¹⁰ = 1024. Every row doubles the one above it, because each entry gets copied into the two below. It also counts something real: row 10 adds up to the number of ways to answer ten yes-or-no questions, which is 2 × 2 × ... ten times."
       },
       {
+       "id": "pb_queue_orders",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "Six people queue at a bus stop. In how many different orders can they stand?",
+       "answerNumber": 720.0,
+       "tolerance": 0.5,
+       "answerValue": "720",
+       "explain": "6 x 5 x 4 x 3 x 2 x 1 = 720. Six choices for who is first, five left for second, and so on down to one. Written 6! and read 'six factorial'. Notice how fast it climbs: seven people is 5,040, and ten is over three million."
+      },
+      {
+       "id": "pb_podium",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "Eight runners race. How many different ways can the gold, silver and bronze be handed out?",
+       "answerNumber": 336.0,
+       "tolerance": 0.5,
+       "answerValue": "336",
+       "explain": "8 x 7 x 6 = 336. Eight could take gold, seven are left for silver, six for bronze. Here ORDER MATTERS -- gold for A and silver for B is a different outcome from the other way round. That is the whole difference from choosing three runners to interview, which is 56."
+      },
+      {
+       "id": "pb_letter_words",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "How many different arrangements are there of the six letters in the word LETTER?",
+       "answerNumber": 180.0,
+       "tolerance": 0.5,
+       "answerValue": "180",
+       "explain": "If all six letters were different it would be 6! = 720. But swapping the two E's changes nothing you can see, and nor does swapping the two T's, so every visible arrangement has been counted 2 x 2 = 4 times: 720 / 4 = 180. Divide by the factorial of each repeat."
+      },
+      {
+       "id": "pb_two_together",
+       "type": "number",
+       "topic": "probability",
+       "prompt": "Five friends line up, but two of them insist on standing next to each other. How many orders are there now?",
+       "answerNumber": 48.0,
+       "tolerance": 0.5,
+       "answerValue": "48",
+       "explain": "Glue the pair together and treat them as one person: four things to arrange, 4! = 24. Then the glued pair can be in either order, so double it: 48. Out of the 120 orders five people have, 48 keep those two together -- which is two in five, not the one in five most people guess."
+      },
+      {
        "id": "pb_both_red",
        "type": "number",
        "topic": "probability",

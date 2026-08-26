@@ -4388,7 +4388,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_queue_orders",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "Six people queue at a bus stop. In how many different orders can they stand?"
+   }
   },
   {
    "slug": "how_many_different_pizzas",
@@ -4813,7 +4819,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_letter_words",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "How many different arrangements are there of the six letters in the word LETTER?"
+   }
   },
   {
    "slug": "every_hand_in_the_room",
