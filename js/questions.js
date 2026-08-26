@@ -3661,6 +3661,46 @@ window.QQ_DATA = {
        "explain": "About eight times. The dip of a cantilever goes as delta = F L³ / (3 E I), so it depends on the CUBE of the length: double the length and you multiply the dip by 2³ = 8. Two is the intuitive answer and four is the answer that sounds like it has had some thought put into it. Both are wrong for the same reason — the length enters three separate times, and they multiply."
       },
       {
+       "id": "ma_energy",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "That same rod stretches 2 mm under a 2000 N pull. How much energy is stored in it, in joules?",
+       "answerNumber": 2.0,
+       "tolerance": 0.02,
+       "answerValue": "2",
+       "explain": "Energy = half x force x extension = 0.5 x 2000 x 0.002 = 2 J. The half is the whole point: the force starts at zero and grows to 2000 N as the rod stretches, so the average force doing the work is 1000 N, not 2000. This is also why a snapping cable is dangerous — that stored energy has to go somewhere."
+      },
+      {
+       "id": "ma_break_force",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A wire breaks at a stress of 400 MPa. Its cross-section is 2 mm². What pull breaks it, in newtons?",
+       "answerNumber": 800.0,
+       "tolerance": 1.0,
+       "answerValue": "800",
+       "explain": "Force = stress x area = 400 x 10⁶ x 2 x 10⁻⁶ = 800 N. Watch the millimetres: 2 mm² is 2 x 10⁻⁶ m², not 2 x 10⁻³. Getting that wrong by a factor of a thousand is the commonest way to lose this mark."
+      },
+      {
+       "id": "ma_on_edge",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "A plank is 50 mm wide and 200 mm deep. Laid flat it sags; turned on edge it sags less. How many times stiffer is it on edge?",
+       "answerNumber": 16.0,
+       "tolerance": 0.1,
+       "answerValue": "16",
+       "explain": "Stiffness goes with the second moment of area, b d³/12, and the DEPTH is cubed. On edge: 50 x 200³. Flat: 200 x 50³. The ratio is 16. Same plank, same wood, same weight — turned a quarter turn and sixteen times stiffer. It is why floor joists stand on edge and why an I-beam puts its metal at the top and bottom rather than in the middle."
+      },
+      {
+       "id": "ma_thicker_wire",
+       "type": "number",
+       "topic": "mechanics",
+       "prompt": "Two wires of the same material and length hang the same load. One has twice the diameter of the other. How many times LESS does the thick one stretch?",
+       "answerNumber": 4.0,
+       "tolerance": 0.05,
+       "answerValue": "4",
+       "explain": "Twice the diameter is four times the area, so a quarter of the stress. Same material means the same Young's modulus, so a quarter of the strain, so a quarter of the stretch — four times less. Note it is the AREA that matters, not the diameter, which is why doubling a cable's thickness buys far more than doubling its strength suggests."
+      },
+      {
        "id": "ma_scale_both",
        "type": "choice",
        "topic": "mechanics",
