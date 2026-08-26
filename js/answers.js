@@ -4874,7 +4874,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_pizzas",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "A shop offers eight toppings. How many different pizzas have exactly three different toppings?"
+   }
   },
   {
    "slug": "every_route_to_the_corner",
@@ -4960,7 +4966,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_pascal_row",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "In Pascal's triangle, the top row is row 0. What do the entries in row 10 add up to?"
+   }
   },
   {
    "slug": "one_seat_is_already_taken",
@@ -5087,7 +5099,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_double_or_six",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "Two fair dice are thrown. What is the probability of a double OR at least one six? Give it as a decimal to three places."
+   }
   },
   {
    "slug": "each_line_describes_the_last",
@@ -5709,7 +5727,13 @@ window.QQ_ANSWERS = {
      ]
     }
    ],
-   "src": "answer"
+   "src": "answer",
+   "road": {
+    "qid": "pb_pascal_row",
+    "lesson": "pb1",
+    "unit": 13,
+    "prompt": "In Pascal's triangle, the top row is row 0. What do the entries in row 10 add up to?"
+   }
   },
   {
    "slug": "sixty_in_the_pub_all_night",
