@@ -16,8 +16,77 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 170,
+ "count": 171,
  "entries": [
+  {
+   "slug": "a_bar_of_chocolate_in_the_microwave",
+   "title": "A bar of chocolate in the microwave",
+   "ts": "2026-08-27T19:43:37+00:00",
+   "date": "27 Aug 2026",
+   "topic": "real_world",
+   "q": null,
+   "a": "ABOUT 6 CENTIMETRES — 6.1 cm, to be exact.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    wavelength  =  c / f  =  3.0 x 10⁸ / 2.45 x 10⁹  =  12.2 cm",
+      "    hot spots sit at the ANTINODES, one every HALF wavelength",
+      "    spacing  =  12.2 / 2  =  6.1 cm"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THERE IS A PATTERN AT ALL. The oven is a metal box, and metal reflects microwaves. The wave bounces back on itself and interferes with its own reflection, which is a standing wave — fixed places where the field is always huge and fixed places where it is always nearly nothing. The chocolate melts where the field is huge. That is the entire reason a microwave has a turntable: not to cook evenly by magic, but to drag the food through a pattern that will not move."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY 12 CM IS THE GOOD WRONG ANSWER. It is the wavelength, and it is the right number to have worked out — it just is not the spacing. Antinodes come twice per wavelength, once at each bulge of the wave, so they are half a wavelength apart. The same factor of two catches people on strings and organ pipes."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "NOW TURN IT ROUND, BECAUSE THIS IS THE GOOD PART. Measure the gap between the melted patches yourself, multiply by two to get the wavelength, and multiply by the frequency written on the back of the oven:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    c  =  2 x 0.0612 m x 2.45 x 10⁹ Hz  =  3.00 x 10⁸ m/s"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is the speed of light, to three significant figures, from a bar of chocolate and a ruler. It is a real measurement and not a trick: the same standing wave that ruins your reheating is a metre rule laid against the electromagnetic spectrum."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT TO ACTUALLY DO. Take the turntable out, lay the bar flat, and give it about twenty seconds — you want soft patches, not a puddle. The gaps are clearest on a wide thin bar."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "wa_speed",
+    "lesson": "w1",
+    "unit": 11,
+    "prompt": "A wave has frequency 50 Hz and wavelength 6 m. What is its speed, in m/s?"
+   }
+  },
   {
    "slug": "it_sits_over_one_spot_all_day",
    "title": "It sits over one spot all day",
