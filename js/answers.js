@@ -16,8 +16,78 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 187,
+ "count": 188,
  "entries": [
+  {
+   "slug": "twice_the_ice_four_times_the_load",
+   "title": "Twice the ice, four times the load",
+   "ts": "2026-08-29T05:02:09+00:00",
+   "date": "29 Aug 2026",
+   "topic": "materials",
+   "q": null,
+   "a": "Four times. The load goes as the SQUARE of the thickness, not in step with it.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The working rule for clear ice is Gold's:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    safe load in kg = 3.5 x (thickness in cm)^2"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    5 cm    88 kg    one person, and not with any margin",
+      "    10 cm   350 kg   a small group",
+      "    15 cm   788 kg   a quad bike",
+      "    20 cm  1400 kg   a small car"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So the honest question is never \"is the ice thick enough\" but \"thick enough for what\". Going from 5 cm to 10 cm does not double what it holds; it quadruples it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY SQUARED. The ice is a floating plate and it fails by BENDING, not by crushing or by running out of buoyancy. A plate's resistance to bending rises with the square of its thickness, for the same reason a plank on edge is stiffer than one laid flat: the material furthest from the middle does the most work, and thickening the plate moves more material further out."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PART THAT CATCHES PEOPLE OUT. Buoyancy is not the mechanism. A 5 cm sheet displaces plenty of water to float a person — it simply breaks first. Reasoning from flotation gives an answer that is far too optimistic and the wrong shape."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. When something carries load by bending — ice, a plank, a beam, a phone screen — expect thickness to appear squared, and check the exponent before trusting a rule of thumb. Half the thickness is a quarter of the strength."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "ma_cantilever",
+    "lesson": "p9",
+    "unit": 8,
+    "prompt": "A diving board dips a certain amount with someone standing on the end. Replace it with a board of the same width and thickness but TWICE the length. How much further does the end dip, with the same person on it?"
+   }
+  },
   {
    "slug": "the_charged_one_is_heavier",
    "title": "The charged one is heavier",
