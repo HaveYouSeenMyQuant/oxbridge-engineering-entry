@@ -16,8 +16,71 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 188,
+ "count": 189,
  "entries": [
+  {
+   "slug": "the_rust_weighs_more",
+   "title": "The rust weighs more",
+   "ts": "2026-08-29T05:54:03+00:00",
+   "date": "29 Aug 2026",
+   "topic": "chemistry",
+   "q": null,
+   "a": "Heavier. 10 g of nail becomes 14.30 g of rust — 43% more than it started.",
+   "why": [
+    {
+     "h": "WHERE THE EXTRA COMES FROM",
+     "t": "p",
+     "lines": [
+      "Red rust is Fe2O3: two iron atoms take on three oxygens. Oxygen weighs 15.999 against iron's 55.845, so per gram of iron consumed you get 1.4297 g of oxide. Nothing has been lost — three-quarters of a gram of oxygen has been added for every two grams of iron."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Corrosion looks like loss because rust flakes off and blows away. The mass leaves the NAIL. It does not leave the experiment."
+     ]
+    },
+    {
+     "h": "THE EXPERIMENT THAT SETTLES IT",
+     "t": "p",
+     "lines": [
+      "Lavoisier's version: seal the whole thing in a jar and weigh the jar. The total changes by exactly 0.0 g. The nail gains 4.30 g and the air inside loses the same 4.30 g, because the oxygen was in the jar all along."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The 43% only appears when you weigh the nail and quietly leave one of the reactants off the scales."
+     ]
+    },
+    {
+     "h": "WHICH OXIDE MATTERS",
+     "t": "p",
+     "lines": [
+      "Get the formula wrong and the answer changes:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    FeO      x 1.286",
+      "    Fe3O4    x 1.382",
+      "    Fe2O3    x 1.430   <- ordinary red rust"
+     ]
+    },
+    {
+     "h": "THE TRANSFERABLE MOVE",
+     "t": "p",
+     "lines": [
+      "When something appears to lose mass, check whether the thing it reacted with was ever on the scales. Most \"losses\" are a boundary drawn around part of a system."
+     ]
+    }
+   ],
+   "src": "answer"
+  },
   {
    "slug": "twice_the_ice_four_times_the_load",
    "title": "Twice the ice, four times the load",
