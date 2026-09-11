@@ -16,8 +16,68 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 199,
+ "count": 200,
  "entries": [
+  {
+   "slug": "the_monkey_and_the_sandbag",
+   "title": "The monkey and the sandbag",
+   "ts": "2026-09-11T16:05:04+00:00",
+   "date": "11 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "The sandbag rises too — at exactly the same rate as the monkey. They stay level with each other the whole way up, however fast or slowly the monkey climbs.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY. The wheel turns freely, so it cannot make the rope pull harder on one side than the other. There is one pull in that rope and both ends feel it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Write down what each end feels. The monkey feels that pull upward and its own weight downward. The sandbag feels the same pull upward and its own weight downward. The weights are equal, so the two ends are being pushed around by identical amounts — and they respond identically. Whatever the monkey does to itself, it does to the sandbag at the same instant."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So the monkey can scramble, or inch up, or stop dead. The gap between it and the sandbag never changes."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE PART THAT CATCHES PEOPLE OUT. Almost everyone's instinct is that climbing \"uses up\" the balance somehow — that the monkey pulls itself past the sandbag, or that the sandbag drops as the monkey rises. Both picture the rope as something the monkey can act on without the sandbag noticing. It cannot. Pulling harder to climb is the same act as pulling the sandbag up harder."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Worth noticing what the answer does NOT depend on: how heavy they are, how fast the monkey climbs, or whether it climbs smoothly. Only that the two weights are equal."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. When a single rope, shaft or wire connects two things through something that turns freely, the first question is always \"is it the same pull at both ends?\" If it is, the two ends are not two problems. They are one."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_hydraulic",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "A hydraulic jack has pistons of 2 cm² and 50 cm². You push the small one with 20 N. What force does the large one deliver, in newtons?"
+   }
+  },
   {
    "slug": "the_sand_does_not_care",
    "title": "The sand does not care",
