@@ -21,7 +21,7 @@ window.QQ_ANSWERS = {
   {
    "slug": "the_hole_in_the_window",
    "title": "The hole in the window",
-   "ts": "2026-09-12T14:44:13+00:00",
+   "ts": "2026-09-12T14:46:50+00:00",
    "date": "12 Sep 2026",
    "topic": "engineering",
    "q": null,
