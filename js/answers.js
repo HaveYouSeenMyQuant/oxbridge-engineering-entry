@@ -16,8 +16,68 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 202,
+ "count": 203,
  "entries": [
+  {
+   "slug": "twice_as_tall_a_quarter_the_load",
+   "title": "Twice as tall, a quarter the load",
+   "ts": "2026-09-12T17:18:39+00:00",
+   "date": "12 Sep 2026",
+   "topic": "materials",
+   "q": null,
+   "a": "A quarter. Double the height and the load it carries before it goes drops to one in four, not one in two.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A slender strut does not fail by being crushed. It fails by bowing sideways, all at once, and the load that starts that bow is Euler's:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P = pi^2 x E x I / L^2"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "E is the stiffness of the material, I is a number describing the shape of the cross-section, and L is the length. Length is the only one of the three that is squared, which is where the factor of four comes from."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "HOW FAR BELOW CRUSHING THIS IS. Take a steel strip 20 mm x 3 mm, one metre long. It bows at about 89 newtons - roughly the weight of a nine-kilogram bag. To actually crush the same strip you would need about 15,000 newtons. It gives way at well under one per cent of the load that would squash it, so the strength of the steel is almost irrelevant to how much it holds."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHICH WAY IT BENDS. The strip bows the easy way, across its thin dimension, because I is proportional to the cube of the thickness in the direction of bending. Turn the strip on edge and it takes far more - which is why a floor joist is deep and narrow rather than square."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. When something fails by bending rather than breaking, look for length in the formula and check its exponent before you check the material. Making the strut out of better steel does almost nothing here. Making it shorter, or bracing it across the middle so it behaves as two short struts, does everything - and that is why scaffolding gets a brace rather than thicker tubes."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "ma_cantilever",
+    "lesson": "p9",
+    "unit": 8,
+    "prompt": "A diving board dips a certain amount with someone standing on the end. Replace it with a board of the same width and thickness but TWICE the length. How much further does the end dip, with the same person on it?"
+   }
+  },
   {
    "slug": "no_spark_plug_anywhere",
    "title": "No spark plug anywhere",
