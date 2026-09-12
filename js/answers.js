@@ -16,8 +16,61 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 200,
+ "count": 201,
  "entries": [
+  {
+   "slug": "the_hole_in_the_window",
+   "title": "The hole in the window",
+   "ts": "2026-09-12T14:44:13+00:00",
+   "date": "12 Sep 2026",
+   "topic": "engineering",
+   "q": null,
+   "a": "It decides which pane carries the load - and the answer is the OUTER one.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "At cruise the cabin is held at about 8,000 ft while the air outside is at 38,000 ft. From the standard atmosphere that is 75.3 kPa inside against 20.6 kPa outside: a difference of about 55 kPa. On a pane roughly 250 by 350 mm that is 4.8 kN, the weight of about 490 kg pressing outwards on the glass."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Something has to take that. The hole - the bleed hole - lets cabin air into the gap between the outer and middle panes, so the gap sits at cabin pressure. The full 55 kPa therefore falls across the OUTER pane alone, and the middle pane has almost nothing across it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THAT IS THE SAFE ARRANGEMENT. The outer pane is the thickest and is designed for the whole load. The middle pane carries nothing in normal flight, so it is unstressed, undamaged and ready: if the outer pane ever fails, the middle one takes over having spent the flight doing no work at all. Without the hole the load would divide between the two in a way nobody could rely on, and both would be part-worn."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The hole does a second job for free: it lets moisture out of the gap, which is why the window does not fog between the panes."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. In any sealed stack, ask where the pressure is allowed to equalise. That single choice, not the strength of the parts, is what decides which part is carrying the load - and a deliberate leak is often the cheapest way to make a spare genuinely spare."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_hydrostatic",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "How much does the pressure increase 10 m below the surface of water? Take ρ = 1000 kg/m³ and g = 10. Give your answer in kilopascals."
+   }
+  },
   {
    "slug": "the_monkey_and_the_sandbag",
    "title": "The monkey and the sandbag",
