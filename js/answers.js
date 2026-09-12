@@ -16,8 +16,68 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 201,
+ "count": 202,
  "entries": [
+  {
+   "slug": "no_spark_plug_anywhere",
+   "title": "No spark plug anywhere",
+   "ts": "2026-09-12T15:50:44+00:00",
+   "date": "12 Sep 2026",
+   "topic": "thermodynamics",
+   "q": null,
+   "a": "The squeezing does. Compressing the air to a twentieth of its volume takes it to roughly 720 C, and diesel lights at about 250 C.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Squeeze a gas quickly and you do work on it. That work has nowhere to go - there is no time for heat to escape through the cylinder walls - so it all ends up as the energy of the molecules, which is what temperature measures. This is an adiabatic compression, and for it:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    T2 = T1 x r^(gamma - 1)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "with r the compression ratio and gamma 1.4 for air. At r = 20 that is 20^0.4 = 3.31, so 300 K becomes about 994 K, which is 721 C. Nearly three times what the fuel needs."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY IT IS NOT JUST THE PRESSURE. People often say the fuel is lit by the pressure. Pressure alone does not ignite anything - a gas cylinder sits at 200 atmospheres in the corner of a workshop and stays cold. What matters is that the air was heated in the act of being compressed."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE CHECK WORTH KNOWING. The same number arrives by a different road. The pressure rises by r^gamma = 20^1.4 = 66 times, and the volume falls to 1/20, so T2/T1 = 66/20 = 3.31 - the same factor, from the ideal gas law rather than the adiabatic temperature relation."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. Whenever a gas is compressed fast enough that heat cannot escape, expect the temperature to rise, and expect it to rise as the ratio to the power of about 0.4. It is why a bicycle pump gets hot near the valve, and why diesels need no ignition system at all."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "th_specific_heat",
+    "lesson": "h1",
+    "unit": 9,
+    "prompt": "How much energy does it take to warm 2 kg of water by 30 °C? Water's specific heat capacity is 4200 J/kg°C. Give your answer in kilojoules."
+   }
+  },
   {
    "slug": "the_hole_in_the_window",
    "title": "The hole in the window",
