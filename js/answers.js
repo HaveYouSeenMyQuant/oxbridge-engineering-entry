@@ -21,7 +21,7 @@ window.QQ_ANSWERS = {
   {
    "slug": "the_bars_go_where_it_stretches",
    "title": "The bars go where it stretches",
-   "ts": "2026-09-12T18:23:25+00:00",
+   "ts": "2026-09-12T18:25:34+00:00",
    "date": "12 Sep 2026",
    "topic": "materials",
    "q": null,
