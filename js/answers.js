@@ -21,7 +21,7 @@ window.QQ_ANSWERS = {
   {
    "slug": "shut_the_tap_and_the_pipes_bang",
    "title": "Shut the tap and the pipes bang",
-   "ts": "2026-09-12T20:22:58+00:00",
+   "ts": "2026-09-12T20:25:06+00:00",
    "date": "12 Sep 2026",
    "topic": "fluids",
    "q": null,
