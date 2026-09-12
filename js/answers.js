@@ -21,7 +21,7 @@ window.QQ_ANSWERS = {
   {
    "slug": "the_river_takes_most_of_the_fuel",
    "title": "The river takes most of the fuel",
-   "ts": "2026-09-12T19:24:54+00:00",
+   "ts": "2026-09-12T19:28:00+00:00",
    "date": "12 Sep 2026",
    "topic": "thermodynamics",
    "q": null,
