@@ -21,7 +21,7 @@ window.QQ_ANSWERS = {
   {
    "slug": "twice_as_tall_a_quarter_the_load",
    "title": "Twice as tall, a quarter the load",
-   "ts": "2026-09-12T17:18:39+00:00",
+   "ts": "2026-09-12T17:20:50+00:00",
    "date": "12 Sep 2026",
    "topic": "materials",
    "q": null,
