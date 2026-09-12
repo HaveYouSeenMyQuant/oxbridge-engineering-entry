@@ -21,7 +21,7 @@ window.QQ_ANSWERS = {
   {
    "slug": "no_spark_plug_anywhere",
    "title": "No spark plug anywhere",
-   "ts": "2026-09-12T15:50:44+00:00",
+   "ts": "2026-09-12T15:53:56+00:00",
    "date": "12 Sep 2026",
    "topic": "thermodynamics",
    "q": null,
