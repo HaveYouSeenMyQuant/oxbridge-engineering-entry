@@ -16,8 +16,82 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 204,
+ "count": 205,
  "entries": [
+  {
+   "slug": "the_river_takes_most_of_the_fuel",
+   "title": "The river takes most of the fuel",
+   "ts": "2026-09-12T19:24:54+00:00",
+   "date": "12 Sep 2026",
+   "topic": "thermodynamics",
+   "q": null,
+   "a": "About two thirds - 66 parts in every hundred - and not one engine ever built can beat it, because the limit is set by two temperatures and nothing else.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT DECIDES IT. Every engine takes heat in somewhere hot and must dump heat out somewhere cold. Write both temperatures from absolute zero, in kelvin, and the most you can ever keep as work is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    best share = 1 - (cold temperature / hot temperature)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A modern station makes steam at about 600 C, which is 873 K, and condenses it against river water at about 25 C, which is 298 K. So the best share is 1 - 298/873 = 0.659, about 66 parts in a hundred. A real unit delivers about 40. The 66 is a ceiling, not a prediction: no real machine gets there, and none can go past it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE THE NUMBER COMES FROM. A perfect engine is reversible, so it hands out exactly as much entropy at the cold end as it took in at the hot end: Q_hot / T_hot = Q_cold / T_cold. That fixes Q_cold = Q_hot x 298/873 = 0.341 of the heat, whatever the machine is made of. Energy is conserved, so the rest is work. The waste heat is not leaking away - it is the price of admission for taking any heat in at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY THE STATION IS BUILT ON A RIVER. The two temperatures are not equally useful. Take one kelvin off the cold side and the ceiling rises by 0.115 of a percentage point; put one kelvin ON the hot side and it rises by only 0.039. The cold side is worth nearly three times as much per degree, and it is also the cheaper one to move - the hot side is already at the limit of what the steel of the boiler will take. So you go and find the coldest big thing available and put your condenser next to it. That is a river, the sea, or a cooling tower evaporating water."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "HOW MUCH HEAT THAT IS. A 1,000 megawatt station running at 40 per cent burns 2,500 megawatts of fuel and must get rid of 1,500 megawatts of heat. Warming river water by 10 C carries away 41.8 megajoules per cubic metre, so it needs about 36 cubic metres of water every second - a fair-sized river, running through the plant and out again slightly warm. That flow, not the turbine, is often what decides where a station can be built at all."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE IDEALISATION DOING THE WORK. The ceiling assumes a reversible engine: infinitely slow, no friction, no turbulence, and heat crossing between the working fluid and the source with no temperature difference at all. A real plant also loses in the boiler, the turbine blades, the generator and its own pumps, which is most of the gap between 66 and 40. Squeeze all of those to nothing and you still stop at 66, which is the point."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. When something wastes energy as heat, ask what its hot and cold temperatures are before you blame the machine. If the two numbers are close, no amount of engineering will help, and the useful question becomes how to get a bigger gap - or how to use the warm water for something, which is what a combined heat and power plant does."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "th_temp_vs_energy",
+    "lesson": "h1",
+    "unit": 9,
+    "prompt": "A bath of water at 40 °C and a cup of tea at 90 °C. Which holds more thermal energy?"
+   }
+  },
   {
    "slug": "the_bars_go_where_it_stretches",
    "title": "The bars go where it stretches",
