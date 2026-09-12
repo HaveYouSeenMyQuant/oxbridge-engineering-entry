@@ -16,8 +16,70 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 203,
+ "count": 204,
  "entries": [
+  {
+   "slug": "the_bars_go_where_it_stretches",
+   "title": "The bars go where it stretches",
+   "ts": "2026-09-12T18:23:25+00:00",
+   "date": "12 Sep 2026",
+   "topic": "materials",
+   "q": null,
+   "a": "The bottom half - the half being stretched. And the beam fails there at under a tenth of the load the material could take.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Bending puts one face in compression and the other in tension, equally hard. For a 300 x 500 mm beam over a 4 m span the peak stress works out as:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    self weight alone      0.57 MPa",
+      "    plus 10 kN/m of floor  2.17 MPa",
+      "    plus 20 kN/m of floor  3.77 MPa"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Concrete takes about 40 MPa in compression but only about 3.5 MPa in tension. So at the third line the underside has already gone while the top is carrying 3.77 of the 40 it could manage - the beam breaks with more than 90 per cent of its strength unused, purely because the stress was the wrong sign."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Steel is about equally strong either way and enormously strong in tension, so it goes in the tension zone: low in the beam, near the face that is being pulled. Put the same bars in the top of a simply supported beam and they do nothing at all - which is why the bars move to the top over the supports of a continuous beam, where the bending reverses and the top is what stretches."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY STEEL AND NOT SOMETHING STRONGER. It is not only strength. Steel and concrete expand at almost the same rate with temperature, so a hot day does not shear the two apart, and concrete's alkalinity keeps the steel from rusting. A stronger fibre that failed either of those would be useless here."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. When something breaks far below its rated strength, check the SIGN of the stress before doubting the number. Most materials have two strengths, and the quoted one is usually the flattering one."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "ma_cantilever",
+    "lesson": "p9",
+    "unit": 8,
+    "prompt": "A diving board dips a certain amount with someone standing on the end. Replace it with a board of the same width and thickness but TWICE the length. How much further does the end dip, with the same person on it?"
+   }
+  },
   {
    "slug": "twice_as_tall_a_quarter_the_load",
    "title": "Twice as tall, a quarter the load",
