@@ -16,8 +16,110 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 205,
+ "count": 206,
  "entries": [
+  {
+   "slug": "shut_the_tap_and_the_pipes_bang",
+   "title": "Shut the tap and the pipes bang",
+   "ts": "2026-09-12T20:22:58+00:00",
+   "date": "12 Sep 2026",
+   "topic": "fluids",
+   "q": null,
+   "a": "About 19 bar -- over six times mains pressure, from a tap you closed with one finger.",
+   "why": [
+    {
+     "h": "WHY A SMALL FLOW DOES THAT",
+     "t": "p",
+     "lines": [
+      "Water is heavy and it was moving. To stop it you have to take its momentum away, and the only places that momentum can go are squashing the water and stretching the pipe. Both are stiff, so it takes a lot of pressure."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Work it out across the front that travels back up the pipe. In a time dt the front advances c*dt, so a mass rho*A*c*dt goes from v to rest. That change of momentum per unit time is the extra force dp*A, and the area cancels:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    dp = rho * c * v"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Energy gives the same thing: all the kinetic energy 0.5*rho*v^2 per unit volume ends up stored elastically as 0.5*dp^2/K, so dp = v*sqrt(rho*K), which is the same expression because c = sqrt(K/rho)."
+     ]
+    },
+    {
+     "h": "THE NUMBERS",
+     "t": "p",
+     "lines": [
+      "c is not the 1466 m/s of sound in open water. A pipe stretches, so some of the squeeze goes into the wall and the wave is slower: for 15 mm copper, 1259 m/s. Then"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    dp = 1000 * 1259 * 1.5 = 1.89 MPa = 18.9 bar"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "against a mains supply of about 3 bar. That is 6.3 times mains, and it sits ON TOP of it. As a head of water it is 192 m. On the 13.6 mm bore it is 274 N trying to push the tap open -- like hanging 28 kg on it."
+     ]
+    },
+    {
+     "h": "NOTICE WHAT IS NOT IN THE FORMULA",
+     "t": "p",
+     "lines": [
+      "Not the length of the pipe, not its diameter, not how much water it holds. Only the speed of the water and the speed of the message. A long pipe does not bang harder -- but it does decide what \"quickly\" means."
+     ]
+    },
+    {
+     "h": "WHY CLOSING SLOWLY FIXES IT",
+     "t": "p",
+     "lines": [
+      "The far end of the pipe is a tank at ordinary pressure, and it sends relief back. That relief arrives after 2L/c: for a 10 m run, 15.9 milliseconds. Close in less than that and you get the full 19 bar, because nothing has come back yet. Close in longer and the peak falls roughly as 2L/(c*T) -- close over a tenth of a second instead of a hundredth and you divide the spike by about six. That is the whole reason a lever tap bangs and a screw tap does not, and why big valves are geared to close slowly."
+     ]
+    },
+    {
+     "h": "WHAT AN AIR CHAMBER IS ACTUALLY DOING",
+     "t": "p",
+     "lines": [
+      "A surge arrestor is a small sealed pocket of air on a tee near the tap. Air is thousands of times more compressible than water, so the arriving column has something soft to push into instead of a stiff wall: the same momentum is absorbed over a much longer time, and force is momentum divided by time. A surge tank on a big main is the same trick with a free water surface. Neither removes the momentum -- both give it somewhere gentle to go."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE IDEALISATION DOING THE WORK. This is a rigid straight pipe, one fluid, no dissolved air, no friction along the wall, and a valve that shuts in a clean linear ramp. Real domestic pipes have bends, clips that flex, and air in solution, all of which cushion and damp the spike -- the bang you hear decays over a few cycles rather than ringing on. Wall friction also drops the peak a little. So 19 bar is the honest upper bound for these numbers, not a measurement of your kitchen."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE TRANSFERABLE MOVE. When something moving has to stop, do not ask how strong the stop is -- ask how long it has to take the momentum out. Every airbag, crumple zone, arrestor and surge tank is the same sentence."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_force_rate",
+    "lesson": "p3",
+    "unit": 8,
+    "prompt": "A jet of water delivers 20 kg per second at 5 m/s onto a wall and stops dead. What force does it exert, in newtons?"
+   }
+  },
   {
    "slug": "the_river_takes_most_of_the_fuel",
    "title": "The river takes most of the fuel",
