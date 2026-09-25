@@ -16,8 +16,68 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 209,
+ "count": 210,
  "entries": [
+  {
+   "slug": "press_harder_and_it_goes_sharp",
+   "title": "Press harder and it goes sharp",
+   "ts": "2026-09-25T19:24:46+00:00",
+   "date": "25 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "About 115.4 Hz — not 121. Roughly 82 cents sharp, which is four fifths of a semitone.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The law is f = (1/2L) times the square root of T over mu. Length and thickness have not changed, so all that matters is the square root of the tension ratio: the root of 1.10 is 1.0488. Multiply 110 by that and you get 115.4 Hz."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The square root is the whole story. Tension goes up a tenth, pitch goes up about a twentieth. Every time you want more pitch you have to pay for it twice over in tension, and that gets expensive fast."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Two consequences worth keeping, and they are the answers people usually give:"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Doubling the tension does NOT give you an octave. It gives exactly 600 cents — a tritone, the most dissonant interval there is. To go up a full octave you need FOUR times the tension, which is why a guitar neck has to survive around half a tonne of pull across six strings, and why old pianos with iron frames weigh what they do."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "And it is why pressing too hard makes you play sharp. Eighty-two cents is not subtle; it is most of the way to the next fret. Classical players are taught to press just past the point where the note speaks cleanly and no further, and this is the reason. On a bass, where the strings are slacker and your finger moves them further, the effect is worse."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Same square root, different knob: halving the LENGTH gives you exactly an octave, which is why the twelfth fret sits at the halfway point of the string."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "wa_fund_lambda",
+    "lesson": "w5",
+    "unit": 11,
+    "prompt": "A string 2 m long is fixed at both ends and vibrates at its fundamental. What is the wavelength, in metres?"
+   }
+  },
   {
    "slug": "he_clears_the_bar_at_two_forty",
    "title": "He clears the bar at two forty",
