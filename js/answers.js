@@ -16,8 +16,61 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 211,
+ "count": 212,
  "entries": [
+  {
+   "slug": "one_turn_of_the_platter",
+   "title": "One turn of the platter",
+   "ts": "2026-09-25T20:43:54+00:00",
+   "date": "25 Sep 2026",
+   "topic": "cs_systems",
+   "q": null,
+   "a": "Twenty-five million. Exactly, as it happens.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "7,200 rpm is 120 turns a second, so one turn takes a hundred and twentieth of a second. The processor does three thousand million ticks a second. Divide one by the other and the sum comes out whole: 25,000,000 clock cycles while the disk goes round once."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Sit with the size of that. If a clock tick were one second, one turn of the platter would take you about nine months."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "This is the number underneath every slow computer you have ever used, and it is why an operating system will do almost anything rather than actually go to a spinning disk. Caching in RAM, read-ahead, elevator scheduling of requests, swapping only as a last resort — none of those are cleverness for its own sake. They exist because the alternative costs twenty-five million cycles, and the processor has nothing to do for any of them."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "An SSD does not fix the gap so much as shrink it. At about 0.1 ms it is roughly eighty times better than one platter turn — genuinely transformative, and still three hundred thousand wasted cycles every time you touch it. Even RAM costs a few hundred. The whole memory hierarchy, from registers down, is one long argument with this arithmetic."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "And note what the question did NOT depend on: how much data you asked for. This is pure waiting. Reading one byte and reading a whole track cost nearly the same, which is why disks are read in big blocks and why a file scattered across a platter is so much worse than the same file laid out in order."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_geo_period",
+    "lesson": "p8",
+    "unit": 8,
+    "prompt": "A satellite has to stay above one spot on the equator. What must its orbital period be, in hours?"
+   }
+  },
   {
    "slug": "nobody_can_open_that_door",
    "title": "Nobody can open that door",
