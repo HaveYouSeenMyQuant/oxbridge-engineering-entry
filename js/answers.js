@@ -16,8 +16,54 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 208,
+ "count": 209,
  "entries": [
+  {
+   "slug": "he_clears_the_bar_at_two_forty",
+   "title": "He clears the bar at two forty",
+   "ts": "2026-09-25T18:41:13+00:00",
+   "date": "25 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "About 2.13 m — which is roughly 27 cm BELOW the bar he just went over.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The numbers first. Once his foot leaves the track he is a projectile, and nothing can add to his upward speed. Four and a half metres per second gives a rise of v squared over 2g: 4.5 squared is 20.25, over 19.62 is 1.03 m. Add the 1.10 m his centre of mass started at and it peaks at about 2.13 m. The bar is at 2.40 m."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So how does he get over it? By not taking his centre of mass with him. In the Fosbury flop the back arches so hard that the balance point of the body leaves the body altogether and sits in the air under the small of his back. Head and shoulders cross the bar while the hips are still rising; the hips cross while the legs are still down; the legs flick over last. No single part of him is ever much above the bar, and the average of all of them — the centre of mass — passes underneath it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is the whole invention. Dick Fosbury did not jump higher than the straddle jumpers he beat in 1968; he wasted less of his jump. A straddle jumper has to lift his centre of mass over the bar, which from the same 1.10 m start needs about 5.05 m/s instead of 4.5 — over a fifth more energy for the same result."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "It is also why you cannot beat this with cleverness beyond a point. The centre of mass follows a parabola fixed at take-off, and the only honest ways to raise it are to leave the ground faster or to start taller."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_gpe",
+    "lesson": "p4",
+    "unit": 8,
+    "prompt": "How much gravitational potential energy does a 5 kg mass gain when lifted 4 m, with g = 10? Answer in joules."
+   }
+  },
   {
    "slug": "it_fires_once_every_two_turns",
    "title": "It fires once every two turns",
