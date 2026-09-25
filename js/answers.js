@@ -16,8 +16,61 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 210,
+ "count": 211,
  "entries": [
+  {
+   "slug": "nobody_can_open_that_door",
+   "title": "Nobody can open that door",
+   "ts": "2026-09-25T20:05:29+00:00",
+   "date": "25 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "About 95 kN — call it ten tonnes sitting on the door.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The sum is the easy part. Pressure difference is 75 kPa inside minus 22 kPa outside, so 53 kPa, which is 53,000 newtons on every square metre. The door is 1.8 m by 1.0 m, so 1.8 square metres. Multiply: about 95,000 N. Divide by g and that is very nearly ten tonnes — the weight of a loaded lorry, pressed evenly over a door you could reach across."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So no, you cannot open it, and no amount of adrenaline changes that. A strong person pulls with perhaps 1,000 N. You would need fifty of them, all pulling cleanly on the same handle, before the door so much as flexed."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The design goes further than simply being strong. Cabin doors are PLUG doors: they are slightly bigger than the hole they sit in, and they have to be pulled inward and rotated before they can swing out. That means the pressure is not fighting the latches at all, it is jamming the door into its own frame. The harder the cabin pushes, the tighter it seals. The latches only have to hold the door in place on the ground."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "It is also why the number falls away as you descend. At the gate there is no difference at all and the same door swings on one hand. Halfway down, around 20,000 feet, it is already light enough that the difference is what stops you rather than the door itself."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "One more thing worth noticing: nothing above depended on the door being strong. Force equals pressure times area, so it was decided entirely by how big the door is. Make the door twice as tall and you double the load on the frame, which is why aircraft doors are small, rounded, and there are not many of them."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_hydrostatic",
+    "lesson": "p6",
+    "unit": 8,
+    "prompt": "How much does the pressure increase 10 m below the surface of water? Take ρ = 1000 kg/m³ and g = 10. Give your answer in kilopascals."
+   }
+  },
   {
    "slug": "press_harder_and_it_goes_sharp",
    "title": "Press harder and it goes sharp",
