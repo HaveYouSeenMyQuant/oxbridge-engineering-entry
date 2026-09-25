@@ -16,8 +16,54 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 206,
+ "count": 207,
  "entries": [
+  {
+   "slug": "the_low_gear_is_not_free",
+   "title": "The low gear is not free",
+   "ts": "2026-09-25T17:46:04+00:00",
+   "date": "25 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "Two and a half metres and a bit — 2.55 m, against 8.4 m in top gear. A third as far, near enough.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The chain only counts teeth. Top gear is 52 on the front over 13 on the back, which is exactly 4 turns of the wheel for one turn of the pedals; 8.4 m over those 4 turns makes the wheel 2.1 m around. Bottom gear is 34 over 28, which is 17/14 — about 1.21 wheel turns per pedal turn. Multiply by the same 2.1 m wheel and you get 2.55 m."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Here is the part worth keeping. The low gear did not give you anything. Your foot goes round exactly the same circle, and you push it with the same force, so you do the SAME work per stroke. What changed is how that work is spent: the force at the back wheel goes up by 3.29, and the distance goes down by 3.29. Multiply them and the work is identical."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is why a low gear feels easier and gets you up the hill, and also why the hill takes so long. Same energy per stroke, three times as many strokes, and the hill is not climbed one metre sooner for it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "If gears really did change the effort without changing the distance, you could gear a bike arbitrarily low, climb Everest on one pedal stroke, and get the potential energy for nothing. Every gearbox, every lever and every pulley obeys the same rule."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_moment",
+    "lesson": "p7",
+    "unit": 8,
+    "prompt": "A 200 N force acts at the end of a spanner, 0.5 m from the bolt and at right angles to it. What is the moment about the bolt, in newton metres?"
+   }
+  },
   {
    "slug": "shut_the_tap_and_the_pipes_bang",
    "title": "Shut the tap and the pipes bang",
