@@ -16,8 +16,54 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 207,
+ "count": 208,
  "entries": [
+  {
+   "slug": "it_fires_once_every_two_turns",
+   "title": "It fires once every two turns",
+   "ts": "2026-09-25T18:04:00+00:00",
+   "date": "25 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "About 2954 rpm. It loses roughly one and a half per cent of its speed, and that is the whole reason a flywheel is there.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The numbers. At 3000 rpm the crank is turning at 314 rad/s, so the wheel is holding half times 0.20 times 314 squared, which is 9,870 J. Take 300 J out and 9,570 J is left. Run that back through the same formula and the speed comes to 309 rad/s, or about 2954 rpm."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Now the part worth keeping, because it is why the answer is so small. The 300 J is about a thirtieth of what the wheel is holding. But energy goes as speed SQUARED, so a change in energy costs you only about HALF as much fractional change in speed. A thirtieth of the energy, a sixtieth of the speed. That square is doing all the work."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "It is also why the flywheel has to be heavy. Put a tenth of the inertia on the same engine and the same 300 J takes more than ten times as much speed away — enough that the engine would lurch between firings and stall under load. Mass at the rim buys smoothness, and it buys it as the square of the radius, which is why flywheels are rims with spokes rather than solid discs."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Same reason a potter's wheel keeps turning while you shape the pot, and the same reason a single-cylinder engine sounds lumpy while a six sounds smooth: the six is firing three times as often into the same stored energy."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_exam_energy",
+    "lesson": "p5",
+    "unit": 8,
+    "prompt": "A 2 kg block slides from rest down a smooth slope, dropping 1.8 m, g = 10. What is its speed at the bottom, in m/s?"
+   }
+  },
   {
    "slug": "the_low_gear_is_not_free",
    "title": "The low gear is not free",
