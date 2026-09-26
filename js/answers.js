@@ -16,8 +16,68 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 217,
+ "count": 218,
  "entries": [
+  {
+   "slug": "the_middle_of_the_wire_is_idle",
+   "title": "The middle of the wire is idle",
+   "ts": "2026-09-26T17:50:05+00:00",
+   "date": "26 Sep 2026",
+   "topic": "electricity",
+   "q": null,
+   "a": "About sixty five microns. Thinner than a human hair, and roughly three tenths of one percent of the bar.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    depth = sqrt( rho / (pi x f x mu) )"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "with copper's resistivity 1.68e-8 and mu = 4pi x 1e-7. At one megahertz that gives 6.5e-5 m. The other 99.7 percent of the copper carries almost nothing."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY IT HAPPENS. A changing current makes a changing magnetic field inside the conductor, and that field induces eddy currents which oppose the original current most strongly at the centre. The deeper you go, the more opposition, so the current gives up on the middle and runs along the outside."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE SCALING IS THE USEFUL PART. Depth goes as one over the SQUARE ROOT of frequency. Go up a factor of a hundred in frequency and the depth falls by ten. That one relation gets you from the mains figure to almost any other: at fifty hertz copper is about nine millimetres deep, which is why the grid can still use solid conductors a couple of centimetres thick and have them mostly working."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE CONTROL PEOPLE GET BACKWARDS. Put a WORSE conductor in the formula and the depth gets LARGER. Stainless steel, about forty times copper's resistivity, has a skin depth about six times deeper. That feels wrong until you see what is being resisted: it is the eddy currents that push the flow outwards, and a poor conductor cannot support them well either."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT IT BUYS YOU. It is why radio-frequency conductors are silver-PLATED rather than made of solid silver, why high-frequency coils use litz wire — many thin strands, individually insulated, so the surface area goes up — and why a microwave waveguide can be a hollow tube without losing anything. Above a few megahertz, a thick conductor is mostly structural. You are not paying for copper, you are paying for surface."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_resistivity",
+    "lesson": "e1",
+    "unit": 10,
+    "prompt": "A copper wire is 2 m long with a cross-section of 1 mm². Copper's resistivity is 1.68 × 10⁻⁸ Ω·m. What is its resistance, in milliohms?"
+   }
+  },
   {
    "slug": "the_missing_seven_hundred_watts",
    "title": "The missing seven hundred watts",
