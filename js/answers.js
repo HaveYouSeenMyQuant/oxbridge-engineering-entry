@@ -16,8 +16,69 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 219,
+ "count": 220,
  "entries": [
+  {
+   "slug": "why_not_just_switch_at_twenty",
+   "title": "Why not just switch at twenty",
+   "ts": "2026-09-26T20:46:33+00:00",
+   "date": "26 Sep 2026",
+   "topic": "control",
+   "q": null,
+   "a": "A hundred and fifty times an hour, against seven and a half with the two degree gap.",
+   "why": [
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    one cycle = up the gap + down the gap",
+      "              = gap / rate + gap / rate"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "At half a degree a minute, a two degree gap takes 4 minutes to climb and 4 to fall: an 8 minute cycle, so 7.5 an hour. A tenth of a degree takes 0.2 minutes each way: a 0.4 minute cycle, so 150 an hour."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THE LAW IS THE USEFUL PART. Switching rate goes as one OVER the gap. Twenty times narrower, twenty times more often — exactly, not roughly. And that means closing the gap completely does not give you perfect control. It sends the switching rate to infinity."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "THAT IS THE WHOLE REASON THE GAP EXISTS. With a single threshold at twenty, the room is never exactly at twenty; it is a hair above or a hair below, and noise in the sensor pushes it across the line constantly. The relay would open and close many times a second. Contacts weld, compressors burn out, and a boiler that needs a minute to light never gets one."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "So the gap is not imprecision in the thermostat. It is the mechanism that makes a switching controller usable at all, and the designer's trade is explicit: a wider gap means sloppier temperature and longer equipment life, a narrower one the reverse."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHERE ELSE YOU WILL MEET IT. Exactly the same two-threshold trick is a Schmitt trigger, which is how a noisy analogue signal is turned into a clean digital one; it is the deadband in a disk-drive head servo; and it is why a fridge lets itself drift a couple of degrees rather than holding one. Whenever a system must make a discrete decision about a continuous quantity, it needs two thresholds, not one."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "th_specific_heat",
+    "lesson": "h1",
+    "unit": 9,
+    "prompt": "How much energy does it take to warm 2 kg of water by 30 °C? Water's specific heat capacity is 4200 J/kg°C. Give your answer in kilojoules."
+   }
+  },
   {
    "slug": "back_half_then_forward_half",
    "title": "Back half, then forward half",
