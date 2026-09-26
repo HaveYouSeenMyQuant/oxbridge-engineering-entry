@@ -16,8 +16,61 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 212,
+ "count": 213,
  "entries": [
+  {
+   "slug": "a_hundred_metres_up_in_ten_minutes",
+   "title": "A hundred metres up in ten minutes",
+   "ts": "2026-09-26T07:24:42+00:00",
+   "date": "26 Sep 2026",
+   "topic": "physics",
+   "q": null,
+   "a": "About 123 watts. Two old filament bulbs, held for ten minutes.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The sum is short. Lifting 75 kg through 100 m takes mgh = 75 x 9.81 x 100 = 73,575 joules. Spread that over ten minutes, which is 600 seconds, and you get 73,575 / 600 = 123 watts."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Almost everyone guesses far higher, and the reason is worth naming: the effort FEELS enormous, and a watt sounds like a small unit because we meet it on lightbulbs. Both instincts are right and they still mislead you. A human is simply not a powerful machine. A fit amateur holds 200 to 250 W for an hour; a Tour professional holds about 400 W; a decent kettle is 3,000 W. You could not boil a kettle with twenty cyclists."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The energy side is even more startling. 73,575 joules is about 17.6 kilocalories — the food energy in roughly a quarter of a digestive biscuit. Ten minutes of hard climbing, and gravity took a biscuit off you."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Two honest caveats, because the question said \"just to lift themselves\". Real riding also fights rolling resistance and air, and the body is only about a quarter efficient at turning food into pedal work. So the rider burns perhaps four times the food energy above, and on a fast descent air resistance would dominate entirely. On a steep slow climb, though, gravity is nearly the whole story, which is exactly why this sum is the one cyclists actually use."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "And notice what the answer does not depend on: how steep the hill is. A hundred metres of height in ten minutes is the same power whether it took you one kilometre or five. Steepness changes the gear you need, not the watts."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "me_power",
+    "lesson": "p4",
+    "unit": 8,
+    "prompt": "A crane lifts 60 kg through 2 m in 4 s, g = 10. What is its output power, in watts?"
+   }
+  },
   {
    "slug": "one_turn_of_the_platter",
    "title": "One turn of the platter",
