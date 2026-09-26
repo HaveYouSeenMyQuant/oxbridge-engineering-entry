@@ -16,8 +16,89 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 213,
+ "count": 214,
  "entries": [
+  {
+   "slug": "the_salt_cannot_get_out",
+   "title": "The salt cannot get out",
+   "ts": "2026-09-26T08:01:36+00:00",
+   "date": "26 Sep 2026",
+   "topic": "thermodynamics",
+   "q": null,
+   "a": "About fifteen atmospheres. Roughly five car tyres, held back by a membrane a few molecules thick.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "The sum is one line — van 't Hoff. Osmotic pressure is Pi = i M R T. Table salt splits into two ions, so i = 2. The concentration is 0.3 mol per litre, which is 300 mol per cubic metre. R is 8.314, and body temperature is 310 K."
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    Pi = 2 x 300 x 8.314 x 310 = 1,546,000 Pa"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "That is about 1,550 kPa, or 15.3 atmospheres."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Put that next to something. The pressure difference across an aircraft cabin door at cruise is about 53 kPa — this is nearly thirty times larger. A car tyre is about 220 kPa. Your cells are holding back more than five of them."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHAT THE NUMBER ACTUALLY TELLS YOU, which is why this is worth knowing rather than just startling."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "It is why a cell in pure water bursts, and why cells that must survive fresh water build a wall — plants, fungi and bacteria all have one, animals mostly do not. It is why plants stand up at all: turgor pressure IS this pressure, and a wilting plant is one that has lost it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "It is why a drip is saline and not water. Push pure water into a vein and you burst red cells directly."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "And it is why desalination is expensive. To push water the wrong way through a membrane you must beat the osmotic pressure, so seawater — about 27 atmospheres — needs pumps working above that before a single drop crosses. The energy cost of reverse osmosis is set by this line of algebra, not by engineering cleverness."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Notice the one input that surprises people: it does not depend on what the dissolved thing IS. Sugar, salt or protein, only the number of particles counts. That is why the i matters — glucose at the same molarity gives exactly half, because it does not split in two."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "th_gas_pressure",
+    "lesson": "h1",
+    "unit": 9,
+    "prompt": "A sealed rigid container of gas is at 100 kPa and 300 K. It is heated to 600 K. What is the new pressure, in kPa?"
+   }
+  },
   {
    "slug": "a_hundred_metres_up_in_ten_minutes",
    "title": "A hundred metres up in ten minutes",
