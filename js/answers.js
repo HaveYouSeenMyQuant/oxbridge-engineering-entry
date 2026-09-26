@@ -16,8 +16,75 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 216,
+ "count": 217,
  "entries": [
+  {
+   "slug": "the_missing_seven_hundred_watts",
+   "title": "The missing seven hundred watts",
+   "ts": "2026-09-26T14:46:40+00:00",
+   "date": "26 Sep 2026",
+   "topic": "electricity",
+   "q": null,
+   "a": "Nowhere. That is the answer, and it is not a trick.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "No energy is lost, nothing is being wasted as heat, and the motor is not underperforming. The seven hundred watts were never there to begin with."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "WHY VOLTS TIMES AMPS IS NOT THE POWER. In an AC circuit the current does not have to rise and fall in step with the voltage. A motor is mostly coils of wire, and a coil resists a CHANGE in current, so the current lags behind. Once they are out of step, there are parts of every cycle where the voltage is positive while the current is still negative — and during those moments the motor is pushing energy back INTO the supply rather than taking it out."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Average volts times amps over a whole cycle and that giving-back cancels part of the taking. What survives is"
+     ]
+    },
+    {
+     "h": null,
+     "t": "pre",
+     "lines": [
+      "    P = V x I x cos(phi)"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "where phi is how far out of step they are. Here cos(phi) = 1700 / 2400 = 0.708, so the two are about 45 degrees apart."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "You can check this without the formula, which is worth doing once: write down v(t) and i(t) as sines 45 degrees apart, multiply them point by point, and average over a few cycles. You get 1,700. The formula and the waveform are genuinely different routes to it."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "SO WHY DOES ANYONE CARE? Because the cable does. The wire, the fuse, the switchgear and the transformer all have to carry the full ten amps, and they heat up according to that ten amps. Deliver the same 1,700 W in step and you would only need about seven. Those extra three amps do no work and cost real copper, which is exactly why industrial customers are billed for a poor power factor and why you will find banks of capacitors bolted to the wall of any large workshop, quietly putting the current back in step."
+     ]
+    }
+   ],
+   "src": "answer",
+   "road": {
+    "qid": "el_power",
+    "lesson": "e3",
+    "unit": 10,
+    "prompt": "A 240 V kettle draws 8 A. What is its power, in watts?"
+   }
+  },
   {
    "slug": "the_hob_is_never_half_on",
    "title": "The hob is never half on",
