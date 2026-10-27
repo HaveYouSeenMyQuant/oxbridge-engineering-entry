@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 224,
+ "count": 225,
  "entries": [
+  {
+   "slug": "ep03_the_servant_returns",
+   "title": "ep03 the servant returns",
+   "ts": "2026-10-27T13:17:23+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "They buried him. He walked back in through the front gate.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Episode 3"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Episodes 1 and 2 are on the page: a crippled servant is thrown off a cliff, and wakes in a sealed tomb with a bronze heart that counts every blow before it lands."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Next, Episode 4, One Step: he does not hit back. He only steps aside."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep02_three_days",
    "title": "ep02 three days",
