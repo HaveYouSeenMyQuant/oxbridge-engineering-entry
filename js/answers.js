@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 227,
+ "count": 228,
  "entries": [
+  {
+   "slug": "ep06_a_red_mask_in_the_rain",
+   "title": "ep06 a red mask in the rain",
+   "ts": "2026-10-27T16:43:31+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "It had no mouth. It didn't need one.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Episode 6"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Episodes 1 to 5 are on the page: a crippled servant thrown off a cliff comes back with a bronze heart that counts every blow before it lands. Tonight, for the first time, it stutters."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Next, Episode 7, Seol-hwa: a stranger in a red coat."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep05_the_elders_eyes",
    "title": "ep05 the elders eyes",
