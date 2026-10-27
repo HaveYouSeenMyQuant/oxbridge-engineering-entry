@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 234,
+ "count": 235,
  "entries": [
+  {
+   "slug": "ep13_ten_masks",
+   "title": "ep13 ten masks",
+   "ts": "2026-10-27T19:53:53+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "Ten of them. I could see every blade.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Season 2, Episode 1 · TEN MASKS"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Season 2 starts here. Season 1 is on the page: a crippled servant thrown off a cliff comes back with a bronze heart that counts every blow before it lands. Tonight ten masked assassins surround him on the rooftops, and he never throws a single strike."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "New episodes coming: follow so you don't miss it."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep12_heaven_work",
    "title": "ep12 heaven work",
