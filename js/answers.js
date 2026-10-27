@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 231,
+ "count": 232,
  "entries": [
+  {
+   "slug": "ep10_the_sparring_tournament",
+   "title": "ep10 the sparring tournament",
+   "ts": "2026-10-27T18:31:10+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "A servant has never entered the tournament. He signed his name in ink.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Episode 10"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Episodes 1 to 9 are on the page: a crippled servant thrown off a cliff comes back with a bronze heart that counts every blow before it lands. Today he walks into the sect's sparring tournament with a wooden sword, and someone on the balcony brings steel to the final."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Next, Episode 11, Do-gyeom, Again."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep09_mothers_grave",
    "title": "ep09 mothers grave",
