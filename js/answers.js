@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 236,
+ "count": 237,
  "entries": [
+  {
+   "slug": "ep14_forty_li_north",
+   "title": "ep14 forty li north",
+   "ts": "2026-10-27T20:44:02+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "Forty li north. Twenty-two to go. Four of them.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Season 2, Episode 2 · FORTY LI NORTH"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "A rope bridge over a gorge, four masked assassins, and a bronze heart that stops reading the enemy and starts reading the bridge. Then, by the fire, Seol-hwa finally says who the Bloodless Hand took from her."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "New episodes coming: follow so you don't miss it."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep04_scroll_music_test",
    "title": "ep04 scroll music test",
