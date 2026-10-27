@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 233,
+ "count": 234,
  "entries": [
+  {
+   "slug": "ep12_heaven_work",
+   "title": "ep12 heaven work",
+   "ts": "2026-10-27T19:21:54+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "Forty times my strength. I only needed one opening.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Episode 12 · SEASON 1 FINALE"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Episodes 1 to 11 are on the page: a crippled servant thrown off a cliff comes back with a bronze heart that counts every blow before it lands. Today the elder himself comes down from the balcony, and the heart has to give everything it has. Then the masks arrive, and the heart says something it has never said before."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "End of Season 1. Season 2 soon: follow so you don't miss it."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep11_do_gyeom_again",
    "title": "ep11 do gyeom again",
