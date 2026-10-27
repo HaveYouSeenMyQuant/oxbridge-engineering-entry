@@ -16,8 +16,34 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 222,
+ "count": 223,
  "entries": [
+  {
+   "slug": "ep01_the_cliff",
+   "title": "ep01 the cliff",
+   "ts": "2026-10-27T10:24:32+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "They threw a crippled servant off a cliff. Something ancient caught him.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Episode 1"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Episode 2, Three Days: he wakes in a sealed tomb, and the machine in his chest starts to fix him."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "drill_the_middle_out_of_it",
    "title": "Drill the middle out of it",
