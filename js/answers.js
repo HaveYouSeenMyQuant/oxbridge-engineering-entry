@@ -16,8 +16,19 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 235,
+ "count": 236,
  "entries": [
+  {
+   "slug": "ep04_scroll_music_test",
+   "title": "ep04 scroll music test",
+   "ts": "2026-10-27T20:01:50+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "He drew a sword on the servant. The servant only took one step. Heaven's Mechanism · Episode 4 (webtoon cut) the whole series is on the page #manhwa #webtoon #murim #martialarts #manga #qvp_ep04_scroll_music_test",
+   "why": [],
+   "src": "module"
+  },
   {
    "slug": "ep13_ten_masks",
    "title": "ep13 ten masks",
