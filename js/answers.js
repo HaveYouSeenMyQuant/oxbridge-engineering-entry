@@ -16,8 +16,41 @@
  *                  verify() is what proves the number
  */
 window.QQ_ANSWERS = {
- "count": 229,
+ "count": 230,
  "entries": [
+  {
+   "slug": "ep08_the_mechanism_lies",
+   "title": "ep08 the mechanism lies",
+   "ts": "2026-10-27T17:33:53+00:00",
+   "date": "27 Oct 2026",
+   "topic": "",
+   "q": null,
+   "a": "The voice in my chest lied to me. I found out at dawn.",
+   "why": [
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Heaven's Mechanism · Episode 8"
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Episodes 1 to 7 are on the page: a crippled servant thrown off a cliff comes back with a bronze heart that counts every blow before it lands. Tonight it hides one on purpose."
+     ]
+    },
+    {
+     "h": null,
+     "t": "p",
+     "lines": [
+      "Next, Episode 9, Mother's Grave."
+     ]
+    }
+   ],
+   "src": "caption"
+  },
   {
    "slug": "ep07_seol_hwa",
    "title": "ep07 seol hwa",
